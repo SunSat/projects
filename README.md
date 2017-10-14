@@ -1,14 +1,14 @@
 Projects
 
-Do More practice. Stop Talking. Put all your programs if you fell to share with others.
+Do More practice. Stop Talking. Put all your programs/projects if you fell to share with others.
 
 Important Guide Lines.
 
-1. Do not commit any You company project specific codes.
+1. Do not commit any Your company project specific codes.
 2. Do not commit any faulty/un-compiled programs. This will affect others also.
 3. Add Brief comments/Design patterns explanation in the file itself.
 
-Steps to create New Java/J2ee Projct(Ex: Adding Calculator Project).
+Steps to create New Java/J2ee Projct(Ex: Adding Calculator Project). In Intelija Idea IDE.(Not sure about Eclipse).
 
 Step 1 : Select Java/J2ee Project under your respectie name(Ex: SathishProjects). and Do Right Click New --> Module. 
 Step 2 : Check the CheckBox "Create From ArcheType" --> Select --> Maven ArcheType QuickStart for Java Or Maven ArcheType WebApp for J2EE projects. Click Next. 
