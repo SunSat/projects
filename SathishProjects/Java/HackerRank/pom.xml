@@ -21,6 +21,13 @@
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/com.sun.pdfview/pdfrenderer -->
+    <dependency>
+      <groupId>com.sun.pdfview</groupId>
+      <artifactId>pdfrenderer</artifactId>
+      <version>0.9.1-patched</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
