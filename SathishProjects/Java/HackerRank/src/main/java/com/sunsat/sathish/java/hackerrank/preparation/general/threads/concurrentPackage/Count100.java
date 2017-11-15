@@ -1,7 +1,5 @@
 package com.sunsat.sathish.java.hackerrank.preparation.general.threads.concurrentPackage;
 
-import com.sun.org.apache.xalan.internal.utils.FeatureManager;
-
 import java.util.concurrent.*;
 
 /**

@@ -1,7 +1,5 @@
 package com.sunsat.sathish.java.hackerrank.preparation.interview.symentac;
 
-import com.sun.org.apache.xalan.internal.utils.FeatureManager;
-
 import java.util.concurrent.*;
 
 /**
