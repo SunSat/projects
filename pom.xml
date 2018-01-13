@@ -25,6 +25,7 @@
   <build>
     <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <outputDirectory>${project.basedir}/target</outputDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

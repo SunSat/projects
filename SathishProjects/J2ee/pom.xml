@@ -15,6 +15,7 @@
     <modules>
         <module>UserLogin</module>
         <module>SpSystem</module>
+        <module>StoreManagement</module>
     </modules>
 
     <build>
