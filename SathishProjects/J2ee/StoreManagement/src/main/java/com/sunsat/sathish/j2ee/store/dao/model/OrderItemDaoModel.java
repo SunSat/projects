@@ -59,5 +59,4 @@ public class OrderItemDaoModel {
         this.totalCost = totalCost;
     }
 
-
 }

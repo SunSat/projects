@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 1/12/2018.
  */
-public class CategoryServiceImpl extends BaseServiceImpl {
+public class CategoryDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int delete(CategoryDaoModel model) throws SQLException {
         String sql = "delete from category where categoryid=?";

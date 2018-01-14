@@ -10,7 +10,7 @@ import java.sql.Statement;
 /**
  * Created by sathishkumar_su on 1/8/2018.
  */
-public abstract class BaseServiceImpl {
+public abstract class BaseDaoServiceImpl {
 
     public int getMaxId(String tableName,String primaryKeyColumn) throws SQLException {
         Statement maxSt = null;

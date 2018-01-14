@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 1/11/2018.
  */
-public class AddressServiceImpl extends BaseServiceImpl {
+public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int delete(AddressDaoModel model) throws SQLException {
         String sql = "delete from address where addressid=?";
@@ -252,7 +252,7 @@ public class AddressServiceImpl extends BaseServiceImpl {
         daoModel.setZipCode("600100");
         daoModel.setLandmark("near");
 
-        AddressServiceImpl impl = new AddressServiceImpl();
+        AddressDaoServiceImpl impl = new AddressDaoServiceImpl();
         try {
             impl.add(daoModel);
         }catch (SQLException sqe) {

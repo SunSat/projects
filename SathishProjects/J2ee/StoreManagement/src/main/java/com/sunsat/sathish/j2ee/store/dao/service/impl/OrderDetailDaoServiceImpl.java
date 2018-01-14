@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 1/9/2018.
  */
-public class OrderDetailServiceImpl extends BaseServiceImpl {
+public class OrderDetailDaoServiceImpl extends BaseDaoServiceImpl {
     public int add(OrderDetailDaoModel model) throws SQLException {
         String sql = "insert into order_detail (orderid, amount, payment_type, created_date, order_state) values (?,?,?,?,?)";
         PreparedStatement insertSt = null;
@@ -183,7 +183,7 @@ public class OrderDetailServiceImpl extends BaseServiceImpl {
         daoModel.setPaymentType("Case On Delivery");
         daoModel.setOrderState("moved");
         daoModel.setCreatedDate(new Date());
-        OrderDetailServiceImpl impl = new OrderDetailServiceImpl();
+        OrderDetailDaoServiceImpl impl = new OrderDetailDaoServiceImpl();
         try {
             impl.add(daoModel);
         }catch (SQLException sqe) {

@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 1/8/2018.
  */
-public class ItemServiceImpl extends BaseServiceImpl {
+public class ItemDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int delete(ItemDaoModel model) throws SQLException {
         String sql = "delete from item where itemid=?";
@@ -207,7 +207,7 @@ public class ItemServiceImpl extends BaseServiceImpl {
         daoModel.setEnd_date(new java.util.Date());
         daoModel.setQuantity(100);
         daoModel.setState("Available");
-        ItemServiceImpl impl = new ItemServiceImpl();
+        ItemDaoServiceImpl impl = new ItemDaoServiceImpl();
         try {
             impl.add(daoModel);
         }catch (SQLException sqe) {

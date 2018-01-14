@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 1/4/2018.
  */
-public class UserServiceImpl extends BaseServiceImpl {
+public class UserDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int add(UserDaoModel model) throws SQLException {
         String sql = "insert into user (userid,first_name,last_name,user_name,password,email,mobile_no,admin,type,rank) " +
@@ -211,7 +211,7 @@ public class UserServiceImpl extends BaseServiceImpl {
         daoModel.setIsAdmin("true");
         daoModel.setRank(5);
         daoModel.setType("good");
-        UserServiceImpl impl = new UserServiceImpl();
+        UserDaoServiceImpl impl = new UserDaoServiceImpl();
         try {
             impl.add(daoModel);
         }catch (SQLException sqe) {

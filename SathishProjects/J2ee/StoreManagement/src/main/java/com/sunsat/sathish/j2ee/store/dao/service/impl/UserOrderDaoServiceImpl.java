@@ -1,8 +1,7 @@
 package com.sunsat.sathish.j2ee.store.dao.service.impl;
 
-import com.sunsat.sathish.j2ee.store.dao.DaoUtil;
 import com.sunsat.sathish.j2ee.store.dao.manager.DaoManager;
-import com.sunsat.sathish.j2ee.store.dao.model.CommentDaoModel;
+import com.sunsat.sathish.j2ee.store.dao.model.UserOrderDaoModel;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,19 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sathishkumar_su on 1/12/2018.
+ * Created by sathishkumar_su on 1/13/2018.
  */
-public class CommentServiceImpl extends BaseServiceImpl {
+public class UserOrderDaoServiceImpl extends BaseDaoServiceImpl {
 
-    public int delete(CommentDaoModel model) throws SQLException {
-        String sql = "delete from comment where commentid=?";
+    public int delete(UserOrderDaoModel model) throws SQLException {
+        String sql = "delete from user_order where id=?";
         PreparedStatement delSt = null;
         int deleteCount = 0 ;
         Connection con = DaoManager.getConnection();
         try {
             con.setAutoCommit(false);
             delSt = con.prepareStatement(sql);
-            delSt.setInt(1, model.getCommentId());
+            delSt.setInt(1, model.getId());
             deleteCount = delSt.executeUpdate();
             con.commit();
             con.setAutoCommit(true);
@@ -36,20 +35,17 @@ public class CommentServiceImpl extends BaseServiceImpl {
         return deleteCount;
     }
 
-    public int add(CommentDaoModel model) throws SQLException {
-        String sql = "insert into comment (commentid, itemid, userid, rating,comment_text,created_date ) values (?,?,?,?,?,?)";
+    public int add(UserOrderDaoModel model) throws SQLException {
+        String sql = "insert into user_order (id, userid, orderid) values (?,?,?,?)";
         PreparedStatement insertSt = null;
-        int maxId = getMaxId("comment","commentid");
+        int maxId = getMaxId("category_item","id");
         Connection con = DaoManager.getConnection();
         try {
             con.setAutoCommit(false);
             insertSt = con.prepareStatement(sql);
             insertSt.setInt(1, maxId);
-            insertSt.setInt(2, model.getItemId());
-            insertSt.setInt(3, model.getUserId());
-            insertSt.setInt(4, model.getRating());
-            insertSt.setString(5, model.getCommentText());
-            insertSt.setDate(6, DaoUtil.convertJavaToSqlDate(model.getCreatedDate()));
+            insertSt.setInt(2, model.getUserId());
+            insertSt.setInt(3, model.getOrderId());
             insertSt.execute();
             con.commit();
             con.setAutoCommit(true);
@@ -60,20 +56,17 @@ public class CommentServiceImpl extends BaseServiceImpl {
         return maxId;
     }
 
-    public int update(CommentDaoModel model) throws SQLException {
-        String sql = "update comment set itemid = ?, userid = ?,rating = ?,comment_text = ?,created_date = ?, where id = ?";
+    public int update(UserOrderDaoModel model) throws SQLException {
+        String sql = "update user_order set userid = ?, orderid = ? where id = ?";
         PreparedStatement updateSt = null;
         int updateCount = 0;
         Connection con = DaoManager.getConnection();
         try {
             con.setAutoCommit(false);
             updateSt = con.prepareStatement(sql);
-            updateSt.setInt(1, model.getItemId());
-            updateSt.setInt(2, model.getUserId());
-            updateSt.setInt(3,model.getRating());
-            updateSt.setString(4, model.getCommentText());
-            updateSt.setDate(5,DaoUtil.convertJavaToSqlDate(model.getCreatedDate()));
-            updateSt.setInt(6,model.getCommentId());
+            updateSt.setInt(1, model.getUserId());
+            updateSt.setInt(2, model.getOrderId());
+            updateSt.setInt(3,model.getId());
             updateCount = updateSt.executeUpdate();
             con.commit();
             con.setAutoCommit(true);
@@ -86,28 +79,25 @@ public class CommentServiceImpl extends BaseServiceImpl {
     }
 
 
-    public List<CommentDaoModel> getByName(String name) throws SQLException {
+    public List<UserOrderDaoModel> getByName(String name) throws SQLException {
         return null;
     }
 
-    public CommentDaoModel getById(int id) throws SQLException {
-        String sql = "select * from comment where commentid = ?";
+    public UserOrderDaoModel getById(int id) throws SQLException {
+        String sql = "select * from user_order where id = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         Connection con = null;
-        CommentDaoModel model = new CommentDaoModel();
+        UserOrderDaoModel model = new UserOrderDaoModel();
         try {
             con = DaoManager.getConnection();
             getState = con.prepareStatement(sql);
             getState.setInt(1, id);
             rs = getState.executeQuery();
             while(rs.next()) {
-                model.setCommentId(rs.getInt("commentid"));
-                model.setItemId(rs.getInt("itemid"));
+                model.setId(rs.getInt("id"));
                 model.setUserId(rs.getInt("userid"));
-                model.setRating(rs.getInt("rating"));
-                model.setCommentText(rs.getString("comment_text"));
-                model.setCreatedDate(DaoUtil.convertSqlToJavaDate(rs.getDate("created_date")));
+                model.setOrderId(rs.getInt("orderid"));
             }
         }finally {
             if(getState != null) {
@@ -119,25 +109,51 @@ public class CommentServiceImpl extends BaseServiceImpl {
         }
         return model;
     }
-    public List<CommentDaoModel> getAllCommentsByItemId(int itemId) throws SQLException {
-        String sql = "select * from comment where itemid = ?";
+
+    public List<UserOrderDaoModel> getAllOrderByUserId(int userId) throws SQLException {
+        String sql = "select * from user_order where userid = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         Connection con = null;
-        List<CommentDaoModel> listOfCategoryModel = new ArrayList<>();
+        List<UserOrderDaoModel> listOfOrdersByUserId = new ArrayList<>();
         try {
             con = DaoManager.getConnection();
             getState = con.prepareStatement(sql);
-            getState.setInt(1, itemId);
+            getState.setInt(1, userId);
             rs = getState.executeQuery();
             while(rs.next()) {
-                CommentDaoModel model = new CommentDaoModel();
-                model.setCommentId(rs.getInt("commentid"));
-                model.setItemId(rs.getInt("itemid"));
+                UserOrderDaoModel model = new UserOrderDaoModel();
+                model.setId(rs.getInt("id"));
                 model.setUserId(rs.getInt("userid"));
-                model.setRating(rs.getInt("rating"));
-                model.setCommentText(rs.getString("comment_text"));
-                model.setCreatedDate(DaoUtil.convertSqlToJavaDate(rs.getDate("created_date")));
+                model.setOrderId(rs.getInt("orderid"));
+                listOfOrdersByUserId.add(model);
+            }
+        }finally {
+            if(getState != null) {
+                getState.close();
+            }
+            if(rs!= null){
+                rs.close();
+            }
+        }
+        return listOfOrdersByUserId;
+    }
+    public List<UserOrderDaoModel> getUserByOrderId(int orderId) throws SQLException {
+        String sql = "select * from user_order where orderid = ?";
+        PreparedStatement getState = null;
+        ResultSet rs = null;
+        Connection con = null;
+        List<UserOrderDaoModel> listOfCategoryModel = new ArrayList<>();
+        try {
+            con = DaoManager.getConnection();
+            getState = con.prepareStatement(sql);
+            getState.setInt(1, orderId);
+            rs = getState.executeQuery();
+            while(rs.next()) {
+                UserOrderDaoModel model = new UserOrderDaoModel();
+                model.setId(rs.getInt("id"));
+                model.setUserId(rs.getInt("userid"));
+                model.setOrderId(rs.getInt("orderid"));
                 listOfCategoryModel.add(model);
             }
         }finally {
@@ -150,35 +166,5 @@ public class CommentServiceImpl extends BaseServiceImpl {
         }
         return listOfCategoryModel;
     }
-    public List<CommentDaoModel> getAllCommentsByUserId(int itemId) throws SQLException {
-        String sql = "select * from comment where userid = ?";
-        PreparedStatement getState = null;
-        ResultSet rs = null;
-        Connection con = null;
-        List<CommentDaoModel> listOfCategoryModel = new ArrayList<>();
-        try {
-            con = DaoManager.getConnection();
-            getState = con.prepareStatement(sql);
-            getState.setInt(1, itemId);
-            rs = getState.executeQuery();
-            while(rs.next()) {
-                CommentDaoModel model = new CommentDaoModel();
-                model.setCommentId(rs.getInt("commentid"));
-                model.setItemId(rs.getInt("itemid"));
-                model.setUserId(rs.getInt("userid"));
-                model.setRating(rs.getInt("rating"));
-                model.setCommentText(rs.getString("comment_text"));
-                model.setCreatedDate(DaoUtil.convertSqlToJavaDate(rs.getDate("created_date")));
-                listOfCategoryModel.add(model);
-            }
-        }finally {
-            if(getState != null) {
-                getState.close();
-            }
-            if(rs!= null){
-                rs.close();
-            }
-        }
-        return listOfCategoryModel;
-    }
+
 }
