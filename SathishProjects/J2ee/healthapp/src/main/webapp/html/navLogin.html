@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/vendor/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/vendor/grid.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i|Open+Sans:300i,400,400i,600,600i|PT+Serif:400,400i,700|Roboto:100i,300,300i,400,400i,500,500i|Source+Sans+Pro:200i,300,300i,400,400i,600" rel="stylesheet" type="text/css"/>
+    <link href="../css/vendor/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/navigation.css" rel="stylesheet" type="text/css"/>
+    <title>Healthy Life Technique</title>
+    <title></title>
+</head>
+<body id="main-body-container">
+    <nav class="navigation-container">
+        <a href="#" class="ion-navicon-round shortcut-div"></a>
+        <div class="search-share-navigation-div">
+            <a href="#" class="ion-android-share-alt share-navigation "></a>
+            <a href="#" class="ion-search search-navigation "></a>
+        </div>
+        <div class="navigation-div">
+            <a href="#" class="donate-navigation sub-navigation">Donate</a>
+            <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
+            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation">Logout</a>
+            <a href="#" class="login-navigation sub-navigation" id="login-navigation" onmouseover="loginMouseHover()">Login</a>
+            <a href="#" class="home-navigation  sub-navigation">Home</a>
+            </div>
+        <div class="clearfix">
+
+        </div>
+    </nav>
+    <div class="main-login-container" id="main-login-container">
+        <div class="login-container">
+            <div class="login-header">
+                <p class="header-text">Sign In</p>
+                <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
+            </div>
+            <div class="clearfix">
+
+            </div>
+            <form method="post" action="submit" class="login-handler">
+                <div class="through-social-media">
+                    <p class="login-catption">With Your Social Network</p>
+                    <a href="#" class="div-facebook by_social_medai media-link"><i class="ion-social-facebook social-icon"></i><span>Facebook</span></a>
+                    <a href="#" class="div-twitter by_social_medai media-link"><i class="ion-social-twitter social-icon"></i><span>Twitter</span></a>
+                    <a href="#" class="div-gmail by_social_medai media-link"><i class="ion-social-googleplus social-icon"></i><span>Gmail</span></a>
+                </div>
+                <div class="clearfix">
+
+                </div>
+
+                <div class="through-username-pass">
+                    <p class="login-catption">With Your UserName</p>
+                    <div class="responseResult" id="responseResult">
+                    </div>
+                    <fieldset class="div-username">
+                        <legend>UserName</legend>
+                        <input type="text" id="username" class="username placeholder-fix" placeholder="UserName" required/>
+                    </fieldset>
+                    <fieldset class="div-password">
+                        <legend>Password</legend>
+                        <input type="password" id="password" class="password placeholder-fix" placeholder="Password" required/>
+                    </fieldset>
+                    <span class="keep-me-signed-in">Keep Me Signed In: <input type="checkbox" class="signedIn-checkbox" id="keepSignedIn"/></span>
+                    <div class="clearfix"></div>
+
+                    <a href="#" class="btn-submit div-submit media-link"  id="btn-submit" onclick="doLogin()">Sign In</a>
+                    <div class="signup-forgotpassword">
+                        <span class="div-not-a-member">Not a member?<a href="#" class="sign-up media-link" onclick="showSignUpForm()">Sign Up</a></span>
+                        <a href="#" class="forgot-password media-link">Forgot Password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="clearfix">
+
+        </div>
+
+        <div class="signUp-container">
+            <div class="login-header">
+                <p class="header-text">Sign Up</p>
+                <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
+            </div>
+            <form method="post" action="submit" class="signup-handler">
+                <div class="warning-messages">
+                    <p>Address already Exist. Please Sign up.</p>
+                </div>
+
+                <ul class="signup-unorder-list">
+                    <li>
+                        <fieldset class="div-signup">
+                            <legend>UserName</legend>
+                            <input type="text" id="signup-username" class="input-signup placeholder-fix" required/>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <fieldset class="div-signup">
+                            <legend>Password</legend>
+                            <input type="password" id="signup-password" class="input-signup placeholder-fix" required/>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <fieldset class="div-signup">
+                            <legend>Confirm Password</legend>
+                            <input type="password" id="signup-password-cnf" class="input-signup placeholder-fix" required/>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <fieldset class="div-signup">
+                            <legend>Mail Id</legend>
+                            <input type="email" id="signup-mail-id" class="input-signup placeholder-fix" required/>
+                        </fieldset>
+                    </li>
+                    <div class="clearfix"></div>
+                    <div class="sign-up-footer">
+                        <a href="#" class="btn-submit media-link"  id="signup-btn-submit" onclick="doSignUp()">Sign Up</a>
+                        <div class="signup-forgotpassword">
+                            <a href="#" class="sign-up media-link" onclick="showSignInForm()">Sign In?</a>
+                            <a href="#" class="forgot-password media-link">Forgot Password?</a>
+                        </div>
+                    </div>
+                </ul>
+            </form>
+        </div>
+        <div class="clearfix">
+        </div>
+        <div class="forgot-password-container">
+            <div class="login-header">
+                <p class="header-text">Forgot Password</p>
+                <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
+            </div>
+            <form class="forgot-password" method="post" action="forgotPassword.do">
+                <div class="warning-messages">
+                    <p>Address already Exist. Please Sign up.</p>
+                </div>
+                <fieldset>
+                        <legend>Enter Your Mail Id</legend>
+                        <input type="email" class="forgot-pass-mail-id" id="forgot-pass-mail-id"/>
+                    </fieldset>
+                    <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/navLogin.js"></script>
+</body>
+</html>

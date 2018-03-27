@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/LoginForm2.css">
+    <link rel="stylesheet" type="text/css" href="../css/resources/ionicons.min.css">
+    <style>
+        body {
+        }
+        .login-form {
+            z-index: 1;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: absolute;
+            top: 10%;
+            left: 70%;
+            width: 20%;
+            height: 40%;
+            display: none;
+            background-color: rgba(46, 204, 113,0.4);
+            animation: animatezoom 0.6s
+        }
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)}
+            to {-webkit-transform: scale(1)}
+        }
+        .form {
+            padding: 10% 20% 5% 20%;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10% ;
+            font-size: 1em;
+            padding: 2% 2% 4% 4%;
+            background-color: #f1f2f6;
+        }
+        .login {
+            width: 100%;
+            padding-bottom: 6px;
+            background-color:#6ab04c; ;
+        }
+        input,button {
+            border: none;
+            border-radius: 2%;
+            vertical-align: bottom;
+        }
+        .message {
+            margin: 2% auto;
+            text-align: center;
+            font-size: 0.8em;
+        }
+        .login:hover {
+            background-color: #2ed573;
+            transition: background-color;
+        }
+        * {
+            box-sizing: border-box;
+            #outline: dotted 2px orange;
+        }
+    </style>
+</head>
+<body>
+<button class="buttonToLoggin" onclick="document.getElementById('login-form').style.display='block'">Login</button>
+
+<div class="login-form" id="login-form">
+    <div class="form">
+        <form action="/login.do" method="post" class="controllers">
+            <input type="text" placeholder="username" name="username" id="usernaame">
+            <input type="password" placeholder="password" name="username" id="username">
+            <button class="login">login</button>
+            <button class="login" onclick="document.getElementById('login-form').style.display='none'">cancel</button>
+            <p class="message">Not Registred?<a href="#">Create Account</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

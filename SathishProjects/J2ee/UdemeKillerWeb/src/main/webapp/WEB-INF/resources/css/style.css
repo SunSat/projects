@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+html {
+    background: #fff;
+    color: #555;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight:300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    background-color: #fff;
+}
+/*Start --- Header */
+
+header {
+    background-image:linear-gradient(to right, rgba(0,0,0,1), rgba(1,0,0,0)), url("../images/hero.jpg");
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    padding: 0 50px 0 50px;
+    background-attachment: fixed;
+
+}
+
+.hero-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.btn:link,
+.btn:visited
+input[type=submit]:link,
+input[type=submit]:visited{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    color: #e67e22;
+    border: 1px solid #ff7b29;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #cf6d17;
+    color: white;
+}
+
+.btn-hungry:link,.btn-hungry:visited {
+
+}
+
+.btn-full:link,.btn-full:visited {
+    margin: 15px;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: solid 2px deeppink;
+}
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    border: solid 2px deepskyblue;
+}
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-right: 50px;
+    margin-top: 50px;
+    border: solid 2px yellow;
+}
+.main-nav li {
+    display: inline-block;
+    padding: 10px;
+    border: solid 2px orangered;
+
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 16px;
+    border-bottom: solid 5px transparent;
+    padding-bottom: 2px;
+    transition: border-bottom 0.10s;
+}
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: solid 5px  #cf6d17;
+}
+
+
+/*End --- Header*/
+
+/*Start --- section-features style here.*/
+.section-features {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    border: solid red 1px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+h2 {
+    font-size: 24px;
+    text-align: center;
+    word-spacing: 2px;
+    margin-bottom: 30px;
+}
+h2:after {
+    display: block;
+    content: " ";
+    height: 2px;
+    background-color:  orange;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom : 6%;
+}
+
+.box p {
+    font-size: 18px;
+    line-height: 20px;
+}
+.long-copy {
+    width: 65%;
+    line-height: 22px;
+    margin: 0 15%;
+}
+.box {
+    padding: 1%;
+    line-height: 20px;
+    border: solid greenyellow 1px;
+}
+
+.big-icon {
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 10px;
+    display: block;
+}
+/*End - section-features here*/
+
+
+/*Start -- Meals Section */
+.section-meals {
+    margin-bottom: 20px;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+.meals-figure {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+.meals-figure img {
+    opacity: 0.5;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 1s, opacity 1s;
+}
+.meals-figure img:hover {
+    opacity: 1;
+    transform: scale(1.14);
+    transition: transform 1s, opacity 1s;
+}
+
+/*End -- Meals Section */
+
+/*Start - How it works*/
+.section-steps {
+    display: block;
+    margin-top: 90vh;
+    background-color: #f9f4f4;
+}
+.step-box:first-child {
+    text-align: right;
+    margin-top: 20px;
+}
+.step-box:last-child {
+    margin-top: 70px;
+    padding-left: 20px;
+}
+
+.app-screen {
+    width:40%
+}
+
+.works-app {
+    margin-bottom: 50px;
+}
+
+.works-app div {
+    color: orange;
+    border: solid 1px cadetblue;
+    display: inline-block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    float: left;
+    font-size: 30px;
+    padding-top: 5px;
+    margin-right: 20px;
+}
+.works-app p {
+    font-size: 20px;
+}
+/*End - How it works*/
+
+/*Start - Section Cities*/
+.section-cities {
+    display: inline;
+    margin-top: 5vh;
+    border: solid 1px red;
+    height: 1200vh;
+    width: 1200vh;
+
+}
+.section-cities .city-img {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 50px 5px;
+    transform: scale(1);
+    transition: transform 0.5s;
+
+}
+/*.section-cities .city-img {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 10px;
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+*/
+.section-cities  .city-img:hover {
+    transform: scale(1.10);
+    transition: transform 0.5s;
+}
+
+.section-cities  .icon-small {
+    text-align: center;
+    font-size: 25px;
+    display: inline-block;
+    width: 30px;
+    color: orange;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+.section-cities a:link,
+.section-cities a:visited {
+    color: orange;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid orange;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.section-cities a:hover,
+.section-cities a:active{
+    color: black;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: none;
+}
+.section-cities .city-features {
+    font-size: 16px;
+}
+/*Start - Section Cities*/
+/*Start - Section Testmonial*/
+.section-testimonial {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)), url("../images/back-customers.jpg");
+    background-size: cover;
+    display: block;
+    margin-top: 30px;
+    color: white;
+    background-attachment: fixed;
+}
+.section-testimonial blockquote:before{
+    content: "\201C";
+    font-size: 60px;
+    display: block;
+}
+.section-testimonial blockquote{
+    padding: 2%;
+    font-style: italic;
+    width: 250px;
+}
+.customer-img {
+    margin-top: 25px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 1px orange;
+    vertical-align: -100%;
+    text-align: center;
+    display: inline-block;
+}
+/*End - Section Testmonial*/
+/*Start - Section signup*/
+.section-signup {
+    background-color: #f9f4f4;
+}
+.signupbox {
+    background-color: white;
+    width: 50%;
+    border-radius: 5%;
+    margin-left: 5%;
+}
+.signup-header-div {
+    padding: 3%;
+    border-bottom: 1px rgba(186, 186, 186, 0.74) solid;
+}
+.signup-header-div h3 {
+    text-align: center;
+}
+.plan-details {
+    font-size: 300%;
+    font-weight: 100;
+    color: orange;
+    margin-bottom: 1px;
+    border-color: #dfdada;
+}
+.plan-details span {
+    font-size: 35%;
+    font-weight: 300;
+    color: black;
+}
+.plan-description {
+    margin-top: 3%;
+    font-size: 80%;
+}
+.signup-features {
+    border-bottom: 1px solid #dfdfdf;
+}
+.signup-list {
+    list-style: none;
+    margin: 5% 5%;
+
+}
+.signup-list li {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 25px;
+}
+.signup-list i {
+    margin-right: 4%;
+    font-size: 15px;
+    color: orange;
+}
+
+.signup-button-div {
+    text-align: center;
+    background-color: white;
+}
+/*start contact form*/
+
+.section-login {
+    margin-top: 40px;
+}
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+input[type=submit] {
+    border-radius: 30px;
+}
+/*End Contact form*/
+

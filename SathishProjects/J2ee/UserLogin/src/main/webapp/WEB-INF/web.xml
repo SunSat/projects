@@ -7,8 +7,13 @@
          id="WebApp_ID" version="3.0">
 
     <welcome-file-list>
-        <welcome-file>./WEB-INF/jsp/index.jsp</welcome-file>
+        <welcome-file>/WEB-INF/jsp/home.jsp</welcome-file>
     </welcome-file-list>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>WEB-INF/loginWebApp-servlet.xml</param-value>
+    </context-param>
 
     <display-name>Logging Web Application</display-name>
 

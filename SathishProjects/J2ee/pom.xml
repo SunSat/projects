@@ -16,6 +16,9 @@
         <module>UserLogin</module>
         <module>SpSystem</module>
         <module>StoreManagement</module>
+        <module>UdemeKillerWeb</module>
+        <module>Sample</module>
+        <module>healthapp</module>
     </modules>
 
     <build>

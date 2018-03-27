@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            box-shadow: 5px 5px 25px #000;
+            transition: all 2s;
+            overflow: hidden;
+        }
+
+        .w3-animate-right {
+            width: 100px;
+            height: 100%;
+            background-color:pink;
+            display: block;
+            float: left;
+        }
+
+        .w3-animate-left {
+            width: 100px;
+            height: 100%;
+            background-color:green;
+            display: block;
+            float: left;
+        }
+
+        .w3-animate-right {
+            position: relative;
+            animation: animateright 0.4s
+        }
+
+        @keyframes animateright {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 100px;
+            }
+        }
+
+        .w3-animate-left {
+            position: relative;
+            animation: animateleft 0.4s
+        }
+
+        @keyframes animateleft {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 100px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <span class="w3-animate-right">I'm a Box</span>
+    <span class="w3-animate-left">I'm a Rectangle</span>
+</div>
+<input type="button" value="submit">
+<script>
+    document.getElementById().style = "transformX(100px)"
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pimp My Shoes</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Contest Entry Form</h1>
+
+<p>
+    Want to trade in your old sneakers for a custom pair of Forcefields?
+    Make a case for why your shoes have got to go and you may be
+    one of ten lucky winners.
+</p>
+<hr/>
+<div id="formelements">
+    <form name="pimpmyshose" action="/hello.jsp" method="post">
+        <fieldset>
+            <legend>Contest Entry Information</legend>
+            <ul>
+                <li>
+                    <label for="form-name">Name:</label>
+                    <input type="text" name="username" id="form-name">
+                </li>
+                <li>
+                    <label for="form-email">Email Address:</label>
+                    <input type="text" name="emailaddress" id="form-email">
+                </li>
+                <li>
+                    <label for="form-tel">Telephone Number:</label>
+                    <input type="tel" name="telephone" id="form-tel">
+                </li>
+                <li>
+                    <label for="form-story">My shoes are SO old...</label><br>
+                    <textarea name="story" rows="4" cols="60" maxlength="300" id="form-story" placeholder="No more than 300 characters long"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <h3>Design your custom ForceFields:</h3>
+        <fieldset>
+            <legend>Custom Shoes Fields:</legend>
+            <fieldset>
+                <legend>Custome shoe design.</legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="color" value="Red" checked/>Red
+                    </li>
+                    <li>
+                        <input type="radio" name="color" value="Green"/>Green
+                    </li>
+                    <li>
+                        <input type="radio" name="color" value="Blue"/>Blue
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Features (Choose as many as you want).</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="feature" value="sparkley"/> Sparkley Laces.
+                    </li>
+                    <li>
+                        <input type="checkbox" name="feature" value="Metallic" checked/> Metallic Logo
+                    </li>
+                </ul>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>What 80s bands did you listen to?</legend>
+            <select name="eightesbend" size="2" multiple>
+                <optgroup label="hello">
+                    <option>The Curse</option>
+                    <option>Twins</option>
+                </optgroup>
+                <option selected>Tears for ears</option>
+                <option selected>thompson</option>
+                <option>Everything Big and Gril</option>
+                <option>The Smiths</option>
+                <option>New Order</option>
+                <option>Hello </option>
+            </select>
+        </fieldset>
+        <input type="submit" value="submit" id="submit" name="submit">
+        <input type="button" value="Reset" id="reset" name="reset">
+    </form>
+</div>
+</body>
+</html>

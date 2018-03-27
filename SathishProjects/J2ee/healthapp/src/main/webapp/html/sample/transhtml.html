@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 0px;
+            height: 0px;
+            background: red;
+            transition: width 2s, height 2s;
+        }
+
+        .scalePlz {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Transition + Transform</h1>
+
+<p>Hover over the div element below:</p>
+
+<div onmouseover='callfun()' id='h101'>Hello</div>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<script>
+    function callfun() {
+        var classlist = document.getElementById('h101').classList;
+        classlist.toggle('scalePlz')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .parent {
+            width : 100px;
+            height : 100px;
+            border : solid green 1px;
+            overflow : hidden;
+        }
+        .one-child {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            transform: translateX(0px);
+            transition: transform 0.4s 0.5s;
+            display: block;
+            float: left;
+        }
+
+        .two-child {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: relative;
+            transform: translateX(-100px);
+            transition: transform 0.4s 0.5s;
+            display: block;
+            float: left;
+        }
+
+        .perform-one-child {
+            transform: translateX(100px);
+        }
+
+        .perform-two-child {
+            transform: translateX(0px);
+        }
+
+    </style>
+</head>
+<body>
+<h1>The @keyframes Rule</h1>
+
+<p><strong>Note:</strong> The @keyframes rule is not supported in Internet Explorer 9 and earlier versions.</p>
+
+<div class="parent">
+    <div class="one-child" id="one-child"></div>
+    <div class="two-child" id="two-child"></div>
+</div>
+<input type="button" value="signup" onclick="signupshow()">
+<input type="button" value="sigin" onclick="signinshow()">
+<script>
+    function signupshow() {
+        document.getElementById('one-child').classList.toggle('perform-one-child');
+        document.getElementById('two-child').classList.toggle('perform-two-child');
+    }
+</script>
+</body>
+</html>

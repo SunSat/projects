@@ -1,0 +1,20 @@
+Web App development and deployment.
+    1. Development
+        1. The in WEB-INF folder can be accessed only through internal path. Hence any path in Html/JSP page to direct access cannot be done.
+           Either we need to use JSTL Core tag <img src="<c:url value='/images/temp.jpg'/>" alt=.../>. Or
+           Else move the image or any directory to webapp. Not inside of WEB-INF.
+        2. We should not mentioned the path start from / because if we use context root as /health or /anything else.
+           Then resource path start from root. ex : http://localhost:8080/health/img/temp.jpg if we use /img/temp.jpg then
+           then the link parsed as http://localhost:8080/img/temp.jpg which is not available.
+           <img src="${pageContext.request.contextPath}/images/tarun.jpg"/>
+           <img src="<%= request.getContextPath() %>/images/tarun.jpg">
+           <img src='<%= request.getContextPath() + "/images/tarun.jpg" %>'>
+           or in a jsp2.0 container using EL: <img src="${pageContext.request.contextPath}/images/tarun.jpg"/>
+        3.
+
+
+
+    2. Deployment
+
+
+===========================================================================================================

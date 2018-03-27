@@ -5,21 +5,22 @@ import java.util.Date;
 /**
  * Created by ssundar2 on 24-02-2017.
  */
-public class LoginDao {
+public class LoginDao extends AbstractDao {
 
-    private int id;
+    private Long userId;
     private Date loggingTime;
     private Date loggoutTime;
-    private String status;
+    private String status; // Login Or Logout Or Failed
     private String machineName;
     private String ipAddress;
+    private String message; //Failed Message
 
-    public int getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getLoggingTime() {
@@ -62,31 +63,11 @@ public class LoginDao {
         this.ipAddress = ipAddress;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof LoginDao)) return false;
-
-        LoginDao loginPojo = (LoginDao) o;
-
-        if (getId() != loginPojo.getId()) return false;
-        if (getLoggingTime() != null ? !getLoggingTime().equals(loginPojo.getLoggingTime()) : loginPojo.getLoggingTime() != null)
-            return false;
-        if (getStatus() != null ? !getStatus().equals(loginPojo.getStatus()) : loginPojo.getStatus() != null)
-            return false;
-        if (getMachineName() != null ? !getMachineName().equals(loginPojo.getMachineName()) : loginPojo.getMachineName() != null)
-            return false;
-        return !(getIpAddress() != null ? !getIpAddress().equals(loginPojo.getIpAddress()) : loginPojo.getIpAddress() != null);
-
+    public String getMessage() {
+        return message;
     }
 
-    @Override
-    public int hashCode() {
-        int result = getId();
-        result = 31 * result + (getLoggingTime() != null ? getLoggingTime().hashCode() : 0);
-        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
-        result = 31 * result + (getMachineName() != null ? getMachineName().hashCode() : 0);
-        result = 31 * result + (getIpAddress() != null ? getIpAddress().hashCode() : 0);
-        return result;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
