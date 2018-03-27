@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    #border: solid 2px black;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+p {
+    text-align: justify;
+}
+.header {
+    color: burlywood
+}
+.blog-left {
+    width: 75%;
+    margin-right: 0.2%;
+    float: left;
+}
+.blog-right {
+    width: 23%;
+    float: right;
+}
+
+.blog-bottom {
+    width: 75%;
+}
+
+.date-time {
+    position: absolute;
+    top: 5%;
+    left: 62%;
+}
+
+.left-blog-images {
+    margin-top: 20px;
+}
+.udemy-images,
+.w3schools-images {
+    float: left;
+    margin-left: 20px;
+}
+.udemy-images img,
+.w3schools-images img {
+    width: 300px;
+    height: 200px;
+}
+.w3schools-images a,
+.udemy-images a
+{
+    display: block;
+}
