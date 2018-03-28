@@ -47,7 +47,21 @@ function doLogin() {
 }
 
 function showSignInForm() {
+    document.getElementById("signUp-container").style.display = "none";
+    document.getElementById("login-container").style.display = "block";
+    document.getElementById("forgot-password-container").style.display = "none";
+}
 
+function showSignUpForm() {
+    document.getElementById("signUp-container").style.display = "block";
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("forgot-password-container").style.display = "none";
+}
+
+function showForgotPasswordForm() {
+    document.getElementById("signUp-container").style.display = "none";
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("forgot-password-container").style.display = "block";
 }
 /**
  var xhttp = new XMLHttpRequest();
@@ -61,3 +75,17 @@ function showSignInForm() {
  xhttp.send();
 
  **/
+
+function showSearchBar() {
+    var clsList = document.getElementById('general-search-container').classList;
+    if ( !clsList.contains('general-search-container-hover') ) {
+        clsList.toggle('general-search-container-hover');
+    }
+}
+
+function showExpandSearchBar() {
+    var clsList = document.getElementById('general-search-container').classList;
+    if ( !clsList.contains('general-search-container-expand') ) {
+        clsList.toggle('general-search-container-expand');
+    }
+}

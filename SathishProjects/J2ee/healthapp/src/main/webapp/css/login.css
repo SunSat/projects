@@ -5,9 +5,10 @@
     right: 7%;
     z-index: 9999;
     border: #e67e22 1px solid;
-    width: 420px;
-    height: 380px;
+    width: 400px;
+    height: 450px;
     font-family: 'Roboto', sans-serif;
+    //box-shadow: 2px 2px 20px 2px black;
 }
 
 .show-login {
@@ -52,13 +53,12 @@
 
 .login-handler {
     width: 100%;
-    height: 90.5%;
-    margin-top: 2%;
+    height: 90%;
 }
 
 .through-social-media {
     width: 100%;
-    height: 25%;
+    height: 20%;
     display: block;
 }
 
@@ -99,14 +99,14 @@
 }
 
 
-.through-social-media:after {
-    content: "------------  Or -------------";
+.between-social-and-user {
+    content: "----------  Or -----------";
     width: 100%;
+    height: 5%;
     text-align: center;
     display: block;
-    margin-top: 3%;
-    margin-bottom: 3%;
     color: #95a5a6;
+    margin-bottom: 2%;
 }
 
 .login-catption {
@@ -148,8 +148,7 @@
 }
 
 .keep-me-signed-in {
-    display: block;
-    margin: 1.5% auto;
+    margin: 2% auto;
     font-size: 80%;
     width: 100%;
     vertical-align: bottom;
@@ -222,20 +221,21 @@
     transform: rotate(360deg);
 }
 
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 420px) {
     .main-login-container {
         position: fixed;
         top: 60px;
         right: 0%;
         width: 100%;
-        height: 380px;
+        height: 430px;
+        margin: 0 auto;
+        font-size: 80%;
     }
 }
 
 /*THis is for place holder*/
 .placeholder-fix::-webkit-input-placeholder  {
-    color:gray;
+    color:#95a5a6;
     -webkit-transition: all 0.50s ease;
     -ms-transition: all 0.50s ease;
     -moz-transition: all 0.50s ease;
@@ -243,7 +243,7 @@
     transition: all 0.50s ease;
 }
 .placeholder-fix::-moz-placeholder   {
-    color:gray;
+    color:#95a5a6;
     -webkit-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -251,7 +251,7 @@
     transition: all 0.2s ease;
 }
 .placeholder-fix:-moz-placeholder   {
-    color:gray;
+    color:#95a5a6;
     -webkit-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -280,7 +280,7 @@
 }
 
 .div-signup {
-    margin-top: 1%;
+    margin-top: 0%;
     border: none;
     border:solid #e67e22 1px;
 }
@@ -293,23 +293,67 @@
 
 .warning-messages p{
     width: 100%;
-    margin: auto;
+    margin: 0% auto 2% auto;
     text-align: center;
+    display: block;
+    color: #b10000;
 }
+
 .sign-up-footer {
     margin-top: 2%;
+    display: block;
 }
 
 /*Forgot Password*/
 .forgot-password-container {
-    width: 100%;
+    width: 95%;
     height: 100%;
     position: relative;
     display: block;
-    border: solid 1px red;
+    margin: auto;
 }
-.forgot-password-main {
+
+.forgot-pass-submit {
     width: 100%;
-    height: 80%;
+    display: inline-block;
+    text-align: center;
+    margin: 1% auto 0% auto;
+}
+
+.forgot-pass-submit a {
+    width: 40%;
+    display: inline-block;
+    background-color: #e67e22;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 100%;
+}
+
+.forgot-pass-dashes {
+    width: 100%;
+    text-align: center;
+    color:#95a5a6;
+    margin: 0%;
+}
+.reset-password-ul {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.lbl-reset-password,
+.lbl-reset-password-conf {
+    display: inline-block;
+    width: 28%;
+    float: left;
+}
+
+.reset-password,
+.reset-password-conf {
+    width: 70%;
+    margin-top: 0.5%;
+    outline: #e67e22;
+    border: solid 1px #e67e22;
 }
 /*Forgot passrod end*/

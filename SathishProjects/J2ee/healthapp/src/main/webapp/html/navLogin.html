@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/vendor/normalize.css" rel="stylesheet" type="text/css"/>
     <link href="../css/vendor/grid.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i|Open+Sans:300i,400,400i,600,600i|PT+Serif:400,400i,700|Roboto:100i,300,300i,400,400i,500,500i|Source+Sans+Pro:200i,300,300i,400,400i,600" rel="stylesheet" type="text/css"/>
     <link href="../css/vendor/ionicons.min.css" rel="stylesheet" type="text/css"/>
     <link href="../css/common.css" rel="stylesheet" type="text/css"/>
@@ -16,29 +17,48 @@
 <body id="main-body-container">
     <nav class="navigation-container">
         <a href="#" class="ion-navicon-round shortcut-div"></a>
-        <div class="search-share-navigation-div">
-            <a href="#" class="ion-android-share-alt share-navigation "></a>
-            <a href="#" class="ion-search search-navigation "></a>
-        </div>
-        <div class="navigation-div">
-            <a href="#" class="donate-navigation sub-navigation">Donate</a>
-            <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
-            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation">Logout</a>
-            <a href="#" class="login-navigation sub-navigation" id="login-navigation" onmouseover="loginMouseHover()">Login</a>
-            <a href="#" class="home-navigation  sub-navigation">Home</a>
+        <div class="search-share-navigations">
+            <div class="search-share-div">
+                <a href="#" class="ion-search search-navigation" onmouseover="showSearchBar()"></a>
+                <a href="#" class="ion-android-share-alt share-navigation "></a>
             </div>
-        <div class="clearfix">
-
+            <div class="navigation-div">
+                <a href="#" class="donate-navigation sub-navigation">Donate</a>
+                <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
+                <a href="#" class="logout-navigation sub-navigation" id="logout-navigation">Logout</a>
+                <a href="#" class="login-navigation sub-navigation" id="login-navigation" onmouseover="loginMouseHover()">Login</a>
+                <a href="#" class="home-navigation  sub-navigation">Home</a>
+            </div>
         </div>
+
+        <div class="general-search-container" id="general-search-container" onmouseover="showExpandSearchBar()">
+            <form class="general-search-form" id="general-search-form">
+                <i class="ion-search"></i>
+                <div class="general-search-div" id="general-search-div">
+                    <input type="text" name="search" placeholder="Search..">
+                </div>
+            </form>
+        </div>
+
+        <div id="general-share-container" class="general-share-container">
+            <a href="#" id="facebook"> <i class="ion-social-facebook"></i>Face Book</a>
+            <a href="#" id="twitter"> <i class="ion-social-twitter"></i>Twitter</a>
+            <a href="#" id="google"> <i class="ion-social-googleplus"></i>Google+</a>
+        </div>
+
+
     </nav>
     <div class="main-login-container" id="main-login-container">
-        <div class="login-container">
+        <div class="login-container" id="login-container">
             <div class="login-header">
                 <p class="header-text">Sign In</p>
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
             </div>
             <div class="clearfix">
 
+            </div>
+            <div class="warning-messages">
+                <p>Address already Exist. Please Sign up.</p>
             </div>
             <form method="post" action="submit" class="login-handler">
                 <div class="through-social-media">
@@ -51,10 +71,12 @@
 
                 </div>
 
+                <div class="between-social-and-user">
+                    ------------------ Or ------------------
+                </div>
+
                 <div class="through-username-pass">
                     <p class="login-catption">With Your UserName</p>
-                    <div class="responseResult" id="responseResult">
-                    </div>
                     <fieldset class="div-username">
                         <legend>UserName</legend>
                         <input type="text" id="username" class="username placeholder-fix" placeholder="UserName" required/>
@@ -63,13 +85,20 @@
                         <legend>Password</legend>
                         <input type="password" id="password" class="password placeholder-fix" placeholder="Password" required/>
                     </fieldset>
-                    <span class="keep-me-signed-in">Keep Me Signed In: <input type="checkbox" class="signedIn-checkbox" id="keepSignedIn"/></span>
+
+                    <div class="keep-me-signed-in">
+                        <label for="keepSignedIn">Keep Me Signed In:</label>
+                        <input type="checkbox" class="signedIn-checkbox" id="keepSignedIn"/>
+                    </div>
+                    <!--span class="keep-me-signed-in">Keep Me Signed In:
+
+                    </span-->
                     <div class="clearfix"></div>
 
                     <a href="#" class="btn-submit div-submit media-link"  id="btn-submit" onclick="doLogin()">Sign In</a>
                     <div class="signup-forgotpassword">
                         <span class="div-not-a-member">Not a member?<a href="#" class="sign-up media-link" onclick="showSignUpForm()">Sign Up</a></span>
-                        <a href="#" class="forgot-password media-link">Forgot Password?</a>
+                        <a href="#" class="forgot-password media-link" onclick="showForgotPasswordForm()">Recover my password?</a>
                     </div>
                 </div>
             </form>
@@ -78,7 +107,7 @@
 
         </div>
 
-        <div class="signUp-container">
+        <div class="signUp-container" id="signUp-container">
             <div class="login-header">
                 <p class="header-text">Sign Up</p>
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
@@ -118,7 +147,7 @@
                         <a href="#" class="btn-submit media-link"  id="signup-btn-submit" onclick="doSignUp()">Sign Up</a>
                         <div class="signup-forgotpassword">
                             <a href="#" class="sign-up media-link" onclick="showSignInForm()">Sign In?</a>
-                            <a href="#" class="forgot-password media-link">Forgot Password?</a>
+                            <a href="#" class="forgot-password media-link" onclick="showForgotPasswordForm()">Forgot Password?</a>
                         </div>
                     </div>
                 </ul>
@@ -126,21 +155,67 @@
         </div>
         <div class="clearfix">
         </div>
-        <div class="forgot-password-container">
+        <div class="forgot-password-container" id="forgot-password-container">
             <div class="login-header">
-                <p class="header-text">Forgot Password</p>
+                <p class="header-text">Password Reset</p>
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
             </div>
-            <form class="forgot-password" method="post" action="forgotPassword.do">
-                <div class="warning-messages">
-                    <p>Address already Exist. Please Sign up.</p>
-                </div>
-                <fieldset>
+
+            <div class="warning-messages">
+                <p>Address already Exist. Please Sign up.</p>
+            </div>
+
+            <div class="clearfix">
+            </div>
+
+            <form class="form-forgot-password form-reset-pass" method="post" action="forgotPassword.do">
+                <fieldset class="div-signup">
                         <legend>Enter Your Mail Id</legend>
-                        <input type="email" class="forgot-pass-mail-id" id="forgot-pass-mail-id"/>
-                    </fieldset>
-                    <input type="submit" value="submit">
+                        <input type="email" class="forgot-pass-mail-id input-signup placeholder-fix" id="forgot-pass-mail-id"/>
+                </fieldset>
+                <div class="forgot-pass-submit">
+                    <a href="#" class="forgot-pass-reset-pass media-link">Reset Password.</a>
+                </div>
             </form>
+
+            <div class="forgot-pass-dashes">
+                -------------------
+            </div>
+
+            <form class="form-account-validator form-reset-pass" method="post" action="accountValidator.do">
+                <fieldset class="div-signup">
+                    <legend>Enter Secret Code.</legend>
+                    <input type="number" class="secret-code input-signup placeholder-fix" id="secret-code">
+                </fieldset>
+                <div class="forgot-pass-submit">
+                    <a href="#" class="media-link forgot-pass-validate-code ">Validate</a>
+                </div>
+            </form>
+
+            <div class="forgot-pass-dashes">
+                -------------------
+            </div>
+
+            <form class="form-new-password-getter form-reset-pass" action="newPassword.do" method="post">
+                <fieldset class="div-signup">
+                    <legend>New Password</legend>
+                    <ul class="reset-password-ul">
+                        <li>
+                            <label class="lbl-reset-password" for="reset-password">Password : </label> <input type="password" class="reset-password placeholder-fix" id="reset-password">
+                        </li>
+                        <li>
+                            <label class="lbl-reset-password-conf" for="reset-password-conf">Confirm : </label> <input type="password" class="reset-password-conf placeholder-fix" id="reset-password-conf">
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="forgot-pass-submit">
+                    <a href="#" class="media-link forgot-pass-change-pass">Change</a>
+                </div>
+            </form>
+            <div class="signup-forgotpassword">
+                <a href="#" class="sign-up media-link" onclick="showSignInForm()">Sign In?</a>
+                <a href="#" class="forgot-password media-link" onclick="showSignUpForm()">SignUp?</a>
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

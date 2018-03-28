@@ -3,7 +3,7 @@
     top: 0%;
     z-index: 999;
     width: 100%;
-    height: 28px;
+    height: 30px;
     display: block;
     background-color: #e67e22;
     box-shadow: 0px 0.5vh 3vh rgba(45, 52, 54,1.0);
@@ -11,56 +11,51 @@
 }
 
 .shortcut-div {
-    min-width: 15px;
     height: 100%;
+    width: 18px;
     float: left;
     display: block;
     text-align: center;
     color: white;
     padding-top: 0.3%;
-    margin-left: 1%;
 }
 
-/*.nav-empty-space {
-    width: 58%;
-    float: left;
+.search-share-navigations {
     display: block;
-    border: solid 1px #e67e22;
-    background-color: #e67e22;
+    float: right;
+    width: 95%;
     height: 100%;
-}*/
-.search-share-navigation-div {
+}
+
+.search-share-div {
     height: 100%;
+    width: 50px;
     float: right;
     display: block;
     text-align: center;
-    margin-right: 2%;
 }
 
 .search-navigation {
-    min-width: 15px;
     height: 100%;
-    float: left;
+    width: 50%;
     display: block;
     text-align: center;
     color: white;
-/*    width: 16px;
-    height: 100%;
-    color: white;
-    display: block;
-    float: right;*/
+    float: left;
+    padding-top: 5%;
 }
 
 .share-navigation {
     display: block;
-    float: right;
-    width: 16px;
+    width: 50%;
     height: 100%;
     color: white;
+    float: left;
+    padding-top: 5%;
 }
 
 .navigation-div {
-    width: 70%;
+    width: 400px;
     height: 100%;
     display: block;
     float: right;
@@ -68,8 +63,8 @@
 }
 
 .sub-navigation {
-    width: 12%;
     display: block;
+    width: 25%;
     float: right;
     height: 100%;
     text-align: center;
@@ -77,11 +72,10 @@
     padding-top: 0.4%;
 }
 
-
-
 .logout-navigation {
     display: none;
 }
+
 .shortcut-div:active,
 .shortcut-div:link,
 .sub-navigation:active,
@@ -109,41 +103,103 @@
     display: block;
 }
 
-
-@media only screen and (max-width: 1100px) {
-    .navigation-div {
-
-    }
-    .sub-navigation {
-        width: 15%;
-    }
+.general-search-container {
+    display: none;
+    top: 60px;
+    right: 2%;
+    width: 100px;
+    height: 30px;
+    border: solid 1px #e67e22;
+    position: fixed;
+    transition: all 2s;
+    padding-top: 2px;
 }
 
-@media only screen and (max-width: 800px) {
-    .navigation-div {
+.general-search-form {
+    width: 100%;
+    display: block;
+    float: left;
+}
 
-    }
-    .sub-navigation {
-        width: 20%;
-    }
+.general-search-form i {
+    font-size: 100%;
+    color: darkgray;
+    display: block;
+    float: left;
+    margin: 0 5px 0 2px;
+}
+
+.general-search-div {
+    width: 80%;
+    float: left;
+}
+
+.general-search-div input {
+    width: 100%;
+    outline: none;
+    border-style: none;
+}
+
+.general-search-container-hover{
+    display: block;
+}
+
+.general-search-container-expand{
+    width: 300px;
+}
+
+.general-share-container a {
+    position: absolute; /* Position them relative to the browser window */
+    right: -100px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 150px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 100%; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    overflow: hidden;
+}
+
+.general-share-container i {
+    width: 15px;
+    font-size: 150%;
+    margin: 10% auto;
+    padding: 5%;
+}
+
+
+.general-share-container a:hover {
+    right: 0%; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#facebook {
+    top: 60px;
+    background-color: #4CAF50;
+}
+
+#twitter {
+    top: 120px;
+    background-color: #2196F3; /* Blue */
+}
+
+#google {
+    top: 180px;
+    background-color: #f44336; /* Red */
 }
 
 @media only screen and (max-width: 600px) {
+    .search-share-navigations {
+        width: 90%;
+    }
     .navigation-div {
-        width: 85%;
+        width: 80%;
     }
     .sub-navigation {
-        width: 24%;
+        width: 25%;
     }
-}
-
-@media only screen and (max-width: 400px) {
-    .navigation-div {
-        width: 85%;
+    .my-identity-navigation {
+        display: none;
     }
-
-    .sub-navigation {
-        width: 24%;
-    }
-
 }
