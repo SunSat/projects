@@ -4,8 +4,6 @@
 <link href="css/vendor/ionicons.min.css" rel="stylesheet" type="text/css"/>
 <link href="css/common.css" rel="stylesheet" type="text/css"/>
 <link href="css/navigation.css" rel="stylesheet" type="text/css"/>
-<link href="css/header.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css">
-<link href="css/main-header.css" rel="stylesheet" type="text/css">
-<link href="css/main-home.css" rel="stylesheet" type="text/css">
+<link href="css/header.css" rel="stylesheet" type="text/css" />
 <title>Healthy Life Technique</title>

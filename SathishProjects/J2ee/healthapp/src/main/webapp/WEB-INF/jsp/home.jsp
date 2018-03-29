@@ -7,8 +7,9 @@
   <%--Header--%>
 </head>
 <body>
-  <div class="main-container">
-    <jsp:include page="mainHeader.jsp"/>
+  <div class="main-body-container">
+    <jsp:include page="navLogin.jsp"/>
+    <jsp:include page="header.jsp"/>
     <div class="main-home-container">
       <div class="multiple-image-container">
         <div class="no-yogo-image">
