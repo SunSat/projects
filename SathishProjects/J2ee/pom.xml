@@ -19,6 +19,7 @@
         <module>UdemeKillerWeb</module>
         <module>Sample</module>
         <module>healthapp</module>
+        <module>LoginApp</module>
     </modules>
 
     <build>
