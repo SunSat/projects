@@ -28,7 +28,12 @@
         <a href="#" id="twitter"> <i class="ion-social-twitter"></i>Twitter</a>
         <a href="#" id="google"> <i class="ion-social-googleplus"></i>Google+</a>
     </div-->
+
+
 </nav>
+<div class="clearfix">
+
+</div>
 
 <div class="main-login-container" id="main-login-container">
     <div class="contant-container">
@@ -223,5 +228,6 @@
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/navLogin.js"></script>
+<div class="clearfix">
+
+</div>

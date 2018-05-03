@@ -7,38 +7,20 @@ import com.sunsat.sathish.j2ee.health.base.pojo.model.BaseModel;
  * Created by sathishkumar_su on 2/26/2018.
  */
 public class UserModel extends AbstractBaseModel {
-    private String type = "User";
+
     private String name;
-    private String userName;
-    private String password;
     private String gender;
     private String dob;
     private String address;
     private String mob;
     private String mail;
-    private String creationDate;
-    private String expiryDate;
-    private String userStatus;
-    private String accountStatus;
-    private String isDeleted;
-    private String isAdmin;
 
     public UserModel() {
-        type = "user";
+        setType("user");
     }
 
     public UserModel(String type) {
-        this.type = type;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public void setType(String type) {
-        this.type = type;
+        setType(type);
     }
 
     public String getName() {
@@ -47,22 +29,6 @@ public class UserModel extends AbstractBaseModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getGender() {
@@ -104,53 +70,4 @@ public class UserModel extends AbstractBaseModel {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    public String getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(String creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public String getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
-    }
-
-    public String getUserStatus() {
-        return userStatus;
-    }
-
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
-    }
-
-    public String getAccountStatus() {
-        return accountStatus;
-    }
-
-    public void setAccountStatus(String accountStatus) {
-        this.accountStatus = accountStatus;
-    }
-
-    public String getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(String isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public String getIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(String isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
 }

@@ -32,11 +32,6 @@ public class UserDao extends AbstractBaseDao {
     }
 
     @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
     public void setType(String type) {
         this.type = type;
     }

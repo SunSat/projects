@@ -1,6 +1,6 @@
 create database health;
 
-CREATE TABLE `user` (
+CREATE TABLE `health`.`user` (
   `userid` bigint(10) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `username` varchar(45) DEFAULT NULL,
@@ -37,3 +37,11 @@ CREATE TABLE `health`.`oldpassword` (
   `expirydate` VARCHAR(45) NULL,
   `message` VARCHAR(100) NULL,
   PRIMARY KEY (`oldpasswordid`));
+
+CREATE TABLE `health`.`loginatempt` (
+  `id` BIGINT(10) NOT NULL,
+  `userid` BIGINT(10) NULL,
+  `count` INT NULL,
+  `message` VARCHAR(100) NULL,
+  `attempttime` VARCHAR(20) NULL,
+  PRIMARY KEY (`id`));

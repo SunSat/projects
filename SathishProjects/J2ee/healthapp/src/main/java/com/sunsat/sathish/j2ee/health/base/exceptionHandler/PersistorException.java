@@ -3,7 +3,7 @@ package com.sunsat.sathish.j2ee.health.base.exceptionHandler;
 /**
  * Created by sathishkumar_su on 2/26/2018.
  */
-public class PersistorException extends HealthAppException {
+public class PersistorException extends AbstractHealthAppException {
 
     public PersistorException() {
     }

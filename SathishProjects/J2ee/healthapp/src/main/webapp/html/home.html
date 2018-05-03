@@ -6,7 +6,9 @@
     <link href="../css/vendor/grid.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i|Open+Sans:300i,400,400i,600,600i|PT+Serif:400,400i,700|Roboto:100i,300,300i,400,400i,500,500i|Source+Sans+Pro:200i,300,300i,400,400i,600"
           rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" type="text/css">
     <link href="../css/vendor/ionicons.min.css" rel="stylesheet" type="text/css"/>
     <link href="../css/common.css" rel="stylesheet" type="text/css"/>
     <link href="../css/header.css" rel="stylesheet" type="text/css"/>
@@ -14,7 +16,6 @@
     <link href="../css/login.css" rel="stylesheet" type="text/css">
     <link href="../css/home.css" rel="stylesheet" type="text/css">
     <title>Healthy Life Technique</title>
-    <title></title>
 </head>
 <body>
 <nav class="navigation-container">
@@ -247,31 +248,53 @@
 <div class="clearfix">
 </div>
 
-<div class="main-header-container">
-    <div class="main-logo-div">
-        <img src="img/logo_healthy_life_technique.jpg" alt="Logo Healthy Life Technique" class="main-logo">
+<header class="header-container">
+    <div class="main-header-container">
+        <div class="main-logo-div">
+            <img src="img/logo_healthy_life_technique.jpg" alt="Logo Healthy Life Technique" class="main-logo">
+        </div>
+        <div class="google-ad-sense">
+            Display google Adds.
+        </div>
+
+        <div class="total-page-count">
+        <span class="share-icons-list">
+            <ul>
+                <li class="shake-left-right-effort">
+                    <a href="#"><i class="ion-social-facebook-outline share-icon-facebook"></i></a>
+                </li>
+                <li class="shake-left-right-effort">
+                    <a href="#"><i class="ion-social-twitter-outline share-icon-twitter"></i></a>
+                </li>
+                <li class="shake-left-right-effort">
+                    <a href="#"><i class="ion-social-googleplus-outline share-icon-googleplus"></i></a>
+                </li>
+                <li class="shake-left-right-effort">
+                    <a href="#"><i class="ion-social-linkedin-outline share-icon-linkedIn"></i></a>
+                </li>
+            </ul>
+        </span>
+            <div class="clearfix"></div>
+
+        <span class="total-page-counts">
+           <label class="total-counts">2000000000</label>
+        </span>
+        <span class="download-video-span">
+            <a href="#" class="download-video"><i class=ion-ios-cloud-download-outline></i> </a>
+        </span>
+
+            <!--<span>
+                <p>Total Downloads</p> <label class="download-count">0</label>
+            </span>-->
+        </div>
     </div>
-    <div class="google-ad-sense">
-        Display google Adds.
-    </div>
-    <div class="total-page-count">
-            <span>
-                <p>Total Hits :</p> <label class="total-counts">0</label>
-            </span>
-            <span>
-                <a href="#" class="download-video">Download Video</a>
-            </span>
-            <span>
-                <p>Counts :</p> <label class="download-count">0</label>
-            </span>
-    </div>
-</div>
+</header>
 <div class="clearfix">
 
 </div>
 
-
 <div class="main-home-container">
+
     <div class="multiple-image-container">
         <div class="no-yogo-image">
         </div>
@@ -288,30 +311,45 @@
     </div>
 
     <div class="row main-container-row">
-        <div class="col span-1-of-6 main-left" style="border: solid 1px red;">
-            <!--
-            <div class="content-navigation-side-bar">
-                <a href="#" class="">Introduction</a>
-                <a href="#" class="">Hospitals, Shops, Centers, Classes & Ads</a>
-                <a href="#" class="">Walk To Any Hospital</a>
-                <a href="#" class="">Reason For Non-Healthy Life</a>
-                <a href="#" class="">Do We Need All These</a>
-                <a href="#" class="">Benefits</a>
-                <a href="#" class="">Strict Diat plan</a>
-                <a href="#" class="">Benifites I got</a>
-                <a href="#" class="">My Guru(Heler Basker)</a>
-                <a href="#" class="">Donate me</a>
-                <a href="#" class="">Share this Video or Site</a>
-                <a href="#" class="">Technique</a>
+        <div class="col span-1-of-6 main-left" >
+            <div class="section-movable" id="section-movable">
+                <div class="content-navigation-side-bar">
+                    <a href="#" class="select">Introduction</a>
+                    <a href="#" class="">Hospitals, Shops, Centers</a>
+                    <a href="#" class="">Walk To Any Hospital</a>
+                    <a href="#" class="">Reason For Non-Healthy Life</a>
+                    <a href="#" class="">Do We Need All These</a>
+                    <a href="#" class="">Benefits</a>
+                    <a href="#" class="">Strict Diat plan</a>
+                    <a href="#" class="">Benifites I got</a>
+                    <a href="#" class="">My Guru(Heler Basker)</a>
+                    <a href="#" class="">Donate me</a>
+                    <a href="#" class="">Share this Video or Site</a>
+                    <a href="#" class="">Technique</a>
+                </div>
+
+                <div class="thumpsup_count">
+                    <div class="thumpsup_msg">
+                        <p class="like_count_msg">0 Likes</p>
+                    </div>
+                    <div class="thumpsupicon shake-up-down-effort">
+                        <i class="ion-thumbsup"></i>
+                    </div>
+                </div>
             </div>
-            <div class="icon-bar">
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="google"><i class="fa fa-google"></i></a>
-                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+
+            <div class="content-temp-visible" id="content-temp-visible">
+
             </div>
-            -->
+
+            <!--div class="shareIconsdiv">
+                <div class="icon-bar">
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="google"><i class="fa fa-google"></i></a>
+                </div>
+            </div-->
+
         </div>
         <div class="col span-4-of-6 main-center">
             <div>
@@ -606,5 +644,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/navLogin.js"></script>
+<script src="../js/home.js"></script>
 </body>
 </html>

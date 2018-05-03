@@ -1,4 +1,4 @@
-package com.sunsat.sathish.j2ee.health.base.service.condition;
+package com.sunsat.sathish.j2ee.health.base.business.condition;
 
 import java.util.List;
 

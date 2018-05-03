@@ -5,7 +5,8 @@ import java.util.Date;
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
-public class AbstractBaseDao implements BaseDao {
+public abstract class AbstractBaseDao implements BaseDao {
+
     private String type;
     private Long primarykeyId;
     private Long createdById;
@@ -13,6 +14,7 @@ public class AbstractBaseDao implements BaseDao {
     private Date createdByDate;
     private Date modifiedByDate;
     private boolean isDeleted;
+    private String description;
 
     @Override
     public String getType() {
@@ -32,6 +34,7 @@ public class AbstractBaseDao implements BaseDao {
         this.primarykeyId = primarykeyId;
     }
 
+    @Override
     public Long getCreatedById() {
         return createdById;
     }
@@ -40,6 +43,7 @@ public class AbstractBaseDao implements BaseDao {
         this.createdById = createdById;
     }
 
+    @Override
     public Long getModifiedById() {
         return modifiedById;
     }
@@ -48,6 +52,7 @@ public class AbstractBaseDao implements BaseDao {
         this.modifiedById = modifiedById;
     }
 
+    @Override
     public Date getCreatedByDate() {
         return createdByDate;
     }
@@ -56,6 +61,7 @@ public class AbstractBaseDao implements BaseDao {
         this.createdByDate = createdByDate;
     }
 
+    @Override
     public Date getModifiedByDate() {
         return modifiedByDate;
     }
@@ -73,4 +79,12 @@ public class AbstractBaseDao implements BaseDao {
         this.isDeleted = isDeleted;
     }
 
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

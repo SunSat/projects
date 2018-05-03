@@ -14,6 +14,8 @@ public abstract class AbstractBaseModel implements BaseModel {
     private Date createdByDate;
     private Date modifiedByDate;
     private boolean isDeleted;
+    private String description;
+
 
     @Override
     public String getType() {
@@ -33,6 +35,7 @@ public abstract class AbstractBaseModel implements BaseModel {
         this.primarykeyId = primarykeyId;
     }
 
+    @Override
     public Long getCreatedById() {
         return createdById;
     }
@@ -41,6 +44,7 @@ public abstract class AbstractBaseModel implements BaseModel {
         this.createdById = createdById;
     }
 
+    @Override
     public Long getModifiedById() {
         return modifiedById;
     }
@@ -49,6 +53,7 @@ public abstract class AbstractBaseModel implements BaseModel {
         this.modifiedById = modifiedById;
     }
 
+    @Override
     public Date getCreatedByDate() {
         return createdByDate;
     }
@@ -57,6 +62,7 @@ public abstract class AbstractBaseModel implements BaseModel {
         this.createdByDate = createdByDate;
     }
 
+    @Override
     public Date getModifiedByDate() {
         return modifiedByDate;
     }
@@ -73,4 +79,15 @@ public abstract class AbstractBaseModel implements BaseModel {
     public void setIsDeleted(boolean isDeleted) {
         this.isDeleted = isDeleted;
     }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
+
+

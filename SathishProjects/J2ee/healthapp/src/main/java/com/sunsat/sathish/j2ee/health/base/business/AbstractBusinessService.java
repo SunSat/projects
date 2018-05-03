@@ -1,22 +1,13 @@
-package com.sunsat.sathish.j2ee.health.base.service;
+package com.sunsat.sathish.j2ee.health.base.business;
 
-import com.sunsat.sathish.j2ee.health.base.exceptionHandler.PersistorException;
-import com.sunsat.sathish.j2ee.health.base.persistor.DaoPersistor;
-import com.sunsat.sathish.j2ee.health.base.pojo.dao.BaseDao;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.BaseModel;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
-public abstract class AbstractBaseService<Bm extends BaseModel> implements BaseService<Bm> {
+public abstract class AbstractBusinessService<Bm extends BaseModel> implements BaseBusinessService<Bm> {
 
-    DaoPersistor persistor = DaoPersistor.getInstance();
+   /* DaoPersistor persistor = DaoPersistor.getInstance();
 
     @Override
     public ResultSet getByPrimaryKey(Bm baseModel) {
@@ -77,5 +68,5 @@ public abstract class AbstractBaseService<Bm extends BaseModel> implements BaseS
     @Override
     public ResultSet getByQuery(String query) {
         return null;
-    }
+    }*/
 }
