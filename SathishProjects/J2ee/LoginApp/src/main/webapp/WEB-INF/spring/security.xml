@@ -1,0 +1,36 @@
+<b:beans xmlns:sec="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://www.springframework.org/schema/security
+		 http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <sec:http />
+        <!--intercept-url access="permitAll()" pattern="/homepage.do"/>
+        <intercept-url access="permitAll()" pattern="/resources/**"/>
+        <intercept-url access="permitAll()" pattern="/signupAction.do"/>
+        <intercept-url access="permitAll()" pattern="/passwordResetAction.do"/>
+        <intercept-url access="hasRole('ROLE_USER')" pattern="/**"/>
+        <form-login
+                login-page="/loginAction.do"
+                password-parameter="loginPassword"
+                username-parameter="loginUserName"
+        />
+        <logout logout-url="/logoutAction.do" logout-success-url="/homepage.do" invalidate-session="true" delete-cookies="true" /-->
+
+    <!--/sec:http-->
+
+    <b:bean id="nopasswordEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
+
+    <sec:authentication-manager>
+        <sec:authentication-provider>
+            <sec:user-service>
+                <sec:user name="user" password="password" authorities="ROLE_USER"/>
+                <sec:user name="1" password="1" authorities="ROLE_USER,ROLE_ADMIN"/>
+            </sec:user-service>
+            <sec:password-encoder ref="nopasswordEncoder" ></sec:password-encoder>
+        </sec:authentication-provider>
+    </sec:authentication-manager>
+
+</b:beans>

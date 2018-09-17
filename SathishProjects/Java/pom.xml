@@ -17,6 +17,7 @@
         <module>Calculator</module>
         <module>HackerRank</module>
         <module>hibernate</module>
+        <module>sample</module>
     </modules>
 
     <properties>

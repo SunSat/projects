@@ -11,10 +11,6 @@ Web App development and deployment.
            <img src='<%= request.getContextPath() + "/images/tarun.jpg" %>'>
            or in a jsp2.0 container using EL: <img src="${pageContext.request.contextPath}/images/tarun.jpg"/>
         3.
-
-
-
     2. Deployment
-
 
 ===========================================================================================================

@@ -1,9 +1,8 @@
 package com.sunsat.sathish.j2ee.loginapp.login.persistance.impl;
 
 import com.sunsat.sathish.j2ee.loginapp.login.persistance.LoginDao;
-import com.sunsat.sathish.j2ee.loginapp.login.pojo.model.LoginModel;
-import com.sunsat.sathish.j2ee.loginapp.login.pojo.service.LoginService;
-import com.sunsat.sathish.j2ee.loginapp.persistance.AbstractDao;
+import com.sunsat.sathish.j2ee.loginapp.login.pojo.daoModel.LoginModel;
+import com.sunsat.sathish.j2ee.loginapp.login.pojo.serviceModel.UserNameService;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,29 +24,29 @@ public class LoginDaoImpl implements LoginDao {
     }
 
     @Override
-    public int add(LoginService loginService) {
-        convertServiceToModel(loginService,loginModel);
+    public int add(UserNameService userNameService) {
+        convertServiceToModel(userNameService,loginModel);
         Session session = this.factory.getCurrentSession();
         session.persist(loginModel);
         return loginModel.getId();
     }
 
     @Override
-    public boolean delete(LoginService loginService) {
+    public boolean delete(UserNameService userNameService) {
         return false;
     }
 
     @Override
-    public LoginModel getByUserName(LoginService loginService) {
+    public LoginModel getByUserName(UserNameService userNameService) {
         return null;
     }
 
     @Override
-    public boolean update(LoginService loginService) {
+    public boolean update(UserNameService userNameService) {
         return false;
     }
 
-    public void convertServiceToModel(LoginService service,LoginModel model) {
+    public void convertServiceToModel(UserNameService service,LoginModel model) {
         model.setId(service.getId());
     }
 }

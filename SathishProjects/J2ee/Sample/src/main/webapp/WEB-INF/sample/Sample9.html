@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample9</title>
+</head>
+<body>
+This is simple. &#9585; <br/>
+This is two : &#x2571;
+<script type="application/javascript">
+    document.writeln("<br/>")
+
+    for(var i = 0;i<50;i++) {
+        for(var k = 0 ; k < 50; k++) {
+            var z = ((Math.floor(Math.random()*2)) % 2) ? "/" : "\\";
+            //document.write(z);
+        }
+        //document.writeln("<br/>")
+    };
+</script>
+   <p id="hello">Sample123</p>
+    <input type="button" onclick="document.getElementById('hello').innerHTML = helloWorld" value="Hello Cock Me plz.">
+<script type="application/javascript">
+    document.getElementById('hello').innerHTML = "My First JavaScript";
+    document.write("<p id='goodone'>Hello I am '"+(5+6)+"'</p>");
+    var a = 0,b= 1,c=a+b;
+    function helloWorld() {
+        document.write("hello World");
+    }
+
+    var ca = {
+        name:"Sathish",
+        type:"4 wheel",
+        model:"skoda"
+    };
+    document.write(ca.type)
+    document.write(ca["name"]);
+</script>
+</body>
+</html>

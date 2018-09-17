@@ -1,0 +1,15 @@
+1. Unknown column type issue. I creaated a new field called type="userNameModel" to reflect each data object type and faced this issue.
+Leater removed the field diclaration.
+Solution : unwated type need to review from Dao Model classes.
+
+2.
+Hibernate: insert into username (password, username) values (?, ?)
+Exception in thread "main" org.hibernate.HibernateException: No CurrentSessionContext configured!
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:462)
+	at com.sunsat.sathish.java.hibernate.loginMaintanance.dao.UserNameDao.getByName(UserNameDao.java:42)
+	at com.sunsat.sathish.java.hibernate.client.loginMaintanance.LoginAppClient.main(LoginAppClient.java:30)
+
+Solution  : Auto increment not available in the table hence insert expecting all the columns.
+Solution 1:
+
+
