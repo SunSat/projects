@@ -3,7 +3,7 @@ create database `cart_management`;
 CREATE TABLE `cart_management`.`item` (
   `itemid` INT NOT NULL,
   `name` VARCHAR(100) NULL,
-  `description` VARCHAR(100) NULL,
+  `message` VARCHAR(100) NULL,
   `initial_price` FLOAT NULL,
   `reserved_price` FLOAT NULL,
   `start_date` DATE NULL,

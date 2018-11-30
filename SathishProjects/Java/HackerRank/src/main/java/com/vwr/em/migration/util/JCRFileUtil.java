@@ -192,7 +192,7 @@ public class JCRFileUtil {
     public static DocumentDao saveFileNode(final InputStream inputStream,final String contentType,final String folderPath, final String fileName, DocumentDao documentCenterValue, boolean isThumb){
         try {
             Node rootNode = jcrSession.getRootNode();
-            Node folderNode = createDocumentFolder(rootNode, "em/service");
+            Node folderNode = createDocumentFolder(rootNode, "em/businessService");
             Node fileNode;
             String name = new Date().getTime()+"_"+fileName;
             if(folderNode.hasNode(name)){

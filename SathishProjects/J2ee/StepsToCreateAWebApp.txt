@@ -1,0 +1,203 @@
+Step 1 : Create a web app in Intelija Or Eclipse.
+Step 2 : Go To web.xml file add
+<welcome-file-list>
+  <welcome-file>loginpage.do</welcome-file>
+ </welcome-file-list>
+
+<!--Each application should application context parm tag to mentioned spring application base path. -->
+<context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>WEB-INF/spring/application-context.xml</param-value>
+ </context-param>
+
+<!--The spring application should have minimum one servlet configuration and it should point to DispatcherServlet.  -->
+ <servlet>
+  <servlet-name>loginPage</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+
+ <servlet-mapping>
+  <servlet-name>loginPage</servlet-name>
+  <url-pattern>*.do</url-pattern>
+ </servlet-mapping>
+
+<!-- Under the name of Servlet-name we should have one context for that particular servlet. This should have all the internal view resources and other beans.
+And argument resolvers, Message concertors. List Json to Java Object or XML to Java Object vice versa.
+-->
+ Step 3 : Create application context for spring under web-inf loginapp-context.xml(Servlet-Name-context.xml file).
+WEB-INF/loginPage-context.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xmd">
+
+       <context:component-scan base-package="com.sunsat.sathish.j2ee.loginapp.login">
+       </context:component-scan>
+
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="prefix" value="WEB-INF/jsp/"></property>
+              <property name="suffix" value=".jsp"></property>
+       </bean>
+
+</beans>
+
+Step 4 : Create application-context.xml file and mentioned the same in web.xml file.
+WEB-INF/spring/application-context.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="prefix" value="WEB-INF/jsp"></property>
+              <property name="suffix" value=".jsp"></property>
+       </bean>
+</beans>
+
+Step 5 : Create a controller and other pojos.
+
+Step 6 : If multiple page wants to load based on some condition then welcome file like index.jsp should have
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/jquery.checkbox.min.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+$(document).ready(function() {
+	if( "${sessionScope.user}" != "" && "${sessionScope.organization}" != ""){
+			window.location.href = "dashboard.htm";
+	}
+	else{
+		window.location.href = "selectCountry.htm";
+		}
+});
+
+</script>
+</head>
+</html>
+
+Step 7 : Create hibenate and other classes and pojos.
+The servlet-context.xml required for all the MVC cleass
+The application-context.xml requiref for all business layer and Dao layer classes.
+
+Step 8 : In servlet-context.xml file all the convertors should mentioned like Json to Java Object, Java Object to Json.
+Or Xml To Java Object or Java Object To Xml.
+       <bean  id="jsonHttpMessageConvertor" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+       </bean>
+
+       <bean  id="marshallingHttpMessageConverter" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+              <property name="marshaller" ref="jaxb2Marshaller"></property>
+              <property name="unmarshaller" ref="jaxb2Marshaller"></property>
+       </bean>
+
+       <bean id="loggedUserFormModel" class="com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LogingFormModel"> </bean>
+
+       <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+              <property name="classesToBeBound" value="com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LogingFormModel"></property>
+       </bean>
+
+       <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+              <property name="messageConverters">
+                     <list value-type="org.springframework.http.converter.HttpMessageConverter">
+                            <ref bean="jsonHttpMessageConvertor"></ref>
+                            <ref bean="marshallingHttpMessageConverter"></ref>
+                     </list>
+              </property>
+       </bean>
+
+Step 9 :
+
+-----------------------
+function printTREquipmentPopupWindow(id, rowStart) {
+	/*var printBtn = "<table class=\"printBtnTable\" width=\"100%\"  align=\"center\"><tr><td><ul class=\"buttons_below\"><li class=\"btnPrint_align\"><a href=\"javascript:void(0)\" " +
+			"onclick=\"print();\"><div class=\"btn\" style=\"margin-top:2.5%\">Print</div></a></li></ul></td></tr></table>";*/
+	var printBtn = "<table class=\"printBtnTable\" width=\"100%\"  align=\"center\"><tr><td><ul class=\"buttons_below\"><li class=\"btnPrint_align\"><button " +
+	"onclick=\"print();\" class=\"btn\" style=\"margin-top:2.5%\">Print</button></li></ul></td></tr></table>";
+	OpenWindow = window
+			.open('about:blank', '',
+				'width=1000,height=500,scrollbars=yes,location=0,menubar=1,status=0,resizable=yes');
+	OpenWindow.document.write("<TITLE>VWR EM</TITLE>");
+	OpenWindow.document.write("<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"images/favicon.ico\">");
+	OpenWindow.document.write("<HEAD >");
+	OpenWindow.document
+			.write("<link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/application.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/basestyle.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/reset.css\" rel=\"stylesheet\" type=\"text/css\" />");
+    OpenWindow.document.write("<style>@media print  {" +
+			".printBtnTable {display:none}" +
+			".tableheadrow_heading th {font-weight: bold;padding-left: 10px !important;	vertical-align: middle !important;height: 34px !important;}" +
+			".tableBorder{border:1px solid #C6C9CD} " +
+			".tableHeader{font-size:12px;min-height:20px; max-height:250px;}" +
+			"}</style>");
+	OpenWindow.document.write("</HEAD>");
+	OpenWindow.document.write("<BODY style='color: white;text-align: center;font-size: 14px;'>");
+
+	//OpenWindow.document.write("<table cellspacing=\"0\" align=\"center\" cellpadding=\0\">"+ tableValue + "</table>");
+	OpenWindow.document.write("<table id=\"printTable\" width=\"100%\" cellspacing=\"0\" align=\"center\" cellpadding=\"0\">");
+	OpenWindow.document.write(getValue(id, rowStart));
+	$(OpenWindow.document).find("th:first-child ").remove();
+	$(OpenWindow.document).find("td:first-child ").remove();
+	$(OpenWindow.document).find("th:last-child ").remove();
+	$(OpenWindow.document).find("td:last-child ").remove();
+	$(OpenWindow.document).find(".up-down-arrow").remove();
+	OpenWindow.document.write("</table>");
+	OpenWindow.document.write(printBtn);
+	OpenWindow.document.write("</BODY>");
+	OpenWindow.document.write("</HTML>");
+	OpenWindow.document.close();
+	
+}
+
+function printGraph(id)
+{
+		
+	OpenWindow = window
+	.open('', '',
+		'width=800,height=700,scrollbars=yes,location=0,menubar=1,status=0,resizable=yes');
+	OpenWindow.document.write("<HTML>");
+	OpenWindow.document.write("<TITLE>VSRPlus</TITLE>");
+	
+	OpenWindow.document.write("<HEAD >");
+	OpenWindow.document
+	.write("<link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/application.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/basestyle.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document
+	.write("<link href=\"css/reset.css\" rel=\"stylesheet\" type=\"text/css\" />");
+	OpenWindow.document.write("<style>@media print  {" +
+			".printBtnTable {display:none}</style>");
+	OpenWindow.document.write("</HEAD>");
+	OpenWindow.document.write("<BODY>");
+	OpenWindow.document.write(document.getElementById(id).innerHTML);
+	
+	/*var printBtn = "<table class=\"printBtnTable\" width=\"100\" align=\"center\"><tr><td><ul class=\"buttons_below\"><li class=\"btnPrint_align\"><a href=\"javascript:void(0)\" " +
+	"onclick=\"print();\"><div class=\"btn\">Print</div></a></li></ul></td></tr></table>";*/
+	var printBtn = "<table width=\"100%\" class=\"printBtnTable\" width=\"100\" align=\"center\"><tr><td><ul class=\"buttons_below\"><li class=\"btnPrint_align\"><button " +
+	"onclick=\"print();\" class=\"btn\">Print</button></li></ul></td></tr></table>";
+	OpenWindow.document.write(printBtn);
+	OpenWindow.document.write("</BODY>");
+	OpenWindow.document.write("</HTML>");
+	OpenWindow.document.close();
+	
+}
+---------------------------------

@@ -1,0 +1,39 @@
+1. Hibernate POJO may not need to implement serialize.
+2. POJO can be implement or abstract or extends any class.
+3. Only mandatory is POJO should be top level class.
+4. POJO should not have any final methods
+5. State should not exposed to outside Or should use same Object which we get from gettor. Otherwise Hibernate will check the state even if no updates to that Object. This is unnecessary operation cause extra DB Hits.
+6. Another issue to consider is dirty checking. Hibernate automatically detects state
+changes in order to synchronize the updated state with the database. It’s usually safe
+to return a different instance from the getter method than the instance passed by
+Hibernate to the setter. Hibernate compares them by value—not by object identity—
+to determine whether the attribute’s persistent state needs to be updated.
+7.There is one important exception to this: collections are compared by identity! For a
+  property mapped as a persistent collection, you should return exactly the same collection
+  instance from the getter method that Hibernate passed to the setter method. If
+  you don’t, Hibernate will update the database, even if no update is necessary, every
+  time the state held in memory is synchronized with the database. You should usually
+  avoid this kind of code in accessor methods:
+
+Ex : protected String[] names = new String[0];
+     public void setNames(List<String> names) {
+     this.names = names.toArray(new String[names.size()]);
+     }
+     public List<String> getNames() {
+     return Arrays.asList(names); ----- Dont do this.
+     }
+8.How does Hibernate handle exceptions when your accessor methods throw them?
+  If Hibernate uses accessor methods when loading and storing instances and a RuntimeException
+  (unchecked) is thrown, the current transaction is rolled back, and the
+  exception is yours to handle in the code that called the Java Persistence (or Hibernate
+  native) API. If you throw a checked application exception, Hibernate wraps the exception
+  into a RuntimeException.
+9. Bi Directional association is always should be in very carefull. Otherwise it will load object unwantedly.
+
+10. To reduce performance one way relationship will be always best fit.
+11. For Hibernate Getters and setters is not actually required. Through Reflections hibernate directly access the property itself.
+12. We prefer to prefix Hibernate annotations with the full org.hibernate.annotations
+    package name. Consider this good practice, because you can easily see what metadata
+    for this class is from the JPA specification and which is vendor-specific
+13. Distinguishing entities and value types
+14.

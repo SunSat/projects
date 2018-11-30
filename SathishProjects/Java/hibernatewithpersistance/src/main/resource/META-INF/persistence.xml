@@ -1,0 +1,31 @@
+<persistence
+        version="2.1"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
+    <persistence-unit name="persistanceWithHibernate" transaction-type="RESOURCE_LOCAL" >
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.Message</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.B_Billing</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.B_BankAccount</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.B_CreditCard</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.U_User</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.U_Address</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.E_Address</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.E_Employee</class-->
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.E_Employee_One_To_One_Join_By_Table</class>
+        <class>com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.E_Address_One_To_One_Join_By_Table</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/persistancewithhibernate"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>

@@ -18,6 +18,7 @@
         <module>HackerRank</module>
         <module>hibernate</module>
         <module>sample</module>
+        <module>hibernatewithpersistance</module>
     </modules>
 
     <properties>

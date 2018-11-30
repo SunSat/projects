@@ -49,7 +49,7 @@ public class DaoPersistor {
         } catch (ClassNotFoundException ce) {
             throw new PersistorException(ce.getMessage(),"Could not load JDBC driver","Please check JDBC driver available in the path.", ce);
         } catch (SQLException sqe) {
-            throw new PersistorException(sqe.getMessage(),"Could not get JDBC connection","Please check JDBC server is up or reachable.", sqe);
+            throw new PersistorException(sqe.getMessage(),"Could not getByPrimaryKey JDBC connection","Please check JDBC server is up or reachable.", sqe);
         }
     }
 

@@ -16,7 +16,7 @@ import java.util.List;
 public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int delete(AddressDaoModel model) throws SQLException {
-        String sql = "delete from address where addressid=?";
+        String sql = "delete from u_address where addressid=?";
         PreparedStatement delSt = null;
         int deleteCount = 0 ;
         Connection con = DaoManager.getConnection();
@@ -36,7 +36,7 @@ public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public int add(AddressDaoModel model) throws SQLException {
-        String sql = "insert into address (addressid,userid,type,address1,address2,city,state,country,zip_code,landmark) " +
+        String sql = "insert into u_address (addressid,userid,type,address1,address2,city,state,country,zip_code,landmark) " +
                 "values (?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedSt = null;
         int maxId = getMaxId("address","addressid");
@@ -65,7 +65,7 @@ public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public int update(AddressDaoModel model) throws SQLException {
-        String sql = "update address set userid=?,type=?,address1=?,address2=?,city=?,state=?,country=?,zip_code=?, landmark=?"
+        String sql = "update u_address set userid=?,type=?,address1=?,address2=?,city=?,state=?,country=?,zip_code=?, landmark=?"
                 + " where addressid=?";
         PreparedStatement preparedSt = null;
         int updateCount = 0;
@@ -133,7 +133,7 @@ public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public AddressDaoModel getById(int addressId) throws SQLException {
-        String sql = "select * from address where addressid = ?";
+        String sql = "select * from u_address where addressid = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         Connection con = null;
@@ -167,7 +167,7 @@ public class AddressDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public List<AddressDaoModel> getAllAddressByUserId(int userId) throws SQLException {
-        String sql = "select * from address where userid = ?";
+        String sql = "select * from u_address where userid = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         Connection con = null;

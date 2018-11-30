@@ -1,13 +1,15 @@
 package com.sunsat.sathish.j2ee.health.base.pojo.business;
 
+import com.sunsat.sathish.j2ee.health.base.pojo.model.AbstractBaseModel;
+
 import java.util.Date;
 
 /**
  * Created by sathishkumar_su on 4/17/2018.
  */
-public class AbstractBaseBusiness implements BaseBusiness {
+public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> implements BaseBusiness<BM> {
 
-    private String type;
+    private Class type;
     private Long primarykeyId;
     private Long createdById;
     private Long modifiedById;
@@ -16,15 +18,16 @@ public class AbstractBaseBusiness implements BaseBusiness {
     private boolean isDeleted;
     private String description;
 
+    public AbstractBaseBusiness() {
 
-    @Override
-    public String getType() {
-        return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public AbstractBaseBusiness(BM model) {
+        this.primarykeyId = model.getPrimarykeyId();
+        this.createdById = model.getCreatedById();
+        this.modifiedById = model.getModifiedById();
     }
+
 
     @Override
     public Long getPrimarykeyId() {

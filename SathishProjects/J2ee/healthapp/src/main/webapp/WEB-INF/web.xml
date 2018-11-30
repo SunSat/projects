@@ -11,13 +11,9 @@
 
     <display-name>Health App</display-name>
 
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/jsp/home.jsp</welcome-file>
-    </welcome-file-list>
-
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext.xml</param-value>
+        <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
     </context-param>
 
     <listener>
@@ -25,19 +21,21 @@
     </listener>
 
     <servlet>
-        <servlet-name>health-app-dispatcher</servlet-name>
+        <servlet-name>health-app</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring/health-app-dispatcher-servlet.xml</param-value>
-        </init-param-->
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>health-app-dispatcher</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <servlet-name>health-app</servlet-name>
+        <url-pattern>*.do</url-pattern>
+        <url-pattern>*.an</url-pattern>
+        <url-pattern>*.ad</url-pattern>
+        <url-pattern>*.api</url-pattern>
     </servlet-mapping>
 
+
+    <!--
     <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -46,7 +44,7 @@
             <param-value>true</param-value>
         </init-param>
     </filter>
-<!--
+
 
     <context-param>
         <param-name>shiroEnvironmentClass</param-name>
@@ -65,7 +63,6 @@
         <filter-name>ShiroFilter</filter-name>
         <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
     </filter>
--->
 
     <filter-mapping>
         <filter-name>shiroFilter</filter-name>
@@ -75,4 +72,5 @@
         <dispatcher>INCLUDE</dispatcher>
         <dispatcher>ERROR</dispatcher>
     </filter-mapping>
+     -->
 </web-app>

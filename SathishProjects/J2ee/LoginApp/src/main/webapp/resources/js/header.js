@@ -3,8 +3,19 @@
  */
 
 window.onload = function() {
-    document.getElementById('logging-popup-container').style.display = 'none';
+
+    /*document.getElementById('logging-popup-container').style.display = 'none';
     document.getElementById('login-button-container').style.display = 'block';
+    document.getElementById('login-button').onclick = showLoginContainer;
+    document.getElementById('small-avator-image').onclick = showDetailAvatorImage;
+    document.getElementById('login-continer-signin').onclick = performLogin;
+    document.getElementById('login-continer-signup').onclick = showSignUpContainer;
+    document.getElementById('login-continer-cancel').onclick = cleanLoginContainer;
+    document.getElementById('signup-continer-submit').onclick =performSignUp;
+    document.getElementById('signup-continer-signin').onclick =showLoginContainer;
+    document.getElementById('signup-continer-cancel').onclick =cleanSignUpContainer;
+    do=cument.getElementById('logged-user-container-signout').onclick = performSignout;*/
+
 }
 
 function performSignUp() {
@@ -22,14 +33,7 @@ function performSignUp() {
         formSubAction : "signUp"
     }
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("post","signUpAction.do",true);
-    xhttp.onreadystatechange = function() {
-        if(xhttp.readyState == 4 && xhttp.status == 200) {
-            performSuccessfulSignUp(xhttp);
-        }
-    }
-    xhttp.send(data);
+    performAjaxRequest("post","signUpAction.an",data,performSuccessfulSignUp);
 }
 
 function performSuccessfulSignUp(xhttp) {
@@ -41,47 +45,41 @@ function performLogin() {
 
     var uName  = document.getElementById("loginUserName").value;
     var pass  = document.getElementById("loginPassword").value;
-    var csrfToken = document.getElementById("csrfTokenDetail");
-    var csrfParaName = csrfToken.name;
-    var csrfParaValue = csrfToken.value;
 
     var formAction = "loginPage";
     var formSubAction = "login";
-    var xhttp = new XMLHttpRequest();
+    
     var data = {
-        loginUserName: uName,
-        loginPassword: pass,
+        userName: uName,
+        password: pass,
         formAction : formAction,
         formSubAction : formSubAction,
-        _csrf : csrfParaValue
     }
-    xhttp.open("post","loginAction.do",true);
-    xhttp.onreadystatechange = function() {
-        if(xhttp.readyState == 4 && xhttp.status == 200) {
-            performSuccessfulLogin(xhttp);
-        }
-    }
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    var jsonObj = JSON.stringify(data);
-    xhttp.send("_csrf="+csrfParaValue+"&loginUserName="+uName+"&loginPassword="+pass);
+    performAjaxRequest("post","loginAction.an",true,data,performSuccessfulLogin);
 }
 
 function performSuccessfulLogin(xhttp) {
+    if(xhttp.readyState != 4 || xhttp.status != 200) {
+        return;
+    }
     var formModel = JSON.parse( xhttp.responseText );
     var loginMessage = formModel.message;
     if(loginMessage != "successful") {
         document.getElementById("loginMessage").innerHTML = loginMessage;
+        document.getElementById("loginMessage").style.display = "block";
+        return;
     } else {
         hideAllContainer();
         document.getElementById("login-button-container").style.display = "none";
         document.getElementById("small-avator-image").style.display = "block";
 
-        var fUserName = formModel.fullUserName;
+        var fUserName = formModel.userName;
         var fChar =  fUserName.substring(0,1);
         document.getElementById("userInitial").innerHTML = fChar;
-        document.getElementById("fullName").innerHTML = formModel.fullUserName;
+        document.getElementById("userName").innerHTML = fUserName;
         document.getElementById("mailId").innerHTML = formModel.mailId;
         document.getElementById("userId").value = formModel.userId;
+        document.getElementById("sessionId").value = formModel.sessionId;
     }
 }
 
@@ -123,11 +121,21 @@ function hideAllContainer() {
 }
 
 function performSignout() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("post","logout",true);
-    var csrfToken = document.getElementById("csrfTokenDetail");
-    var csrfParaName = csrfToken.name;
-    var csrfParaValue = csrfToken.value;
-    var data = csrfParaName+"="+csrfParaValue;
-    xhttp.send(data);
+    var userId = document.getElementById("userId").value
+    var sessionId = document.getElementById("sessionId").value
+    var data = {
+        userId:userId,
+        sessionId : sessionId,
+        formAction : 'login',
+        formSubAction : 'logout'
+    }
+    performAjaxRequest("post","logoutAction.do",true,data,completeSignout)
+}
+
+function completeSignout(xhttp) {
+    if(xhttp.status == 200 && xhttp.readyState == 4) {
+        hideAllContainer();
+        document.getElementById('small-avator-image').style.display = 'none';
+        document.getElementById('login-button-container').style.display = 'block';
+    }
 }

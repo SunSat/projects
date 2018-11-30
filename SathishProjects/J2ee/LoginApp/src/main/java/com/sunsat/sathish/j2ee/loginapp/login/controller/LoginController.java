@@ -1,20 +1,16 @@
 package com.sunsat.sathish.j2ee.loginapp.login.controller;
 
-import com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LoggedUserFormModel;
-import org.springframework.http.MediaType;
+import com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LogingFormModel;
+import com.sunsat.sathish.j2ee.loginapp.util.ApplicationHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.http.HTTPBinding;
-import java.util.Date;
-import java.util.logging.Logger;
+import javax.servlet.http.HttpSession;
+import java.net.HttpCookie;
 
 /**
  * Created by anitha on 5/1/2018.
@@ -22,86 +18,85 @@ import java.util.logging.Logger;
 @Controller
 public class LoginController {
 
-    org.apache.log4j.Logger logger  = org.apache.log4j.Logger.getLogger(LoginController.class);
+    //org.apache.log4j.Logger logger  = org.apache.log4j.Logger.getLogger(LoginController.class);
 
-    @RequestMapping(value = {"/homepage.do","/"," * "})
-    public String showHome() {
+    @RequestMapping(value = {"/homepage.an","/"," * "},method = RequestMethod.GET)
+    public String showHome(HttpServletRequest request) {
+        ApplicationHelper.clearCookie(request);
+        ApplicationHelper.clearSession(request);
         return "homepage";
-    }
-
-    @RequestMapping(value = "/loginSamePageAction.do", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-    public @ResponseBody LoggedUserFormModel performLogin(HttpServletRequest request) {
-
-        String uName = request.getParameter("uname");
-        String psw = request.getParameter("passwd");
-        boolean isSuccess = true;
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
-        formModel.setUserId(1);
-        formModel.setUserName("satunar");
-        formModel.setLoggedTime(new Date());
-        formModel.setMessage("successful");
-        formModel.setFullUserName("Sathish Kumar Sundara");
-        formModel.setMailId("sundar.sat84@gmail.com");
-        return formModel;
-    }
-
-    @RequestMapping(value = "/signSamePageUpAction.do", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-    public @ResponseBody LoggedUserFormModel performSignUpAction(HttpServletRequest request) {
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
-        formModel.setUserId(1);
-        formModel.setUserName("satunar");
-        formModel.setLoggedTime(new Date());
-        formModel.setMessage("successful");
-        formModel.setFullUserName("Sathish Kumar Sundara");
-        formModel.setMailId("sundar.sat84@gmail.com");
-        return formModel;
     }
 
     @RequestMapping("/sample.do")
     public String performSample(ModelMap map) {
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
-        formModel.setUserId(1);
+        LogingFormModel formModel = new LogingFormModel();
+        /*formModel.setUserId(1);
         formModel.setUserName("satunar");
         formModel.setLoggedTime(new Date());
         formModel.setMessage("successful");
         formModel.setFullUserName("Sathish Kumar Sundara");
-        formModel.setMailId("sundar.sat84@gmail.com");
+        formModel.setMailId("sundar.sat84@gmail.com");*/
         map.put("user",formModel);
         return "sample";
     }
 
     @ResponseBody
-    @RequestMapping(value = "/loginAction.do", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public LoggedUserFormModel PerformLogin(HttpServletRequest request, HttpServletResponse response) {
-        logger.debug("");
-        String uName = request.getParameter("loginUserName");
-        String psw = request.getParameter("loginPassword");
+    @RequestMapping(value = "/loginAction.an", method = RequestMethod.POST)
+    public LogingFormModel PerformLogin(@RequestBody LogingFormModel model, HttpServletRequest request, HttpServletResponse response) {
+
+        LogingFormModel formModel = new LogingFormModel();
+
         boolean isSuccess = true;
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
-        formModel.setUserId(1);
-        formModel.setUserName("satunar");
-        formModel.setLoggedTime(new Date());
+        if(!model.getUserName().equals("1") || !model.getPassword().equals("1")) {
+            formModel.setMessage("unsuccessful");
+            return formModel;
+        }
+
         formModel.setMessage("successful");
-        formModel.setFullUserName("Sathish Kumar Sundara");
+        formModel.setUserId(1l);
+        formModel.setUserName(model.getUserName());
         formModel.setMailId("sundar.sat84@gmail.com");
+
+        Cookie cookie = new Cookie("userId",formModel.getUserId()+"");
+        cookie.setMaxAge(60 * 3);
+        response.addCookie(cookie);
+
+        HttpSession session = request.getSession(true);
+        session.setMaxInactiveInterval(60 * 3);
+        if(session.isNew()) {
+            session.setAttribute("user", formModel);
+        }
+        formModel.setSessionId(session.getId());
         return formModel;
     }
 
     @ResponseBody
-    @RequestMapping(value = "/signUpAction.do",method = RequestMethod.POST)
-    public LoggedUserFormModel performSignUp(HttpServletRequest request) {
+    @RequestMapping(value = "/signUpAction.an",method = RequestMethod.POST)
+    public LogingFormModel performSignUp(HttpServletRequest request) {
         String uName = request.getParameter("uName");
         String password = request.getParameter("password");
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
-        formModel.setUserId(null);
+        LogingFormModel formModel = new LogingFormModel();
+        /*formModel.setUserId(null);
         formModel.setUserName(uName);
-        formModel.setMessage("User "+uName+" created successfully. Please check your mail your mail for confirmation.");
+        formModel.setMessage("User "+uName+" created successfully. Please check your mail your mail for confirmation.");*/
         return formModel;
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public LoggedUserFormModel performLogout(HttpServletRequest request) {
-        LoggedUserFormModel formModel = new LoggedUserFormModel();
+    @ResponseBody
+    @RequestMapping(value = "/logoutAction.do", method = RequestMethod.POST)
+    public LogingFormModel performLogout(HttpServletRequest request,@RequestBody LogingFormModel formModel) {
+        String sessionId = formModel.getSessionId();
+        Long userId = formModel.getUserId();
+        String userName = formModel.getUserName();
+
+        Cookie[] cooArr = request.getCookies();
+        for(Cookie cookie  : cooArr) {
+            if(cookie.getName().equals("userId")) {
+                cookie.setMaxAge(0);
+                break;
+            }
+        }
+        request.getSession().invalidate();
         return formModel;
     }
 }

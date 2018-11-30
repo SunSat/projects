@@ -6,8 +6,20 @@
 		 http://www.springframework.org/schema/security
 		 http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <sec:http />
-        <!--intercept-url access="permitAll()" pattern="/homepage.do"/>
+    <sec:http>
+        <sec:intercept-url pattern="resources/**" access="permitAll()"/>
+        <sec:intercept-url pattern="/*.an" access="permitAll()"/>
+        <sec:intercept-url pattern="/*.do" access="hasRole('ROLE_USER')"/>
+        <sec:intercept-url pattern="/*.ad" access="hasRole('ROLE_ADMIN')"/>
+        <sec:form-login login-page="/login" username-parameter="loginUserName" password-parameter="loginPassword"/>
+    </sec:http>
+        <!--sec:intercept-url pattern="resources/**" access=""/>
+        <sec:intercept-url pattern="/*.an" access="permitAll()"/>
+        <sec:intercept-url pattern="/*.ad" access="hasRole('ROLE_ADMIN')"/>
+        <sec:intercept-url pattern="/*.do" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
+        <sec:form-login login-page="/login*.an" default-target-url="/homepage.an" />
+        <sec:logout logout-url="/logout*.do" logout-success-url="/homepage.an" invalidate-session="true" delete-cookies="true" />
+        <intercept-url access="permitAll()" pattern="/homepage.do"/>
         <intercept-url access="permitAll()" pattern="/resources/**"/>
         <intercept-url access="permitAll()" pattern="/signupAction.do"/>
         <intercept-url access="permitAll()" pattern="/passwordResetAction.do"/>
@@ -17,9 +29,9 @@
                 password-parameter="loginPassword"
                 username-parameter="loginUserName"
         />
-        <logout logout-url="/logoutAction.do" logout-success-url="/homepage.do" invalidate-session="true" delete-cookies="true" /-->
+        <logout logout-url="/logoutAction.do" logout-success-url="/homepage.do" invalidate-session="true" delete-cookies="true" />
 
-    <!--/sec:http-->
+    </sec:http-->
 
     <b:bean id="nopasswordEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
 

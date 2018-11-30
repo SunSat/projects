@@ -114,7 +114,7 @@ public class MigrationProcess {
             uploadTaskExecutor.start();
         }
 
-        DBUpdateTaskExecutor dbUpdateTaskExecutor = new DBUpdateTaskExecutor(dbUpdateQueue,null,service);
+        DBUpdateTaskExecutor dbUpdateTaskExecutor = new DBUpdateTaskExecutor(dbUpdateQueue,null,businessService);
         allTaskExecutor.add(dbUpdateTaskExecutor);
         dbUpdateTaskExecutor.start();
 */

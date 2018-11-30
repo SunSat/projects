@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public abstract class AbstractBaseModel implements BaseModel {
 
-    private String type;
+    private Class type;
     private Long primarykeyId;
     private Long createdById;
     private Long modifiedById;
@@ -16,13 +16,12 @@ public abstract class AbstractBaseModel implements BaseModel {
     private boolean isDeleted;
     private String description;
 
-
     @Override
-    public String getType() {
+    public Class getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Class type) {
         this.type = type;
     }
 

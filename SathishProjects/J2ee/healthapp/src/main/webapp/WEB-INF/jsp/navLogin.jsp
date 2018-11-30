@@ -2,23 +2,31 @@
     <a href="#" class="ion-navicon-round shortcut-div"></a>
     <div class="search-share-navigations">
         <div class="search-share-div">
-            <a href="#" class="ion-search search-navigation" onmouseover="showSearchBar()"></a>
-            <a href="#" class="ion-android-share-alt share-navigation "></a>
+            <div class="search-navigation" onclick="showSearchBar()">
+                <a href="#" class="ion-search"></a>
+            </div>
+            <div class="share-navigation">
+                <a href="#" class="ion-android-share-alt"></a>
+            </div>
         </div>
         <div class="navigation-div">
             <a href="#" class="donate-navigation sub-navigation">Donate</a>
             <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
             <a href="#" class="logout-navigation sub-navigation" id="logout-navigation">Logout</a>
             <a href="#" class="login-navigation sub-navigation" id="login-navigation" onclick="loginMouseHover()">Login</a>
+            <a href="#" class="health-life-navigation sub-navigation">Health Technique</a>
             <a href="#" class="home-navigation  sub-navigation">Home</a>
         </div>
     </div>
 
-    <div class="general-search-container" id="general-search-container" onmouseover="showExpandSearchBar()">
+    <div class="general-search-container" id="general-search-container" onclick="showExpandSearchBar()">
         <form class="general-search-form" id="general-search-form">
             <i class="ion-search"></i>
             <div class="general-search-div" id="general-search-div">
                 <input type="text" name="search" placeholder="Search..">
+            </div>
+            <div class="general-search-div-closebut" id="general-search-div-closebut">
+                <i class="ion-close-round mycloseicon" onclick="searchCloseBut()"></i>
             </div>
         </form>
     </div>
@@ -76,23 +84,23 @@
                     <p class="login-catption">With Your UserName</p>
                     <fieldset class="div-username">
                         <legend>UserName</legend>
-                        <input type="text" id="username" class="username placeholder-fix" placeholder="UserName" required/>
+                        <input type="text" id="loginUsername" class="username placeholder-fix" placeholder="UserName" required/>
                     </fieldset>
                     <fieldset class="div-password">
                         <legend>Password</legend>
-                        <input type="password" id="password" class="password placeholder-fix" placeholder="Password" required/>
+                        <input type="password" id="loginPassword" class="password placeholder-fix" placeholder="Password" required/>
                     </fieldset>
 
                     <div class="keep-me-signed-in">
-                        <label for="keepSignedIn">Keep Me Signed In:</label>
-                        <input type="checkbox" class="signedIn-checkbox" id="keepSignedIn"/>
+                        <label for="keepMeSignedIn">Keep Me Signed In:</label>
+                        <input type="checkbox" class="signedIn-checkbox" id="keepMeSignedIn"/>
                     </div>
                     <!--span class="keep-me-signed-in">Keep Me Signed In:
 
                     </span-->
                     <div class="clearfix"></div>
 
-                    <a href="#" class="btn-submit div-submit media-link" id="btn-submit" onclick="doLogin()">Sign In</a>
+                    <a href="#" class="btn-submit div-submit media-link" id="btn-submit" onclick="performLogin()">Sign In</a>
 
                     <div class="signup-forgotpassword">
                             <span class="div-not-a-member">Not a member?
@@ -113,7 +121,7 @@
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
             </div>
             <form method="post" action="submit" class="signup-handler">
-                <div class="warning-messages">
+                <div class="warning-messages" id="warning-messages">
                     <p>Address already Exist. Please Sign up.</p>
                 </div>
 
@@ -121,30 +129,38 @@
                     <li>
                         <fieldset class="div-signup">
                             <legend>UserName</legend>
-                            <input type="text" id="signup-username" class="input-signup placeholder-fix" required/>
+                            <input type="text" id="signup-username" class="input-signup placeholder-fix" required onblur="checkExistingUserName()"/>
+                            <div class="ion-android-checkmark-circle signup-username-circle" id="signup-username-circle"></div>
+                            <div class="close-circle-outline close-username-circle" id="close-username-circle"></div>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Password</legend>
-                            <input type="password" id="signup-password" class="input-signup placeholder-fix" required/>
+                            <input type="password" id="signup-password" class="input-signup placeholder-fix" required onblur="verifyPassword()"/>
+                            <div class="ion-android-checkmark-circle signup-password-circle" id="signup-password-circle"></div>
+                            <div class="close-circle-outline close-password-circle" id="close-password-circle"></div>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Confirm Password</legend>
-                            <input type="password" id="signup-password-cnf" class="input-signup placeholder-fix" required/>
+                            <input type="password" id="signup-password-cnf" class="input-signup placeholder-fix" required onfocusout="cnfVerifyPassword()"/>
+                            <div class="ion-android-checkmark-circle signup-cnf-password-circle" id="signup-cnf-password-circle"></div>
+                            <div class="close-circle-outline close-cnf-password-circle" id="close-cnf-password-circle"></div>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Mail Id</legend>
-                            <input type="email" id="signup-mail-id" class="input-signup placeholder-fix" required/>
+                            <input type="email" id="signup-mail-id" class="input-signup placeholder-fix" required onfocusout="verifyMailId()"/>
+                            <div class="ion-android-checkmark-circle signup-email-circle" id="signup-email-circle"></div>
+                            <div class="close-circle-outline close-email-circle" id="close-email-circle"></div>
                         </fieldset>
                     </li>
                     <div class="clearfix"></div>
                     <div class="sign-up-footer">
-                        <a href="#" class="btn-submit media-link" id="signup-btn-submit" onclick="doSignUp()">Sign
+                        <a href="#" class="btn-submit media-link" id="signup-btn-submit" onclick="performSignUp()">Sign
                             Up</a>
 
                         <div class="signup-forgotpassword">

@@ -1,0 +1,925 @@
+2018-07-16 18:30:46 DEBUG Class:32 - Hello Mapping
+2018-07-16 18:30:46 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 18:30:46 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 18:30:46 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 18:30:46 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 18:30:46 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 18:30:46 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 18:30:46 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 18:30:46 DEBUG Class:39 - JCR initiatted.
+2018-07-16 18:30:46 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 18:31:46 DEBUG Class:32 - Hello Mapping
+2018-07-16 18:31:46 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 18:31:46 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 18:31:46 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 18:31:46 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 18:31:46 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 18:31:46 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 18:31:46 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 18:31:46 DEBUG Class:39 - JCR initiatted.
+2018-07-16 18:31:46 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 18:32:29 DEBUG Class:32 - Hello Mapping
+2018-07-16 18:32:31 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 18:32:34 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 18:32:40 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 18:32:41 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 18:32:43 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 18:33:02 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 18:33:02 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 18:33:02 DEBUG Class:39 - JCR initiatted.
+2018-07-16 18:33:02 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 18:33:42 DEBUG Class:32 - Hello Mapping
+2018-07-16 18:37:50 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 18:37:51 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 18:37:53 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 18:37:56 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 18:37:58 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 18:38:11 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 18:38:11 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 18:38:11 DEBUG Class:39 - JCR initiatted.
+2018-07-16 18:38:11 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 19:21:04 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:21:04 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:21:04 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:21:04 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 19:21:04 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:21:04 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:21:04 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 19:21:04 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 19:21:04 DEBUG Class:39 - JCR initiatted.
+2018-07-16 19:21:04 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 19:21:24 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:21:29 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:21:30 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:21:32 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 19:21:33 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:21:34 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:22:07 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 19:22:07 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 19:22:07 DEBUG Class:39 - JCR initiatted.
+2018-07-16 19:22:07 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 19:23:20 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:23:21 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:23:22 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:23:24 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 19:23:33 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:23:35 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:23:48 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 19:23:48 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 19:23:48 DEBUG Class:39 - JCR initiatted.
+2018-07-16 19:23:48 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 19:24:05 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:24:07 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:24:19 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:24:19 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@f6c48ac
+2018-07-16 19:24:19 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:24:19 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:24:27 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:24:37 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:25:05 ERROR FILE:41 - JCRInit Failled by general Exception : 
+java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:627)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at org.apache.jackrabbit.rmi.repository.URLRemoteRepository.<init>(URLRemoteRepository.java:66)
+	at com.vwr.em.migration.util.JCRFileUtil.init(JCRFileUtil.java:34)
+	at com.vwr.em.migration.util.JCRFileUtil.<init>(JCRFileUtil.java:28)
+	at com.vwr.em.migration.util.JCRFileUtil.getInstance(JCRFileUtil.java:49)
+	at com.vwr.em.migration.MigrationProcess.main(MigrationProcess.java:38)
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:532)
+	... 7 more
+2018-07-16 19:25:05 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 19:25:05 DEBUG Class:39 - JCR initiatted.
+2018-07-16 19:25:05 DEBUG Class:48 - error while initialting JCR. Hence exiting from app.
+2018-07-16 19:25:18 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:25:20 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:26:16 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:26:18 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 19:26:19 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:26:21 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : null
+2018-07-16 19:27:57 DEBUG Class:32 - Hello Mapping
+2018-07-16 19:27:59 INFO  FILE:32 - Entering JCRFileUtil Init method
+2018-07-16 19:28:05 DEBUG PropertyUtil:22 - Entering Property Util Init. Reading data from proty file
+2018-07-16 19:28:07 DEBUG PropertyUtil:28 - Data loaded successfully. All property names are : java.util.Hashtable$Enumerator@2f686d1f
+2018-07-16 19:28:08 DEBUG PropertyUtil:36 - Existing Property Util Init. Reading data from proty file
+2018-07-16 19:28:10 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.url. And the value is : http://localhost:9080/jackrabbit/rmi
+2018-07-16 19:28:19 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.userName. And the value is : admin
+2018-07-16 19:28:21 DEBUG PropertyUtil:43 - The requeted property name is : migrate.jcr.password. And the value is : admin
+2018-07-16 19:28:25 INFO  FILE:43 - Exited JCRFileUtil Init method
+2018-07-16 19:28:29 DEBUG Class:39 - JCR initiatted.
+2018-07-16 19:28:37 DEBUG PersistanceManager:30 - Initiating Hibernate ORM
+2018-07-16 19:28:37 DEBUG logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-07-16 19:28:37 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2018-07-16 19:28:37 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2018-07-16 19:28:37 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2018-07-16 19:28:37 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2018-07-16 19:28:37 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-07-16 19:28:37 DEBUG LocalXmlResourceResolver:57 - Interpreting public/system identifier : [null] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+2018-07-16 19:28:37 DEBUG LocalXmlResourceResolver:85 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+2018-07-16 19:28:37 DEBUG JaxbCfgProcessor:116 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+2018-07-16 19:28:38 DEBUG Configuration:724 - Building session factory using internal StandardServiceRegistryBuilder
+2018-07-16 19:28:38 DEBUG ServiceBinding:68 - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2018-07-16 19:28:38 DEBUG Configuration:652 - Building session factory using provided StandardServiceRegistry
+2018-07-16 19:28:39 DEBUG RegionFactoryInitiator:75 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2018-07-16 19:28:39 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@7c351808
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@7c351808
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7c351808
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@d5ae57e
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@1536602f
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration yes_no -> org.hibernate.type.YesNoType@44c79f32
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@fd0e5b6
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@fd0e5b6
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@fd0e5b6
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration character -> org.hibernate.type.CharacterType@716a7124
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration char -> org.hibernate.type.CharacterType@716a7124
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@716a7124
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@55795845
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@55795845
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@55795845
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration integer -> org.hibernate.type.IntegerType@6175619b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration int -> org.hibernate.type.IntegerType@6175619b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@6175619b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@4e76dac
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@4e76dac
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@4e76dac
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@4b85880b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@4b85880b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@4b85880b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@3e2943ab
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@3e2943ab
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@3e2943ab
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1c98290c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1c98290c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@fd46303
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@fd46303
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration string -> org.hibernate.type.StringType@79e18e38
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.String -> org.hibernate.type.StringType@79e18e38
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6d1d4d7
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5f2606b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration url -> org.hibernate.type.UrlType@2cf23c81
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@2cf23c81
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration Duration -> org.hibernate.type.DurationType@1255b1d1
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@1255b1d1
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration Instant -> org.hibernate.type.InstantType@669513d8
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@669513d8
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@664a9613
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@664a9613
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@332a7fce
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@332a7fce
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@72e34f77
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@72e34f77
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@33617539
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@33617539
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@6fefce9e
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@6fefce9e
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@11acdc30
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@11acdc30
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration date -> org.hibernate.type.DateType@7cbee484
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@7cbee484
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration time -> org.hibernate.type.TimeType@a77614d
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@a77614d
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration timestamp -> org.hibernate.type.TimestampType@791cbf87
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@791cbf87
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@791cbf87
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@372ea2bc
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration calendar -> org.hibernate.type.CalendarType@5dcbb60
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@5dcbb60
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@5dcbb60
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5471388b
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration locale -> org.hibernate.type.LocaleType@142eef62
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@142eef62
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration currency -> org.hibernate.type.CurrencyType@12cd9150
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@12cd9150
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@c9413d8
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@c9413d8
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration class -> org.hibernate.type.ClassType@7caa550
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@7caa550
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@30ed9c6c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@30ed9c6c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5ae81e1
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration binary -> org.hibernate.type.BinaryType@24f360b2
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration byte[] -> org.hibernate.type.BinaryType@24f360b2
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration [B -> org.hibernate.type.BinaryType@24f360b2
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@476aac9
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@476aac9
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@476aac9
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration row_version -> org.hibernate.type.RowVersionType@552518c3
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration image -> org.hibernate.type.ImageType@5e77f0f4
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration characters -> org.hibernate.type.CharArrayType@4efcf8a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration char[] -> org.hibernate.type.CharArrayType@4efcf8a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration [C -> org.hibernate.type.CharArrayType@4efcf8a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@459f7aa3
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@459f7aa3
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@459f7aa3
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration text -> org.hibernate.type.TextType@2f4854d6
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration ntext -> org.hibernate.type.NTextType@a50b09c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration blob -> org.hibernate.type.BlobType@b5cc23a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@b5cc23a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@182f1e9a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration clob -> org.hibernate.type.ClobType@78461bc4
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@78461bc4
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration nclob -> org.hibernate.type.NClobType@407cf41
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@407cf41
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@5aceec94
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@3d3f761a
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration serializable -> org.hibernate.type.SerializableType@1a2e2935
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration object -> org.hibernate.type.ObjectType@4108fa66
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@4108fa66
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@27eb3298
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@200a26bc
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@bc57b40
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@1b5bc39d
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@655a5d9c
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@1494b84d
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@34abdee4
+2018-07-16 19:28:39 DEBUG BasicTypeRegistry:145 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@71a9b4c7
+2018-07-16 19:28:39 INFO  ConnectionProviderInitiator:122 - HHH000130: Instantiating explicit connection provider: org.hibernate.c3p0.internal.C3P0ConnectionProvider
+2018-07-16 19:28:39 INFO  C3P0ConnectionProvider:117 - HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.3.150.9:3306/VWR_EM_QA4
+2018-07-16 19:28:39 INFO  C3P0ConnectionProvider:118 - HHH10001001: Connection properties: {user=vsr, password=****}
+2018-07-16 19:28:39 INFO  C3P0ConnectionProvider:121 - HHH10001003: Autocommit mode: false
+2018-07-16 19:28:40 INFO  C3P0ConnectionProvider:201 - HHH10001007: JDBC isolation level: <unknown>
+2018-07-16 19:29:30 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Connections could not be acquired from the underlying database!
+2018-07-16 19:29:30 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2018-07-16 19:29:30 DEBUG IdentifierHelperBuilder:191 - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+2018-07-16 19:29:30 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2018-07-16 19:29:30 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2018-07-16 19:29:30 DEBUG Namespace:47 - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+2018-07-16 19:29:30 DEBUG AnnotationBinder:512 - Binding entity from annotated class: com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2018-07-16 19:29:31 DEBUG EntityBinder:419 - Import with entity name DocumentDao
+2018-07-16 19:29:31 DEBUG EntityBinder:695 - Bind entity com.vwr.em.migration.dao.DocumentDao on table DOCUMENT
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_ID, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property skGuid with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:skGuid]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for skGuid
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property skGuid
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=CREATED_BY, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property creaatedBy with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:creaatedBy]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for creaatedBy
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property creaatedBy
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=CREATED_DT, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property createdDt with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:createdDt]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for createdDt
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property createdDt
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DELETED, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property deleted with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:deleted]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for deleted
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property deleted
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DESCRIPTION, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property descritpion with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:descritpion]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for descritpion
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property descritpion
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_TYPE, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property documentType with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:documentType]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for documentType
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property documentType
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_UNIQUE_ID, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property documentUniquId with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:documentUniquId]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for documentUniquId
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property documentUniquId
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_URL, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property documentUrl with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:documentUrl]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for documentUrl
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property documentUrl
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=FILENAME, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property fileName with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:fileName]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for fileName
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property fileName
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=IS_SOFTWARE, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property isSoftware with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:isSoftware]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for isSoftware
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property isSoftware
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=MODIFIED_BY, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property modifiedBy with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:modifiedBy]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for modifiedBy
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property modifiedBy
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=MODIFIED_DT, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property modifiedDt with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:modifiedDt]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for modifiedDt
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property modifiedDt
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=ORG_ID, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property orgId with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:orgId]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for orgId
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property orgId
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=REASON_FOR_CHANGE, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property reasonForChange with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:reasonForChange]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for reasonForChange
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property reasonForChange
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=SIGN_OFF_REASON, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property signOfReason1 with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:signOfReason1]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for signOfReason1
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property signOfReason1
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=SIGN_OFF_REASON2, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property signOfReason2 with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:signOfReason2]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for signOfReason2
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property signOfReason2
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=SIZE, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property size with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:size]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for size
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property size
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=STATUS, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property status with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:status]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for status
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property status
+2018-07-16 19:29:31 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=TITLE, insertable=true, updatable=true, unique=false}
+2018-07-16 19:29:31 DEBUG PropertyBinder:175 - MetadataSourceProcessor property title with lazy=false
+2018-07-16 19:29:31 DEBUG AbstractPropertyHolder:95 - Attempting to locate auto-apply AttributeConverter for property [com.vwr.em.migration.dao.DocumentDao:title]
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:411 - building SimpleValue for title
+2018-07-16 19:29:31 DEBUG PropertyBinder:266 - Building property title
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for skGuid
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for creaatedBy
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for createdDt
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for deleted
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for descritpion
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for documentType
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for documentUniquId
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for documentUrl
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for fileName
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for isSoftware
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for modifiedBy
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for modifiedDt
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for orgId
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for reasonForChange
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for signOfReason1
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for signOfReason2
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for size
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for status
+2018-07-16 19:29:31 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for title
+2018-07-16 19:29:31 DEBUG PrimaryKey:35 - Forcing column [document_id] to be non-null as it is part of the primary key for table [document]
+2018-07-16 19:29:31 DEBUG SessionFactoryImpl:199 - Building session factory
+2018-07-16 19:29:31 DEBUG Settings:69 - SessionFactory name : null
+2018-07-16 19:29:31 DEBUG Settings:70 - Automatic flush during beforeCompletion(): enabled
+2018-07-16 19:29:31 DEBUG Settings:71 - Automatic session close at end of transaction: disabled
+2018-07-16 19:29:31 DEBUG Settings:73 - Statistics: disabled
+2018-07-16 19:29:31 DEBUG Settings:75 - Deleted entity synthetic identifier rollback: disabled
+2018-07-16 19:29:31 DEBUG Settings:76 - Default entity-mode: pojo
+2018-07-16 19:29:31 DEBUG Settings:77 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2018-07-16 19:29:31 DEBUG Settings:78 - Allow initialization of lazy state outside session : disabled
+2018-07-16 19:29:31 DEBUG Settings:80 - Using BatchFetchStyle : LEGACY
+2018-07-16 19:29:31 DEBUG Settings:81 - Default batch fetch size: -1
+2018-07-16 19:29:31 DEBUG Settings:82 - Maximum outer join fetch depth: 2
+2018-07-16 19:29:31 DEBUG Settings:83 - Default null ordering: NONE
+2018-07-16 19:29:31 DEBUG Settings:84 - Order SQL updates by primary key: disabled
+2018-07-16 19:29:31 DEBUG Settings:85 - Order SQL inserts for batching: disabled
+2018-07-16 19:29:31 DEBUG Settings:87 - multi-tenancy strategy : NONE
+2018-07-16 19:29:31 DEBUG Settings:89 - JTA Track by Thread: enabled
+2018-07-16 19:29:31 DEBUG Settings:91 - Query language substitutions: {}
+2018-07-16 19:29:31 DEBUG Settings:92 - JPA query language strict compliance: disabled
+2018-07-16 19:29:31 DEBUG Settings:93 - Named query checking : enabled
+2018-07-16 19:29:31 DEBUG Settings:95 - Second-level cache: disabled
+2018-07-16 19:29:31 DEBUG Settings:96 - Second-level query cache: disabled
+2018-07-16 19:29:31 DEBUG Settings:97 - Second-level query cache factory: null
+2018-07-16 19:29:31 DEBUG Settings:98 - Second-level cache region prefix: null
+2018-07-16 19:29:31 DEBUG Settings:99 - Optimize second-level cache for minimal puts: disabled
+2018-07-16 19:29:31 DEBUG Settings:100 - Structured second-level cache entries: disabled
+2018-07-16 19:29:31 DEBUG Settings:101 - Second-level cache direct-reference entries: disabled
+2018-07-16 19:29:31 DEBUG Settings:102 - Automatic eviction of collection cache: disabled
+2018-07-16 19:29:31 DEBUG Settings:104 - JDBC batch size: 0
+2018-07-16 19:29:31 DEBUG Settings:105 - JDBC batch updates for versioned data: enabled
+2018-07-16 19:29:31 DEBUG Settings:106 - Scrollable result sets: disabled
+2018-07-16 19:29:31 DEBUG Settings:107 - Wrap result sets: disabled
+2018-07-16 19:29:31 DEBUG Settings:108 - JDBC3 getGeneratedKeys(): disabled
+2018-07-16 19:29:31 DEBUG Settings:109 - JDBC result set fetch size: null
+2018-07-16 19:29:31 DEBUG Settings:110 - Connection release mode: AFTER_TRANSACTION
+2018-07-16 19:29:31 DEBUG Settings:111 - Generate SQL with comments: disabled
+2018-07-16 19:29:31 DEBUG SessionFactoryImpl:257 - Session factory constructed with filter configurations : {}
+2018-07-16 19:29:31 DEBUG SessionFactoryImpl:258 - Instantiating session factory with properties: {sun.desktop=windows, awt.toolkit=sun.awt.windows.WToolkit, file.encoding.pkg=sun.io, java.specification.version=1.8, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.MySQL55Dialect, java.class.path=C:\project\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\project\Java\jdk1.8.0_131\jre\lib\deploy.jar;C:\project\Java\jdk1.8.0_131\jre\lib\javaws.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\project\Java\jdk1.8.0_131\jre\lib\management-agent.jar;C:\project\Java\jdk1.8.0_131\jre\lib\plugin.jar;C:\project\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\project\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-64.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\project\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;C:\personal\Projects\SathishProjects\Java\HackerRank\target;C:\Users\sathishkumar_su\.m2\repository\com\sun\pdfview\pdfrenderer\0.9.1-patched\pdfrenderer-0.9.1-patched.jar;C:\Users\sathishkumar_su\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\sathishkumar_su\.m2\repository\javax\jcr\jcr\2.0\jcr-2.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-core\2.7.0\jackrabbit-core-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\concurrent\concurrent\1.3.4\concurrent-1.3.4.jar;C:\Users\sathishkumar_su\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;C:\Users\sathishkumar_su\.m2\repository\commons-dbcp\commons-dbcp\1.3\commons-dbcp-1.3.jar;C:\Users\sathishkumar_su\.m2\repository\commons-pool\commons-pool\1.5.4\commons-pool-1.5.4.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-api\2.7.0\jackrabbit-api-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-jcr-commons\2.7.0\jackrabbit-jcr-commons-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-spi-commons\2.7.0\jackrabbit-spi-commons-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-spi\2.7.0\jackrabbit-spi-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\tika\tika-core\1.3\tika-core-1.3.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\lucene\lucene-core\3.6.0\lucene-core-3.6.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\derby\derby\10.5.3.0_1\derby-10.5.3.0_1.jar;C:\Users\sathishkumar_su\.m2\repository\org\slf4j\jcl-over-slf4j\1.6.4\jcl-over-slf4j-1.6.4.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-jcr-rmi\2.7.0\jackrabbit-jcr-rmi-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-webapp\2.7.0\jackrabbit-webapp-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\tika\tika-parsers\1.3\tika-parsers-1.3.jar;C:\Users\sathishkumar_su\.m2\repository\org\gagravarr\vorbis-java-tika\0.1\vorbis-java-tika-0.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\gagravarr\vorbis-java-core\0.1\vorbis-java-core-0.1-tests.jar;C:\Users\sathishkumar_su\.m2\repository\edu\ucar\netcdf\4.2-min\netcdf-4.2-min.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\james\apache-mime4j-core\0.7.2\apache-mime4j-core-0.7.2.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\james\apache-mime4j-dom\0.7.2\apache-mime4j-dom-0.7.2.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\tukaani\xz\1.0\xz-1.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\pdfbox\pdfbox\1.7.1\pdfbox-1.7.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\pdfbox\fontbox\1.7.1\fontbox-1.7.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\pdfbox\jempbox\1.7.1\jempbox-1.7.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\bouncycastle\bcmail-jdk15\1.45\bcmail-jdk15-1.45.jar;C:\Users\sathishkumar_su\.m2\repository\org\bouncycastle\bcprov-jdk15\1.45\bcprov-jdk15-1.45.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\poi\poi\3.8\poi-3.8.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\poi\poi-scratchpad\3.8\poi-scratchpad-3.8.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\poi\poi-ooxml\3.8\poi-ooxml-3.8.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.8\poi-ooxml-schemas-3.8.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\geronimo\specs\geronimo-stax-api_1.0_spec\1.0.1\geronimo-stax-api_1.0_spec-1.0.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\sathishkumar_su\.m2\repository\asm\asm\3.1\asm-3.1.jar;C:\Users\sathishkumar_su\.m2\repository\com\googlecode\mp4parser\isoparser\1.0-RC-1\isoparser-1.0-RC-1.jar;C:\Users\sathishkumar_su\.m2\repository\org\aspectj\aspectjrt\1.6.11\aspectjrt-1.6.11.jar;C:\Users\sathishkumar_su\.m2\repository\com\drewnoakes\metadata-extractor\2.6.2\metadata-extractor-2.6.2.jar;C:\Users\sathishkumar_su\.m2\repository\com\adobe\xmp\xmpcore\5.1.2\xmpcore-5.1.2.jar;C:\Users\sathishkumar_su\.m2\repository\xerces\xercesImpl\2.8.1\xercesImpl-2.8.1.jar;C:\Users\sathishkumar_su\.m2\repository\xml-apis\xml-apis\1.3.03\xml-apis-1.3.03.jar;C:\Users\sathishkumar_su\.m2\repository\de\l3s\boilerpipe\boilerpipe\1.1.0\boilerpipe-1.1.0.jar;C:\Users\sathishkumar_su\.m2\repository\rome\rome\0.9\rome-0.9.jar;C:\Users\sathishkumar_su\.m2\repository\jdom\jdom\1.0\jdom-1.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\gagravarr\vorbis-java-core\0.1\vorbis-java-core-0.1.jar;C:\Users\sathishkumar_su\.m2\repository\com\googlecode\juniversalchardet\juniversalchardet\1.0.3\juniversalchardet-1.0.3.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-jcr-server\2.7.0\jackrabbit-jcr-server-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-webdav\2.7.0\jackrabbit-webdav-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\sathishkumar_su\.m2\repository\commons-fileupload\commons-fileupload\1.2.1\commons-fileupload-1.2.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\apache\jackrabbit\jackrabbit-jcr-servlet\2.7.0\jackrabbit-jcr-servlet-2.7.0.jar;C:\Users\sathishkumar_su\.m2\repository\ch\qos\logback\logback-classic\1.0.0\logback-classic-1.0.0.jar;C:\Users\sathishkumar_su\.m2\repository\ch\qos\logback\logback-core\1.0.0\logback-core-1.0.0.jar;C:\Users\sathishkumar_su\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar;C:\Users\sathishkumar_su\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\hibernate-core\5.2.17.Final\hibernate-core-5.2.17.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\sathishkumar_su\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\sathishkumar_su\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.0.1.Final\jboss-transaction-api_1.2_spec-1.0.1.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\sathishkumar_su\.m2\repository\com\fasterxml\classmate\1.3.0\classmate-1.3.0.jar;C:\Users\sathishkumar_su\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\hibernate-annotations\3.5.6-Final\hibernate-annotations-3.5.6-Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\hibernate-commons-annotations\3.2.0.Final\hibernate-commons-annotations-3.2.0.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.0-api\1.0.0.Final\hibernate-jpa-2.0-api-1.0.0.Final.jar;C:\Users\sathishkumar_su\.m2\repository\org\hibernate\hibernate-c3p0\5.2.17.Final\hibernate-c3p0-5.2.17.Final.jar;C:\Users\sathishkumar_su\.m2\repository\com\mchange\c3p0\0.9.5.2\c3p0-0.9.5.2.jar;C:\Users\sathishkumar_su\.m2\repository\com\mchange\mchange-commons-java\0.2.11\mchange-commons-java-0.2.11.jar;C:\Users\sathishkumar_su\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\sathishkumar_su\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 14.1.7\lib\idea_rt.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=http://java.oracle.com/, user.timezone=Asia/Calcutta, os.name=Windows 8.1, java.vm.specification.version=1.8, user.country=US, sun.java.launcher=SUN_STANDARD, sun.boot.library.path=C:\project\Java\jdk1.8.0_131\jre\bin, sun.java.command=com.vwr.em.migration.MigrationProcess, hibernate.connection.provider_class=org.hibernate.c3p0.internal.C3P0ConnectionProvider, sun.cpu.endian=little, user.home=C:\Users\sathishkumar_su, user.language=en, java.specification.vendor=Oracle Corporation, java.home=C:\project\Java\jdk1.8.0_131\jre, file.separator=\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, sun.boot.class.path=C:\project\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\project\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\project\Java\jdk1.8.0_131\jre\lib\sunrsasign.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\project\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\project\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\project\Java\jdk1.8.0_131\jre\classes, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=1.8.0_131-b11, user.name=sathishkumar_su, path.separator=;, hibernate.connection.username=****, os.version=6.3, java.endorsed.dirs=C:\project\Java\jdk1.8.0_131\jre\lib\endorsed, java.runtime.name=Java(TM) SE Runtime Environment, hibernate.connection.url=jdbc:mysql://10.3.150.9:3306/VWR_EM_QA4, file.encoding=windows-1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.connection.driver_class=com.mysql.jdbc.Driver, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, java.io.tmpdir=C:\Users\SATHIS~1\AppData\Local\Temp\, java.version=1.8.0_131, user.dir=C:\personal\Projects\SathishProjects\Java\HackerRank, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, hibernate.connection.password=****, java.awt.printerjob=sun.awt.windows.WPrinterJob, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@280e8a1a, java.library.path=C:\project\Java\jdk1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\project\Python34\;C:\project\Python34\Scripts;C:\Project\Python36\Scripts\;C:\Project\Python36\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\Brackets\command;C:\Program Files (x86)\cURL\bin;C:\project\Java\jdk1.8.0_152\bin;C:\project\apache-maven-3.5.0\bin;C:\Users\sathishkumar_su\AppData\Local\GitHubDesktop\bin;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\project\cygwin64\bin\bash.exe;.;;., java.vm.info=mixed mode, java.vendor=Oracle Corporation, java.vm.version=25.131-b11, hibernate.bytecode.use_reflection_optimizer=false, java.ext.dirs=C:\project\Java\jdk1.8.0_131\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.io.unicode.encoding=UnicodeLittle, java.class.version=52.0}
+2018-07-16 19:29:32 DEBUG JaccIntegrator:80 - Skipping JACC integration as it was not enabled
+2018-07-16 19:29:32 DEBUG SessionFactoryImpl:297 - Instantiated session factory
+2018-07-16 19:29:32 DEBUG ClassLoaderAccessImpl:55 - Not known whether passed class name [com.vwr.em.migration.dao.DocumentDao] is safe
+2018-07-16 19:29:32 DEBUG ClassLoaderAccessImpl:57 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:32 DEBUG ClassLoaderAccessImpl:55 - Not known whether passed class name [com.vwr.em.migration.dao.DocumentDao] is safe
+2018-07-16 19:29:32 DEBUG ClassLoaderAccessImpl:57 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:3642 - Static SQL for entity: com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:3647 -  Version select: select DOCUMENT_ID from DOCUMENT where DOCUMENT_ID =?
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:3650 -  Snapshot select: select documentda_.DOCUMENT_ID, documentda_.CREATED_BY as CREATED_2_0_, documentda_.CREATED_DT as CREATED_3_0_, documentda_.DELETED as DELETED4_0_, documentda_.DESCRIPTION as DESCRIPT5_0_, documentda_.DOCUMENT_TYPE as DOCUMENT6_0_, documentda_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_, documentda_.DOCUMENT_URL as DOCUMENT8_0_, documentda_.FILENAME as FILENAME9_0_, documentda_.IS_SOFTWARE as IS_SOFT10_0_, documentda_.MODIFIED_BY as MODIFIE11_0_, documentda_.MODIFIED_DT as MODIFIE12_0_, documentda_.ORG_ID as ORG_ID13_0_, documentda_.REASON_FOR_CHANGE as REASON_14_0_, documentda_.SIGN_OFF_REASON as SIGN_OF15_0_, documentda_.SIGN_OFF_REASON2 as SIGN_OF16_0_, documentda_.SIZE as SIZE17_0_, documentda_.STATUS as STATUS18_0_, documentda_.TITLE as TITLE19_0_ from DOCUMENT documentda_ where documentda_.DOCUMENT_ID=?
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into DOCUMENT (CREATED_BY, CREATED_DT, DELETED, DESCRIPTION, DOCUMENT_TYPE, DOCUMENT_UNIQUE_ID, DOCUMENT_URL, FILENAME, IS_SOFTWARE, MODIFIED_BY, MODIFIED_DT, ORG_ID, REASON_FOR_CHANGE, SIGN_OFF_REASON, SIGN_OFF_REASON2, SIZE, STATUS, TITLE, DOCUMENT_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:394 -  Update 0: update DOCUMENT set CREATED_BY=?, CREATED_DT=?, DELETED=?, DESCRIPTION=?, DOCUMENT_TYPE=?, DOCUMENT_UNIQUE_ID=?, DOCUMENT_URL=?, FILENAME=?, IS_SOFTWARE=?, MODIFIED_BY=?, MODIFIED_DT=?, ORG_ID=?, REASON_FOR_CHANGE=?, SIGN_OFF_REASON=?, SIGN_OFF_REASON2=?, SIZE=?, STATUS=?, TITLE=? where DOCUMENT_ID=?
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from DOCUMENT where DOCUMENT_ID=?
+2018-07-16 19:29:32 DEBUG AbstractEntityPersister:3658 -  Identity insert: insert into DOCUMENT (CREATED_BY, CREATED_DT, DELETED, DESCRIPTION, DOCUMENT_TYPE, DOCUMENT_UNIQUE_ID, DOCUMENT_URL, FILENAME, IS_SOFTWARE, MODIFIED_BY, MODIFIED_DT, ORG_ID, REASON_FOR_CHANGE, SIGN_OFF_REASON, SIGN_OFF_REASON2, SIZE, STATUS, TITLE) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2018-07-16 19:29:32 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7efd28bd]
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:32 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:32 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [NONE]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4ac86d6a]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [READ]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@508a65bf]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [UPGRADE]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1e58512c]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [UPGRADE_NOWAIT]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@22a736d7]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [UPGRADE_SKIPLOCKED]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7f353d99]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [FORCE]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d43409a]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [PESSIMISTIC_READ]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? lock in share mode
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6ede46f6]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [PESSIMISTIC_WRITE]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2127e66e]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [PESSIMISTIC_FORCE_INCREMENT]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=? for update
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@e5cbff2]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [OPTIMISTIC]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4fc3c165]
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : creaatedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : createdDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : deleted
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : descritpion
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentType
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUniquId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : documentUrl
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : fileName
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : isSoftware
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedBy
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : modifiedDt
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : orgId
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : reasonForChange
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason1
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : signOfReason2
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : size
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : status
+2018-07-16 19:29:33 DEBUG MetamodelGraphWalker:139 - Visiting attribute path : title
+2018-07-16 19:29:33 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2018-07-16 19:29:33 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2018-07-16 19:29:33 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.vwr.em.migration.dao.DocumentDao)
+    - Returns
+       - EntityReturnImpl(entity=com.vwr.em.migration.dao.DocumentDao, querySpaceUid=<gen:0>, path=com.vwr.em.migration.dao.DocumentDao)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.vwr.em.migration.dao.DocumentDao)
+          - SQL table alias mapping - documentda0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_0_0_}
+
+2018-07-16 19:29:33 DEBUG EntityLoader:115 - Static select for entity com.vwr.em.migration.dao.DocumentDao [OPTIMISTIC_FORCE_INCREMENT]: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG Loader:38 - Static select for action ACTION_MERGE on entity com.vwr.em.migration.dao.DocumentDao: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG Loader:38 - Static select for action ACTION_REFRESH on entity com.vwr.em.migration.dao.DocumentDao: select documentda0_.DOCUMENT_ID as DOCUMENT1_0_0_, documentda0_.CREATED_BY as CREATED_2_0_0_, documentda0_.CREATED_DT as CREATED_3_0_0_, documentda0_.DELETED as DELETED4_0_0_, documentda0_.DESCRIPTION as DESCRIPT5_0_0_, documentda0_.DOCUMENT_TYPE as DOCUMENT6_0_0_, documentda0_.DOCUMENT_UNIQUE_ID as DOCUMENT7_0_0_, documentda0_.DOCUMENT_URL as DOCUMENT8_0_0_, documentda0_.FILENAME as FILENAME9_0_0_, documentda0_.IS_SOFTWARE as IS_SOFT10_0_0_, documentda0_.MODIFIED_BY as MODIFIE11_0_0_, documentda0_.MODIFIED_DT as MODIFIE12_0_0_, documentda0_.ORG_ID as ORG_ID13_0_0_, documentda0_.REASON_FOR_CHANGE as REASON_14_0_0_, documentda0_.SIGN_OFF_REASON as SIGN_OF15_0_0_, documentda0_.SIGN_OFF_REASON2 as SIGN_OF16_0_0_, documentda0_.SIZE as SIZE17_0_0_, documentda0_.STATUS as STATUS18_0_0_, documentda0_.TITLE as TITLE19_0_0_ from DOCUMENT documentda0_ where documentda0_.DOCUMENT_ID=?
+2018-07-16 19:29:33 DEBUG SchemaManagementToolCoordinator:56 - No actions specified; doing nothing
+2018-07-16 19:29:33 DEBUG JtaPlatformInitiator:42 - No JtaPlatform was specified, checking resolver
+2018-07-16 19:29:33 DEBUG JtaPlatformResolverInitiator:33 - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2018-07-16 19:29:33 DEBUG StandardJtaPlatformResolver:110 - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2018-07-16 19:29:33 DEBUG NamedQueryRepository:151 - Checking 0 named HQL queries
+2018-07-16 19:29:33 DEBUG NamedQueryRepository:167 - Checking 0 named SQL queries
+2018-07-16 19:29:33 DEBUG SessionFactoryRegistry:52 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@518bfd90
+2018-07-16 19:29:33 DEBUG SessionFactoryRegistry:74 - Registering SessionFactory: a87a33bd-5c82-422b-b3c4-b302cbb36779 (<unnamed>)
+2018-07-16 19:29:33 DEBUG SessionFactoryRegistry:81 - Not binding SessionFactory to JNDI, no JNDI name configured
+2018-07-16 19:29:33 DEBUG PersistanceManager:34 - Initied Hibernate ORM successfully
+2018-07-16 19:29:41 DEBUG PropertyUtil:43 - The requeted property name is : migrate.type. And the value is : org
+2018-07-16 19:29:43 DEBUG PropertyUtil:43 - The requeted property name is : migrate.max.record.limit. And the value is : 5000
+2018-07-16 19:29:44 DEBUG PropertyUtil:43 - The requeted property name is : migrate.download.thread.count. And the value is : 5
+2018-07-16 19:29:45 DEBUG PropertyUtil:43 - The requeted property name is : migrate.upload.thread.count. And the value is : 30
+2018-07-16 19:29:46 DEBUG PropertyUtil:43 - The requeted property name is : migrate.download.file.path. And the value is : C:vemmigrate
+2018-07-16 19:29:52 DEBUG dbreadLogger:31 - Initating DBReadTaskExecutor
+2018-07-16 19:29:53 DEBUG StatisticsInitiator:82 - Statistics initialized [enabled=false]
+2018-07-16 19:29:53 DEBUG QueryTranslatorFactoryInitiator:45 - QueryTranslatorFactory : org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@7f5b9db
+2018-07-16 19:29:53 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-07-16 19:29:53 DEBUG QueryTranslatorImpl:282 - parse() - HQL: select distinct orgId from com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:53 DEBUG ErrorCounter:95 - throwQueryException() : no errors
+2018-07-16 19:29:53 DEBUG QueryTranslatorImpl:305 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'from'
+       |  \-[RANGE] Node: 'RANGE'
+       |     \-[DOT] Node: '.'
+       |        +-[DOT] Node: '.'
+       |        |  +-[DOT] Node: '.'
+       |        |  |  +-[DOT] Node: '.'
+       |        |  |  |  +-[DOT] Node: '.'
+       |        |  |  |  |  +-[IDENT] Node: 'com'
+       |        |  |  |  |  \-[IDENT] Node: 'vwr'
+       |        |  |  |  \-[IDENT] Node: 'em'
+       |        |  |  \-[IDENT] Node: 'migration'
+       |        |  \-[IDENT] Node: 'dao'
+       |        \-[IDENT] Node: 'DocumentDao'
+       \-[SELECT] Node: 'select'
+          +-[DISTINCT] Node: 'distinct'
+          \-[IDENT] Node: 'orgId'
+
+2018-07-16 19:29:53 DEBUG HqlSqlBaseWalker:124 - select << begin [level=1, statement=select]
+2018-07-16 19:29:53 DEBUG FromElement:147 - FromClause{level=1} : com.vwr.em.migration.dao.DocumentDao (<no alias>) -> documentda0_
+2018-07-16 19:29:53 DEBUG FromReferenceNode:60 - Resolved : {synthetic-alias} -> {synthetic-alias}
+2018-07-16 19:29:53 DEBUG DotNode:688 - getDataType() : orgId -> org.hibernate.type.IntegerType@6175619b
+2018-07-16 19:29:53 DEBUG FromReferenceNode:60 - Resolved : {synthetic-alias}.orgId -> documentda0_.ORG_ID
+2018-07-16 19:29:53 DEBUG HqlSqlBaseWalker:128 - select : finishing up [level=1, statement=select]
+2018-07-16 19:29:53 DEBUG HqlSqlWalker:747 - processQuery() :  ( SELECT ( {select clause} distinct ( documentda0_.ORG_ID {synthetic-alias} orgId ) ) ( FromClause{level=1} DOCUMENT documentda0_ ) )
+2018-07-16 19:29:53 DEBUG JoinProcessor:192 - Using FROM fragment [DOCUMENT documentda0_]
+2018-07-16 19:29:53 DEBUG HqlSqlBaseWalker:132 - select >> end [level=1, statement=select]
+2018-07-16 19:29:53 DEBUG QueryTranslatorImpl:269 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (DOCUMENT)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[DISTINCT] SqlNode: 'distinct'
+    |  +-[DOT] DotNode: 'documentda0_.ORG_ID' {propertyName=orgId,dereferenceType=PRIMITIVE,getPropertyPath=orgId,path={synthetic-alias}.orgId,tableAlias=documentda0_,className=com.vwr.em.migration.dao.DocumentDao,classAlias=null}
+    |  |  +-[IDENT] IdentNode: '{synthetic-alias}' {originalText={synthetic-alias}}
+    |  |  \-[IDENT] IdentNode: 'orgId' {originalText=orgId}
+    |  \-[SELECT_COLUMNS] SqlNode: ' as col_0_0_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[documentda0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'DOCUMENT documentda0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=DOCUMENT,tableAlias=documentda0_,origin=null,columns={,className=com.vwr.em.migration.dao.DocumentDao}}
+
+2018-07-16 19:29:53 DEBUG ErrorCounter:95 - throwQueryException() : no errors
+2018-07-16 19:29:53 DEBUG QueryTranslatorImpl:251 - HQL: select distinct orgId from com.vwr.em.migration.dao.DocumentDao
+2018-07-16 19:29:53 DEBUG QueryTranslatorImpl:252 - SQL: select distinct documentda0_.ORG_ID as col_0_0_ from DOCUMENT documentda0_
+2018-07-16 19:29:53 DEBUG ErrorCounter:95 - throwQueryException() : no errors
+2018-07-16 19:29:53 DEBUG SQL:92 - select distinct documentda0_.ORG_ID as col_0_0_ from DOCUMENT documentda0_

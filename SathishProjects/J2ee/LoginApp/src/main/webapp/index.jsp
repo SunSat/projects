@@ -1,5 +1,11 @@
 <html>
+<head>
+    <script rel="script" type="application/javascript">
+        window.onload = function () {
+            location.href = "homepage.an";
+        }
+    </script>
+</head>
 <body>
-<h2>Hello World!</h2>
 </body>
 </html>

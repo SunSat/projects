@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by sathishkumar_su on 2/24/2018.
  */
 public interface BaseModel {
-    public String getType() ;
+    public Class getType() ;
     public Long getPrimarykeyId();
     public Long getCreatedById();
     public Long getModifiedById();

@@ -16,7 +16,7 @@ import java.util.List;
 public class UserDaoServiceImpl extends BaseDaoServiceImpl {
 
     public int add(UserDaoModel model) throws SQLException {
-        String sql = "insert into user (userid,first_name,last_name,user_name,password,email,mobile_no,admin,type,rank) " +
+        String sql = "insert into u_user (userid,first_name,last_name,user_name,password,email,mobile_no,admin,type,rank) " +
                 "values (?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement insertSt = null;
         int maxId = getMaxId("user","userid");
@@ -45,7 +45,7 @@ public class UserDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public int delete(UserDaoModel model) throws SQLException {
-        String sql = "delete from user where userid=?";
+        String sql = "delete from u_user where userid=?";
         PreparedStatement delSt = null;
         int deleteCount = 0 ;
         Connection con = DaoManager.getConnection();
@@ -65,7 +65,7 @@ public class UserDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public int update(UserDaoModel model) throws SQLException {
-        String sql = "update user set first_name=?,last_name=?,user_name=?,password=?,email=?,mobile_no=?,admin=?,type=?,rank=?"
+        String sql = "update u_user set first_name=?,last_name=?,user_name=?,password=?,email=?,mobile_no=?,admin=?,type=?,rank=?"
                 + " where userid=?";
         PreparedStatement updateSt = null;
         int updateCount = 0;
@@ -96,7 +96,7 @@ public class UserDaoServiceImpl extends BaseDaoServiceImpl {
 
 
     public List<UserDaoModel> getByName(String name) throws SQLException {
-        String sql = "select * from user where user_name = ?";
+        String sql = "select * from u_user where user_name = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         List<UserDaoModel> userLi = new ArrayList<>();
@@ -131,7 +131,7 @@ public class UserDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public UserDaoModel getById(int id) throws SQLException {
-        String sql = "select * from user where userid = ?";
+        String sql = "select * from u_user where userid = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         Connection con = null;
@@ -165,7 +165,7 @@ public class UserDaoServiceImpl extends BaseDaoServiceImpl {
     }
 
     public List<UserDaoModel> getAllByName(String objName) throws SQLException{
-        String sql = "select * from user where first_name = ?";
+        String sql = "select * from u_user where first_name = ?";
         PreparedStatement getState = null;
         ResultSet rs = null;
         List<UserDaoModel> userLi = new ArrayList<>();

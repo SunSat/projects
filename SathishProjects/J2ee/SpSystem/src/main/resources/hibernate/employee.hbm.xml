@@ -9,6 +9,6 @@
             <generator class="increment"/>
         </id>
         <property name="type" column="type"></property>
-        <property name="description" column="description" ></property>
+        <property name="message" column="message" ></property>
     </class>
 </hibernate-mapping>

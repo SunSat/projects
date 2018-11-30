@@ -1,6 +1,6 @@
 <%@ page import="java.util.Enumeration" %>
 <%@ page import="java.io.*,java.util.*" %>
-<%@ page import="com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LoggedUserFormModel" %>
+<%@ page import="com.sunsat.sathish.j2ee.loginapp.login.pojo.formModel.LogingFormModel" %>
 <%--
   Created by IntelliJ IDEA.
   User: sathishkumar_su
@@ -104,6 +104,6 @@ Today's Date is : <%=(new java.util.Date())%>
 
 <h2>The logged User Details were </h2>
 
-Hello Mr.<%=((LoggedUserFormModel)request.getAttribute("user")).getUserName()%> Welcome
+Hello Mr.<%=((LogingFormModel)request.getAttribute("user")).getUserName()%> Welcome
 </body>
 </html>

@@ -1,38 +1,36 @@
 package com.sunsat.sathish.j2ee.health.base.pojo.dao;
 
+import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
+import com.sunsat.sathish.j2ee.health.base.pojo.business.BaseBusiness;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
-public abstract class AbstractBaseDao implements BaseDao {
+public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness> implements BaseDao<BB> {
 
-    private String type;
-    private Long primarykeyId;
+    @Column(name = "created_by")
     private Long createdById;
+
+    @Column(name = "modified_by")
     private Long modifiedById;
+
+    @Column(name = "created_date")
     private Date createdByDate;
+
+    @Column(name = "modified_date")
     private Date modifiedByDate;
-    private boolean isDeleted;
-    private String description;
 
-    @Override
-    public String getType() {
-        return type;
-    }
+    @Column(name = "deleted")
+    private boolean deleted;
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    @Override
-    public Long getPrimarykeyId() {
-        return primarykeyId;
-    }
-
-    public void setPrimarykeyId(Long primarykeyId) {
-        this.primarykeyId = primarykeyId;
-    }
+    @Column(name = "message")
+    private String message;
 
     @Override
     public Long getCreatedById() {
@@ -72,19 +70,20 @@ public abstract class AbstractBaseDao implements BaseDao {
 
     @Override
     public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
+        return deleted;
     }
 
     @Override
-    public String getDescription() {
-        return description;
+    public void setIsDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

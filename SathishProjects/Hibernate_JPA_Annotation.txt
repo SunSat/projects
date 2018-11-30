@@ -1,0 +1,37 @@
+Declaration Annotations
+@Entity - Defining Bean as JPA/Hibernate Bean
+@Table - Mapping a Bean with Table
+    (name = "")
+@Transient - Any property not required to match by JPA
+@Basic -
+@Lob, @Bob
+@Temporal - will tell which field in time, Like Time, Date, TimeDate etc
+@Embeded
+@Embedable
+@AttributeOverride
+@Column
+    Ex :
+        class Student {
+
+            Address address;
+
+            @Embeded
+            @AttributeOverrides({
+                @AttributeOverride(name="iso2" column=@Column(name="borIns2"))
+            })
+            Professional professional;
+        }
+
+        @Embedable
+        class Address {
+
+        }
+
+        @Embedable
+        class Professional {
+
+        }
+
+@Id
+@GeneratedValue(strategy,generator)
+

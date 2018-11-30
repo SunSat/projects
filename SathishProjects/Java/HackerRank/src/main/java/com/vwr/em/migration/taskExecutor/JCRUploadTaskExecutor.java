@@ -60,7 +60,7 @@ public class JCRUploadTaskExecutor extends MigrationTaskExecutor {
                     try {
                         String fileName = f.getName();
                         String contextType = fileName.substring(fileName.lastIndexOf('.'));
-                        newDao = JCRFileUtil.saveFileNode(bos, contextType, "em/service", fileName, doDao, false);
+                        newDao = JCRFileUtil.saveFileNode(bos, contextType, "em/businessService", fileName, doDao, false);
                         newDao.setFileName(fileName);
                     } catch (Exception e) {
                         e.printStackTrace();

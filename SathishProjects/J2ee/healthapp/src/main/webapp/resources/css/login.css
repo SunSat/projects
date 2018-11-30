@@ -1,0 +1,401 @@
+.main-login-container {
+
+    /*
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 7%;
+    z-index: 9999;
+    border: #e67e22 1px solid;
+    width: 400px;
+    height: 450px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0,0,0,0.5)
+    */
+
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.show-login {
+    display: block;
+}
+
+.contant-container {
+    display: block;
+    background-color: white;
+    top: 60px;
+    margin: auto;
+    width: 400px;
+    height: 440px;
+    position: relative;
+    box-shadow: 1px 2px 20px rgba(230, 125, 34, .5);
+    border: solid 1px #e67e22;
+}
+
+.login-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    transition: 0.5s;
+}
+
+.login-header {
+    width: 100%;
+    height: 8%;
+    display: block;
+    margin-top: 2.5%;
+}
+
+.header-text {
+    display: block;
+    float: left;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.mycloseicon {
+    display: block;
+    float: left;
+    width: 10%;
+    text-align: left;
+}
+
+.mycloseicon:hover,
+.mycloseicon:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.login-handler {
+    width: 100%;
+    height: 90%;
+}
+
+.through-social-media {
+    width: 100%;
+    height: 20%;
+    display: block;
+}
+
+.through-social-media a {
+    width: 25%;
+    height: 28%;
+    display: block;
+    float: left;
+    margin: 0% 3.5%;
+    background-color: #e67e22;
+    border-radius: 5px;
+    color: white;
+    text-align: left;
+}
+
+.through-social-media p {
+    display: inline-block;
+    width: 100%;
+    margin: 0% auto 4% auto;
+    text-align: center;
+}
+
+.through-social-media i {
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    margin: 2% 2% 0% 2%;
+
+}
+
+.through-social-media span {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+
+.between-social-and-user {
+    content: "----------  Or -----------";
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    display: block;
+    color: #95a5a6;
+    margin-bottom: 2%;
+}
+
+.login-catption {
+    color: #95a5a6;
+}
+
+.through-username-pass {
+    width: 90%;
+    height: 80%;
+    display: inline-block;
+    float: left;
+    margin-left: 3%;
+}
+
+.through-username-pass p {
+    width: 100%;
+    text-align: center;
+}
+
+.responseResult {
+    width: 100%;
+    margin: 2% auto 2% auto;
+    display: block;
+    text-align: left;
+    color: #b10000;
+}
+
+.div-username,
+.div-password {
+    margin-top: 1%;
+    border: solid #e67e22 1px;
+}
+
+.username,
+.password{
+    width: 100%;
+    outline: none;
+    border-style: none;
+}
+
+.keep-me-signed-in {
+    margin: 2% auto;
+    font-size: 80%;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.btn-submit {
+    width: 100%;
+    display: inline-block;
+    background-color: #e67e22;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    padding: 4% auto;
+    font-size: 100%;
+}
+
+.signup-forgotpassword {
+    width: 100%;
+    margin-top: 1%;
+}
+
+.div-not-a-member {
+    display:  block;
+    float: left;
+    text-align: left;
+    font-size: 80%;
+    width: 50%;
+}
+
+.div-not-a-member a {
+    margin-left: 2%;
+    display: inline-block;
+    font-size: 100%;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 80%;
+    float: right;
+}
+
+.media-link:link,
+.media-link:visited,
+.media-link:hover,
+.media-link:active{
+    text-decoration: none;
+}
+
+.div-facebook:hover {
+    background-color: #2e86de;
+}
+
+.div-twitter:hover {
+    background-color: #54a0ff;
+}
+
+.div-gmail:hover {
+    background-color: #d63031;
+}
+
+.sign-up,
+.forgot-password {
+    color: #e67e22;
+    font-size: 80%;
+}
+
+.by_social_medai:hover .social-icon {
+    transition: transform 1s;
+    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 420px) {
+    .main-login-container {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 410px;
+        font-size: 80%;
+    }
+
+    .contant-container {
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: 410px;
+    }
+}
+
+/*THis is for place holder*/
+.placeholder-fix::-webkit-input-placeholder  {
+    color:#95a5a6;
+    -webkit-transition: all 0.50s ease;
+    -ms-transition: all 0.50s ease;
+    -moz-transition: all 0.50s ease;
+    -o-transition: all 0.50s ease;
+    transition: all 0.50s ease;
+}
+.placeholder-fix::-moz-placeholder   {
+    color:#95a5a6;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.placeholder-fix:-moz-placeholder   {
+    color:#95a5a6;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.placeholder-fix:focus::-webkit-input-placeholder  {color:transparent;}
+.placeholder-fix:focus::-moz-placeholder   {color:transparent;}
+.placeholder-fix:-moz-placeholder   {color:transparent;}
+/*This is for place holder*/
+
+/*Sign Up Form*/
+.signUp-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.signup-unorder-list {
+    width: 95%;
+    height: 100%;
+    list-style: none;
+    margin: auto;
+}
+
+.div-signup {
+    margin-top: 0%;
+    border: none;
+    border:solid #e67e22 1px;
+}
+
+.input-signup {
+    width: 100%;
+    outline: none;
+    border-style: none;
+}
+
+.warning-messages p{
+    width: 100%;
+    margin: 0% auto 2% auto;
+    text-align: center;
+    display: block;
+    color: #b10000;
+}
+
+.sign-up-footer {
+    margin-top: 2%;
+    display: block;
+}
+
+.ion-android-checkmark-circle {
+    text-align: center;
+    display: inline;
+    color: #8bc34a;
+}
+
+.close-circle-outline {
+    text-align: center;
+    display: inline;
+    color: #8bc34a;
+}
+/*Forgot Password*/
+.forgot-password-container {
+    width: 95%;
+    height: 100%;
+    position: relative;
+    display: none;
+    margin: auto;
+}
+
+.forgot-pass-submit {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 1% auto 0% auto;
+}
+
+.forgot-pass-submit a {
+    width: 40%;
+    display: inline-block;
+    background-color: #e67e22;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 100%;
+}
+
+.forgot-pass-dashes {
+    width: 100%;
+    text-align: center;
+    color:#95a5a6;
+    margin: 0%;
+}
+.reset-password-ul {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.lbl-reset-password,
+.lbl-reset-password-conf {
+    display: inline-block;
+    width: 28%;
+    float: left;
+}
+
+.reset-password,
+.reset-password-conf {
+    width: 70%;
+    margin-top: 0.5%;
+    outline: #e67e22;
+    border: solid 1px #e67e22;
+}
+/*Forgot passrod end*/
