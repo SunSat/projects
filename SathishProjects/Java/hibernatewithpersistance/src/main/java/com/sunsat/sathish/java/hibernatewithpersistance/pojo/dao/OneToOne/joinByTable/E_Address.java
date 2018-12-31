@@ -1,17 +1,28 @@
-package com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.OneToOne.bidirection;
-
-import org.hibernate.annotations.Cascade;
+package com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.OneToOne.joinByTable;
 
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ CREATE TABLE `003_e_address_onetoone_join_by_table`
+ (
+ `id`          int(11) NOT NULL AUTO_INCREMENT,
+ `street_name` varchar(40) DEFAULT NULL,
+ `city_name`   varchar(40) DEFAULT NULL,
+ `state_name`  varchar(40) DEFAULT NULL,
+ `zipcode`     varchar(10) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+ ) ENGINE = InnoDB
+ DEFAULT CHARSET = utf8
+
+ */
 @Entity
-@Table(name = "001_e_address_onetoone_fk")
+@Table(name = "003_e_address_onetoone_join_by_table")
 public class E_Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "street_name")
@@ -26,18 +37,24 @@ public class E_Address {
     @Column(name = "zipcode")
     private String zipcode;
 
-    @OneToOne(fetch = FetchType.LAZY,orphanRemoval = true,targetEntity = E_Employee.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "e_employee_id")
-    protected E_Employee e_employee;
+    @OneToOne(mappedBy = "address")
+    private E_Employee employee;
+
+    public E_Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(E_Employee employee) {
+        this.employee = employee;
+    }
 
     public E_Address() {}
 
-    public E_Address(String street, String city, String state, String zipcode, E_Employee empl) {
+    public E_Address(String street, String city, String state, String zipcode) {
         this.street = street;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        this.e_employee = empl;
     }
 
     public int getId() {
@@ -80,14 +97,6 @@ public class E_Address {
         this.zipcode = zipcode;
     }
 
-    public E_Employee getE_employee() {
-        return e_employee;
-    }
-
-    public void setE_employee(E_Employee employee) {
-        this.e_employee = employee;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -97,13 +106,12 @@ public class E_Address {
                 Objects.equals(street, e_address.street) &&
                 Objects.equals(city, e_address.city) &&
                 Objects.equals(state, e_address.state) &&
-                Objects.equals(zipcode, e_address.zipcode) &&
-                Objects.equals(e_employee, e_address.e_employee);
+                Objects.equals(zipcode, e_address.zipcode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, street, city, state, zipcode, e_employee);
+        return Objects.hash(id, street, city, state, zipcode);
     }
 
     @Override
@@ -114,7 +122,6 @@ public class E_Address {
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zipcode='" + zipcode + '\'' +
-                ", employee=" + e_employee +
                 '}';
     }
 }

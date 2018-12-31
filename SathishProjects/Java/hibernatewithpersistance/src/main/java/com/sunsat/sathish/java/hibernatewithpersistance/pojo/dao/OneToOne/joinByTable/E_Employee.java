@@ -1,17 +1,40 @@
-package com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.OneToOne.bidirection;
-
-import org.hibernate.annotations.Cascade;
+package com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.OneToOne.joinByTable;
 
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ CREATE TABLE `003_e_employee_onetoone_join_by_table`
+ (
+ `id`         int(11) NOT NULL AUTO_INCREMENT,
+ `first_name` varchar(20) DEFAULT NULL,
+ `last_name`  varchar(20) DEFAULT NULL,
+ `salary`     int(11)     DEFAULT NULL,
+ PRIMARY KEY (`id`)
+ ) ENGINE = InnoDB
+ AUTO_INCREMENT = 27
+ DEFAULT CHARSET = utf8
+
+ CREATE TABLE `003_employee_address_link_onetoone_join_by_table` (
+ `id` int(10) NOT NULL AUTO_INCREMENT,
+ `e_employee_id` int(10) DEFAULT NULL,
+ `e_address_id` int(10) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `003_employee_address_link_onetoone_to_003_e_address_fk` (`e_address_id`),
+ KEY `003_employee_address_link_to_003_e_employee` (`e_employee_id`),
+ CONSTRAINT `003_employee_address_link_onetoone_to_003_e_address_fk` FOREIGN KEY (`e_address_id`) REFERENCES `003_e_address_onetoone_join_by_table` (`id`),
+ CONSTRAINT `003_employee_address_link_to_003_e_employee` FOREIGN KEY (`e_employee_id`) REFERENCES `003_e_employee_onetoone_join_by_table` (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+ */
 @Entity
-@Table(name = "001_e_employee_onetoone_fk")
+@Table(name = "003_e_employee_onetoone_join_by_table")
 public class E_Employee{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "first_name")
@@ -23,8 +46,11 @@ public class E_Employee{
     @Column(name="salary")
     private int salary;
 
-    @OneToOne(mappedBy = "e_employee")
-    private E_Address address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "003_employee_address_link_onetoone_join_by_table",
+    joinColumns = @JoinColumn(name = "e_employee_id") ,
+    inverseJoinColumns = @JoinColumn(name = "e_address_id"))
+   private E_Address address;
 
     public E_Address getAddress() {
         return address;

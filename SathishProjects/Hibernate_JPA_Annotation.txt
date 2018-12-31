@@ -34,4 +34,109 @@ Declaration Annotations
 
 @Id
 @GeneratedValue(strategy,generator)
+@Column - We can mentioned the column Name
+@OneToOne(cascade, MappedBy, TargetEntity come when we use Interface) -
+@OneToMany
+@ManyToOne
+@ManyToMany
+@JoinColumn(name)
+@PrimaryKeyJoinColumn
+@JoinTables(joinColumn,inverseJoinColumn)
+@Cascade - Cascade Operation for all mapped elements.
+@ElementCollection - Only for basic properties. Not specific to Persistance properties - For Set,List, Bag & Collections.
+@CollectionTable - Specificy the collection table details.
+@MapKeyColumn- For Map
+@OrderBy
+@Enumerated(By String, Ordinal)
+@Temporal(TemporalType.TIME)
+
+Ex 1 :
+@Converter
+public class PeriodStringConverter
+        implements AttributeConverter<Period, String> {
+
+    @Override
+    public String convertToDatabaseColumn(Period attribute) {
+        return attribute.toString();
+    }
+
+    @Override
+    public Period convertToEntityAttribute(String dbData) {
+        return Period.parse( dbData );
+    }
+}
+
+@Entity
+public class Event {
+   @Id
+   @GeneratedValue(type= IDENTITY)
+   private int id;
+
+   @Convert(convertor = PeriodStringConverter.class)
+   @Column(name="")
+   private Period span;
+}
+
+Ex 2 :
+public class Money {
+   private long cents;
+
+   public long getCents() {
+       return cents;
+   }
+   public void setCents(long cents) {
+       this.cents = cents;
+   }
+}
+@Entity(name = "account")
+public class Account {
+    @Id
+    private int id;
+
+    private String owner;
+
+    @Convert(convertor=MoneyConvertor.class)
+    private Money balance;
+}
+
+public class MoneyConvertor implements AttributeConvertor<Money,Long> {
+    @Override
+    public Long convertToDatabaseColumn(Money attribute) {
+
+    }
+
+    @Override
+    public Money convertToEntiryAttribute(Long longAttr) {
+
+    }
+}
+
+Account ac = em.find(Account.class,1);
+ac.getBalance().setCents(100 * 150);
+em.persist(ac);
+
+@Column(name = "\"name\"") - Any reserved words of Java/JPA/Hibernate can be used in Quatord words with escape sequence.
+
+@Generated(value = GenerationTime.ALWAYS)
+@Column(columnDefinication= "AS concat(COALESCE(firstName, ''))")
+private String fullName
+
+Ex 1:
+
+@Entity
+public class Person {
+   @Id
+   @GeneratedValue
+   @Column(name = "id")
+   private int id;
+
+   private String firstName;
+   private String lastName;
+   private String middle1;
+   private String middle2;
+
+   @Generated(value=GenerationTime.always)
+   @Column(columnDefinition = "")
+   private String fullName;
+}
 

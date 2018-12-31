@@ -21,6 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+
     </properties>
 
     <dependencies>
@@ -133,11 +134,12 @@
                 <executions>
                     <execution>
                         <id>copy-resources</id>
-                        <phase>install</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
+                            <!--outputDirectory>${project.build.outputDirectory}</outputDirectory-->
                             <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                             <resources>
                                 <resource>

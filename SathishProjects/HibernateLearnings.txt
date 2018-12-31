@@ -1,3 +1,4 @@
+0. For Hibernate its mandatory to put the persistance file inside META-INF/persistence.xml
 1. Hibernate POJO may not need to implement serialize.
 2. POJO can be implement or abstract or extends any class.
 3. Only mandatory is POJO should be top level class.

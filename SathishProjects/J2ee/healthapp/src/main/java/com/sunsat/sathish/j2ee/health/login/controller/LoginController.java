@@ -58,7 +58,7 @@ public class LoginController {
             resModel.setMessage("Please provide all necessary data.");
         } else {
             try {
-                resModel = loginService.createNewUser(model);
+                //resModel = loginService.createNewUser(model);
             }catch (LoginException lo) {
                 resModel.setMessage("Error while crating User. Please contact Admin.");
             }

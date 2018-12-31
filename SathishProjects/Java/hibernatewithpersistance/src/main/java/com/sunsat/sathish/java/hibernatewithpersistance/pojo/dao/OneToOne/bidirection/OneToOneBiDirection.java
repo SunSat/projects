@@ -1,6 +1,7 @@
 package com.sunsat.sathish.java.hibernatewithpersistance.pojo.dao.OneToOne.bidirection;
 
 import com.sunsat.sathish.java.hibernatewithpersistance.PersistanceMgr;
+import com.sunsat.sathish.java.util.CommonsUtil;
 
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,9 @@ public class OneToOneBiDirection {
 
     public static void main(String[] args) {
         System.out.println("From bidirection - Start");
+
+        CommonsUtil.printSystemEnvs();
+
         EntityManager mgr = PersistanceMgr.getManager();
 
         mgr.getTransaction().begin();
