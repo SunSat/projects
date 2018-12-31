@@ -1,0 +1,14 @@
+https://medium.freecodecamp.org/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+https://hackernoon.com/the-2018-react-js-roadmap-4d0a43814c02
+
+https://reactpatterns.com/
+https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
+https://www.sitepoint.com/organize-large-react-application/
+https://facebook.github.io/react-native/blog/
+https://facebook.github.io/react-native/blog/2018/06/14/state-of-react-native-2018
+https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76
+
+React is Javascript Library which enforece the cross cutting concenrs like 
+  1. Data binding 
+  2. 
+
