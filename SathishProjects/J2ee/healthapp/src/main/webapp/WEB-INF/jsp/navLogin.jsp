@@ -54,7 +54,6 @@
 
             </div>
             <div class="warning-messages">
-                <p>Address already Exist. Please Sign up.</p>
             </div>
             <form method="post" action="submit" class="login-handler">
                 <div class="through-social-media">
