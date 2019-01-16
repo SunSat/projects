@@ -17,6 +17,4 @@ public interface BaseBusinessService<BM extends BaseModel> {
    public boolean delete(BM baseMolel);
    public boolean update(BM baseModel);
    public Long getCount(BM baseModel);
-   public boolean sendMail(BM mailModel);
-
 }

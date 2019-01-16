@@ -1,0 +1,12 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="healthapp" transaction-type="RESOURCE_LOCAL">
+        <description>Health Application persistence manager</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL55Dialect"/>
+        </properties>
+        <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao</class>
+        <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao</class>
+    </persistence-unit>
+</persistence>

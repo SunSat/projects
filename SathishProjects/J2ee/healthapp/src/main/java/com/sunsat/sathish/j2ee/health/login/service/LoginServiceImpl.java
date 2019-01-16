@@ -1,27 +1,29 @@
 package com.sunsat.sathish.j2ee.health.login.service;
 
 import com.sunsat.sathish.j2ee.health.login.loginException.LoginException;
-import com.sunsat.sathish.j2ee.health.login.persistor.LoginDaoPersistorImpl;
-import com.sunsat.sathish.j2ee.health.login.persistor.UserDaoPersistorImpl;
+import com.sunsat.sathish.j2ee.health.login.persistor.LoginGenericDaoPersistor;
+import com.sunsat.sathish.j2ee.health.login.pojo.business.LoginBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-@Service("loginServiceImpl")
+@Service("loginService")
 public class LoginServiceImpl extends LoginBusinessService<UserFormModel> {
 
     @Autowired
-    UserDaoPersistorImpl userDaoPersistor;
+    @Qualifier("loginDaoPersistor")
+    LoginGenericDaoPersistor loginDaoPer;
 
-    @Autowired
-    LoginDaoPersistorImpl loginDaoPersistor;
+
 
     public UserFormModel createNewUser(UserFormModel model) {
+        //LoginDaoPersistorImpl loginPersistor = LoginDaoPersistorImpl.getInstance();
         String userName = model.getUserName();
         UserBusiness userBusines = new UserBusiness();
         userBusines.setUserName(userName);
@@ -33,14 +35,17 @@ public class LoginServiceImpl extends LoginBusinessService<UserFormModel> {
         userBusines.setCreatedByDate(new Date());
         userBusines.setModifiedByDate(new Date());
 
+        LoginBusiness bussiness = new LoginBusiness();
+
         String query = "from UserDao u where u.userName = '"+"sat"+"'";
-        List<UserDao> dao = userDaoPersistor.getByQuery(userDaoPersistor.getDaoClass(),query);
+        List<UserDao> dao = null;//userDaoPersistor.getByQuery(userDaoPersistor.getDaoClass(),query);
         if(dao != null && dao.size() > 1) {
             throw new LoginException("UserName already exists");
         }
 
-        UserDao newUserDao = userDaoPersistor.persist(userBusines);
-        model.setPrimarykeyId(newUserDao.getPrimarykeyId());
+        //userDaoPersistor.add(userBusines);
+        model.setPrimarykeyId(userBusines.getPrimarykeyId());
+        loginDaoPer.persist(bussiness);
         model.setMessage("Account Created Successfully. Plz verify through your mail id.");
         return model;
     }

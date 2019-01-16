@@ -1,5 +1,6 @@
 package com.sunsat.sathish.j2ee.health.base.businessService;
 
+import com.sunsat.sathish.j2ee.health.base.pojo.model.AbstractBaseModel;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.BaseModel;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
-public abstract class AbstractBusinessService<BM extends BaseModel> implements BaseBusinessService<BM> {
+public abstract class AbstractBusinessService<BM extends AbstractBaseModel> implements BaseBusinessService<BM> {
 
    /* DaoPersistor persistor = DaoPersistor.getInstance();
 
@@ -112,7 +113,6 @@ public abstract class AbstractBusinessService<BM extends BaseModel> implements B
         return null;
     }
 
-    @Override
     public boolean sendMail(BM mailModel) {
         return false;
     }

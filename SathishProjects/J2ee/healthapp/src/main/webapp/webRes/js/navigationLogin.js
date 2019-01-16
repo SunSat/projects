@@ -160,7 +160,7 @@ function performLogin() {
         formAction : formAction,
         formSubAction : formSubAction,
     }
-    performAjaxRequest("post","loginAction.an",true,data,performSuccessfulLogin);
+    performAjaxRequest("post","loginAction.do",true,data,performSuccessfulLogin);
 }
 
 function performSuccessfulLogin(xhttp) {

@@ -1,5 +1,6 @@
 package com.sunsat.sathish.j2ee.health.login.controller;
 
+import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
 import com.sunsat.sathish.j2ee.health.login.loginException.LoginException;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.LoginResponseModel;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
@@ -24,12 +25,12 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
     @Autowired
-    @Qualifier("loginServiceImpl")
     LoginBusinessService loginService;
 
 
     @RequestMapping(value = {"/homepage.an","/"," * "},method = RequestMethod.GET)
     public String loadHomePage() {
+        //loginService.createNewUser(new UserFormModel());
         return "homepage";
     }
 
@@ -43,6 +44,10 @@ public class LoginController {
             ses.invalidate();
             ses = request.getSession(true);
         }
+        UserFormModel model1 = new UserFormModel();
+        model1.setUserName("Hello");
+        model1.setPassword("Good");
+
         return new UserFormModel();
     }
 

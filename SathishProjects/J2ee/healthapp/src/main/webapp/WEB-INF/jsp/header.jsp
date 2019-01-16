@@ -1,7 +1,7 @@
 <header class="header-container">
     <div class="main-header-container">
         <div class="main-logo-div">
-            <img src="resources/img/logo_healthy_life_technique.jpg" alt="Logo Healthy Life Technique" class="main-logo">
+            <img src="webRes/img/logo_healthy_life_technique.jpg" alt="Logo Healthy Life Technique" class="main-logo">
         </div>
         <div class="google-ad-sense">
             Display google Adds.

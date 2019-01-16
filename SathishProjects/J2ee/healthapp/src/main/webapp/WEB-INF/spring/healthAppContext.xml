@@ -31,10 +31,11 @@
     <task:annotation-driven/>
     <tx:annotation-driven/>
 
-    <context:component-scan base-package="com.sunsat.sathish.j2ee.health.*">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    <context:component-scan base-package="com.sunsat.sathish.j2ee.health">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <!--context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-        <context:include-filter type="annotation" expression="javax.persistence.Entity"/>
+        <context:include-filter type="annotation" expression="javax.persistence.Entity"/-->
     </context:component-scan>
 
     <context:property-placeholder location="classpath:hibernate/hibernate.properties"/>
@@ -46,7 +47,18 @@
         <property name="password" value="${hibernate.connection.password}"/>
     </bean>
 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <bean id="jpaVendorAdaptor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+    <bean id="entityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="datasource"/>
+        <property name="persistenceUnitName" value="healthapp"/>
+    </bean>
+
+    <bean id="loginDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.LoginDaoPersistorImpl" lazy-init="false" />
+
+    <bean id="userDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.UserDaoPersistorImpl"/>
+
+    <!--bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource"  ref="datasource"/>
         <property name="annotatedClasses"  value="javax.persistence.Entity"/>
         <property name="hibernateProperties">
@@ -59,10 +71,14 @@
                 <prop key="hibernate.current_session_context_class">${hibernate.connection.current_session_context_class}</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="com.sunsat.sathish.j2ee.health.*.pojo.dao"/>
+        <property name="packagesToScan" value="com.sunsat.sathish.j2ee.health"/>
+    </bean-->
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManager"/>
     </bean>
 
-    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    <bean id="persistenceExceptionTranslationPostProcessor" class=
+            "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
 </beans>

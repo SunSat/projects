@@ -1,9 +1,11 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
+import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GeneratorType;
+import org.springframework.context.annotation.ComponentScan;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,7 +16,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "user")
-public class UserDao extends AbstractBaseDao<UserBusiness> {
+public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
 
     @Id
     @Column(name = "id")
@@ -101,9 +103,98 @@ public class UserDao extends AbstractBaseDao<UserBusiness> {
         this.accountStatus = accountStatus;
     }
 
+    @Column(name = "created_by")
+    private Long createdById;
+
+    @Column(name = "modified_by")
+    private Long modifiedById;
+
+    @Column(name = "created_date")
+    private Date createdByDate;
+
+    @Column(name = "modified_date")
+    private Date modifiedByDate;
+
+    @Column(name = "deleted")
+    private boolean deleted;
+
+    @Column(name = "message")
+    private String message;
+
     @Override
-    public UserBusiness getBusinessValue() {
+    public Long getCreatedById() {
+        return createdById;
+    }
+
+    public void setCreatedById(Long createdById) {
+        this.createdById = createdById;
+    }
+
+    @Override
+    public Long getModifiedById() {
+        return modifiedById;
+    }
+
+    public void setModifiedById(Long modifiedById) {
+        this.modifiedById = modifiedById;
+    }
+
+    @Override
+    public Date getCreatedByDate() {
+        return createdByDate;
+    }
+
+    public void setCreatedByDate(Date createdByDate) {
+        this.createdByDate = createdByDate;
+    }
+
+    @Override
+    public Date getModifiedByDate() {
+        return modifiedByDate;
+    }
+
+    public void setModifiedByDate(Date modifiedByDate) {
+        this.modifiedByDate = modifiedByDate;
+    }
+
+    @Override
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    @Override
+    public void setIsDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public UserBusiness getBusinessValue(BaseDataFilter filter) {
         UserBusiness business = new UserBusiness();
+        switch (filter) {
+            case BY_ALL:
+                business.setUserName(this.getUserName());
+                business.setAccountStatus(this.getAccountStatus());
+                business.setPrimarykeyId(this.getPrimarykeyId());
+                business.setCreatedByDate(this.getCreatedByDate());
+                business.setCreationTime(this.getCreationTime());
+                business.setDescription(this.getMessage());
+                business.setIsDeleted(this.isDeleted());
+                business.setModifiedById(this.getModifiedById());
+                business.setModifiedByDate(this.getModifiedByDate());
+                break;
+            case BY_BUSINESS_KEY:
+
+                break;
+        }
         return business;
     }
 

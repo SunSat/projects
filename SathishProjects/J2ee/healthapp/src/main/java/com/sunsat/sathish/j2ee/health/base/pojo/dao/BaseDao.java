@@ -1,5 +1,6 @@
 package com.sunsat.sathish.j2ee.health.base.pojo.dao;
 
+import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.business.BaseBusiness;
 
 import java.io.Serializable;
@@ -8,9 +9,9 @@ import java.util.Date;
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
-public interface BaseDao<BB extends BaseBusiness> extends Serializable,Cloneable {
+public interface BaseDao<BB extends BaseBusiness,DF extends Enum> extends Serializable,Cloneable {
 
-    public Class<BaseDao> getType();
+    public Class<BB> getType();
 
     public Long getPrimarykeyId();
     public void setPrimarykeyId(Long primarykeyId);
@@ -33,7 +34,7 @@ public interface BaseDao<BB extends BaseBusiness> extends Serializable,Cloneable
     public String getMessage();
     public void setMessage(String message);
 
-    public BB getBusinessValue();
+    public BB getBusinessValue(DF df);
     public void setBusinessValue(BB businessValue);
 
 }

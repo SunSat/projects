@@ -131,41 +131,41 @@
               <table class="img-table1">
                 <tr>
                   <td>
-                    <img src="resources/img/content/hospitals_420_232.png">
+                    <img src="webRes/img/content/hospitals_420_232.png">
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="resources/img/content/Research_Labs_microscope-275984__480.jpg"/>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <img src="resources/img/content/health_products.jpg"/>
+                    <img src="webRes/img/content/Research_Labs_microscope-275984__480.jpg"/>
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <img src="resources/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
+                    <img src="webRes/img/content/health_products.jpg"/>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img src="webRes/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
                   </td>
                 </tr>
               </table>
               <table class="img-table2">
                 <tr>
                   <td>
-                    <img src="resources/img/content/the_top_50_most_valuable_cosmetics_brands_2014.jpg"/>
+                    <img src="webRes/img/content/the_top_50_most_valuable_cosmetics_brands_2014.jpg"/>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="resources/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
+                    <img src="webRes/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="resources/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
+                    <img src="webRes/img/content/bethesda-naval-medical-center-80380__480.jpg"/>
                   </td>
                 </tr>
               </table>
