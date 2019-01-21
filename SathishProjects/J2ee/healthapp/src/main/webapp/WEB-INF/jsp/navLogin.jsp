@@ -1,4 +1,5 @@
 <nav class="navigation-container">
+    <input type="hidden" name="${_csrf.parameterName}" id="${_csrf.parameterName}" value="${_csrf.token}"/>
     <a href="#" class="ion-navicon-round shortcut-div"></a>
     <div class="search-share-navigations">
         <div class="search-share-div">

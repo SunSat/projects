@@ -148,19 +148,23 @@ performSuccessfulSignUp = function(xhttp) {
 
 function performLogin() {
 
-    var uName  = document.getElementById("loginUserName").value;
-    var pass  = document.getElementById("loginPassword").value;
+    var uName  = document.getElementById('loginUsername').value;
+    var pass  = document.getElementById('loginPassword').value;
+    var csrf = document.getElementById('_csrf')
+    if(csrf != null) csrf = document.getElementById('_csrf').value;
+    else csrf = "1";
 
     var formAction = "loginPage";
     var formSubAction = "login";
 
     var data = {
-        userName: uName,
+        username: uName,
         password: pass,
         formAction : formAction,
         formSubAction : formSubAction,
+        _csrf : csrf
     }
-    performAjaxRequest("post","loginAction.do",true,data,performSuccessfulLogin);
+    performAjaxRequest("post","login",data,performSuccessfulLogin);
 }
 
 function performSuccessfulLogin(xhttp) {
@@ -301,7 +305,7 @@ function checkExistingUserName() {
             document.getElementById("signup-username-circle").style.display = block;
         }
     }
-    performAjaxRequest("post","checkExistingUserName.an",data,checkUserNameResponse);
+    performAjaxJsonRequest("post","checkExistingUserName.an",data,checkUserNameResponse);
 }
 
 function hideAllValidationCircles() {

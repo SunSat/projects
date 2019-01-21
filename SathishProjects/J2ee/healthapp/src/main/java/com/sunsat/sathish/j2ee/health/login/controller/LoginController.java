@@ -7,16 +7,15 @@ import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import com.sunsat.sathish.j2ee.health.login.service.LoginBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.awt.*;
 
 /**
  * Created by sathishkumar_su on 4/17/2018.
@@ -34,8 +33,9 @@ public class LoginController {
         return "homepage";
     }
 
-    @RequestMapping("/loginAction.do")
-    public UserFormModel peformLogin(@RequestBody UserFormModel model, HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ResponseBody
+    public UserFormModel peformLogin(@RequestParam  UserFormModel model, HttpServletRequest request, HttpServletResponse response) {
 
         HttpSession ses = request.getSession(true);
         if(ses.isNew()) {
@@ -77,9 +77,9 @@ public class LoginController {
         return new LoginResponseModel();
     }
 
-    @RequestMapping(value = "/checkExistingUserName.an", method = RequestMethod.POST)
-    @ResponseBody
-    public String checkExistingUserName(@RequestBody UserFormModel model) {
+    @RequestMapping(value = "/checkExistingUserName.an", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody String checkExistingUserName(@RequestParam UserFormModel model) {
+
 
         return "succss";
     }

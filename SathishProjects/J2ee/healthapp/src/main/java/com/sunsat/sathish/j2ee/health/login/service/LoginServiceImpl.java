@@ -1,5 +1,7 @@
 package com.sunsat.sathish.j2ee.health.login.service;
 
+import com.sunsat.sathish.j2ee.health.base.businessService.AbstractBusinessService;
+import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
 import com.sunsat.sathish.j2ee.health.login.loginException.LoginException;
 import com.sunsat.sathish.j2ee.health.login.persistor.LoginGenericDaoPersistor;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.LoginBusiness;
@@ -14,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service("loginService")
-public class LoginServiceImpl extends LoginBusinessService<UserFormModel> {
+public class LoginServiceImpl extends AbstractBusinessService<UserFormModel> implements LoginBusinessService {
 
     @Autowired
     @Qualifier("loginDaoPersistor")
@@ -67,4 +69,45 @@ public class LoginServiceImpl extends LoginBusinessService<UserFormModel> {
     public UserFormModel updateUser(UserFormModel model) {
         return null;
     }
+
+    @Override
+    public UserFormModel getByPrimarykey(UserFormModel baseModel) {
+        return null;
+    }
+
+    @Override
+    public List<UserFormModel> getAllByType(UserFormModel baseModel) {
+        return null;
+    }
+
+    @Override
+    public List<UserFormModel> getByQuery(String query) {
+        return null;
+    }
+
+    @Override
+    public Long getMaxRow(UserFormModel baseModel) {
+        return null;
+    }
+
+    @Override
+    public UserFormModel save(UserFormModel baseModel) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(UserFormModel baseMolel) {
+        return false;
+    }
+
+    @Override
+    public boolean update(UserFormModel baseModel) {
+        return false;
+    }
+
+    @Override
+    public Long getCount(UserFormModel baseModel) {
+        return null;
+    }
+
 }

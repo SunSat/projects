@@ -35,6 +35,8 @@
 
     <servlet-mapping>
         <servlet-name>health-app</servlet-name>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/logout</url-pattern>
         <url-pattern>*.do</url-pattern>
         <url-pattern>*.an</url-pattern>
         <url-pattern>*.ad</url-pattern>
