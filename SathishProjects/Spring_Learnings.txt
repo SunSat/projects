@@ -1,0 +1,19 @@
+problems you may face when you develop spring application first time
+
+1. DAO Design : when enable @Transactional suddently you get an exception cannot load context[]
+	Solution : You need to use interfacce to assign the DAO Manager. 
+
+2. When Enable security : You may see just Http Response 404. 
+	The reason would be any of one
+	1. Intercept-URL not matched properly
+	2. Check produce, consume & Http Method in your controller
+	3. Clean Up Tomcat webapp folder
+	4. If none match still problem persist put a break point in DelegatingFilterProxy.java Spring Java class in doFilter method and start debug which lead FilterChainProxy --> doFilter method for 13 filters. There will 13 Filters you need to go-through.
+	5. Mainly 2 FilterChin you need to look : 1. CsrfFilter.java --> doFilterInternal 2.
+	6. the most of the problem with content type we use Ajax or Jquery content type : http://api.jquery.com/jQuery.ajax/ check. like application/json
+	7. Method Type Like : Post,Get etc.
+	8. https://stackoverflow.com/questions/34782025/http-post-request-with-content-type-application-x-www-form-urlencoded-not-workin/38252762#38252762
+	9. CSRF filter need to disable to begin with. Once you complete/setup all the configuration then you can enable CSRF Filter later. Otherwise CSRFFilter siliently throw exception and comming out with 403
+	10.
+
+	 
