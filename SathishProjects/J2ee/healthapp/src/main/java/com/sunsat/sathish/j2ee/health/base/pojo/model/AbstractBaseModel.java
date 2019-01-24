@@ -13,7 +13,7 @@ public abstract class AbstractBaseModel implements BaseModel {
     private Long modifiedById;
     private Date createdByDate;
     private Date modifiedByDate;
-    private boolean isDeleted;
+    private Integer isDeleted;
     private String description;
 
     @Override
@@ -71,11 +71,11 @@ public abstract class AbstractBaseModel implements BaseModel {
     }
 
     @Override
-    public boolean isDeleted() {
+    public Integer isDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(boolean isDeleted) {
+    public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
 

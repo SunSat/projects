@@ -5,6 +5,8 @@ public class FormModel extends AbstractBaseModel {
     String operationType;
     String subOperationType;
     String sessionid;
+    String formAction;
+    String formSubAction;
 
     public FormModel() {
         setType(FormModel.class);
@@ -32,5 +34,21 @@ public class FormModel extends AbstractBaseModel {
 
     public void setSessionid(String sessionid) {
         this.sessionid = sessionid;
+    }
+
+    public String getFormAction() {
+        return formAction;
+    }
+
+    public void setFormAction(String formAction) {
+        this.formAction = formAction;
+    }
+
+    public String getFormSubAction() {
+        return formSubAction;
+    }
+
+    public void setFormSubAction(String formSubAction) {
+        this.formSubAction = formSubAction;
     }
 }

@@ -15,6 +15,8 @@ public interface BaseBusiness<BM extends BaseModel> {
     public Long getModifiedById();
     public Date getCreatedByDate();
     public Date getModifiedByDate();
-    public boolean isDeleted();
+    public Integer isDeleted();
     public String getDescription();
+    public void populateData(BM bm);
+    public BM getData();
 }

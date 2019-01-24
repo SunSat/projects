@@ -28,13 +28,13 @@ public interface BaseDao<BB extends BaseBusiness,DF extends Enum> extends Serial
     public Date getModifiedByDate();
     public void setModifiedByDate(Date modifiedByDate);
 
-    public boolean isDeleted();
-    public void setIsDeleted(Boolean deleted);
+    public Integer isDeleted();
+    public void setIsDeleted(Integer deleted);
 
     public String getMessage();
     public void setMessage(String message);
 
-    public BB getBusinessValue(DF df);
+    public BB getBusinessValue(DF df, BB businessValue);
     public void setBusinessValue(BB businessValue);
 
 }

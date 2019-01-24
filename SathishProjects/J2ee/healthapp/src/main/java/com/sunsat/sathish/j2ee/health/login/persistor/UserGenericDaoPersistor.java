@@ -10,7 +10,7 @@ public interface UserGenericDaoPersistor extends BaseDaoPersistor<UserDao, UserB
     public UserBusiness createNewUser(UserBusiness ub);
     public UserBusiness getUserDetails(UserBusiness ub);
     public UserBusiness updateUserDetails(UserBusiness ub);
-    public UserBusiness getUserByUserName(String ub);
+    public UserBusiness getUserByUserName(String un);
     public UserBusiness deleteUserById(UserBusiness ub);
     public String validateUser(UserBusiness ub);
     public String validateUserMailId(UserBusiness ub);

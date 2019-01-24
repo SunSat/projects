@@ -121,41 +121,55 @@
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
             </div>
             <form method="post" action="submit" class="signup-handler">
-                <div class="warning-messages" id="warning-messages">
-                    <p>Address already Exist. Please Sign up.</p>
+                <div class="signup-warning-msg" id="signup-warning-msg">
                 </div>
-
                 <ul class="signup-unorder-list">
                     <li>
                         <fieldset class="div-signup">
                             <legend>UserName</legend>
-                            <input type="text" id="signup-username" class="input-signup placeholder-fix" required onblur="checkExistingUserName()"/>
-                            <div class="ion-android-checkmark-circle signup-username-circle" id="signup-username-circle"></div>
-                            <div class="close-circle-outline close-username-circle" id="close-username-circle"></div>
+                            <input type="text" id="signup-username" class="input-signup placeholder-fix" required onfocusout="verifyExistingUserName()"/>
+                            <input type="hidden" id="verifyUserNameStatus" name="verifyUserNameStatus" value="false"/>
+                            <div class="signup-icons">
+                                <i class="ion-android-checkmark-circle signup-username-circle sign-up-warning-msg-icons" id="signup-username-circle"></i>
+                                <i class="ion-close-circled signup-username-circle-failed sign-up-warning-msg-icons-failed" id="signup-username-circle-failed"></i>
+                            </div>
+                            <div class="signup-warning-msg signup-username-warning-messages" id="signup-username-warning-messages"/>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Password</legend>
-                            <input type="password" id="signup-password" class="input-signup placeholder-fix" required onblur="verifyPassword()"/>
-                            <div class="ion-android-checkmark-circle signup-password-circle" id="signup-password-circle"></div>
-                            <div class="close-circle-outline close-password-circle" id="close-password-circle"></div>
+                            <input type="password" id="signup-password" class="input-signup placeholder-fix" required onfocusout="verifyPassword()"/>
+                            <input type="hidden" id="verifyPasswordStatus" name="verifyPasswordStatus" value="false"/>
+                            <div class="signup-icons">
+                                <i class="ion-android-checkmark-circle signup-password-circle sign-up-warning-msg-icons" id="signup-password-circle"></i>
+                                <i class="ion-close-circled signup-password-circle-failed sign-up-warning-msg-icons-failed" id="signup-password-circle-failed"></i>
+                            </div>
+                            <div class="signup-warning-msg signup-password-warning-messages" id="signup-password-warning-messages"/>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Confirm Password</legend>
-                            <input type="password" id="signup-password-cnf" class="input-signup placeholder-fix" required onfocusout="cnfVerifyPassword()"/>
-                            <div class="ion-android-checkmark-circle signup-cnf-password-circle" id="signup-cnf-password-circle"></div>
-                            <div class="close-circle-outline close-cnf-password-circle" id="close-cnf-password-circle"></div>
+                            <input type="password" id="signup-password-cnf" class="input-signup placeholder-fix" required onfocusout="verifyCnfPassword()"/>
+                            <input type="hidden" id="verifyCnfPasswordStatus" name="verifyCnfPasswordStatus" value="false"/>
+                            <div class="signup-icons">
+                                <i class="ion-android-checkmark-circle signup-cnf-password-circle sign-up-warning-msg-icons" id="signup-cnf-password-circle"></i>
+                                <i class="ion-close-circled signup-cnf-password-circle-failed sign-up-warning-msg-icons-failed" id="signup-cnf-password-circle-failed"></i>
+                            </div>
+                            <div class="signup-warning-msg signup-cnf-password-warning-messages" id="signup-cnf-password-warning-messages"/>
                         </fieldset>
                     </li>
                     <li>
                         <fieldset class="div-signup">
                             <legend>Mail Id</legend>
                             <input type="email" id="signup-mail-id" class="input-signup placeholder-fix" required onfocusout="verifyMailId()"/>
-                            <div class="ion-android-checkmark-circle signup-email-circle" id="signup-email-circle"></div>
-                            <div class="close-circle-outline close-email-circle" id="close-email-circle"></div>
+                            <input type="hidden" id="verifyMailIdStatus" name="verifyMailIdStatus" value="false"/>
+                            <div class="signup-icons">
+                                <i class="ion-android-checkmark-circle signup-email-circle sign-up-warning-msg-icons" id="signup-email-circle"></i>
+                                <i class="ion-close-circled signup-email-circle-failed sign-up-warning-msg-icons-failed"  id="signup-email-circle-failed"></i>
+                            </div>
+                            <div class="signup-warning-msg signup-email-warning-messages" id="signup-email-warning-messages"/>
                         </fieldset>
                     </li>
                     <div class="clearfix"></div>

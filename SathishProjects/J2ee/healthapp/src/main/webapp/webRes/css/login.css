@@ -34,7 +34,7 @@
     top: 60px;
     margin: auto;
     width: 400px;
-    height: 440px;
+    height: 460px;
     position: relative;
     box-shadow: 1px 2px 20px rgba(230, 125, 34, .5);
     border: solid 1px #e67e22;
@@ -317,12 +317,31 @@
 }
 
 .input-signup {
-    width: 100%;
+    width: 90%;
     outline: none;
     border-style: none;
 }
 
-.warning-messages p{
+.signup-icons {
+    display: inline;
+    font-size: 130%;
+    color: #e67e22;
+}
+
+.sign-up-warning-msg-icons {
+    color: #e67e22;
+}
+
+.sign-up-warning-msg-icons-failed {
+    color: #b10000;
+}
+
+.signup-warning-msg {
+    margin: auto;
+    text-align: center;
+    color: #b10000;
+}
+.warning-messages{
     width: 100%;
     margin: 0% auto 2% auto;
     text-align: center;
@@ -335,17 +354,6 @@
     display: block;
 }
 
-.ion-android-checkmark-circle {
-    text-align: center;
-    display: inline;
-    color: #8bc34a;
-}
-
-.close-circle-outline {
-    text-align: center;
-    display: inline;
-    color: #8bc34a;
-}
 /*Forgot Password*/
 .forgot-password-container {
     width: 95%;

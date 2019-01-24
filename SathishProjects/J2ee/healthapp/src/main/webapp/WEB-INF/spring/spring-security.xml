@@ -10,14 +10,15 @@
 
     <http use-expressions="true">
         <csrf disabled="true"/>
-        <intercept-url pattern="/index.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/webRes/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/*.an" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/index.jsp" access="permitAll()"/>
+        <intercept-url pattern="/webRes/**" access="permitAll()"/>
+        <intercept-url pattern="/*.an" access="permitAll()"/>
+        <intercept-url pattern="/login" access="permitAll()"/>
 <!--        <intercept-url pattern="/logout" access="permitAll()"/>-->
         <intercept-url pattern="/**" access="hasRole('USER')" />
         <form-login login-page='/login' username-parameter="username" password-parameter="password"/>
         <logout invalidate-session="true" logout-url="/logout" />
+        <csrf disabled="true"/>
     </http>
 
     <authentication-manager >

@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service("loginService")
-public class LoginServiceImpl extends AbstractBusinessService<UserFormModel> implements LoginBusinessService {
+public class LoginBusinessServiceImpl extends AbstractBusinessService<UserFormModel> implements LoginBusinessService {
 
     @Autowired
     @Qualifier("loginDaoPersistor")

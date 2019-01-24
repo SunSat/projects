@@ -8,4 +8,5 @@ import com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao;
 public interface LoginGenericDaoPersistor extends BaseDaoPersistor<LoginDao, LoginBusiness, BaseDataFilter> {
 
 
+
 }

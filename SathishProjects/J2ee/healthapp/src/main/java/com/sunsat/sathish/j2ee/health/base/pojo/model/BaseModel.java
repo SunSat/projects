@@ -12,6 +12,6 @@ public interface BaseModel {
     public Long getModifiedById();
     public Date getCreatedByDate();
     public Date getModifiedByDate();
-    public boolean isDeleted();
+    public Integer isDeleted();
     public String getDescription();
 }

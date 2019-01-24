@@ -15,7 +15,7 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
     private Long modifiedById;
     private Date createdByDate;
     private Date modifiedByDate;
-    private boolean isDeleted;
+    private Integer isDeleted = 0;
     private String description;
 
     public AbstractBaseBusiness() {
@@ -75,11 +75,11 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
     }
 
     @Override
-    public boolean isDeleted() {
+    public Integer isDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(boolean isDeleted) {
+    public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
 
@@ -92,4 +92,21 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
         this.description = description;
     }
 
+    @Override
+    public void populateData(BM bm) {
+    }
+
+    @Override
+    public BM getData() {
+/*
+        bm.setPrimarykeyId(this.getPrimarykeyId());
+        bm.setCreatedByDate(this.getCreatedByDate());
+        bm.setCreatedById(this.getCreatedById());
+        bm.setDescription(this.getDescription());
+        bm.setIsDeleted(this.isDeleted());
+        bm.setModifiedByDate(this.getModifiedByDate());
+        bm.setModifiedById(this.getModifiedById());
+*/
+    return null;
+    }
 }

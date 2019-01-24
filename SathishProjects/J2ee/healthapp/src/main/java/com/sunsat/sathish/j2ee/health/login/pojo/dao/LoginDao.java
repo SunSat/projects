@@ -70,10 +70,10 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
     }
 
     @Override
-    public LoginBusiness getBusinessValue(BaseDataFilter df) {
-        LoginBusiness logBu = new LoginBusiness();
-        logBu.setPrimaryKeyId(getPrimarykeyId());
-        return logBu;
+    public LoginBusiness getBusinessValue(BaseDataFilter df, LoginBusiness loginBusiness) {
+        if(null == loginBusiness) loginBusiness = new LoginBusiness();
+        loginBusiness.setPrimaryKeyId(getPrimarykeyId());
+        return loginBusiness;
     }
 
     @Override
@@ -98,7 +98,7 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
     private Date modifiedByDate;
 
     @Column(name = "deleted")
-    private boolean deleted;
+    private Integer deleted;
 
     @Column(name = "message")
     private String message;
@@ -140,12 +140,12 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
     }
 
     @Override
-    public boolean isDeleted() {
+    public Integer isDeleted() {
         return deleted;
     }
 
     @Override
-    public void setIsDeleted(Boolean deleted) {
+    public void setIsDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 

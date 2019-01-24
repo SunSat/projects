@@ -116,7 +116,7 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     private Date modifiedByDate;
 
     @Column(name = "deleted")
-    private boolean deleted;
+    private int deleted;
 
     @Column(name = "message")
     private String message;
@@ -158,12 +158,12 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     }
 
     @Override
-    public boolean isDeleted() {
+    public Integer isDeleted() {
         return deleted;
     }
 
     @Override
-    public void setIsDeleted(Boolean deleted) {
+    public void setIsDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 
@@ -177,25 +177,26 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     }
 
     @Override
-    public UserBusiness getBusinessValue(BaseDataFilter filter) {
-        UserBusiness business = new UserBusiness();
+    public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue) {
+        if(null == businessValue)
+            businessValue = new UserBusiness();
         switch (filter) {
             case BY_ALL:
-                business.setUserName(this.getUserName());
-                business.setAccountStatus(this.getAccountStatus());
-                business.setPrimarykeyId(this.getPrimarykeyId());
-                business.setCreatedByDate(this.getCreatedByDate());
-                business.setCreationTime(this.getCreationTime());
-                business.setDescription(this.getMessage());
-                business.setIsDeleted(this.isDeleted());
-                business.setModifiedById(this.getModifiedById());
-                business.setModifiedByDate(this.getModifiedByDate());
+                businessValue.setUserName(this.getUserName());
+                businessValue.setAccountStatus(this.getAccountStatus());
+                businessValue.setPrimarykeyId(this.getPrimarykeyId());
+                businessValue.setCreatedByDate(this.getCreatedByDate());
+                businessValue.setCreationTime(this.getCreationTime());
+                businessValue.setDescription(this.getMessage());
+                businessValue.setIsDeleted(this.isDeleted());
+                businessValue.setModifiedById(this.getModifiedById());
+                businessValue.setModifiedByDate(this.getModifiedByDate());
                 break;
             case BY_BUSINESS_KEY:
 
                 break;
         }
-        return business;
+        return businessValue;
     }
 
     @Override

@@ -19,4 +19,6 @@ public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends
     public abstract BB getBusinessValue(DF df);
     public abstract void setBusinessValue(BB businessValue);*/
 
+
+
 }

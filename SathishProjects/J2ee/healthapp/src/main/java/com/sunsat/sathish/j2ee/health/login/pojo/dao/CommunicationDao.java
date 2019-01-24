@@ -127,7 +127,7 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     }
 
     @Override
-    public CommunicationBusiness getBusinessValue(BaseDataFilter baseDataFilter) {
+    public CommunicationBusiness getBusinessValue(BaseDataFilter baseDataFilter, CommunicationBusiness businessValue) {
         return null;
     }
 
@@ -144,7 +144,7 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     private Date modifiedByDate;
 
     @Column(name = "deleted")
-    private boolean deleted;
+    private Integer deleted;
 
     @Column(name = "message")
     private String message;
@@ -186,12 +186,12 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     }
 
     @Override
-    public boolean isDeleted() {
+    public Integer isDeleted() {
         return deleted;
     }
 
     @Override
-    public void setIsDeleted(Boolean deleted) {
+    public void setIsDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 

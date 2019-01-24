@@ -5,6 +5,7 @@ import com.sunsat.sathish.j2ee.health.login.loginException.LoginException;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.LoginResponseModel;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import com.sunsat.sathish.j2ee.health.login.service.LoginBusinessService;
+import com.sunsat.sathish.j2ee.health.login.service.UserBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
@@ -26,6 +27,9 @@ public class LoginController {
     @Autowired
     LoginBusinessService loginService;
 
+    @Autowired
+    UserBusinessService userService;
+
 
     @RequestMapping(value = {"/homepage.an","/"," * "},method = RequestMethod.GET)
     public String loadHomePage() {
@@ -33,7 +37,7 @@ public class LoginController {
         return "homepage";
     }
 
-    @RequestMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE, method = RequestMethod.POST)
     @ResponseBody
     public UserFormModel peformLogin(@RequestParam  UserFormModel model, HttpServletRequest request, HttpServletResponse response) {
 
@@ -51,22 +55,21 @@ public class LoginController {
         return new UserFormModel();
     }
 
-    @RequestMapping("/signUpAction.an")
-    public UserFormModel performSignUp(@RequestBody UserFormModel model,HttpServletRequest request,HttpServletResponse response) {
+    @RequestMapping(value="/signUpAction.an", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody UserFormModel performSignUp(@RequestBody UserFormModel model,HttpServletRequest request,HttpServletResponse response) {
 
         UserFormModel resModel = new UserFormModel();
         resModel.setMessage("success");
+
         String userName = model.getUserName();
         String password = model.getPassword();
         String emailId = model.getMailId();
-        if(StringUtils.isEmpty(userName) || StringUtils.isEmpty(password) || StringUtils.isEmpty(emailId)) {
+        String cnfPassword = model.getConfirmPassword();
+
+        if(StringUtils.isEmpty(userName) || StringUtils.isEmpty(password) || StringUtils.isEmpty(emailId) || StringUtils.isEmpty(cnfPassword)) {
             resModel.setMessage("Please provide all necessary data.");
         } else {
-            try {
-                //resModel = loginService.createNewUser(model);
-            }catch (LoginException lo) {
-                resModel.setMessage("Error while crating User. Please contact Admin.");
-            }
+            resModel = userService.createNewUser(model);
         }
         return  resModel;
     }
@@ -78,10 +81,9 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/checkExistingUserName.an", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String checkExistingUserName(@RequestParam UserFormModel model) {
-
-
-        return "succss";
+    public @ResponseBody UserFormModel checkExistingUserName(@RequestBody UserFormModel model) {
+        UserFormModel retModel = userService.getExistingUser(model);
+        return retModel;
     }
 
 }
