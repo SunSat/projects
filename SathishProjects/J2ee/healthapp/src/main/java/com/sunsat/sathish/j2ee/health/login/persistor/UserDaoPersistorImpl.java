@@ -8,7 +8,6 @@ import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -51,8 +50,8 @@ public class UserDaoPersistorImpl extends AbstractGenericDaoPersistor<UserDao,Us
         UserDao userDao = new UserDao();
         userDao.setBusinessValue(ub);
         mgr.persist(userDao);
-        ub.setPrimarykeyId(userDao.getPrimarykeyId());
-        ub.setDescription("successful");
+        ub.setPrimaryKeyId(userDao.getPrimaryKeyId());
+        ub.setMessage("successful");
         return ub;
     }
 

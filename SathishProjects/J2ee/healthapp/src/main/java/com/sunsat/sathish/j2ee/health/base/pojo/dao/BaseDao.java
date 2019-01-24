@@ -13,8 +13,8 @@ public interface BaseDao<BB extends BaseBusiness,DF extends Enum> extends Serial
 
     public Class<BB> getType();
 
-    public Long getPrimarykeyId();
-    public void setPrimarykeyId(Long primarykeyId);
+    public Long getPrimaryKeyId();
+    public void setPrimaryKeyId(Long primarykeyId);
 
     public Long getCreatedById();
     public void setCreatedById(Long createdById);

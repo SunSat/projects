@@ -19,10 +19,10 @@ public abstract class AbstractBusinessService<BM extends AbstractBaseModel> impl
         Connection con = persistor.getCon();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setLong(1,baseModel.getPrimarykeyId());
+            ps.setLong(1,baseModel.getPrimaryKeyId());
             return ps.executeQuery();
         }catch (SQLException sqe) {
-            throw new PersistorException(sqe.getMessage(),"Error while fetching primary key id.","Tahle may not have primarykey for the key" +baseModel.getPrimarykeyId());
+            throw new PersistorException(sqe.getMessage(),"Error while fetching primary key id.","Tahle may not have primarykey for the key" +baseModel.getPrimaryKeyId());
         }
     }
 
@@ -49,7 +49,7 @@ public abstract class AbstractBusinessService<BM extends AbstractBaseModel> impl
             }
             return rs.getLong(1);
         } catch (SQLException sqe) {
-            throw new PersistorException(sqe.getMessage(),"Error while fetching primary key id.","Tahle may not have primarykey for the key" +baseModel.getPrimarykeyId());
+            throw new PersistorException(sqe.getMessage(),"Error while fetching primary key id.","Tahle may not have primarykey for the key" +baseModel.getPrimaryKeyId());
         }
     }
 

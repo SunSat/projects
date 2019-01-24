@@ -1,8 +1,6 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
-import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
-import com.sunsat.sathish.j2ee.health.base.pojo.business.BaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.LoginBusiness;
 
@@ -41,7 +39,7 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
     }
 
     @Override
-    public Long getPrimarykeyId() {
+    public Long getPrimaryKeyId() {
         return primaryKeyId;
     }
 
@@ -69,22 +67,32 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
         this.status = status;
     }
 
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
     public LoginBusiness getBusinessValue(BaseDataFilter df, LoginBusiness loginBusiness) {
         if(null == loginBusiness) loginBusiness = new LoginBusiness();
-        loginBusiness.setPrimaryKeyId(getPrimarykeyId());
+        loginBusiness.setPrimaryKeyId(getPrimaryKeyId());
         return loginBusiness;
     }
 
     @Override
     public void setBusinessValue(LoginBusiness businessValue) {
-        this.setPrimarykeyId(businessValue.getPrimaryKeyId());
+        this.setPrimaryKeyId(businessValue.getPrimaryKeyId());
     }
 
     @Override
-    public void setPrimarykeyId(Long primarykeyId) {
-
+    public void setPrimaryKeyId(Long primarykeyId) {
+        this.primaryKeyId = primarykeyId;
     }
+
+    /*
     @Column(name = "created_by")
     private Long createdById;
 
@@ -158,4 +166,5 @@ public class LoginDao extends AbstractBaseDao<LoginBusiness, BaseDataFilter> {
         this.message = message;
     }
 
+*/
 }

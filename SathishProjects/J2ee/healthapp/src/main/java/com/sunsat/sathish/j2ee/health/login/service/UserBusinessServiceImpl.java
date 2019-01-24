@@ -2,7 +2,6 @@ package com.sunsat.sathish.j2ee.health.login.service;
 
 import com.sunsat.sathish.j2ee.health.login.persistor.UserGenericDaoPersistor;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
-import com.sunsat.sathish.j2ee.health.login.pojo.dao.CommunicationDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +27,8 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         UserBusiness retUb = userDaoPersistor.createNewUser(ub);
         model.setPassword("");
         model.setConfirmPassword("");
-        model.setPrimarykeyId(retUb.getPrimarykeyId());
-        model.setMessage(retUb.getDescription());
+        model.setPrimarykeyId(retUb.getPrimaryKeyId());
+        model.setMessage(retUb.getMessage());
         return model;
     }
 

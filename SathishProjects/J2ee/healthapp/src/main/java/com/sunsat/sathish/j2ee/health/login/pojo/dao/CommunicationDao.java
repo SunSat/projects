@@ -5,6 +5,7 @@ import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.business.BaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
+import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -17,6 +18,11 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     @Column(name = "id")
     @GeneratedValue
     Long primaryKeyId;
+
+    @Column(name="user_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    UserDao userDao;
 
     @Column(name = "mob1")
     String mobile1;
@@ -42,13 +48,21 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     @Column(name = "email1_cnf_token_expiry_date")
     Date email1CnfTokenExpiryDate;
 
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
     public Class getType() {
         return CommunicationDao.class;
     }
 
     @Override
-    public Long getPrimarykeyId() {
+    public Long getPrimaryKeyId() {
         return primaryKeyId;
     }
 
@@ -117,91 +131,44 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
     }
 
     @Override
-    public void setPrimarykeyId(Long primarykeyId) {
-
+    public void setPrimaryKeyId(Long primarykeyId) {
+        this.primaryKeyId = primarykeyId;
     }
 
     @Override
     public void setBusinessValue(CommunicationBusiness businessValue) {
-
+        this.setPrimaryKeyId(businessValue.getPrimaryKeyId());
+        this.setEmail1(businessValue.getEmail1());
+        this.setEmail1CnfToken(businessValue.getEmail1CnfToken());
+        this.setEmail1CnfTokenExpiryDate(businessValue.getEmail1CnfTokenExpiryDate());
+        this.setEmail1Verified(businessValue.isEmail1Verified());
+        this.setMobile1(businessValue.getMobile1());
+        this.setMobile1CnfToken(businessValue.getMobile1CnfToken());
+        this.setMobile1CnfTokenExpiryDate(businessValue.getMobile1CnfTokenExpiryDate());
+        this.setMobile1Verified(businessValue.isMobile1Verified());
+        super.setBusinessValue(businessValue);
     }
 
     @Override
     public CommunicationBusiness getBusinessValue(BaseDataFilter baseDataFilter, CommunicationBusiness businessValue) {
-        return null;
+        if(null == businessValue) businessValue = new CommunicationBusiness();
+        switch (baseDataFilter) {
+            case BY_ALL:
+                super.getBusinessValue(baseDataFilter,businessValue);
+                businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
+                businessValue.setUserBusiness(this.getUserDao().getBusinessValue(BaseDataFilter.BY_ALL,new UserBusiness()));
+                businessValue.setEmail1(this.getEmail1());
+                businessValue.setEmail1CnfToken(this.getEmail1CnfToken());
+                businessValue.setEmail1CnfTokenExpiryDate(this.getEmail1CnfTokenExpiryDate());
+                businessValue.setEmail1Verified(this.isEmail1Verified());
+                businessValue.setMobile1(this.getMobile1());
+                businessValue.setMobile1CnfToken(this.getMobile1CnfToken());
+                businessValue.setMobile1CnfTokenExpiryDate(this.getMobile1CnfTokenExpiryDate());
+                businessValue.setMobile1Verified(this.isMobile1Verified());
+                break;
+            case BY_BUSINESS_KEY:
+                break;
+        }
+        return businessValue;
     }
-
-    @Column(name = "created_by")
-    private Long createdById;
-
-    @Column(name = "modified_by")
-    private Long modifiedById;
-
-    @Column(name = "created_date")
-    private Date createdByDate;
-
-    @Column(name = "modified_date")
-    private Date modifiedByDate;
-
-    @Column(name = "deleted")
-    private Integer deleted;
-
-    @Column(name = "message")
-    private String message;
-
-    @Override
-    public Long getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(Long createdById) {
-        this.createdById = createdById;
-    }
-
-    @Override
-    public Long getModifiedById() {
-        return modifiedById;
-    }
-
-    public void setModifiedById(Long modifiedById) {
-        this.modifiedById = modifiedById;
-    }
-
-    @Override
-    public Date getCreatedByDate() {
-        return createdByDate;
-    }
-
-    public void setCreatedByDate(Date createdByDate) {
-        this.createdByDate = createdByDate;
-    }
-
-    @Override
-    public Date getModifiedByDate() {
-        return modifiedByDate;
-    }
-
-    public void setModifiedByDate(Date modifiedByDate) {
-        this.modifiedByDate = modifiedByDate;
-    }
-
-    @Override
-    public Integer isDeleted() {
-        return deleted;
-    }
-
-    @Override
-    public void setIsDeleted(Integer deleted) {
-        this.deleted = deleted;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
 }

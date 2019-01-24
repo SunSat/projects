@@ -2,18 +2,19 @@ package com.sunsat.sathish.j2ee.health.login.pojo.business;
 
 import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
+import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 
 import javax.persistence.Column;
 import java.util.Date;
 
-public class UserBusiness extends AbstractBaseBusiness<FormModel> {
+public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
 
     @Override
     public Class getType() {
         return UserBusiness.class;
     }
 
-    private Long primarykeyId;
+    private Long primaryKeyId;
     private String userName;
     private String password;
     private String passwordHash;
@@ -21,16 +22,13 @@ public class UserBusiness extends AbstractBaseBusiness<FormModel> {
     private Date expiryTime;
     private String accountStatus;
 
-
-
     @Override
-    public Long getPrimarykeyId() {
-        return primarykeyId;
+    public Long getPrimaryKeyId() {
+        return primaryKeyId;
     }
 
-    @Override
-    public void setPrimarykeyId(Long primarykeyId) {
-        this.primarykeyId = primarykeyId;
+    public void setPrimaryKeyId(Long primarykeyId) {
+        this.primaryKeyId = primarykeyId;
     }
 
     public String getUserName() {

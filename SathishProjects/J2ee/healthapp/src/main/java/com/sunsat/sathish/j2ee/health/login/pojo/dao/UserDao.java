@@ -3,9 +3,6 @@ package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GeneratorType;
-import org.springframework.context.annotation.ComponentScan;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,7 +18,7 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long primarykeyId;
+    private Long primaryKeyId;
 
     @Column(name = "username")
     private String userName;
@@ -47,12 +44,12 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         return UserDao.class;
     }
 
-    public Long getPrimarykeyId() {
-        return primarykeyId;
+    public Long getPrimaryKeyId() {
+        return primaryKeyId;
     }
 
-    public void setPrimarykeyId(Long primarykeyId) {
-        this.primarykeyId = primarykeyId;
+    public void setPrimaryKeyId(Long primarykeyId) {
+        this.primaryKeyId = primarykeyId;
     }
 
     public String getUserName() {
@@ -103,79 +100,6 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.accountStatus = accountStatus;
     }
 
-    @Column(name = "created_by")
-    private Long createdById;
-
-    @Column(name = "modified_by")
-    private Long modifiedById;
-
-    @Column(name = "created_date")
-    private Date createdByDate;
-
-    @Column(name = "modified_date")
-    private Date modifiedByDate;
-
-    @Column(name = "deleted")
-    private int deleted;
-
-    @Column(name = "message")
-    private String message;
-
-    @Override
-    public Long getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(Long createdById) {
-        this.createdById = createdById;
-    }
-
-    @Override
-    public Long getModifiedById() {
-        return modifiedById;
-    }
-
-    public void setModifiedById(Long modifiedById) {
-        this.modifiedById = modifiedById;
-    }
-
-    @Override
-    public Date getCreatedByDate() {
-        return createdByDate;
-    }
-
-    public void setCreatedByDate(Date createdByDate) {
-        this.createdByDate = createdByDate;
-    }
-
-    @Override
-    public Date getModifiedByDate() {
-        return modifiedByDate;
-    }
-
-    public void setModifiedByDate(Date modifiedByDate) {
-        this.modifiedByDate = modifiedByDate;
-    }
-
-    @Override
-    public Integer isDeleted() {
-        return deleted;
-    }
-
-    @Override
-    public void setIsDeleted(Integer deleted) {
-        this.deleted = deleted;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     @Override
     public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue) {
         if(null == businessValue)
@@ -184,13 +108,11 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
             case BY_ALL:
                 businessValue.setUserName(this.getUserName());
                 businessValue.setAccountStatus(this.getAccountStatus());
-                businessValue.setPrimarykeyId(this.getPrimarykeyId());
-                businessValue.setCreatedByDate(this.getCreatedByDate());
+                businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
                 businessValue.setCreationTime(this.getCreationTime());
-                businessValue.setDescription(this.getMessage());
-                businessValue.setIsDeleted(this.isDeleted());
-                businessValue.setModifiedById(this.getModifiedById());
-                businessValue.setModifiedByDate(this.getModifiedByDate());
+                businessValue.setExpiryTime(this.getExpiryTime());
+                businessValue.setAccountStatus(this.getAccountStatus());
+                super.getBusinessValue(filter,businessValue);
                 break;
             case BY_BUSINESS_KEY:
 

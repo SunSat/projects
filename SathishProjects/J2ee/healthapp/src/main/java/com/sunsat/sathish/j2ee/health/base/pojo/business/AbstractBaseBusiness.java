@@ -10,32 +10,15 @@ import java.util.Date;
 public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> implements BaseBusiness<BM> {
 
     private Class type;
-    private Long primarykeyId;
     private Long createdById;
     private Long modifiedById;
     private Date createdByDate;
     private Date modifiedByDate;
     private Integer isDeleted = 0;
-    private String description;
+    private String message;
 
     public AbstractBaseBusiness() {
 
-    }
-
-    public AbstractBaseBusiness(BM model) {
-        this.primarykeyId = model.getPrimarykeyId();
-        this.createdById = model.getCreatedById();
-        this.modifiedById = model.getModifiedById();
-    }
-
-
-    @Override
-    public Long getPrimarykeyId() {
-        return primarykeyId;
-    }
-
-    public void setPrimarykeyId(Long primarykeyId) {
-        this.primarykeyId = primarykeyId;
     }
 
     @Override
@@ -84,12 +67,12 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
     }
 
     @Override
-    public String getDescription() {
-        return description;
+    public String getMessage() {
+        return message;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -99,10 +82,10 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
     @Override
     public BM getData() {
 /*
-        bm.setPrimarykeyId(this.getPrimarykeyId());
+        bm.setPrimaryKeyId(this.getPrimaryKeyId());
         bm.setCreatedByDate(this.getCreatedByDate());
         bm.setCreatedById(this.getCreatedById());
-        bm.setDescription(this.getDescription());
+        bm.setMessage(this.getMessage());
         bm.setIsDeleted(this.isDeleted());
         bm.setModifiedByDate(this.getModifiedByDate());
         bm.setModifiedById(this.getModifiedById());

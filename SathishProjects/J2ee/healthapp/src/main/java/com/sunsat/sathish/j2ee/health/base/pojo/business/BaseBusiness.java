@@ -10,13 +10,13 @@ import java.util.Date;
  */
 public interface BaseBusiness<BM extends BaseModel> {
     public Class getType() ;
-    public Long getPrimarykeyId();
+    public Long getPrimaryKeyId();
     public Long getCreatedById();
     public Long getModifiedById();
     public Date getCreatedByDate();
     public Date getModifiedByDate();
     public Integer isDeleted();
-    public String getDescription();
+    public String getMessage();
     public void populateData(BM bm);
     public BM getData();
 }

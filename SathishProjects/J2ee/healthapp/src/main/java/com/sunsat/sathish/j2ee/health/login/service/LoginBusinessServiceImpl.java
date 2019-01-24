@@ -46,7 +46,7 @@ public class LoginBusinessServiceImpl extends AbstractBusinessService<UserFormMo
         }
 
         //userDaoPersistor.add(userBusines);
-        model.setPrimarykeyId(userBusines.getPrimarykeyId());
+        model.setPrimarykeyId(userBusines.getPrimaryKeyId());
         loginDaoPer.persist(bussiness);
         model.setMessage("Account Created Successfully. Plz verify through your mail id.");
         return model;
