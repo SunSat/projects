@@ -17,6 +17,16 @@ function loginCloseBut() {
     classList.remove('show-login');
 }
 
+function showSignUpForm() {
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("forgot-password-container").style.display = "none";
+    document.getElementById("signUp-container").style.display = "block";
+    clearSignupInputs();
+    hideAllValidationCircles();
+    clearSignupWarningMsgs();
+    clearSignUpStatus();
+}
+
 function performSignUp() {
 
     var uName = document.getElementById("signup-username").value;
@@ -24,21 +34,23 @@ function performSignUp() {
     var cPass = document.getElementById("signup-password-cnf").value;
     var mailId = document.getElementById("signup-mail-id").value;
 
+/*
     verifyExistingUserName();
     verifyPassword();
     verifyCnfPassword();
     verifyMailId();
+*/
 
-    var userNameStatus = document.getElementById('verifyUserNameStatus').value;
+    /*var userNameStatus = document.getElementById('verifyUserNameStatus').value;
     var passwordStatus = document.getElementById('verifyPasswordStatus').value
     var cnfPasswordStatus = document.getElementById('verifyCnfPasswordStatus').value;
     var mailIdStatus = document.getElementById('verifyMailIdStatus').value;
 
-    if(!userNameStatus || !passwordStatus || !cnfPasswordStatus || !mailIdStatus) {
+    if(userNameStatus == 'false' || passwordStatus == 'false'  || cnfPasswordStatus == 'false'  || mailIdStatus == 'false' ) {
         document.getElementById('signup-warning-msg').innerText = "Please fill required data properly.";
         return;
     }
-
+*/
     var data = {
         userName : uName,
         password : pass,
@@ -53,151 +65,19 @@ function performSignUp() {
             return;
         }
         var formModel = JSON.parse(xhttp.responseText)
-        if(formModel.message != "successful") {
-            document.getElementById("signup-warning-msg").innerText = formModel.message;
+        if(formModel.responseStatus != 'successful') {
+            //Todo Show Error message.
+            document.getElementById("signup-warning-msg").innerText = formModel.responseMessage;
         } else {
-            document.getElementById("signup-warning-msg").innerText = "Account Created Successfully. Please confirm your mail id and SignIn.";
+            //Todo generate a successful popup. OnClick Ok clear all the window.
+            document.getElementById("signup-warning-msg").innerText = formModel.responseMessage;
+            hideAllValidationCircles();
+            clearSignupWarningMsgs();
+            clearSignUpStatus();
         }
     };
     performAjaxJsonRequest("post","signUpAction.an",data,successfulSignUp);
 }
-
-function performLogin() {
-
-    var uName  = document.getElementById('loginUsername').value;
-    var pass  = document.getElementById('loginPassword').value;
-    var csrf = document.getElementById('_csrf')
-    if(csrf != null) csrf = document.getElementById('_csrf').value;
-    else csrf = "1";
-
-    var formAction = "loginPage";
-    var formSubAction = "login";
-
-    var data = {
-        username: uName,
-        password: pass,
-        formAction : formAction,
-        formSubAction : formSubAction,
-        _csrf : csrf
-    };
-
-    var performSuccessfulLogin = function(xhttp) {
-        if(xhttp.readyState != 4 || xhttp.status != 200) {
-            return;
-        }
-        var formModel = JSON.parse( xhttp.responseText );
-        var loginMessage = formModel.message;
-        if(loginMessage != "successful") {
-            document.getElementById("loginMessage").innerHTML = loginMessage;
-            document.getElementById("loginMessage").style.display = "block";
-            return;
-        } else {
-            hideAllContainer();
-            document.getElementById("login-button-container").style.display = "none";
-            document.getElementById("small-avator-image").style.display = "block";
-
-            var fUserName = formModel.userName;
-            var fChar =  fUserName.substring(0,1);
-            document.getElementById("userInitial").innerHTML = fChar;
-            document.getElementById("userName").innerHTML = fUserName;
-            document.getElementById("mailId").innerHTML = formModel.mailId;
-            document.getElementById("userId").value = formModel.userId;
-            document.getElementById("sessionId").value = formModel.sessionId;
-        }
-    };
-    performAjaxRequest("post","login",data,performSuccessfulLogin);
-}
-function showLoginContainer() {
-    hideAllContainer();
-    document.getElementById("logging-popup-container").style.display = "block";
-    document.getElementById("login-userInput-container").style.display = "block";
-}
-
-function showSignUpContainer() {
-    hideAllContainer();
-    document.getElementById("logging-popup-container").style.display = "block";
-    document.getElementById("signup-userinput-container").style.display = "block";
-}
-
-function cleanLoginContainer() {
-    document.getElementById("loginUserName").innerHTML = "";
-    document.getElementById("loginPassword").innerHTML = "";
-    document.getElementById("login-userInput-container").style.display = "none";
-}
-
-function cleanSignUpContainer() {
-    document.getElementById("signUpuserName").innerHTML = "";
-    document.getElementById("signUpPassword").innerHTML = "";
-    document.getElementById("signUpConfirmPassword").innerHTML = "";
-    document.getElementById("signup-userinput-container").style.display = "none";
-}
-
-function showDetailAvatorImage() {
-    document.getElementById("logging-popup-container").style.display = "block";
-    document.getElementById("logged-user-container").style.display = "block";
-}
-
-function hideAllContainer() {
-    document.getElementById('logging-popup-container').style.display = 'none';
-    document.getElementById("login-userInput-container").style.display = "none";
-    document.getElementById("signup-userinput-container").style.display = "none";
-    document.getElementById("logged-user-container").style.display = "none";
-}
-
-function performSignout() {
-    var userId = document.getElementById("userId").value
-    var sessionId = document.getElementById("sessionId").value
-    var data = {
-        userId:userId,
-        sessionId : sessionId,
-        formAction : 'login',
-        formSubAction : 'logout'
-    }
-    performAjaxRequest("post","logoutAction.do",true,data,completeSignout)
-}
-
-function completeSignout(xhttp) {
-    if(xhttp.status == 200 && xhttp.readyState == 4) {
-        hideAllContainer();
-        document.getElementById('small-avator-image').style.display = 'none';
-        document.getElementById('login-button-container').style.display = 'block';
-    }
-}
-
-function showSignInForm() {
-    document.getElementById("signUp-container").style.display = "none";
-    document.getElementById("login-container").style.display = "block";
-    document.getElementById("forgot-password-container").style.display = "none";
-}
-
-function showSignUpForm() {
-    document.getElementById("login-container").style.display = "none";
-    document.getElementById("forgot-password-container").style.display = "none";
-    document.getElementById("signUp-container").style.display = "block";
-    clearSignupInputs();
-    hideAllValidationCircles();
-    clearSignupWarningMsgs();
-    clearSignUpStatus();
-}
-function showForgotPasswordForm() {
-    document.getElementById("signUp-container").style.display = "none";
-    document.getElementById("login-container").style.display = "none";
-    document.getElementById("forgot-password-container").style.display = "block";
-}
-function showSearchBar() {
-    var clsList = document.getElementById('general-search-container').classList;
-    if ( !clsList.contains('general-search-container-hover') ) {
-        clsList.toggle('general-search-container-hover');
-    }
-}
-
-function showExpandSearchBar() {
-    var clsList = document.getElementById('general-search-container').classList;
-    if ( !clsList.contains('general-search-container-expand') ) {
-        clsList.toggle('general-search-container-expand');
-    }
-}
-
 function hideAllValidationCircles() {
     document.getElementById('signup-username-circle').style.display = 'none';
     document.getElementById('signup-username-circle-failed').style.display = 'none';
@@ -265,7 +145,7 @@ function showUserNameSuccess() {
     document.getElementById('signup-username-circle').style.display = "inline-block";
 }
 
-function verifyExistingUserName() {
+function verifyExistingUserName(isAsync) {
     var userName = document.getElementById('signup-username').value;
     clearUserNameWarnings();
     if(!userName || userName ==null || userName.trim().length == 0) {
@@ -282,15 +162,15 @@ function verifyExistingUserName() {
             return;
         }
         var formModel = JSON.parse( xhttp.responseText );
-        var loginMessage = formModel.message;
+        var loginMessage = formModel.responseStatus;
         clearUserNameWarnings();
         if(loginMessage != "successful") {
-            showUserNameError(loginMessage);
+            showUserNameError(formModel.responseMessage);
         } else {
             showUserNameSuccess();
         }
     };
-    performAjaxJsonRequest("post","checkExistingUserName.an",data,checkUserNameResponse);
+    performAjaxJsonRequest("post","checkUserNameForSignUp.an",data,checkUserNameResponse);
 }
 function showPasswordError(message) {
     document.getElementById('signup-password-warning-messages').innerText = message;
@@ -321,6 +201,7 @@ function showCnfPasswordSuccess() {
     document.getElementById('verifyCnfPasswordStatus').value = 'true';
 }
 function verifyCnfPassword() {
+    verifyPassword();
     clearcnfPasswordWarnings();
     var cnfpassword = document.getElementById("signup-password-cnf").value;
     if(!cnfpassword || cnfpassword == null || cnfpassword.trim().length == 0) {
@@ -357,4 +238,174 @@ function verifyMailId() {
     } else {
         showMailIdSuccess();
     }
+}
+
+function cleanSignUpContainer() {
+    document.getElementById("signUpuserName").innerHTML = "";
+    document.getElementById("signUpPassword").innerHTML = "";
+    document.getElementById("signUpConfirmPassword").innerHTML = "";
+    document.getElementById("signup-userinput-container").style.display = "none";
+}
+
+
+function showLoginContainer() {
+    hideAllContainer();
+    document.getElementById("logging-popup-container").style.display = "block";
+    document.getElementById("login-userInput-container").style.display = "block";
+}
+
+function showSignUpContainer() {
+    hideAllContainer();
+    document.getElementById("logging-popup-container").style.display = "block";
+    document.getElementById("signup-userinput-container").style.display = "block";
+}
+
+function cleanLoginContainer() {
+    document.getElementById("loginUserName").innerHTML = "";
+    document.getElementById("loginPassword").innerHTML = "";
+    document.getElementById("login-userInput-container").style.display = "none";
+}
+
+
+function showDetailAvatorImage() {
+    document.getElementById("logging-popup-container").style.display = "block";
+    document.getElementById("logged-user-container").style.display = "block";
+}
+
+function hideAllContainer() {
+    document.getElementById('logging-popup-container').style.display = 'none';
+    document.getElementById("login-userInput-container").style.display = "none";
+    document.getElementById("signup-userinput-container").style.display = "none";
+    document.getElementById("logged-user-container").style.display = "none";
+}
+
+function performSignout() {
+    var userId = document.getElementById("userId").value
+    var sessionId = document.getElementById("sessionId").value
+    var data = {
+        userId:userId,
+        sessionId : sessionId,
+        formAction : 'login',
+        formSubAction : 'logout'
+    }
+    performAjaxRequest("post","logoutAction.do",true,data,completeSignout)
+}
+
+function completeSignout(xhttp) {
+    if(xhttp.status == 200 && xhttp.readyState == 4) {
+        hideAllContainer();
+        document.getElementById('small-avator-image').style.display = 'none';
+        document.getElementById('login-button-container').style.display = 'block';
+    }
+}
+
+function showSignInForm() {
+    document.getElementById("signUp-container").style.display = "none";
+    document.getElementById("login-container").style.display = "block";
+    document.getElementById("forgot-password-container").style.display = "none";
+}
+
+function showForgotPasswordForm() {
+    document.getElementById("signUp-container").style.display = "none";
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("forgot-password-container").style.display = "block";
+    clearForgotPasswordWarning();
+    clearForgotPasswordMailId();
+    clearForgotPassSecCode();
+    clearForgotPasswordPasswords();
+    disableOrEnableForgotPassPasswordsForm(true);
+    disableOrEnableForgotPassSecreateCodeForm(true);
+    forgotPasswordSetCurrentStatus("mailid");
+}
+
+function clearForgotPasswordWarning() {
+    document.getElementById("password-reset-warning-messages").innerText = "";
+}
+function showForgotPasswordWarning(message) {
+    document.getElementById("password-reset-warning-messages").innerText = message;
+}
+
+function clearForgotPasswordMailId() {
+    document.getElementById("forgot-pass-mail-id").value = "";
+}
+function clearForgotPassSecCode() {
+    document.getElementById("forgot-pass-secret-code").value =  "";
+}
+function clearForgotPasswordPasswords() {
+    document.getElementById("forgot-password-reset-password").value= "";
+    document.getElementById("forgot-password-reset-password-conf").value= "";
+}
+
+function disableOrEnableForgotPassSecreateCodeForm(isEnable) {
+    document.getElementById("forgot-pass-secret-code").disabled = isEnable;
+    document.getElementById("forgot-pass-validate-code-but").disabled = isEnable;
+}
+function disableOrEnableForgotPassPasswordsForm(isEnable) {
+    document.getElementById("forgot-password-reset-password").disabled = isEnable;
+    document.getElementById("forgot-password-reset-password-conf").disabled = isEnable;
+    document.getElementById("forgot-pass-change-pass-but").disabled = isEnable;
+}
+
+function forgotPasswordSetCurrentStatus(currentStatus) {
+    document.getElementById("forgot-password-current-status").value = currentStatus;
+}
+function showSearchBar() {
+    var clsList = document.getElementById('general-search-container').classList;
+    if ( !clsList.contains('general-search-container-hover') ) {
+        clsList.toggle('general-search-container-hover');
+    }
+}
+
+function showExpandSearchBar() {
+    var clsList = document.getElementById('general-search-container').classList;
+    if ( !clsList.contains('general-search-container-expand') ) {
+        clsList.toggle('general-search-container-expand');
+    }
+}
+
+
+function performLogin() {
+
+    var uName  = document.getElementById('loginUsername').value;
+    var pass  = document.getElementById('loginPassword').value;
+    var csrf = document.getElementById('_csrf')
+    if(csrf != null) csrf = document.getElementById('_csrf').value;
+    else csrf = "1";
+
+    var formAction = "loginPage";
+    var formSubAction = "login";
+
+    var data = {
+        username: uName,
+        password: pass,
+        formAction : formAction,
+        formSubAction : formSubAction,
+        _csrf : csrf
+    };
+
+    var performSuccessfulLogin = function(xhttp) {
+        if(xhttp.readyState != 4 || xhttp.status != 200) {
+            return;
+        }
+        var formModel = JSON.parse( xhttp.responseText );
+        var loginMessage = formModel.responseStatus;
+        if(loginMessage != "successful") {
+            document.getElementById("loginMessage").innerHTML = loginMessage;
+            document.getElementById("loginMessage").style.display = "block";
+            return;
+        } else {
+            hideAllContainer();
+            document.getElementById("login-button-container").style.display = "none";
+            document.getElementById("small-avator-image").style.display = "block";
+
+            var fUserName = formModel.userName;
+            var fChar =  fUserName.substring(0,1);
+            document.getElementById("userInitial").innerHTML = fChar;
+            document.getElementById("userName").innerHTML = fUserName;
+            document.getElementById("mailId").innerHTML = formModel.mailId;
+            document.getElementById("userId").value = formModel.userId;
+            document.getElementById("sessionId").value = formModel.sessionId;
+        }
+    };
+    performAjaxRequest("post","login",data,performSuccessfulLogin);
 }

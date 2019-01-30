@@ -4,11 +4,13 @@ import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
+@MappedSuperclass
 public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends BaseDataFilter> implements BaseDao<BB,DF> {
 
    /* public abstract Class<BB> getType();
@@ -28,7 +30,7 @@ public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends
     private Date modifiedByDate;
 
     @Column(name = "deleted")
-    private int deleted;
+    private Integer deleted = 0;
 
     @Column(name = "message")
     private String message;

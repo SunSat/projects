@@ -14,7 +14,7 @@ public abstract class AbstractBaseModel implements BaseModel {
     private Date createdByDate;
     private Date modifiedByDate;
     private Integer isDeleted;
-    private String description;
+    private String message;
 
     @Override
     public Class getType() {
@@ -80,12 +80,12 @@ public abstract class AbstractBaseModel implements BaseModel {
     }
 
     @Override
-    public String getDescription() {
-        return description;
+    public String getMessage() {
+        return message;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
 

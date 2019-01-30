@@ -14,3 +14,4 @@ Web App development and deployment.
     2. Deployment
 
 ===========================================================================================================
+All Required Basic parameters should be  passed from outside. It should not be initialized within the method. Because in feature it may required to pass from outside. That time need to change entire program or code.

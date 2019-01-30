@@ -194,18 +194,17 @@
                 <i class="ion-close-round mycloseicon" onclick="loginCloseBut()"></i>
             </div>
 
-            <div class="warning-messages">
-                <p>Address already Exist. Please Sign up.</p>
-            </div>
+            <div class="password-reset-warning-messages" id="password-reset-warning-messages"></div>
 
             <div class="clearfix">
             </div>
 
-            <form class="form-forgot-password form-reset-pass" method="post" action="forgotPassword.do">
+            <input type="hidden" id="forgot-password-current-status" value="mailid">
+
+            <form class="form-forgot-password form-reset-pass" id="form-forgot-password-mailid" method="post" action="forgotPassword.do">
                 <fieldset class="div-signup">
                     <legend>Enter Your Mail Id</legend>
-                    <input type="email" class="forgot-pass-mail-id input-signup placeholder-fix"
-                           id="forgot-pass-mail-id"/>
+                    <input type="email" class="forgot-pass-mail-id input-signup placeholder-fix" id="forgot-pass-mail-id"/>
                 </fieldset>
                 <div class="forgot-pass-submit">
                     <a href="#" class="forgot-pass-reset-pass media-link">Reset Password.</a>
@@ -216,13 +215,13 @@
                 -------------------
             </div>
 
-            <form class="form-account-validator form-reset-pass" method="post" action="accountValidator.do">
+            <form class="form-account-validator form-reset-pass" id="form-forgot-pass-account-validator" method="post" action="accountValidator.do">
                 <fieldset class="div-signup">
                     <legend>Enter Secret Code.</legend>
-                    <input type="number" class="secret-code input-signup placeholder-fix" id="secret-code">
+                    <input type="number" class="secret-code input-signup placeholder-fix" id="forgot-pass-secret-code">
                 </fieldset>
                 <div class="forgot-pass-submit">
-                    <a href="#" class="media-link forgot-pass-validate-code ">Validate</a>
+                    <a href="#" class="media-link forgot-pass-validate-code" id="forgot-pass-validate-code-but">Validate</a>
                 </div>
             </form>
 
@@ -230,23 +229,22 @@
                 -------------------
             </div>
 
-            <form class="form-new-password-getter form-reset-pass" action="newPassword.do" method="post">
+            <form class="form-new-password-getter form-reset-pass" id="form-forgot-pass-new-password-getter" action="newPassword.do" method="post">
                 <fieldset class="div-signup">
                     <legend>New Password</legend>
                     <ul class="reset-password-ul">
                         <li>
-                            <label class="lbl-reset-password" for="reset-password">Password : </label> <input
-                                type="password" class="reset-password placeholder-fix" id="reset-password">
+                            <label class="lbl-reset-password" for="forgot-password-reset-password">Password : </label>
+                            <input type="password" class="reset-password placeholder-fix" id="forgot-password-reset-password">
                         </li>
                         <li>
-                            <label class="lbl-reset-password-conf" for="reset-password-conf">Confirm : </label>
-                            <input type="password" class="reset-password-conf placeholder-fix"
-                                   id="reset-password-conf">
+                            <label class="lbl-reset-password-conf" for="forgot-password-reset-password-conf">Confirm : </label>
+                            <input type="password" class="reset-password-conf placeholder-fix" id="forgot-password-reset-password-conf">
                         </li>
                     </ul>
                 </fieldset>
                 <div class="forgot-pass-submit">
-                    <a href="#" class="media-link forgot-pass-change-pass">Change</a>
+                    <a href="#" class="media-link forgot-pass-change-pass-but" id="forgot-pass-change-pass-but">Change Password.</a>
                 </div>
             </form>
             <div class="signup-forgotpassword">

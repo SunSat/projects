@@ -13,5 +13,5 @@ public interface BaseModel {
     public Date getCreatedByDate();
     public Date getModifiedByDate();
     public Integer isDeleted();
-    public String getDescription();
+    public String getMessage();
 }

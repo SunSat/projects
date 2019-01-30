@@ -18,5 +18,5 @@ public interface BaseBusiness<BM extends BaseModel> {
     public Integer isDeleted();
     public String getMessage();
     public void populateData(BM bm);
-    public BM getData();
+    public void getData(BM bm);
 }

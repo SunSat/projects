@@ -1,5 +1,6 @@
 package com.sunsat.sathish.j2ee.health.login.service;
 
+import com.sunsat.sathish.j2ee.health.base.mail.communicator.MailCommunicator;
 import com.sunsat.sathish.j2ee.health.login.persistor.UserGenericDaoPersistor;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
@@ -15,6 +16,10 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     @Autowired
     UserGenericDaoPersistor userDaoPersistor;
 
+    @Autowired
+    MailCommunicator mailCommunicator;
+
+
 
     @Transactional
     @Override
@@ -22,13 +27,14 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         UserBusiness ub = new UserBusiness();
         ub.setUserName(model.getUserName());
         ub.setPassword(model.getPassword());
+        ub.setPasswordHash(model.getPassword());
         ub.setCreationTime(new Date());
         ub.setExpiryTime(new Date());
-        UserBusiness retUb = userDaoPersistor.createNewUser(ub);
+        ub.setAccountStatus("initial");
+        userDaoPersistor.createNewUser(ub);
         model.setPassword("");
         model.setConfirmPassword("");
-        model.setPrimarykeyId(retUb.getPrimaryKeyId());
-        model.setMessage(retUb.getMessage());
+        model.setPrimarykeyId(ub.getPrimaryKeyId());
         return model;
     }
 
@@ -40,9 +46,8 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         retModel.setOperationType(model.getOperationType());
         retModel.setSubOperationType(model.getSubOperationType());
         if(ub != null && ub.getUserName().equals(model.getUserName()))  {
-            retModel.setMessage("UserName Already Exist.");
-        } else {
-            retModel.setMessage("successful");
+            retModel.setUserName(ub.getUserName());
+            retModel.setPrimarykeyId(ub.getPrimaryKeyId());
         }
         return retModel;
     }

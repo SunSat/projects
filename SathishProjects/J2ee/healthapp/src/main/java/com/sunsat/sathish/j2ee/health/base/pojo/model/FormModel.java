@@ -7,6 +7,8 @@ public class FormModel extends AbstractBaseModel {
     String sessionid;
     String formAction;
     String formSubAction;
+    String responseStatus;
+    String responseMessage;
 
     public FormModel() {
         setType(FormModel.class);
@@ -50,5 +52,21 @@ public class FormModel extends AbstractBaseModel {
 
     public void setFormSubAction(String formSubAction) {
         this.formSubAction = formSubAction;
+    }
+
+    public String getResponseStatus() {
+        return responseStatus;
+    }
+
+    public void setResponseStatus(String responseStatus) {
+        this.responseStatus = responseStatus;
+    }
+
+    public String getResponseMessage() {
+        return responseMessage;
+    }
+
+    public void setResponseMessage(String responseMessage) {
+        this.responseMessage = responseMessage;
     }
 }

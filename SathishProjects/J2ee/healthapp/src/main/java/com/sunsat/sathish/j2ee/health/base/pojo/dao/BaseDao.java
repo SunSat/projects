@@ -36,5 +36,4 @@ public interface BaseDao<BB extends BaseBusiness,DF extends Enum> extends Serial
 
     public BB getBusinessValue(DF df, BB businessValue);
     public void setBusinessValue(BB businessValue);
-
 }

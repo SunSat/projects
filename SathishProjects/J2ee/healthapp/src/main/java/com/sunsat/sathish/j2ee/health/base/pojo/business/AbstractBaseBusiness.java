@@ -77,19 +77,21 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
 
     @Override
     public void populateData(BM bm) {
+        this.setModifiedById(bm.getModifiedById());
+        this.setModifiedByDate(bm.getModifiedByDate());
+        this.setIsDeleted(bm.isDeleted());
+        this.setCreatedById(bm.getCreatedById());
+        this.setCreatedByDate(bm.getCreatedByDate());
+        this.setMessage(bm.getMessage());
     }
 
     @Override
-    public BM getData() {
-/*
-        bm.setPrimaryKeyId(this.getPrimaryKeyId());
+    public void getData(BM bm) {
         bm.setCreatedByDate(this.getCreatedByDate());
         bm.setCreatedById(this.getCreatedById());
         bm.setMessage(this.getMessage());
         bm.setIsDeleted(this.isDeleted());
         bm.setModifiedByDate(this.getModifiedByDate());
         bm.setModifiedById(this.getModifiedById());
-*/
-    return null;
     }
 }

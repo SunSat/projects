@@ -2,7 +2,9 @@ package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
+import com.sunsat.sathish.j2ee.health.login.persistor.LoginGenericDaoPersistor;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.LoginBusiness;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.Date;

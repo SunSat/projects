@@ -3,6 +3,8 @@ package com.sunsat.sathish.j2ee.health.login.pojo.model;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
 
+import java.util.Date;
+
 public class UserFormModel extends FormModel {
 
     public UserFormModel() {
@@ -21,8 +23,10 @@ public class UserFormModel extends FormModel {
     private String mobileNo;
     private String loginType;
     private String secreateCode;
-    private String message;
-
+    private String accountStatus;
+    private Date creationTime;
+    private Date expiryTime;
+    private String passwordHash;
 
     public String getUserId() {
         Long primaryKeyId = getPrimarykeyId();
@@ -123,11 +127,35 @@ public class UserFormModel extends FormModel {
         this.secreateCode = secreateCode;
     }
 
-    public String getMessage() {
-        return message;
+    public String getAccountStatus() {
+        return accountStatus;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
+    }
+
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public Date getExpiryTime() {
+        return expiryTime;
+    }
+
+    public void setExpiryTime(Date expiryTime) {
+        this.expiryTime = expiryTime;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 }

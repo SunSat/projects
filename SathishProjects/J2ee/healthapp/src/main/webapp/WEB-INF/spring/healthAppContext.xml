@@ -38,13 +38,27 @@
         <context:include-filter type="annotation" expression="javax.persistence.Entity"/-->
     </context:component-scan>
 
-    <context:property-placeholder location="classpath:hibernate/hibernate.properties"/>
+    <context:property-placeholder location="classpath:hibernate/hibernate.properties,classpath:mail/mail.properties"/>
 
     <bean id="datasource" class="com.mchange.v2.c3p0.DriverManagerDataSource">
         <property name="driverClass" value="${hibernate.connection.driver_class}"/>
         <property name="jdbcUrl" value="${hibernate.connection.url}"/>
         <property name="user" value="${hibernate.connection.username}"/>
         <property name="password" value="${hibernate.connection.password}"/>
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host}"/>
+        <property name="username" value="${mail.username}"/>
+        <property name="password" value="${mail.userpass}"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.socketFactory.port">465</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.port">465</prop>
+            </props>
+        </property>
     </bean>
 
     <bean id="jpaVendorAdaptor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
@@ -54,9 +68,11 @@
         <property name="persistenceUnitName" value="healthapp"/>
     </bean>
 
-    <bean id="loginDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.LoginDaoPersistorImpl" lazy-init="false" />
+    <bean id="loginDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.LoginDaoPersistorImpl"/>
 
     <bean id="userDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.UserDaoPersistorImpl"/>
+
+    <bean id="commDaoPersistor" class="com.sunsat.sathish.j2ee.health.login.persistor.CommunicationDaoPersistorImpl"/>
 
     <!--bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource"  ref="datasource"/>
@@ -80,5 +96,7 @@
 
     <bean id="persistenceExceptionTranslationPostProcessor" class=
             "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+    <bean id="persistanceManager" class="com.sunsat.sathish.j2ee.health.base.persistor.PersistorManager" factory-method="getInstance"/>
 
 </beans>

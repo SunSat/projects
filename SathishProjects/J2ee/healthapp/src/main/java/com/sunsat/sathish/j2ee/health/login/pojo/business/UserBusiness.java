@@ -21,6 +21,7 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
     private Date creationTime;
     private Date expiryTime;
     private String accountStatus;
+    private CommunicationBusiness comBusiness;
 
     @Override
     public Long getPrimaryKeyId() {
@@ -77,5 +78,41 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
 
     public void setAccountStatus(String accountStatus) {
         this.accountStatus = accountStatus;
+    }
+
+    public CommunicationBusiness getComBusiness() {
+        return comBusiness;
+    }
+
+    public void setComBusiness(CommunicationBusiness comBusiness) {
+        this.comBusiness = comBusiness;
+    }
+
+    @Override
+    public void populateData(UserFormModel userFormModel) {
+        this.setUserName(userFormModel.getUserName());
+        this.setPassword(userFormModel.getPassword());
+        this.setAccountStatus(userFormModel.getAccountStatus());
+        this.setExpiryTime(userFormModel.getExpiryTime());
+        this.setCreationTime(userFormModel.getCreationTime());
+        this.setPrimaryKeyId(userFormModel.getPrimarykeyId());
+        this.setPasswordHash(userFormModel.getPasswordHash());
+        CommunicationBusiness comBusiness = new CommunicationBusiness();
+        comBusiness.setEmail1(userFormModel.getMailId());
+        comBusiness.setMobile1(userFormModel.getMobileNo());
+        comBusiness.setUserBusiness(this);
+        this.setComBusiness(comBusiness);
+
+        super.populateData(userFormModel);
+    }
+
+    @Override
+    public void getData(UserFormModel model) {
+        model.setUserName(this.getUserName());
+        model.setPrimarykeyId(this.getPrimaryKeyId());
+        model.setAccountStatus(this.getAccountStatus());
+        model.setExpiryTime(this.getExpiryTime());
+        model.setCreationTime(this.getCreationTime());
+        super.getData(model);
     }
 }

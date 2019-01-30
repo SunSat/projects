@@ -8,5 +8,6 @@
         </properties>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao</class>
+        <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.CommunicationDao</class>
     </persistence-unit>
 </persistence>

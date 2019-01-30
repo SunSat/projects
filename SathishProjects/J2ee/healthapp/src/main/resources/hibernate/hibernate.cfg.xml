@@ -24,5 +24,7 @@
 
         <!-- mapping file, we can use Bean annotations too -->
         <mapping class="com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao"/>
+        <mapping class="com.sunsat.sathish.j2ee.health.login.pojo.dao.CommunicationDao"/>
+        <!--<mapping class="com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao"/>-->
     </session-factory>
 </hibernate-configuration>

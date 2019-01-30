@@ -105,4 +105,14 @@ public class CommunicationBusiness extends AbstractBaseBusiness<UserFormModel> {
     public void setEmail1CnfTokenExpiryDate(Date email1CnfTokenExpiryDate) {
         this.email1CnfTokenExpiryDate = email1CnfTokenExpiryDate;
     }
+
+    @Override
+    public void populateData(UserFormModel userFormModel) {
+        super.populateData(userFormModel);
+    }
+
+    @Override
+    public void getData(UserFormModel userFormModel) {
+        super.getData(userFormModel);
+    }
 }

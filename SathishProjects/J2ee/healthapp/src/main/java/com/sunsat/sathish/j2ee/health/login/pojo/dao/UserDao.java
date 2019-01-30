@@ -1,8 +1,12 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
+import com.sunsat.sathish.j2ee.health.base.persistor.PersistorManager;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
+import com.sunsat.sathish.j2ee.health.login.persistor.UserGenericDaoPersistor;
+import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,6 +23,9 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long primaryKeyId;
+
+    @OneToOne(mappedBy = "userDao")
+    private CommunicationDao comDao;
 
     @Column(name = "username")
     private String userName;
@@ -100,6 +107,15 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.accountStatus = accountStatus;
     }
 
+
+    public CommunicationDao getComDao() {
+        return comDao;
+    }
+
+    public void setComDao(CommunicationDao comDao) {
+        this.comDao = comDao;
+    }
+
     @Override
     public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue) {
         if(null == businessValue)
@@ -112,6 +128,9 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
                 businessValue.setCreationTime(this.getCreationTime());
                 businessValue.setExpiryTime(this.getExpiryTime());
                 businessValue.setAccountStatus(this.getAccountStatus());
+                if(this.getComDao() != null) {
+                    businessValue.setComBusiness(this.getComDao().getBusinessValue(BaseDataFilter.BY_ALL,null));
+                }
                 super.getBusinessValue(filter,businessValue);
                 break;
             case BY_BUSINESS_KEY:
@@ -132,5 +151,9 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.setCreatedByDate(businessValue.getCreatedByDate());
         this.setModifiedByDate(businessValue.getModifiedByDate());
         this.setIsDeleted(businessValue.isDeleted());
+        this.setPrimaryKeyId(businessValue.getPrimaryKeyId());
+        if(businessValue.getComBusiness() != null) {
+            this.setComDao(PersistorManager.getInstance().getCommPersistor().getByPrimaryKey(businessValue.getComBusiness()));
+        }
     }
 }
