@@ -11,8 +11,6 @@ function loginMouseHover() {
 }
 
 function loginCloseBut() {
-    //var loginPageDiv = document.getElementById('main-login-container');
-    //loginPageDiv.style.display = 'none';
     var classList = document.getElementById('main-login-container').classList;
     classList.remove('show-login');
 }
@@ -273,10 +271,10 @@ function showDetailAvatorImage() {
 }
 
 function hideAllContainer() {
-    document.getElementById('logging-popup-container').style.display = 'none';
-    document.getElementById("login-userInput-container").style.display = "none";
-    document.getElementById("signup-userinput-container").style.display = "none";
-    document.getElementById("logged-user-container").style.display = "none";
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('forgot-password-container').style.display = "none";
+    document.getElementById('signUp-container').style.display = "none";
+    loginCloseBut();
 }
 
 function performSignout() {
@@ -288,7 +286,7 @@ function performSignout() {
         formAction : 'login',
         formSubAction : 'logout'
     }
-    performAjaxRequest("post","logoutAction.do",true,data,completeSignout)
+    performAjaxRequest("post","logoutAction.an",true,data,completeSignout)
 }
 
 function completeSignout(xhttp) {
@@ -301,8 +299,8 @@ function completeSignout(xhttp) {
 
 function showSignInForm() {
     document.getElementById("signUp-container").style.display = "none";
-    document.getElementById("login-container").style.display = "block";
     document.getElementById("forgot-password-container").style.display = "none";
+    document.getElementById("login-container").style.display = "block";
 }
 
 function showForgotPasswordForm() {
@@ -369,14 +367,14 @@ function performLogin() {
     var uName  = document.getElementById('loginUsername').value;
     var pass  = document.getElementById('loginPassword').value;
     var csrf = document.getElementById('_csrf')
-    if(csrf != null) csrf = document.getElementById('_csrf').value;
+    if(csrf != null) csrf = csrf.value;
     else csrf = "1";
 
     var formAction = "loginPage";
     var formSubAction = "login";
 
     var data = {
-        username: uName,
+        userName: uName,
         password: pass,
         formAction : formAction,
         formSubAction : formSubAction,
@@ -390,22 +388,37 @@ function performLogin() {
         var formModel = JSON.parse( xhttp.responseText );
         var loginMessage = formModel.responseStatus;
         if(loginMessage != "successful") {
-            document.getElementById("loginMessage").innerHTML = loginMessage;
-            document.getElementById("loginMessage").style.display = "block";
+            document.getElementById("login-warning-messages").innerText = formModel.responseMessage;
+            document.getElementById("login-warning-messages").style.display = "block";
             return;
         } else {
             hideAllContainer();
-            document.getElementById("login-button-container").style.display = "none";
-            document.getElementById("small-avator-image").style.display = "block";
+            document.getElementById("login-navigation").style.display = "none";
+            document.getElementById("logout-navigation").style.display = "block";
 
             var fUserName = formModel.userName;
-            var fChar =  fUserName.substring(0,1);
-            document.getElementById("userInitial").innerHTML = fChar;
-            document.getElementById("userName").innerHTML = fUserName;
-            document.getElementById("mailId").innerHTML = formModel.mailId;
-            document.getElementById("userId").value = formModel.userId;
-            document.getElementById("sessionId").value = formModel.sessionId;
+            document.getElementById('logged-username').innerText =fUserName;
+
         }
     };
-    performAjaxRequest("post","login",data,performSuccessfulLogin);
+    performAjaxRequest("post","loginAction.an",data,performSuccessfulLogin);
+}
+function searchCloseBut() {
+    var clsList = document.getElementById('general-search-container').classList;
+    if ( clsList.contains('general-search-container-hover') ) {
+        clsList.remove('general-search-container-hover');
+    }
+}
+
+function showLogoutUserContainer(isShow) {
+    var clsList = document.getElementById("logout-user-setting-container").classList;
+    if(isShow) {
+        if(!clsList.contains('logout-user-setting-container-show')) {
+            clsList.add('logout-user-setting-container-show');
+        }
+    } else {
+        if(clsList.contains('logout-user-setting-container-show')) {
+            clsList.remove('logout-user-setting-container-show');
+        }
+    }
 }

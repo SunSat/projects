@@ -14,4 +14,7 @@ Web App development and deployment.
     2. Deployment
 
 ===========================================================================================================
-All Required Basic parameters should be  passed from outside. It should not be initialized within the method. Because in feature it may required to pass from outside. That time need to change entire program or code.
+1. All Required Basic parameters should be  passed from outside. It should not be initialized within the method. Because in feature it may required to pass from outside. That time need to change entire program or code.
+2. When developing Bi-Directional Entity in Hibernate it might be a chance to load the business value in circular form. To avoid that need to implement hashcode and equals methods. If object were different then continue to load. Otherwise we should not load circular form.
+3. @Autowired will cause Circular auto injection. To avoid that Its beter way to for Constructor Injection Or Settor Injectction.
+4. Its not at all possible to instantiate an abstract class with impl if any Proxy created. For example if you create an AOP or Transactional then you can assign to Interface but not to abstract base class.

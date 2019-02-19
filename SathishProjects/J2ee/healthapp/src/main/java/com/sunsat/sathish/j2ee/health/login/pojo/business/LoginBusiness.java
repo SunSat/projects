@@ -14,6 +14,8 @@ public class LoginBusiness extends AbstractBaseBusiness<UserFormModel> {
     private Date loginTime;
     private Date logoutTime;
     private String status;
+    private UserBusiness userBusiness;
+
 
     @Override
     public Class getType() {
@@ -50,5 +52,13 @@ public class LoginBusiness extends AbstractBaseBusiness<UserFormModel> {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public UserBusiness getUserBusiness() {
+        return userBusiness;
+    }
+
+    public void setUserBusiness(UserBusiness userBusiness) {
+        this.userBusiness = userBusiness;
     }
 }

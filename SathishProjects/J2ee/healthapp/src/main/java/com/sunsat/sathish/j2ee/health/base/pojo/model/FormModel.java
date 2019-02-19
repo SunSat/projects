@@ -10,10 +10,6 @@ public class FormModel extends AbstractBaseModel {
     String responseStatus;
     String responseMessage;
 
-    public FormModel() {
-        setType(FormModel.class);
-    }
-
     public String getOperationType() {
         return operationType;
     }

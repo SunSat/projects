@@ -2,16 +2,12 @@ package com.sunsat.sathish.j2ee.health.login.pojo.model;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 
 public class UserFormModel extends FormModel {
 
-    public UserFormModel() {
-        setType(UserFormModel.class);
-    }
-
-    private String userId;
     private String userName;
     private String password;
     private String confirmPassword;
@@ -27,17 +23,7 @@ public class UserFormModel extends FormModel {
     private Date creationTime;
     private Date expiryTime;
     private String passwordHash;
-
-    public String getUserId() {
-        Long primaryKeyId = getPrimarykeyId();
-        return userId = primaryKeyId != null ?
-                primaryKeyId != 0 ? primaryKeyId+"" : ""
-                : "" ;
-    }
-
-    public void setUserId(String userId) {
-        setPrimarykeyId(Long.parseLong(userId));
-    }
+    private String userId;
 
     public String getUserName() {
         return userName;
@@ -158,4 +144,5 @@ public class UserFormModel extends FormModel {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
+
 }

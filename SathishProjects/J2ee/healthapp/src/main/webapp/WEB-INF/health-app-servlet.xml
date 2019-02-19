@@ -35,4 +35,16 @@
         </property>
     </bean>
 
+<!--
+    <bean id="csrfTokenRepo" class="org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository" >
+    </bean>
+
+    <bean id="csrfFilter" class="org.springframework.security.web.csrf.CsrfFilter">
+        <constructor-arg ref="csrfTokenRepo"/>
+    </bean>
+
+    <bean id="customCsrfFilter" class="com.sunsat.sathish.j2ee.health.login.util.CustomCsrfFilter">
+        <property name="csrfFilter" ref="csrfFilter"/>
+    </bean>
+-->
 </beans>

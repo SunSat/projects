@@ -6,6 +6,7 @@ import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 
 import javax.persistence.Column;
 import java.util.Date;
+import java.util.List;
 
 public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
 
@@ -22,6 +23,9 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
     private Date expiryTime;
     private String accountStatus;
     private CommunicationBusiness comBusiness;
+    private LoginBusiness loginBusiness;
+    private PersonalDetailBusiness personalDetailBusiness;
+    private List<RoleBusiness> roleBusinesses;
 
     @Override
     public Long getPrimaryKeyId() {
@@ -88,21 +92,46 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
         this.comBusiness = comBusiness;
     }
 
+    public LoginBusiness getLoginBusiness() {
+        return loginBusiness;
+    }
+
+    public void setLoginBusiness(LoginBusiness loginBusiness) {
+        this.loginBusiness = loginBusiness;
+    }
+
+    public PersonalDetailBusiness getPersonalDetailBusiness() {
+        return personalDetailBusiness;
+    }
+
+    public void setPersonalDetailBusiness(PersonalDetailBusiness personalDetailBusiness) {
+        this.personalDetailBusiness = personalDetailBusiness;
+    }
+
+    public List<RoleBusiness> getRoleBusinesses() {
+        return roleBusinesses;
+    }
+
+    public void setRoleBusinesses(List<RoleBusiness> roleBusinesses) {
+        this.roleBusinesses = roleBusinesses;
+    }
+
     @Override
     public void populateData(UserFormModel userFormModel) {
+        this.setPrimaryKeyId(userFormModel.getPrimarykeyId());
         this.setUserName(userFormModel.getUserName());
         this.setPassword(userFormModel.getPassword());
         this.setAccountStatus(userFormModel.getAccountStatus());
         this.setExpiryTime(userFormModel.getExpiryTime());
         this.setCreationTime(userFormModel.getCreationTime());
-        this.setPrimaryKeyId(userFormModel.getPrimarykeyId());
         this.setPasswordHash(userFormModel.getPasswordHash());
+/*
         CommunicationBusiness comBusiness = new CommunicationBusiness();
         comBusiness.setEmail1(userFormModel.getMailId());
         comBusiness.setMobile1(userFormModel.getMobileNo());
         comBusiness.setUserBusiness(this);
         this.setComBusiness(comBusiness);
-
+*/
         super.populateData(userFormModel);
     }
 

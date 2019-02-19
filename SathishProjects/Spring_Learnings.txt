@@ -16,4 +16,6 @@ problems you may face when you develop spring application first time
 	9. CSRF filter need to disable to begin with. Once you complete/setup all the configuration then you can enable CSRF Filter later. Otherwise CSRFFilter siliently throw exception and comming out with 403
 	10.
 
+------------------------------------------
+
 	 

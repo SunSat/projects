@@ -19,9 +19,11 @@ public interface BaseDaoPersistor<BD extends BaseDao,BB extends BaseBusiness, DF
     public BD createDao();
     public Class getDaoClass();
     public BD getByPrimaryKey(BB bb);
+    public BD getByPrimaryKey(BD bd,BB bb);
     public List<BD> getByBusinessKey(BB bb, List<Predicate> predicateList);
     public void appendCriteria(List<Criteria> criteriaList,DF df);
     public BD persist(BB bb);
+    public BD persist(BD bb);
     public BD update(BB bb);
     public BD deleteByPrimaryKey(BB bb);
     public BD getMaxNumber(BB bb);

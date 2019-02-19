@@ -19,4 +19,5 @@ public interface BaseBusiness<BM extends BaseModel> {
     public String getMessage();
     public void populateData(BM bm);
     public void getData(BM bm);
+    public void populateDefaultValue(BM bm);
 }

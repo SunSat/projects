@@ -9,5 +9,7 @@
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.CommunicationDao</class>
+        <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.PersonalDetailDao</class>
+        <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.RoleDao</class>
     </persistence-unit>
 </persistence>

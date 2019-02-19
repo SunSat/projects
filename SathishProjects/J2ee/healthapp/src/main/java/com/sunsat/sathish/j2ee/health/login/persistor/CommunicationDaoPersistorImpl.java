@@ -37,11 +37,12 @@ public class CommunicationDaoPersistorImpl extends AbstractGenericDaoPersistor<C
     @Override
     @Transactional
     public CommunicationBusiness createNewComm(CommunicationBusiness cmb) {
-        CommunicationDao dao = super.persist(cmb);
+        CommunicationDao dao = persist(cmb);
         cmb.setPrimaryKeyId(dao.getPrimaryKeyId());
         return cmb;
     }
 
+    @Transactional
     @Override
     public CommunicationBusiness updateNewComm(CommunicationBusiness cmb) {
         return null;
@@ -50,5 +51,16 @@ public class CommunicationDaoPersistorImpl extends AbstractGenericDaoPersistor<C
     @Override
     public CommunicationBusiness deleteComm(CommunicationBusiness cmb) {
         return null;
+    }
+
+    @Override
+    public CommunicationBusiness getByPrimarykey(CommunicationBusiness cmb) {
+        return getByPrimaryKey(cmb).getBusinessValue(BaseDataFilter.BY_ALL,null,null);
+    }
+
+    @Override
+    @Transactional
+    public CommunicationDao getByPrimaryKeyId(CommunicationBusiness ub) {
+        return getByPrimaryKey(ub);
     }
 }

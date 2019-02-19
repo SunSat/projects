@@ -1,15 +1,15 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
-import com.sunsat.sathish.j2ee.health.base.persistor.PersistorManager;
+import com.sunsat.sathish.j2ee.health.base.persistor.PersistanceManager;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
-import com.sunsat.sathish.j2ee.health.login.persistor.UserGenericDaoPersistor;
-import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
+import com.sunsat.sathish.j2ee.health.login.persistor.UserPersistanceManager;
+import com.sunsat.sathish.j2ee.health.login.pojo.business.RoleBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created by sathishkumar_su on 2/24/2018.
@@ -17,15 +17,20 @@ import java.util.Date;
 
 @Entity
 @Table(name = "user")
+@NamedStoredProcedureQueries(
+        @NamedStoredProcedureQuery(name = "verify_login",procedureName ="sp_verify_login",parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN,name = "user",type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN,name = "pass",type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.OUT,name = "message",type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.OUT,name = "userid",type = String.class)
+        })
+)
 public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long primaryKeyId;
-
-    @OneToOne(mappedBy = "userDao")
-    private CommunicationDao comDao;
 
     @Column(name = "username")
     private String userName;
@@ -45,6 +50,17 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     @Column(name = "account_status")
     private String accountStatus;
 
+    @OneToOne(mappedBy = "userDao", fetch = FetchType.LAZY)
+    private CommunicationDao comDao;
+
+    @OneToOne(mappedBy = "userDao", fetch = FetchType.LAZY)
+    private LoginDao loginDao;
+
+    @OneToOne(mappedBy = "userDao", fetch = FetchType.LAZY)
+    private PersonalDetailDao personalDetailDao;
+
+    @OneToMany(mappedBy = "userDao", fetch = FetchType.LAZY)
+    List<RoleDao> roleDao;
 
     @Override
     public Class getType() {
@@ -116,25 +132,77 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.comDao = comDao;
     }
 
+    public LoginDao getLoginDao() {
+        return loginDao;
+    }
+
+    public void setLoginDao(LoginDao loginDao) {
+        this.loginDao = loginDao;
+    }
+
+    public PersonalDetailDao getPersonalDetailDao() {
+        return personalDetailDao;
+    }
+
+    public void setPersonalDetailDao(PersonalDetailDao personalDetailDao) {
+        this.personalDetailDao = personalDetailDao;
+    }
+
+    public List<RoleDao> getRoleDao() {
+        return roleDao;
+    }
+
+    public void setRoleDao(List<RoleDao> roleDao) {
+        this.roleDao = roleDao;
+    }
+
     @Override
-    public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue) {
+    public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue, List<Class> parentClasses) {
         if(null == businessValue)
             businessValue = new UserBusiness();
+        if(null == parentClasses) {
+            parentClasses = new ArrayList<>();
+        }
+        parentClasses.add(this.getClass());
         switch (filter) {
-            case BY_ALL:
-                businessValue.setUserName(this.getUserName());
-                businessValue.setAccountStatus(this.getAccountStatus());
+            case BY_ID:
                 businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
+                break;
+            case BY_ALL:
+                businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
+                businessValue.setUserName(this.getUserName());
                 businessValue.setCreationTime(this.getCreationTime());
                 businessValue.setExpiryTime(this.getExpiryTime());
                 businessValue.setAccountStatus(this.getAccountStatus());
-                if(this.getComDao() != null) {
-                    businessValue.setComBusiness(this.getComDao().getBusinessValue(BaseDataFilter.BY_ALL,null));
+                super.getBusinessValue(filter,businessValue,parentClasses);
+                if(this.getComDao() != null && !parentClasses.contains(this.getComDao().getClass())) {
+                    parentClasses.add(this.getComDao().getClass());
+                    businessValue.setComBusiness(this.getComDao().getBusinessValue(filter,null,parentClasses));
                 }
-                super.getBusinessValue(filter,businessValue);
+                if(this.getLoginDao() != null && !parentClasses.contains(this.getLoginDao().getClass())) {
+                    parentClasses.add(this.getLoginDao().getClass());
+                    businessValue.setLoginBusiness(this.getLoginDao().getBusinessValue(filter,null,parentClasses));
+                }
+                if(this.getPersonalDetailDao() != null && !parentClasses.contains(this.getPersonalDetailDao().getClass())) {
+                    parentClasses.add(this.getPersonalDetailDao().getClass());
+                    businessValue.setPersonalDetailBusiness(this.getPersonalDetailDao().getBusinessValue(filter,null,parentClasses));
+                }
+                if(this.getRoleDao() != null && !parentClasses.contains(this.getRoleDao().getClass())) {
+                    List<RoleBusiness> roleBusiLi = new ArrayList<>(this.getRoleDao().size());
+                    parentClasses.add(RoleDao.class);
+                    for(RoleDao role : this.getRoleDao()) {
+                        roleBusiLi.add(role.getBusinessValue(filter,null,parentClasses));
+                    }
+                    businessValue.setRoleBusinesses(roleBusiLi);
+                }
                 break;
             case BY_BUSINESS_KEY:
-
+                businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
+                businessValue.setUserName(this.getUserName());
+                businessValue.setCreationTime(this.getCreationTime());
+                businessValue.setExpiryTime(this.getExpiryTime());
+                businessValue.setAccountStatus(this.getAccountStatus());
+                super.getBusinessValue(filter,businessValue,parentClasses);
                 break;
         }
         return businessValue;
@@ -142,18 +210,35 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
 
     @Override
     public void setBusinessValue(UserBusiness businessValue) {
+        this.setPrimaryKeyId(businessValue.getPrimaryKeyId());
         this.setUserName(businessValue.getUserName());
         this.setPassword(businessValue.getPassword());
         this.setPasswordHash(businessValue.getPasswordHash());
         this.setAccountStatus(businessValue.getAccountStatus());
         this.setCreationTime(businessValue.getCreationTime());
         this.setExpiryTime(businessValue.getExpiryTime());
-        this.setCreatedByDate(businessValue.getCreatedByDate());
-        this.setModifiedByDate(businessValue.getModifiedByDate());
-        this.setIsDeleted(businessValue.isDeleted());
-        this.setPrimaryKeyId(businessValue.getPrimaryKeyId());
+        super.setBusinessValue(businessValue);
+        UserPersistanceManager mgr = UserPersistanceManager.getInstance();
+
         if(businessValue.getComBusiness() != null) {
-            this.setComDao(PersistorManager.getInstance().getCommPersistor().getByPrimaryKey(businessValue.getComBusiness()));
+            CommunicationDao comDao = mgr.getCommDaoPersistor().getByPrimaryKeyId(businessValue.getComBusiness());
+            this.setComDao(comDao);
+        }
+        if(businessValue.getLoginBusiness() != null) {
+            LoginDao loginDao = mgr.getLoginDaoPersistor().getByPrimaryKeyId(businessValue.getLoginBusiness());
+            this.setLoginDao(loginDao);
+        }
+        if(businessValue.getPersonalDetailBusiness() != null) {
+            this.setPersonalDetailDao(mgr.getPersonalDetailDaoPersistor().getByPrimaryKeyId(businessValue.getPersonalDetailBusiness()));
+        }
+        if(businessValue.getRoleBusinesses() != null) {
+            List<RoleDao> roleDaoList = new ArrayList<>(businessValue.getRoleBusinesses().size());
+            for(RoleBusiness roleBusinesses : businessValue.getRoleBusinesses()) {
+                roleDaoList.add(mgr.getRoleDaoPersistor().getByPrimaryKeyId(roleBusinesses));
+            }
+            if(roleDaoList.size() > 0) {
+                this.setRoleDao(roleDaoList);
+            }
         }
     }
 }

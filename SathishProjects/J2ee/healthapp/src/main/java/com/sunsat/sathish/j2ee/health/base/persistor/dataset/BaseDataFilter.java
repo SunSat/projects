@@ -1,7 +1,7 @@
 package com.sunsat.sathish.j2ee.health.base.persistor.dataset;
 
 public enum BaseDataFilter {
-    BY_ALL("all"), BY_BUSINESS_KEY("businesskey");
+    BY_ALL("all"), BY_ID("id"),BY_BUSINESS_KEY("do not load any reference");
 
     private String filterType;
 

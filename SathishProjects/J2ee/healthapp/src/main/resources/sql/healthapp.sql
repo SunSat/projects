@@ -1,71 +1,117 @@
-CREATE SCHEMA `healthapp` ;
+CREATE DATABASE `healthapp`;
 
-CREATE TABLE `healthapp`.`user` (
-  `id` BIGINT(10) NOT NULL,
-  `username` VARCHAR(255) NULL,
-  `password` VARCHAR(500) NULL,
-  `password_hash` VARCHAR(500) NULL,
-  `creation_time` VARCHAR(30) NULL,
-  `expiry_time` VARCHAR(30) NULL,
-  `email` VARCHAR(255) NULL,
-  `email_confirmation_token` VARCHAR(255) NULL,
-  `email_token_expiry` VARCHAR(30) NULL,
-  `user_account_status` VARCHAR(20) NULL,
-  `modified_time` VARCHAR(30) NULL,
-  `deleted` TINYINT(1) NULL,
-  `message` VARCHAR(255) NULL,
+drop procedure if exists `sp_verify_login`;
+delimiter $$;
+create procedure sp_verify_login(IN user varchar(50),
+                                 IN pass varchar(500),
+                                 OUT message varchar(100),
+                                 OUT userid bigint(10))
+BEGIN
+  DECLARE existUname varchar(250);
+  DECLARE existPass varchar(550);
+  DECLARE existId bigint(10);
+  DECLARE accCount TINYINT;
+  SELECT ID,USERNAME,PASSWORD,count(USERNAME) INTO existId,existUname,existPass,accCount FROM USER WHERE USERNAME = user;
+  IF accCount <= 0 THEN
+    SET message = "Invalid username Or username not available.";
+  ELSEIF existPass = pass THEN
+    SET userid = existId;
+    SET message = "successful";
+  ELSE
+    SET message = "invalid username or password.";
+  END IF;
+END $$;
+DELIMITER ;
+
+CREATE TABLE `user` (
+  `id` bigint(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(500) DEFAULT NULL,
+  `password_hash` varchar(500) DEFAULT NULL,
+  `creation_time` datetime DEFAULT NULL,
+  `expiry_time` datetime DEFAULT NULL,
+  `account_status` varchar(20) DEFAULT NULL,
+  `deleted` tinyint(1) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `created_by` bigint(10) DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `modified_by` bigint(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC));
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `healthapp`.`login` (
-  `id` BIGINT(10) NOT NULL,
-  `user_id` BIGINT(10) NULL,
-  `login_time` VARCHAR(30) NULL,
-  `logout_time` VARCHAR(30) NULL,
-  `status` VARCHAR(50) NULL,
-  `message` VARCHAR(255) NULL,
-  PRIMARY KEY (`id`),
-  INDEX `Login_UserId_To_User_UserId_idx` (`user_id` ASC),
-  CONSTRAINT `Login_User_Id_To_User_User_Id`
-  FOREIGN KEY (`user_id`)
-  REFERENCES `healthapp`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+CREATE TABLE `communication` (
+ `id` bigint(10) NOT NULL AUTO_INCREMENT,
+ `user_id` bigint(10) NOT NULL,
+ `mob1` varchar(15) DEFAULT NULL,
+ `is_mob1_verified` tinyint(1) DEFAULT NULL,
+ `mob1_cnf_token` int(11) DEFAULT NULL,
+ `mob1_cnf_token_expiry_date` datetime DEFAULT NULL,
+ `email1` varchar(50) DEFAULT NULL,
+ `is_email1_verified` tinyint(1) DEFAULT NULL,
+ `email1_cnf_token` int(11) DEFAULT NULL,
+ `email1_cnf_token_expiry_date` datetime DEFAULT NULL,
+ `created_date` date DEFAULT NULL,
+ `created_by` mediumtext,
+ `modified_date` date DEFAULT NULL,
+ `modified_by` mediumtext,
+ `deleted` tinyint(1) DEFAULT NULL,
+ `message` varchar(100) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `communication_id_uindex` (`user_id`),
+ CONSTRAINT `communication_To_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-ALTER TABLE `healthapp`.`login`
-ADD COLUMN `login_source_id` BIGINT(10) NULL AFTER `user_id`,
-ADD INDEX `Login_To_Login_Source_ID_idx` (`login_source_id` ASC);
-ALTER TABLE `healthapp`.`login`
-ADD CONSTRAINT `Login_To_Login_Source_ID`
-FOREIGN KEY (`login_source_id`)
-REFERENCES `healthapp`.`loginsource` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
+CREATE TABLE `login` (
+ `id` bigint(10) NOT NULL AUTO_INCREMENT,
+ `user_id` bigint(10) NOT NULL,
+ `login_time` varchar(30) DEFAULT NULL,
+ `logout_time` varchar(30) DEFAULT NULL,
+ `status` varchar(50) DEFAULT NULL,
+ `message` varchar(255) DEFAULT NULL,
+ `created_date` timestamp NULL DEFAULT NULL,
+ `created_by` bigint(10) DEFAULT NULL,
+ `modified_date` timestamp NULL DEFAULT NULL,
+ `modified_by` bigint(10) DEFAULT NULL,
+ `deleted` tinyint(1) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `login_id_uindex` (`user_id`),
+ CONSTRAINT `login_to_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `healthapp`.`loginsource` (
-  `id` BIGINT(10) NOT NULL,
-  `userid` BIGINT(10) NULL,
-  `source` VARCHAR(50) NULL,
-  PRIMARY KEY (`id`),
-  INDEX `loginSource_To_UserId_idx` (`userid` ASC),
-  CONSTRAINT `loginSource_To_UserId`
-  FOREIGN KEY (`userid`)
-  REFERENCES `healthapp`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+CREATE TABLE `personaldetail` (
+ `id` bigint(10) NOT NULL AUTO_INCREMENT,
+ `user_id` bigint(10) DEFAULT NULL,
+ `firstname` varchar(50) DEFAULT NULL,
+ `lastname` varchar(50) DEFAULT NULL,
+ `gender` tinyint(4) DEFAULT NULL,
+ `dob` date DEFAULT NULL,
+ `address1` varchar(250) DEFAULT NULL,
+ `address2` varchar(250) DEFAULT NULL,
+ `city` varchar(200) DEFAULT NULL,
+ `district` varchar(100) DEFAULT NULL,
+ `state` varchar(250) DEFAULT NULL,
+ `country` varchar(100) DEFAULT NULL,
+ `pincode` int(11) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `personaldetail_user_id_fk` (`user_id`),
+ CONSTRAINT `personaldetail_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `healthapp`.`oldpassword` (
-  `id` BIGINT(10) NOT NULL,
-  `user_id` BIGINT(10) NULL,
-  `old_password` VARCHAR(500) NULL,
-  `old_password_hash` VARCHAR(500) NULL,
-  `creation_time` VARCHAR(30) NULL,
-  `expiry_time` VARCHAR(30) NULL,
-  `message` VARCHAR(255) NULL,
-  PRIMARY KEY (`id`),
-  INDEX `oldpassword_user_id_to_User_User_id_idx` (`user_id` ASC),
-  CONSTRAINT `oldpassword_user_id_to_User_User_id`
-  FOREIGN KEY (`user_id`)
-  REFERENCES `healthapp`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+CREATE TABLE `roles` (
+ `id` bigint(10) NOT NULL AUTO_INCREMENT,
+ `rolename` varchar(100) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `userrolelink` (
+ `id` bigint(10) NOT NULL AUTO_INCREMENT,
+ `user_id` bigint(10) DEFAULT NULL,
+ `role_id` bigint(10) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `userrolelink_roles_id_fk` (`role_id`),
+ KEY `userrolelink_user_id_fk` (`user_id`),
+ CONSTRAINT `userrolelink_roles_id_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ CONSTRAINT `userrolelink_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

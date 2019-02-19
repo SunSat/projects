@@ -1,21 +1,22 @@
 package com.sunsat.sathish.j2ee.health.base.pojo.dao;
 
+import com.sunsat.sathish.j2ee.health.base.persistor.PersistanceManager;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by sathishkumar_su on 2/24/2018.
  */
 @MappedSuperclass
 public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends BaseDataFilter> implements BaseDao<BB,DF> {
-
-   /* public abstract Class<BB> getType();
-    public abstract BB getBusinessValue(DF df);
-    public abstract void setBusinessValue(BB businessValue);*/
 
     @Column(name = "created_by")
     private Long createdById;
@@ -91,7 +92,7 @@ public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends
     }
 
     @Override
-    public BB getBusinessValue(DF df, BB businessValue) {
+    public BB getBusinessValue(DF df, BB businessValue, List<Class> parentClasses) {
         businessValue.setCreatedByDate(this.getCreatedByDate());
         businessValue.setCreatedById(this.getCreatedById());
         businessValue.setMessage(this.getMessage());
@@ -109,5 +110,9 @@ public abstract class AbstractBaseDao<BB extends AbstractBaseBusiness,DF extends
         this.setMessage(businessValue.getMessage());
         this.setModifiedByDate(businessValue.getModifiedByDate());
         this.setModifiedById(businessValue.getModifiedById());
+    }
+
+    public PersistanceManager getPersistenceManager() {
+        return PersistanceManager.getInstance();
     }
 }

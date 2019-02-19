@@ -108,6 +108,8 @@ public class CommunicationBusiness extends AbstractBaseBusiness<UserFormModel> {
 
     @Override
     public void populateData(UserFormModel userFormModel) {
+        this.setMobile1(userFormModel.getMobileNo());
+        this.setEmail1(userFormModel.getMailId());
         super.populateData(userFormModel);
     }
 

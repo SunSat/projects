@@ -9,7 +9,6 @@ import java.util.Date;
  */
 public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> implements BaseBusiness<BM> {
 
-    private Class type;
     private Long createdById;
     private Long modifiedById;
     private Date createdByDate;
@@ -93,5 +92,8 @@ public abstract class AbstractBaseBusiness<BM extends AbstractBaseModel> impleme
         bm.setIsDeleted(this.isDeleted());
         bm.setModifiedByDate(this.getModifiedByDate());
         bm.setModifiedById(this.getModifiedById());
+    }
+    public void populateDefaultValue(BM bm) {
+
     }
 }

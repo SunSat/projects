@@ -74,13 +74,24 @@
               Introduction
             </h3>
             <p>
-              Hi All In this blog I am going to teach you a simple fundamental technique to live an healthy life.
+              Hi All In this blog I am going to teach/tell you <strong>how to live an health life</strong> by applying a simple fundamental technique.
+              <ul>
+                <li>
+                  Without taking any medicine/any health suplimentery.
+                </li>
+                <li>
+                  without following any Diat.
+                </li>
+                <li>
+                  Without doing any Yoga.
+                </li>
+              </ul>
             </p>
           </div>
 
           <div>
             <h3>
-              Hospitals, Shops, Centers, Classes & Ads:
+              Hospitals, Shops, Centers, Classes, Internet & Ads:
             </h3>
 
             <p>
@@ -93,37 +104,37 @@
             <div class="col span-2-of-3 div-different-varity-of-hospitals">
               <ul class="ul-different-varity-of-hospitals">
                 <li class="li-with-img">
-                  Different verity of Multi Spaciality medical hospitals and clinic for Allopathy(English Medicine), Homepathy, Sidha, Aurvedha, Unani, Acupuncture, PranicHealing, Touchhealing etc,
+                  Different verity of Multi Speciality medical hospitals and clinic for Allopathy(English Medicine), Homepathy, Sidha, Aurvedha, Unani, Acupuncture, PranicHealing, Touchhealing etc,
                 </li>
                 <li>
-                  Medical Institutions / Research Labs.
+                  Medical Institutions & Advance Technology Research Labs.
                 </li>
                 <li>
-                  Medical shop / Health products shops.
+                  Medical & Health products selling shops.
                 </li>
                 <li>
-                  Diagnostic / Scanning / Blood Testing centers
+                  Diagnostic, Scanning & Blood Testing centers.
                 </li>
                 <li>
-                  Skin / Eye / Dental / Heir Cares.
+                  Skin, Eye, Dental & Heir Cares.
                 </li>
                 <li>
-                  Spa / Gym / Yoga centers.
+                  Spa, Gym, Yoga centers.
                 </li>
                 <li>
-                  Parenting / Preganancy related classes.
+                  Parenting, Pregnancy related classes.
                 </li>
                 <li>
-                  High quality(0 Collestral) Food / Air, Water purifiers & Health related equipments.
+                  High quality Food, Air, Water purifiers & Health related equipments.
                 </li>
                 <li>
-                  Vacinations for childs
+                  Vaccinations for child's
                 </li>
                 <li>
-                  So many health awareness programs / Free BMI, Suger, BB, Eye checking campus.
+                  So many health awareness programs / Free BMI, Suger, BB & Eye checking campus.
                 </li>
                 <li>
-                  Health advertisements in TV(more then 1000 indian origin Chennals), FM & Internet on all 24 hours.
+                  Health product related advertisements in TV(Around the world on all channels), FM & Internet every where.
                 </li>
               </ul>
             </div>
@@ -172,11 +183,20 @@
             </div>
             <div class="clearfix"></div>
             <p>
-              And, We are utilizing all these by more then 100%. But still we are not able to live an
-              healthy life. Or We may feel, we are living an healthy life but if we stop doing any of these then we are
-              going back to non-healthy life. Following the reason.
+              And, We are utilizing all these by more then 130%. But still we are not able to live an
+              healthy life. And we are investing time, energy & money to live an healthy life without applying fundamental technique.
             </p>
           </div>
+          <div>
+            <h3>
+              Fundamental Rules Every where:
+            </h3>
+
+            <p>
+
+            </p>
+          </div>
+
           <div>
             <h3>
               Walk To Any Hospital:

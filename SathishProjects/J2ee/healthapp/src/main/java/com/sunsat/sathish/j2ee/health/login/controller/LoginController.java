@@ -1,25 +1,28 @@
 package com.sunsat.sathish.j2ee.health.login.controller;
 
-import com.sunsat.sathish.j2ee.health.base.businessService.BaseBusinessService;
-import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
-import com.sunsat.sathish.j2ee.health.login.loginException.LoginException;
-import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
+import com.sunsat.sathish.j2ee.health.base.mail.communicator.MailCommunicator;
+import com.sunsat.sathish.j2ee.health.base.util.GeneralAppUtil;
+import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.LoginResponseModel;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import com.sunsat.sathish.j2ee.health.login.service.CommunicationBusinessService;
-import com.sunsat.sathish.j2ee.health.login.service.LoginBusinessService;
-import com.sunsat.sathish.j2ee.health.login.service.UserBusinessService;
+import com.sunsat.sathish.j2ee.health.login.service.UserAccountBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.awt.*;
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by sathishkumar_su on 4/17/2018.
@@ -27,37 +30,57 @@ import java.awt.*;
 @Controller
 public class LoginController {
 
-    @Autowired
-    LoginBusinessService loginService;
 
     @Autowired
-    UserBusinessService userService;
+    UserAccountBusinessService userService;
 
     @Autowired
     CommunicationBusinessService communicationService;
 
+    @Autowired
+    MailCommunicator mailCommunicator;
+
+    @Autowired
+    @Qualifier("jdbcAuthenticationManager")
+    AuthenticationManager authManager;
+
     @RequestMapping(value = {"/homepage.an","/","/index.jsp"},method = RequestMethod.GET)
-    public String loadHomePage() {
+    public String loadHomePage(HttpServletRequest request,HttpServletResponse response) {
         //loginService.createNewUser(new UserFormModel());
+/*
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if(auth.getName() != null && auth.getName().equalsIgnoreCase("anonymousUser")) {
+            return "homepage";
+        }
+        new SecurityContextLogoutHandler().logout(request,response,auth);
+*/
+
         return "homepage";
     }
 
-    @RequestMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE, method = RequestMethod.POST)
-    @ResponseBody
-    public UserFormModel peformLogin(@RequestParam  UserFormModel model, HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/loginAction.an", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, method = RequestMethod.POST)
+    public @ResponseBody UserFormModel peformLogin(@ModelAttribute UserFormModel model, HttpServletRequest request, HttpServletResponse response) {
 
-        HttpSession ses = request.getSession(true);
-        if(ses.isNew()) {
-
-        } else {
-            ses.invalidate();
-            ses = request.getSession(true);
+        Authentication newAuth = null;
+        try {
+            newAuth = authManager.authenticate(new UsernamePasswordAuthenticationToken(model.getUserName(),model.getPassword()));
+            if(newAuth.isAuthenticated()) {
+                model.setMessage("successful");
+                GeneralAppUtil.setAuthentication(newAuth);
+                UserBusiness ub = (UserBusiness) newAuth.getPrincipal();
+                model.setPrimarykeyId(ub.getPrimaryKeyId());
+                userService.createOrUpdateLogin(model);
+                model.setResponseStatus("successful");
+                model.setResponseMessage("successful");
+            }
+        }catch(BadCredentialsException be) {
+            model.setResponseStatus("error");
+            model.setResponseMessage(be.getMessage());
+        }catch (UsernameNotFoundException un) {
+            model.setResponseStatus("error");
+            model.setResponseMessage(un.getMessage());
         }
-        UserFormModel model1 = new UserFormModel();
-        model1.setUserName("Hello");
-        model1.setPassword("Good");
-
-        return new UserFormModel();
+        return model;
     }
 
     @RequestMapping(value="/signUpAction.an", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -75,22 +98,24 @@ public class LoginController {
             return resModel;
         }
 
-        resModel = userService.getExistingUser(model);
-        String existUserName = resModel.getUserName();
-        if (existUserName != null && existUserName.trim().length() > 0) {
+        UserBusiness ub = userService.getExistingUser(model);
+        if(ub != null && ub.getUserName().trim().equalsIgnoreCase(userName)) {
             resModel.setResponseMessage("User Already Exists. Please give different UserName.");
             resModel.setResponseStatus("Error");
         } else {
-            resModel = userService.createNewUser(model);
-            Long newPrimaryKeyId = resModel.getPrimarykeyId();
-            if(newPrimaryKeyId != null &&  newPrimaryKeyId > 0) {
-                communicationService.createNewCommunication(resModel);
-                resModel.setResponseMessage("User Successfully Created. Please verify your EMail.");
-                resModel.setResponseStatus("successful");
-            } else {
-                resModel.setResponseMessage("Error Creting new Uesr. Please try after sometime.");
-                resModel.setResponseStatus("Error");
-            }
+            //Create new User.
+            Calendar cal = Calendar.getInstance(Locale.US);
+            model.setCreationTime(cal.getTime());
+            cal.add(Calendar.MONTH,3);
+            model.setExpiryTime(cal.getTime());
+            model.setAccountStatus("INITIAL");
+            model.setIsDeleted(0);
+            ub = userService.createNewUser(model);
+            model.setPrimarykeyId(ub.getPrimaryKeyId());
+            //User Created Succsssfully.
+            userService.createCommunication(model);
+            resModel.setResponseMessage("User Successfully Created. Please verify your EMail before Login.");
+            resModel.setResponseStatus("successful");
         }
         return  resModel;
     }
@@ -103,8 +128,9 @@ public class LoginController {
 
     @RequestMapping(value = "/checkUserNameForSignUp.an", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody UserFormModel checkExistingUserName(@RequestBody UserFormModel model) {
-        UserFormModel retModel = userService.getExistingUser(model);
-        String uName = retModel.getUserName();
+        UserBusiness ub = userService.getExistingUser(model);
+        UserFormModel retModel = new UserFormModel();
+        String uName = ub.getUserName();
         if(null != uName && uName.trim().length() > 0 ) {
             retModel.setResponseStatus("Error");
             retModel.setResponseMessage("UserName Exists.");
@@ -114,5 +140,4 @@ public class LoginController {
         }
         return retModel;
     }
-
 }

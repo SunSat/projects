@@ -1,0 +1,58 @@
+1. JSP Scriptlet for jsp code.
+<%
+    All JSP Code will be in this tag.
+%>
+<jsp:scriptlet>
+    All JSP Code will be in this Tag.
+</jsp:scriptlet>
+
+Example :
+<html>
+ <body>
+    The Current Time is : <% out.println(new Date()); %>
+    <jsp:scriptlet>
+        out.println("Your IP address is " + request.getRemoteAddr());
+        any code can go in this.
+    </jsp:scriptlet>
+ </body>
+</html>
+
+2. JSP Declaration
+
+<%! int i=10;%>
+<%! Integer k=null;%>
+<jsp:declaration>
+  int i=10;
+  Integer p=19;
+</jsp:declaration>
+
+3. JSP Expression:
+<jsp:expression>
+    20;
+    "html";
+</jsp:expression>
+<%= "Sathish"%>
+
+4. Static Code can go in this.
+<\% int i=10; %\>
+
+5. JSP Directive
+<%@Page %>
+<%@include %>
+<%@Taglib %>
+
+Same as jsp:actions.
+
+<jsp:include file.jsp/>
+
+6. JSP Implicit Objects.
+    1. request
+    2. response
+    3. session
+    4. out
+    5. config
+    6. pageContext
+    7. page
+    8. exception
+7.
+

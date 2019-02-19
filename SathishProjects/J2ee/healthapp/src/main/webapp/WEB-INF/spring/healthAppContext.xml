@@ -61,6 +61,8 @@
         </property>
     </bean>
 
+    <bean id="mailCommunicator" class="com.sunsat.sathish.j2ee.health.base.mail.communicator.MailCommunicatorImpl"/>
+
     <bean id="jpaVendorAdaptor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
 
     <bean id="entityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -97,6 +99,9 @@
     <bean id="persistenceExceptionTranslationPostProcessor" class=
             "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-    <bean id="persistanceManager" class="com.sunsat.sathish.j2ee.health.base.persistor.PersistorManager" factory-method="getInstance"/>
+    <bean id="persistanceManager" class="com.sunsat.sathish.j2ee.health.base.persistor.PersistanceManager" factory-method="getInstance"/>
+
+    <bean id="userPersistanceManager" class="com.sunsat.sathish.j2ee.health.login.persistor.UserPersistanceManager" factory-method="getInstance"/>
+
 
 </beans>

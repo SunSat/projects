@@ -13,7 +13,7 @@
         <div class="navigation-div">
             <a href="#" class="donate-navigation sub-navigation">Donate</a>
             <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
-            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation">Logout</a>
+            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation" onclick="showLogoutUserContainer(true)">Settings</a>
             <a href="#" class="login-navigation sub-navigation" id="login-navigation" onclick="loginMouseHover()">Login</a>
             <a href="#" class="health-life-navigation sub-navigation">Health Technique</a>
             <a href="#" class="home-navigation  sub-navigation">Home</a>
@@ -38,6 +38,26 @@
         <a href="#" id="google"> <i class="ion-social-googleplus"></i>Google+</a>
     </div-->
 
+    <div class="logout-user-setting-container" id="logout-user-setting-container">
+        <ul class="logout-user-ul">
+            <li class="logout-user-li avator-img-li">
+                <div class="avator-img-div">
+                    <img src="webRes/img/Healthy_life_Large_Img_900_506.jpg" alt="Welcome User" class="user-avator-img">
+                </div>
+                <div class="wlecome-user-div">
+                    <span class="welcome-msg">Welcome</span>
+                    <span class="logged-username" id="logged-username">Sathish Kumar Sundaram</span>
+                </div>
+            </li>
+            <li class="logout-user-li personal-setting-li">
+                    <a href="#" class="personal-user-setings media-link">Personal Settings</a>
+            </li>
+            <li class="logout-user-li logout-li">
+                    <a href="#" class="personal-user-setings media-link">Logout</a>
+            </li>
+        </ul>
+    </div>
+
 
 </nav>
 <div class="clearfix">
@@ -54,7 +74,7 @@
             <div class="clearfix">
 
             </div>
-            <div class="warning-messages">
+            <div class="login-warning-messages" id="login-warning-messages">
             </div>
             <form method="post" action="submit" class="login-handler">
                 <div class="through-social-media">

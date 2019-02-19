@@ -5,7 +5,7 @@ import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
 
-public interface UserGenericDaoPersistor extends BaseDaoPersistor<UserDao, UserBusiness, BaseDataFilter> {
+public interface UserGenericDaoPersistor {
 
     public UserBusiness createNewUser(UserBusiness ub);
     public UserBusiness getUserDetails(UserBusiness ub);
@@ -15,4 +15,6 @@ public interface UserGenericDaoPersistor extends BaseDaoPersistor<UserDao, UserB
     public String validateUser(UserBusiness ub);
     public String validateUserMailId(UserBusiness ub);
     public String validateUserMobNo(UserBusiness ub);
+    public UserBusiness performLogin(UserBusiness ub);
+    public UserDao getByPrimaryKeyId(UserBusiness ub);
 }

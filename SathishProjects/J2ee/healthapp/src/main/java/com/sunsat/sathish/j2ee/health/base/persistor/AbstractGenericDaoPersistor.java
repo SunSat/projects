@@ -3,8 +3,10 @@ package com.sunsat.sathish.j2ee.health.base.persistor;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
+import com.sunsat.sathish.j2ee.health.base.pojo.dao.BaseDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
 import org.hibernate.Criteria;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -44,8 +46,20 @@ public abstract class AbstractGenericDaoPersistor<BD extends AbstractBaseDao,BB 
 
     @Override
     @Transactional
+    public BD persist(BD bb) {
+        entityManager.persist(bb);
+        return bb;
+    }
+
+    @Override
+    @Transactional
     public BD getByPrimaryKey(BB bb) {
         return (BD) entityManager.find(getDaoClass(),bb.getPrimaryKeyId());
+    }
+
+    @Transactional
+    public BD getByPrimaryKey(BD bd, BB bb) {
+        return (BD) entityManager.find(bd.getType(),bb.getPrimaryKeyId());
     }
 
     @Transactional
@@ -66,6 +80,22 @@ public abstract class AbstractGenericDaoPersistor<BD extends AbstractBaseDao,BB 
         return query.getResultList();
     }
 
+    @Transactional
+    public <T extends BaseDao> List<T> getByBusinessKey(T bd, BB bb, List<Predicate> predicateList) {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> criQuery = builder.createQuery(bd.getType());
+        Root<T> rootQuery = criQuery.from(bd.getType());
+        criQuery.select(rootQuery);
+        if(null != predicateList && predicateList.size() > 0) {
+            criQuery.where(predicateList.toArray(new Predicate[]{}));
+        }
+        TypedQuery<T> query = entityManager.createQuery(criQuery);
+        if(query == null) {
+            return null;
+        }
+        return query.getResultList();
+    }
+
     @Override
     @Transactional
     public List<BD> getByBusinessKey(Root<BD> root,CriteriaQuery<BD> criQuery, List<Predicate> preList) {
@@ -79,6 +109,7 @@ public abstract class AbstractGenericDaoPersistor<BD extends AbstractBaseDao,BB 
     @Transactional
     @Override
     public BD update(BB bb) {
+
         return null;
     }
 

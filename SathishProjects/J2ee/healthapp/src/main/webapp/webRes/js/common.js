@@ -3,7 +3,7 @@ function performAjaxRequest(httpMethod,url,data,responsecallback) {
     xhttp.open(httpMethod,url,true);
 /*    xhttp.setRequestHeader('X-CSRF-TOKEN',data._csrf);*/
     xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    xhttp.setRequestHeader('Accept','application/x-www-form-urlencoded');
+    xhttp.setRequestHeader('Accept','application/json;charset=UTF-8');
     xhttp.onreadystatechange = function () {
         responsecallback(xhttp);
     };

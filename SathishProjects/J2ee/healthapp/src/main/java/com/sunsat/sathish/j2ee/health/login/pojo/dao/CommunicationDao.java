@@ -1,18 +1,17 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.dao;
 
-import com.sunsat.sathish.j2ee.health.base.persistor.PersistorManager;
+import com.sunsat.sathish.j2ee.health.base.persistor.BaseDaoPersistor;
+import com.sunsat.sathish.j2ee.health.base.persistor.PersistanceManager;
 import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
-import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
-import com.sunsat.sathish.j2ee.health.base.pojo.business.BaseBusiness;
 import com.sunsat.sathish.j2ee.health.base.pojo.dao.AbstractBaseDao;
-import com.sunsat.sathish.j2ee.health.login.persistor.CommunicationGenericDaoPersistor;
+import com.sunsat.sathish.j2ee.health.login.persistor.UserPersistanceManager;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
-import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import org.hibernate.annotations.Cascade;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 // @Entity
 @Table(name = "communication")
@@ -151,20 +150,23 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
         this.setMobile1CnfToken(businessValue.getMobile1CnfToken());
         this.setMobile1CnfTokenExpiryDate(businessValue.getMobile1CnfTokenExpiryDate());
         this.setMobile1Verified(businessValue.isMobile1Verified());
+        UserPersistanceManager mgr = UserPersistanceManager.getInstance();
         if(businessValue.getUserBusiness() != null) {
-            this.setUserDao(PersistorManager.getInstance().getUserPersistor().getByPrimaryKey(businessValue.getUserBusiness()));
+            this.setUserDao(mgr.getUserDaoPersistor().getByPrimaryKeyId(businessValue.getUserBusiness()));
         }
         super.setBusinessValue(businessValue);
     }
 
     @Override
-    public CommunicationBusiness getBusinessValue(BaseDataFilter baseDataFilter, CommunicationBusiness businessValue) {
+    public CommunicationBusiness getBusinessValue(BaseDataFilter baseDataFilter, CommunicationBusiness businessValue,List<Class> parentClasses)   {
         if(null == businessValue) businessValue = new CommunicationBusiness();
+        if(null == parentClasses) {
+            parentClasses = new ArrayList<>();
+        }
+        parentClasses.add(this.getClass());
         switch (baseDataFilter) {
             case BY_ALL:
-                super.getBusinessValue(baseDataFilter,businessValue);
                 businessValue.setPrimaryKeyId(this.getPrimaryKeyId());
-                businessValue.setUserBusiness(this.getUserDao().getBusinessValue(BaseDataFilter.BY_ALL,new UserBusiness()));
                 businessValue.setEmail1(this.getEmail1());
                 businessValue.setEmail1CnfToken(this.getEmail1CnfToken());
                 businessValue.setEmail1CnfTokenExpiryDate(this.getEmail1CnfTokenExpiryDate());
@@ -173,8 +175,9 @@ public class CommunicationDao extends AbstractBaseDao<CommunicationBusiness, Bas
                 businessValue.setMobile1CnfToken(this.getMobile1CnfToken());
                 businessValue.setMobile1CnfTokenExpiryDate(this.getMobile1CnfTokenExpiryDate());
                 businessValue.setMobile1Verified(this.isMobile1Verified());
-                if( this.getUserDao()  != null) {
-                    businessValue.setUserBusiness(this.getUserDao().getBusinessValue(BaseDataFilter.BY_ALL,null));
+                if(!parentClasses.contains(this.getUserDao().getClass())) {
+                    parentClasses.add(this.getClass());
+                    businessValue.setUserBusiness(this.getUserDao().getBusinessValue(baseDataFilter,null,parentClasses));
                 }
                 break;
             case BY_BUSINESS_KEY:
