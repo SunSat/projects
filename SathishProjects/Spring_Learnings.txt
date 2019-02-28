@@ -17,5 +17,6 @@ problems you may face when you develop spring application first time
 	10.
 
 ------------------------------------------
-
+3. The DAO layer should have filters from MVC Layer. So that we can load the required data based on the filters.
+4. In UI we should use Event-Driven program for login
 	 
