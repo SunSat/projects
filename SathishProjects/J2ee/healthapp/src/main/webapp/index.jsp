@@ -2,7 +2,7 @@
 <head>
     <script type="application/javascript" rel="script">
         window.onload  = function (ev) {
-            location.href = 'homepage.an'
+            location.href = 'homepage.an';
         }
     </script>
 </head>

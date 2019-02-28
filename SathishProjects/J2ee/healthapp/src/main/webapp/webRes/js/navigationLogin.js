@@ -2,6 +2,14 @@
  * Created by sathishkumar_su on 3/21/2018.
  */
 
+$(document).ready(function () {
+    var userId = document.getElementById('loggedUserId').value;
+    var userName = document.getElementById('loggedUserName').value;
+    if(userId > 0 && userName != null && userName.trim().length > 0) {
+        performSuccessfulLogin();
+    }
+});
+
 function loginMouseHover() {
     var classList = document.getElementById('main-login-container').classList
     if(classList.length <= 1) {
@@ -32,23 +40,6 @@ function performSignUp() {
     var cPass = document.getElementById("signup-password-cnf").value;
     var mailId = document.getElementById("signup-mail-id").value;
 
-/*
-    verifyExistingUserName();
-    verifyPassword();
-    verifyCnfPassword();
-    verifyMailId();
-*/
-
-    /*var userNameStatus = document.getElementById('verifyUserNameStatus').value;
-    var passwordStatus = document.getElementById('verifyPasswordStatus').value
-    var cnfPasswordStatus = document.getElementById('verifyCnfPasswordStatus').value;
-    var mailIdStatus = document.getElementById('verifyMailIdStatus').value;
-
-    if(userNameStatus == 'false' || passwordStatus == 'false'  || cnfPasswordStatus == 'false'  || mailIdStatus == 'false' ) {
-        document.getElementById('signup-warning-msg').innerText = "Please fill required data properly.";
-        return;
-    }
-*/
     var data = {
         userName : uName,
         password : pass,
@@ -278,22 +269,30 @@ function hideAllContainer() {
 }
 
 function performSignout() {
-    var userId = document.getElementById("userId").value
-    var sessionId = document.getElementById("sessionId").value
+    var userId = document.getElementById("loggedUserId").value
+    var userName = document.getElementById("loggedUserName").value
+    var csrf = document.getElementById('_csrf')
+    if(csrf != null) csrf = csrf.value;
+    else csrf = "1";
     var data = {
         userId:userId,
-        sessionId : sessionId,
+        userName : userName,
         formAction : 'login',
-        formSubAction : 'logout'
+        formSubAction : 'logout',
+        _csrf : csrf
     }
-    performAjaxRequest("post","logoutAction.an",true,data,completeSignout)
+    performAjaxJsonRequest("post","logoutAction.do",data,completeSignout)
 }
 
 function completeSignout(xhttp) {
     if(xhttp.status == 200 && xhttp.readyState == 4) {
         hideAllContainer();
-        document.getElementById('small-avator-image').style.display = 'none';
-        document.getElementById('login-button-container').style.display = 'block';
+        document.getElementById("loggedUserId").value = 0;
+        document.getElementById("loggedUserName").value = null;
+        showLogoutUserContainer(false);
+        showHideAdminSettings(false);
+        document.getElementById('login-navigation').style.display = 'block';
+        document.getElementById('logout-navigation').style.display = 'none';
     }
 }
 
@@ -381,7 +380,7 @@ function performLogin() {
         _csrf : csrf
     };
 
-    var performSuccessfulLogin = function(xhttp) {
+    var performLoginCallBack = function(xhttp) {
         if(xhttp.readyState != 4 || xhttp.status != 200) {
             return;
         }
@@ -392,16 +391,35 @@ function performLogin() {
             document.getElementById("login-warning-messages").style.display = "block";
             return;
         } else {
-            hideAllContainer();
-            document.getElementById("login-navigation").style.display = "none";
-            document.getElementById("logout-navigation").style.display = "block";
-
-            var fUserName = formModel.userName;
-            document.getElementById('logged-username').innerText =fUserName;
-
+            document.getElementById('loggedUserId').value = formModel.primarykeyId;
+            document.getElementById('loggedUserName').value = formModel.userName;
+            document.getElementById('isAdmin').value = formModel.isAdmin;
+            document.getElementById('userLike').value = formModel.userLike;
+            performSuccessfulLogin();
         }
     };
-    performAjaxRequest("post","loginAction.an",data,performSuccessfulLogin);
+    performAjaxRequest("post","loginAction.an",data,performLoginCallBack);
+}
+function performSuccessfulLogin() {
+    var fUserName = document.getElementById('loggedUserName').value;
+    var userNameFirstLetter = fUserName.charAt(0);
+
+
+    document.getElementById("login-navigation").style.display = "none";
+    var logoutElement = document.getElementById("logout-navigation");
+    logoutElement.style.display = "block";
+
+    var react = logoutElement.getBoundingClientRect();
+    document.getElementById('logout-user-setting-container').style.left = react.left;
+
+    hideAllContainer();
+
+    var isAdminVal = document.getElementById('isAdmin').value;
+    showHideAdminSettings(isAdminVal);
+
+    var isUserLike = document.getElementById('userLike').value;
+    //changeColorto green.
+
 }
 function searchCloseBut() {
     var clsList = document.getElementById('general-search-container').classList;
@@ -420,5 +438,13 @@ function showLogoutUserContainer(isShow) {
         if(clsList.contains('logout-user-setting-container-show')) {
             clsList.remove('logout-user-setting-container-show');
         }
+    }
+}
+function showHideAdminSettings(isAdmin) {
+    var admin_setting = document.getElementById('admin-sesstings');
+    if(isAdmin == 'true') {
+        admin_setting.style.display = 'block';
+    } else {
+        admin_setting.style.display = 'none';
     }
 }

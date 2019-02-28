@@ -64,12 +64,12 @@ public class PersonalDetailDao extends AbstractBaseDao<PersonalDetailBusiness, B
 
     @Override
     public Long getPrimaryKeyId() {
-        return null;
+        return primaryKeyId;
     }
 
     @Override
     public void setPrimaryKeyId(Long primarykeyId) {
-
+        this.primaryKeyId = primarykeyId;
     }
 
     public UserDao getUserDao() {

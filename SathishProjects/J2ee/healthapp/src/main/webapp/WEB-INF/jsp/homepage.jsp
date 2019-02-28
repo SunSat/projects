@@ -1,3 +1,5 @@
+<%@ page import="static com.sunsat.sathish.j2ee.health.base.util.GeneralConstants.LIKE_COUNT" %>
+<%@ page import="static com.sunsat.sathish.j2ee.health.base.util.GeneralConstants.USER_LIKE" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -45,9 +47,10 @@
               <a href="#" class="">Technique</a>
             </div>
 
-            <div class="thumpsup_count">
+            <div class="thumpsup_count" onclick="performLikeClicked(this)">
+              <input type="hidden" id="userLike" value="<%=request.getAttribute(USER_LIKE)%>">
               <div class="thumpsup_msg">
-                <p class="like_count_msg">0 Likes</p>
+                <p class="like_count_msg"><span class="total-no-likes" id="total-no-likes"><%=request.getAttribute(LIKE_COUNT)%></span> Likes</p>
               </div>
               <div class="thumpsupicon shake-up-down-effort">
                 <i class="ion-thumbsup"></i>

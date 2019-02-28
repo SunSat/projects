@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <div class="logo" style="float: right;width: 50px;height: 80px;">
+            <img src="/webRes/img/logo_healthy_life_technique.jpg" alt="HealthyLifeTechnique Logo"/>
+        </div>
+        <div>
+            <h1>
+                Welcome
+                <br>
+                <hr>
+            </h1>
+        </div>
+        <div>
+            <h3>
+                Dear ${userName},
+            </h3>
+            <p>
+                Your new Account has been creted successfully, Welcome to HealthyLifeTechniqu.com
+            </p>
+            <p>
+                My Haurthy congurdulation for your happy and healthy life.
+            </p>
+            <p>
+                By following the technique suggested in healthylifetechnique.com you can recover from any of the decies and also you can start to live an healthy life which you like. Please gothrough terms and conditions carefully before start applying the healthy life techniques.
+            </p>
+            <p>
+                One more final step to activiate your account.
+                Step 1 : Please login with your creadentials.
+                Step 2 : Go to Settings and provide the below OTP and activiate your account.
+            </p>
+            <p>
+                The OTP is : ${otp}
+            </p>
+            <p>
+                Thanks
+                HealthyLifeTechnique.com
+            </p>
+        </div>
+    </body>
+</html>
+
+
+
+

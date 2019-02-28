@@ -83,9 +83,10 @@ public class LoginDaoPersistorImpl extends AbstractGenericDaoPersistor<LoginDao,
     @Override
     @Transactional
     public LoginDao getByPrimaryKeyId(LoginBusiness ub) {
-        return getByPrimaryKeyId(ub);
+        return getByPrimaryKey(ub);
     }
 
+    @Transactional
     @Override
     public LoginBusiness getAllLoginByUserId(LoginBusiness lb) {
         Long loginPrimaryKey = lb.getPrimaryKeyId();

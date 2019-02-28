@@ -1,20 +1,21 @@
 package com.sunsat.sathish.j2ee.health.login.service;
 
-import com.sunsat.sathish.j2ee.health.base.mail.communicator.MailCommunicator;
+import com.sunsat.sathish.j2ee.health.base.util.mail.communicator.MailCommunicator;
 import com.sunsat.sathish.j2ee.health.base.util.GeneralAppUtil;
 import com.sunsat.sathish.j2ee.health.login.persistor.*;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.CommunicationBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.LoginBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.RoleBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
-import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.Calendar;
-import java.util.Date;
+
+import static com.sunsat.sathish.j2ee.health.base.util.GeneralConstants.NEW_ACCOUNT_VALIDATION_EXPIRY_DURATION_DAYS;
 
 @Service("userService")
 public class UserAccountBusinessServiceImpl implements UserAccountBusinessService {
@@ -61,20 +62,10 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
     @Override
     public UserBusiness getExistingUser(UserFormModel model) {
         return userDaoPersistor.getUserByUserName(model.getUserName());
-/*
-        UserFormModel retModel = new UserFormModel();
-        retModel.setOperationType(model.getOperationType());
-        retModel.setSubOperationType(model.getSubOperationType());
-        if(ub != null && ub.getUserName().equals(model.getUserName()))  {
-            retModel.setUserName(ub.getUserName());
-            retModel.setPrimarykeyId(ub.getPrimaryKeyId());
-        }
-        return retModel;
-*/
     }
 
     @Override
-    public UserBusiness loadUserById(UserFormModel model) {
+    public UserBusiness getExistingUserById(UserFormModel model) {
         UserBusiness ub = new UserBusiness();
         ub.setPrimaryKeyId(model.getPrimarykeyId());
         return userDaoPersistor.getUserDetails(ub);
@@ -83,6 +74,12 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
     @Override
     public UserBusiness updateUser(UserFormModel model) {
         return null;
+    }
+
+    @Override
+    public UserBusiness updateUser(UserBusiness ub) {
+        UserBusiness updateUb = userDaoPersistor.updateUserDetails(ub);
+        return updateUb;
     }
 
     @Override
@@ -105,7 +102,7 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
         ub.setPrimaryKeyId(model.getPrimarykeyId());
         ub = userDaoPersistor.getUserDetails(ub);
         lb = ub.getLoginBusiness();
-        if(lb != null && lb.getStatus().equalsIgnoreCase("LOGOUT")) {
+        if(lb != null) {
             lb.setLoginTime(GeneralAppUtil.getCurrentTime());
             lb.setLogoutTime(null);
             lb.setStatus("LOGIN");
@@ -134,7 +131,27 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
 
     @Override
     public LoginBusiness updateLogin(UserFormModel model) {
-        return null;
+        UserBusiness ub = new UserBusiness();
+        ub.setPrimaryKeyId(model.getPrimarykeyId());
+        ub = userDaoPersistor.getUserDetails(ub);
+        LoginBusiness lb = ub.getLoginBusiness();
+        if(lb != null) {
+            if(model.getAccountStatus().equalsIgnoreCase("LOGIN")) {
+                lb.setLoginTime(GeneralAppUtil.getCurrentTime());
+                lb.setLogoutTime(null);
+            } else {
+                lb.setLogoutTime(GeneralAppUtil.getCurrentTime());
+            }
+            lb.setStatus(model.getAccountStatus());
+            lb.setUserBusiness(ub);
+            lb.setCreatedByDate(GeneralAppUtil.getCurrentTime());
+            lb.setCreatedById(ub.getPrimaryKeyId());
+            lb.setModifiedByDate(GeneralAppUtil.getCurrentTime());
+            lb.setModifiedById(ub.getPrimaryKeyId());
+            lb.setIsDeleted(0);
+            lb = loginDaoPersistor.updateLogin(lb);
+        }
+        return lb;
     }
 
     @Override
@@ -149,7 +166,7 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
         comb.setEmail1Verified(false);
         comb.setEmail1CnfToken(Integer.parseInt(GeneralAppUtil.getOtp()));
         Calendar cal = GeneralAppUtil.getCurrentCalender();
-        cal.add(Calendar.HOUR,24);
+        cal.add(Calendar.DAY_OF_MONTH,NEW_ACCOUNT_VALIDATION_EXPIRY_DURATION_DAYS);
         comb.setEmail1CnfTokenExpiryDate(cal.getTime());
         comb.setMobile1Verified(false);
         comb.setMobile1(null);
@@ -161,8 +178,7 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
         UserBusiness ub = new UserBusiness();
         ub.setPrimaryKeyId(model.getPrimarykeyId());
         comb.setUserBusiness(ub);
-        commDaoPersistor.createNewComm(comb);
-        return comb;
+        return commDaoPersistor.createNewComm(comb);
     }
 
     @Override
@@ -209,5 +225,15 @@ public class UserAccountBusinessServiceImpl implements UserAccountBusinessServic
     @Override
     public RoleBusiness deleteRole(UserFormModel model) {
         return null;
+    }
+
+    @Override
+    public Long getLikeCount() {
+        return userDaoPersistor.getLikeCount();
+    }
+
+    @Override
+    public Long setLikeCount(Long count) {
+        return userDaoPersistor.updateLikeCount(count);
     }
 }

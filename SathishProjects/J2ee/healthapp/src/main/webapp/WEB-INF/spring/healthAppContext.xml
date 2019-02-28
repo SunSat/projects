@@ -38,7 +38,7 @@
         <context:include-filter type="annotation" expression="javax.persistence.Entity"/-->
     </context:component-scan>
 
-    <context:property-placeholder location="classpath:hibernate/hibernate.properties,classpath:mail/mail.properties"/>
+    <context:property-placeholder location="classpath:properties/healthapp.dev.properties"/>
 
     <bean id="datasource" class="com.mchange.v2.c3p0.DriverManagerDataSource">
         <property name="driverClass" value="${hibernate.connection.driver_class}"/>
@@ -53,15 +53,17 @@
         <property name="password" value="${mail.userpass}"/>
         <property name="javaMailProperties">
             <props>
-                <prop key="mail.smtp.auth">true</prop>
-                <prop key="mail.smtp.socketFactory.port">465</prop>
-                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
-                <prop key="mail.smtp.port">465</prop>
+                <prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
+                <prop key="mail.debug">${mail.debug}</prop>
+                <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+                <prop key="mail.smtp.socketFactory.port">${mail.smtp.socketFactory.port}</prop>
+                <prop key="mail.smtp.socketFactory.class">${mail.smtp.socketFactory.class}</prop>
+                <prop key="mail.smtp.port">${mail.smtp.port}</prop>
             </props>
         </property>
     </bean>
 
-    <bean id="mailCommunicator" class="com.sunsat.sathish.j2ee.health.base.mail.communicator.MailCommunicatorImpl"/>
+    <bean id="mailCommunicator" class="com.sunsat.sathish.j2ee.health.base.util.mail.communicator.MailCommunicatorImpl"/>
 
     <bean id="jpaVendorAdaptor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
 
@@ -103,5 +105,12 @@
 
     <bean id="userPersistanceManager" class="com.sunsat.sathish.j2ee.health.login.persistor.UserPersistanceManager" factory-method="getInstance"/>
 
-
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <props>
+                <prop key="resource.loader">class</prop>
+                <prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

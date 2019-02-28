@@ -15,3 +15,4 @@
 <link href="webRes/css/login.css" rel="stylesheet" type="text/css">
 <link href="webRes/css/home.css" rel="stylesheet" type="text/css">
 <title>Healthy Life Technique</title>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>

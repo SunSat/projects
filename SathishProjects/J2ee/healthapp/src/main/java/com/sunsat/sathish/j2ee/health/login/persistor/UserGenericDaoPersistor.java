@@ -5,6 +5,8 @@ import com.sunsat.sathish.j2ee.health.base.persistor.dataset.BaseDataFilter;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
 
+import java.math.BigInteger;
+
 public interface UserGenericDaoPersistor {
 
     public UserBusiness createNewUser(UserBusiness ub);
@@ -17,4 +19,7 @@ public interface UserGenericDaoPersistor {
     public String validateUserMobNo(UserBusiness ub);
     public UserBusiness performLogin(UserBusiness ub);
     public UserDao getByPrimaryKeyId(UserBusiness ub);
+    public Long getLikeCount();
+    public Long updateLikeCount(Long count);
+
 }

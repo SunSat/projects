@@ -5,11 +5,14 @@
         <properties>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL55Dialect"/>
+            <!--<property name="hibernate.format_sql" value="true"/>-->
         </properties>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.LoginDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.CommunicationDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.PersonalDetailDao</class>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.RoleDao</class>
+        <class>com.sunsat.sathish.j2ee.health.base.util.template.pojo.TemplateDao</class>
+        <class>com.sunsat.sathish.j2ee.health.base.util.mail.pojo.dao.MailTrackerDao</class>
     </persistence-unit>
 </persistence>

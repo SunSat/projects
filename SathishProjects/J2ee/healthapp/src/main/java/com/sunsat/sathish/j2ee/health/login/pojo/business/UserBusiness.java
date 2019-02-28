@@ -1,10 +1,8 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.business;
 
 import com.sunsat.sathish.j2ee.health.base.pojo.business.AbstractBaseBusiness;
-import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
 import com.sunsat.sathish.j2ee.health.login.pojo.model.UserFormModel;
 
-import javax.persistence.Column;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +24,7 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
     private LoginBusiness loginBusiness;
     private PersonalDetailBusiness personalDetailBusiness;
     private List<RoleBusiness> roleBusinesses;
+    private String userLike;
 
     @Override
     public Long getPrimaryKeyId() {
@@ -116,6 +115,14 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
         this.roleBusinesses = roleBusinesses;
     }
 
+    public String isUserLike() {
+        return userLike;
+    }
+
+    public void setUserLike(String userLike) {
+        this.userLike = userLike;
+    }
+
     @Override
     public void populateData(UserFormModel userFormModel) {
         this.setPrimaryKeyId(userFormModel.getPrimarykeyId());
@@ -125,6 +132,7 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
         this.setExpiryTime(userFormModel.getExpiryTime());
         this.setCreationTime(userFormModel.getCreationTime());
         this.setPasswordHash(userFormModel.getPasswordHash());
+        this.setUserLike(userFormModel.getUserLike());
 /*
         CommunicationBusiness comBusiness = new CommunicationBusiness();
         comBusiness.setEmail1(userFormModel.getMailId());
@@ -142,6 +150,7 @@ public class UserBusiness extends AbstractBaseBusiness<UserFormModel> {
         model.setAccountStatus(this.getAccountStatus());
         model.setExpiryTime(this.getExpiryTime());
         model.setCreationTime(this.getCreationTime());
+        model.setUserLike(this.isUserLike());
         super.getData(model);
     }
 }

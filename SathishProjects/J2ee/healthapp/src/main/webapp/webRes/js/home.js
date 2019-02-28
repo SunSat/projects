@@ -1,7 +1,12 @@
 
+$(document).ready(function () {
+    var userLike = document.getElementById("userLike").value;
+    if(!userLike && userLike == 'true') {
+
+    }
+})
 
 window.onscroll = function() {performAllRequiredAction()};
-
 // Get the leftSection
 var sectionMovableDiv = document.getElementById("section-movable");
 var tempContent = document.getElementById("content-temp-visible");
@@ -28,4 +33,37 @@ function performMainLeftSticky() {
         sectionMovableDiv.classList.remove("section-movable-sticky");
         tempContent.classList.remove("content-temp-visible-sticky");
     }
+}
+
+function performLikeClicked(that) {
+    if(!isUserLogged()) {
+        loginMouseHover();
+        return;
+    }
+
+    var like = document.getElementById('userLike').value
+    var data = {
+        userLike : like,
+        formAction : "loginPage",
+        formSubAction : "signUp"
+    };
+
+    var userLikeResponseCallBack = function (xhttp) {
+        if(xhttp.readyState != 4 || xhttp.status != 200) {
+            return;
+        }
+        var formModel = JSON.parse( xhttp.responseText );
+        document.getElementById("total-no-likes").innerText = formModel.userLikeCount;
+        document.getElementById("userLike").value = formModel.userLike;
+        //change the color to green.
+    };
+    performAjaxJsonRequest("post","userLike.do",data,userLikeResponseCallBack);
+}
+
+function isUserLogged() {
+    var userId = document.getElementById('loggedUserId').value;
+    if(userId > 0) {
+        return true;
+    }
+    return false;
 }

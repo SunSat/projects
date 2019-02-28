@@ -18,7 +18,6 @@ public class RoleDao extends AbstractBaseDao<RoleBusiness, BaseDataFilter> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-
     Long primaryKeyId;
 
     @Column(name = "rolename")

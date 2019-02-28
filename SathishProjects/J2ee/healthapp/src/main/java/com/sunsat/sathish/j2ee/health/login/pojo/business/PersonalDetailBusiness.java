@@ -29,7 +29,7 @@ public class PersonalDetailBusiness extends AbstractBaseBusiness<UserFormModel> 
 
     @Override
     public Long getPrimaryKeyId() {
-        return null;
+        return primaryKeyId;
     }
 
     public void setPrimaryKeyId(Long primaryKeyId) {

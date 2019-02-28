@@ -13,17 +13,18 @@
         <intercept-url pattern="/index.jsp" access="permitAll()"/>
         <intercept-url pattern="/webRes/**" access="permitAll()"/>
         <intercept-url pattern="/*.an" access="permitAll()"/>
-        <intercept-url pattern="/**" access="hasRole('USER')" />
-        <!--<logout invalidate-session="true" logout-url="/logout" />-->
-        <form-login login-page="/loginAction.an"/>
-        <logout logout-url="/logoutAction.do"/>
+        <intercept-url pattern="/**" access="isAuthenticated()" />
+        <form-login login-page="/loginAction.an" default-target-url="/homepage.an"/>
+        <logout logout-url="/logoutAction.do" invalidate-session="true" success-handler-ref="logoutSuccessHandler" delete-cookies="JSESSIONID"/>
         <headers>
             <xss-protection enabled="true"/>
         </headers>
     </http>
 
+<!--
     <beans:bean id="authSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthenticationSuccessHandler"/>
     <beans:bean id="authFailureHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustormAuthendicationFailureHandler"/>
+-->
     <beans:bean id="customAuthendicationProvider" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthendicationProvider"/>
 
     <authentication-manager id="jdbcAuthenticationManager">
@@ -34,5 +35,7 @@
     <authentication-manager id="ldapAuthenticationManager">
 
     </authentication-manager>
+
+    <beans:bean id="logoutSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomLogoutSuccessHandler"/>
 
 </beans:beans>

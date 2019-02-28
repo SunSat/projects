@@ -1,5 +1,10 @@
+<%@page import="com.sunsat.sathish.j2ee.health.base.util.GeneralConstants" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <nav class="navigation-container">
     <input type="hidden" name="${_csrf.parameterName}" id="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <input type="hidden" name="<%=GeneralConstants.LOGGED_USER_ID%>" id="<%=GeneralConstants.LOGGED_USER_ID%>" value="<%=session.getAttribute(GeneralConstants.LOGGED_USER_ID)%>"/>
+    <input type="hidden" name="<%=GeneralConstants.LOGGED_USER_NAME%>" id="<%=GeneralConstants.LOGGED_USER_NAME%>" value="<%=session.getAttribute(GeneralConstants.LOGGED_USER_NAME)%>">
+    <input type="hidden" name="<%=GeneralConstants.IS_ADMIN%>" id="<%=GeneralConstants.IS_ADMIN%>" value="<%=session.getAttribute(GeneralConstants.IS_ADMIN)%>">
     <a href="#" class="ion-navicon-round shortcut-div"></a>
     <div class="search-share-navigations">
         <div class="search-share-div">
@@ -11,9 +16,10 @@
             </div>
         </div>
         <div class="navigation-div">
+            <a href="#" class="admin-navigation sub-navigation" id="admin-sesstings">Admin Settings</a>
             <a href="#" class="donate-navigation sub-navigation">Donate</a>
             <a href="#" class="my-identity-navigation sub-navigation">My Identity</a>
-            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation" onclick="showLogoutUserContainer(true)">Settings</a>
+            <a href="#" class="logout-navigation sub-navigation" id="logout-navigation" onclick="showLogoutUserContainer(true)">Logout/Settings</a>
             <a href="#" class="login-navigation sub-navigation" id="login-navigation" onclick="loginMouseHover()">Login</a>
             <a href="#" class="health-life-navigation sub-navigation">Health Technique</a>
             <a href="#" class="home-navigation  sub-navigation">Home</a>
@@ -53,7 +59,7 @@
                     <a href="#" class="personal-user-setings media-link">Personal Settings</a>
             </li>
             <li class="logout-user-li logout-li">
-                    <a href="#" class="personal-user-setings media-link">Logout</a>
+                    <a href="#" class="personal-user-setings media-link" onclick="performSignout()">Logout</a>
             </li>
         </ul>
     </div>
@@ -190,6 +196,12 @@
                                 <i class="ion-close-circled signup-email-circle-failed sign-up-warning-msg-icons-failed"  id="signup-email-circle-failed"></i>
                             </div>
                             <div class="signup-warning-msg signup-email-warning-messages" id="signup-email-warning-messages"/>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <fieldset class="div-signup">
+                            <legend>Terms And Conditions</legend>
+                            <input type="checkbox" id="termsConditions" class="termsConditions"/><a href="#">Read and Accept.</a>
                         </fieldset>
                     </li>
                     <div class="clearfix"></div>

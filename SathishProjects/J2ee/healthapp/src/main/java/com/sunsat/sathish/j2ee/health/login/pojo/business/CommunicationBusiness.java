@@ -25,9 +25,10 @@ public class CommunicationBusiness extends AbstractBaseBusiness<UserFormModel> {
         return CommunicationBusiness.class;
     }
 
+
     @Override
     public Long getPrimaryKeyId() {
-        return null;
+        return primaryKeyId;
     }
 
     public void setPrimaryKeyId(Long primaryKeyId) {

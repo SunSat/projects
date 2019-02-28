@@ -6,6 +6,7 @@ import com.sunsat.sathish.j2ee.health.login.pojo.business.RoleBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.business.UserBusiness;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.RoleDao;
 import com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao;
+import org.apache.commons.collections.CollectionUtils;
 import org.hibernate.Criteria;
 import org.hibernate.annotations.Persister;
 import org.springframework.stereotype.Repository;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import javax.persistence.criteria.*;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,36 +57,33 @@ public class UserDaoPersistorImpl extends AbstractGenericDaoPersistor<UserDao,Us
     @Transactional
     @Override
     public UserBusiness getUserDetails(UserBusiness ub) {
-/*
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<UserDao> criteriaQuery = builder.createQuery(UserDao.class);
-        Root<UserDao> root =  criteriaQuery.from(UserDao.class);
-        criteriaQuery.select(root);
-        TypedQuery<UserDao>  query = entityManager.createQuery(criteriaQuery);
-        List<UserDao> resultList = query.getResultList();
-        if(null == resultList || resultList.size() == 0) return new UserBusiness();
-        UserDao dao = resultList.get(0);
-        return dao.getBusinessValue(BaseDataFilter.BY_ALL,null);
-*/
         UserDao userDao = getByPrimaryKey(ub);
         return userDao.getBusinessValue(BaseDataFilter.BY_ALL,null,null);
     }
 
+    @Transactional
     @Override
     public UserBusiness updateUserDetails(UserBusiness ub) {
-        return null;
+        UserDao dao = getByPrimaryKeyId(ub);
+        dao.setBusinessValue(ub);
+        return ub;
     }
 
     @Override
     public UserBusiness getUserByUserName(String un) {
+        UserBusiness ub = null;
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<UserDao> userCriQuery = builder.createQuery(UserDao.class);
         Root<UserDao> userRoot = userCriQuery.from(UserDao.class);
         List<Predicate> userPredicate = new ArrayList<Predicate>(2);
         userPredicate.add(builder.and(builder.equal(userRoot.get("userName"),un),builder.equal(userRoot.get("deleted"),0)));
         List<UserDao> resultList = getByBusinessKey(userRoot,userCriQuery,userPredicate);
-        if(null == resultList || resultList.size() == 0) return null;
-        return resultList.get(0).getBusinessValue(BaseDataFilter.BY_ALL,null,null);
+        if(CollectionUtils.isEmpty(resultList)) {
+            ub = new UserBusiness();
+        } else {
+            ub = resultList.get(0).getBusinessValue(BaseDataFilter.BY_ALL,null,null);
+        }
+        return ub;
     }
 
     @Override
@@ -129,5 +128,21 @@ public class UserDaoPersistorImpl extends AbstractGenericDaoPersistor<UserDao,Us
     @Transactional
     public UserDao getByPrimaryKeyId(UserBusiness ub) {
         return getByPrimaryKey(ub);
+    }
+
+    @Override
+    @Transactional
+    public Long getLikeCount() {
+        Query query = entityManager.createNativeQuery("select count from likecount");
+        return ((BigInteger)query.getSingleResult()).longValue();
+    }
+
+    @Override
+    @Transactional
+    public Long updateLikeCount(Long count) {
+        Query query = entityManager.createNativeQuery("update likecount set count= :updateCount");
+        query.setParameter("updateCount",count);
+        query.executeUpdate();
+        return count;
     }
 }

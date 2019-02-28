@@ -26,3 +26,16 @@ function performAjaxJsonRequest(httpMethod,url,data,responsecallback) {
     var jsonObj = JSON.stringify(data);
     xhttp.send(jsonObj);
 }
+
+function performAjaxJsonSynchronusRequest(httpMethod,url,data,responsecallback,isSynchronous) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open(httpMethod,url,isSynchronous);
+    xhttp.setRequestHeader('Content-type','application/json');
+    xhttp.setRequestHeader('Accept','application/json');
+    /*    xhttp.setRequestHeader("X-CSRF-TOKEN",data._csrf);*/
+    xhttp.onreadystatechange = function () {
+        responsecallback(xhttp);
+    };
+    var jsonObj = JSON.stringify(data);
+    xhttp.send(jsonObj);
+}

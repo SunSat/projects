@@ -60,7 +60,10 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
     private PersonalDetailDao personalDetailDao;
 
     @OneToMany(mappedBy = "userDao", fetch = FetchType.LAZY)
-    List<RoleDao> roleDao;
+    private List<RoleDao> roleDao;
+
+    @Column(name = "likeuser")
+    private boolean isUserLike;
 
     @Override
     public Class getType() {
@@ -156,6 +159,14 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.roleDao = roleDao;
     }
 
+    public boolean isUserLike() {
+        return isUserLike;
+    }
+
+    public void setUserLike(boolean userLike) {
+        isUserLike = userLike;
+    }
+
     @Override
     public UserBusiness getBusinessValue(BaseDataFilter filter, UserBusiness businessValue, List<Class> parentClasses) {
         if(null == businessValue)
@@ -174,6 +185,9 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
                 businessValue.setCreationTime(this.getCreationTime());
                 businessValue.setExpiryTime(this.getExpiryTime());
                 businessValue.setAccountStatus(this.getAccountStatus());
+                businessValue.setUserLike(this.isUserLike()+"");
+                businessValue.setPassword(this.getPassword());
+                businessValue.setPasswordHash(this.getPasswordHash());
                 super.getBusinessValue(filter,businessValue,parentClasses);
                 if(this.getComDao() != null && !parentClasses.contains(this.getComDao().getClass())) {
                     parentClasses.add(this.getComDao().getClass());
@@ -202,6 +216,7 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
                 businessValue.setCreationTime(this.getCreationTime());
                 businessValue.setExpiryTime(this.getExpiryTime());
                 businessValue.setAccountStatus(this.getAccountStatus());
+                businessValue.setUserLike(this.isUserLike()+"");
                 super.getBusinessValue(filter,businessValue,parentClasses);
                 break;
         }
@@ -217,6 +232,9 @@ public class UserDao extends AbstractBaseDao<UserBusiness, BaseDataFilter> {
         this.setAccountStatus(businessValue.getAccountStatus());
         this.setCreationTime(businessValue.getCreationTime());
         this.setExpiryTime(businessValue.getExpiryTime());
+        this.setUserLike(Boolean.parseBoolean(businessValue.isUserLike()));
+        this.setPassword(businessValue.getPassword());
+        this.setPasswordHash(businessValue.getPasswordHash());
         super.setBusinessValue(businessValue);
         UserPersistanceManager mgr = UserPersistanceManager.getInstance();
 

@@ -4,6 +4,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 public class UserFormModel extends FormModel {
@@ -24,6 +25,9 @@ public class UserFormModel extends FormModel {
     private Date expiryTime;
     private String passwordHash;
     private String userId;
+    private boolean isAdmin;
+    private String userLike;
+    private Long userLikeCount;
 
     public String getUserName() {
         return userName;
@@ -145,4 +149,27 @@ public class UserFormModel extends FormModel {
         this.passwordHash = passwordHash;
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public String getUserLike() {
+        return userLike;
+    }
+
+    public void setUserLike(String userLike) {
+        this.userLike = userLike;
+    }
+
+    public Long getUserLikeCount() {
+        return userLikeCount;
+    }
+
+    public void setUserLikeCount(Long userLikeCount) {
+        this.userLikeCount = userLikeCount;
+    }
 }
