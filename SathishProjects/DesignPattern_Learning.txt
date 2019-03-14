@@ -1,0 +1,120 @@
+1. Creational Design Pattern
+2. Structural Design Pattern
+3. Behavioral Design Pattern
+4. J2ee Patterns
+5. Anti Patterns
+
+1. Creational Design Pattern
+    1. Factory
+    2. Abtract Factory
+    3. Singleton
+    4. Prototype
+    5. Builder
+
+    1. Singleton
+        Single Object available per JVM
+            Ex 1 : Calender.getInstance()
+               2 : Local.getLocal()
+               3 : Runtime.getRunTime()
+        Ways to Create Singleton
+            Ex 1 : Static Inner Class
+               2 : Double Null Check
+
+    2. Abstract Factory :
+        Hide the object creation part from user. Based on the input the newly created object factory will be returned.
+            Ex 1: DriverManager.getConnection(url)
+                    url : can be any driver mysql driver,sql server driver etc. Based on the URL the driver will be loaded factory object has been created for next steps.
+               2: JAXBContext.newInstance( "com.acme.foo:com.acme.bar" )
+                    This will create  JAXBContext object abstract factory object. From this we can have factory object like
+               3: JsonBuilderFactory factory = Json.createBuilderFactory(...);
+                    From the factory we can create different varity of JsonBuilder
+                    factory.createArrayBuilder()
+                    factory.createObjectBuilder() All these are factory objects.
+               4: EntityManagerFactory.createEntityManager()
+
+    3. Factory :
+         Once we obtain abstract factory object. Then We can obtain factory from that.
+            Ex 1: Connection con = DriverManager.getConnection(url);
+                    con : is an factory object for a particular driver
+               2: Statement stmt = con.createStatement();
+                    stmt : is an factory object for a particular driver.
+               3: JsonObject value = factory.createObjectBuilder().build()
+               4:
+
+    4. Builder :
+         Step by Step creating huge objects called builder.
+            Ex 1 : Spring boot if we add spring-security-starter-boot jar. Then it will load all 14 filters, delegating filter proxy for the request.
+               2 : Inputstream --> File Input Stream --> Object Input stream
+               3 : Same as Output streem/Reader/writer
+               4 : Tomcat start up/spring boot statup all use Builder pattern
+               5 : EntityManger.getCriteriaBuilder()
+     5. Prototype :
+        Creating empty collections is the best option prototype.
+            Ex 1 : Collections.emptyList()
+               2 : Collections.emptyMap()
+               3 : Collections.emptySet()
+
+    Structural Design Patterns :
+    1 : Adapter Pattern
+    2 : Composite Pattern
+    3 : Proxy Pattern
+    4 : Flyweight Pattern
+    5 : Facade Pattern
+    6 : Bridge Pattern
+    7 : Decorator Pattern
+
+    1 : Adapter Pattern
+        To integrate/communicate two different objects we will be using Adaptor design patterns. In the below example Only Output/Input StreamWriter act as a adaptor between Streams and Byte input/output.
+        Ex 1 : Input/Output StreamWriter
+            Writer out = new BufferedWriter(new OutputStreamWriter(System.out));
+            Reader reader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(new File("c:/path.txt")))));
+            Combining Stream Reader/Writer to Buffered Reader/Writer
+        Ex 2 : Linked List :
+            LinkedList can be used as Queue/Dequeue/List basically List has been adapted as Queue or Dequeue using adapter pattern with out touching the list basic functionality.
+
+    2 : Bridge DesignPatterns :
+       Decouple the interface and its implementation and hiding the implementation from the outer world is know as bridge. Any thing we implement is known as Bridge DeisgnPatterns.
+        Ex 1 :Connection con = DriverManager.getConnection()
+              Statement stmt = con.createStatement();
+              ResultSet reset = stmt.queryResult()
+
+        Ex 2 : java.io.FileFiler has only accept method. We can implement and provide custome file filter.
+        Ex 3 : Seperation of modules on each layer will be best example of Bridge Patterns.
+
+
+    3 : Composite Pattern:
+        Entire object sturcture can be trated has same single objects
+            Ex 1 : Files in Directory both directory & file treated as file object.
+            Ex 2 : All the Collection List,Set,Queue can be used as Iteratable.
+
+    4 : Flyweight Pattern
+        Ex 1 : String Pool implementation in java is one of the best example of Flyweight pattern
+        Ex 2 : Java can be used J2ME,J2EE,Java different version based on where it used.
+
+    5 : Facade Pattern
+        Hiding the implementation behind and exposing only interface is know as facade.
+
+    6 : Decorator Pattern
+            Writer out = new BufferedWriter(new OutputStreamWriter(System.out));
+
+    7 : Proxy :
+        AOP, Transactional, Logging, RMI will be best example of Proxy.
+
+3. Behavioral Design Pattern
+    1. Chain of Responsiblity :
+        Ex 1 : Spring security Filters
+        Ex 2 : Java Class Loading
+    2. Command :
+        Ex 1 : MVC & Restuful Design pattern the URL Endpoint will have command
+        @RequestMapping("/api/user/1")
+    3. Iterator :
+        Ex 1 : Collection iterator.
+    4. Observer
+        Ex 1 : All the RabitMQ, java.awt events
+    5. Mememto :
+        Ex 1 : The restful webservice, Serializable object, keeping the state of an object
+    6. Strategy Pattern :
+        Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual implementation to be used at runtime.
+        Ex 1 : Collection.sort() will use different type of sort based on Size & Data Type.
+        Ex 2 : Payment gateway based on type of credit card/debit card/net banking same payment will act with different algorithms.
+

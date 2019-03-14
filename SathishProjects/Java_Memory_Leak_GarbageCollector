@@ -1,0 +1,113 @@
+1. Java has automatic memory management.
+2. When Java Heap memory crossed configured throshold level then Garbage Collector will be inovked by JVM.
+3. OutofMemoryError occured when GC not able to remove the memory object and no space left to create new object by any thread.
+4. Garbage Colletor is demon thread triggered by JVM.
+5. If user wants to trigger garbage collector they can call in two ways.
+    1. System.gc()
+    2. Runtimg.getRuntime().gc();
+        Both were equilevent. System.gc() internally called Runtime.getRuntime().gc(). System.gc() is static method where vs Runtime.gc() is an instance method.
+6. The task of Garbage collector is to remove unreacable object from memory.
+7. In Java three ways we can make an object to unreachable.
+    1. By nulling the reference
+        Employee e=new Employee(); e=null;
+    2. By assigning a reference to another
+        Employee e1=new Employee(); Employee e2=new Employee(); e1=e2;//Now e1 is available for garbage collection
+    3. By anonymous object etc.
+        new Employee();
+8. Four Type of GC can be algarithms available
+    1. Serial GC
+    2. Parallel GC
+    3. CMS - Concurrent Mark and sweep
+    4. G1GC - Garbage First Garbage Collector.
+
+9. Java Heap memory consist of 4 memory spaces
+    1. Young Generation
+    2. S0
+    3. S1
+    4. Old Genration
+    5. Permanant generation
+10. Java 1.8 removed Permanent Generation.
+
+--------------------
+Java Memory Leak Can be broadly clasified in to 2 category.
+    1. Application slowness
+    2. Application Crashed
+
+1. Application slowness - can be again clasified by multiple reasons.
+    1. Slowness because : Any Big operation triggered by Client.
+        Like : Collecting Reports, Any Bulk import/export in this case the slowness is expected and valid. If we need we need to fine tune the operation
+    2. Slowness Because : Heap memory filled.
+        JVM will trigger GC and GC halt the application till its complete. In this case heap dump tell us which Object has more memory. Then we track that object we can find.
+    3. Slowness Because : Thread Leak.
+        All the thred should be closed properly. If any thread not closed then all the reference that non closed thread hold will be forever in memory.
+        In the dump need to check how many threads were available at that time of slowness.
+    4. Slowness because : Thread running in busy spenning mode multiple threads in busy spenning mode without leaving the CPU for worker thread. Always give less proprity for busy spenning threads.
+    4. Slowness because DOM Leak : Huge object loaded in the memory. Do not load the complete file, image or any in the memory directly. Use Sax
+    5. Slowness Because Static Block Leak : Slowness because static block has big object refered.
+    6. Slowness Because Collection Operations : Slowness because more objects added to Hash collections without proper Hashcode and Equals Method will take more time to find the objects.
+
+2. Application Crashed - Application crashed can be clasified many categories.
+    When application crashed OutofMemory Error can be thrown for the following reasons.
+        1. Java heap space filled :
+        2. PermGen space Filled.
+        3. Requested array size exceeds VM limit
+        4. request <size> bytes for <reason>. Out of swap space?
+        5. <reason> <stack trace> (Native method)
+
+
+3. Tools to find/analyzed memory leak issues.
+    1. JVisual VM
+    2. Yourkit Java Profiler.
+
+4. How to analysis memory lead issues.
+
+    In Both tool we can take JVM Heap snapshots & Thread Dump. And load the snapshot in our local machine for anlaysis
+
+    When to take snapshots : By Monitoring JVM Heap memory continusely we can find based on the below secnario.
+    1. We should find the scenario like.
+        1. After doing particular operation application become slowness Or
+        2. After 1000 client request Or More Or
+        3. After a week/month application become slowness. Or
+        4. Like Any Upload/Download or Stream Operation Or Any resource used
+
+    2. Take Snapshots.
+        1. Once scenario identified or not take snapshots every 15mins/30mins/60 mins once for 3 times based on the scenrio.
+
+    3. What we can find from snapshots.
+        1. Any GC was run at the time of slowness
+        2. How many threads were available
+        3. What is the biggest object available in the memory
+        4. Thread dump show any thread being in deadlock mode.
+        5. Thread dump shows how many thread in wait loop for any Resource/Connections.
+        6. String pool size etc.,
+
+5. How to prevent java memory leak in coding.
+
+    1. In MVC:
+       1. In MVC Application memory leak can happen in Sessions.
+           1. Only Required data/object should be stored in Session.
+           2. Once Session is over its mandatory to invalidate the session.
+           3. Session object can be explicitly cleared.
+           4. Need to keep proper Timeout for cookie & session.
+           5. Avoid creating http session in JSP pages. <%@page session=”false”%> Otherwise this lead to create unwated shortlived http session.
+
+   2. JPA/Hibernate ORM :
+       In JPA/Hibernate following tings we can take care.
+           1. Always use prepared statment insted statment because prepared statment compile once.
+           2. Close the statement,resultset,session once it used. use finally or try with close
+           3. Always use Lasy load.
+           4. Load the Relationship based on the scenario. To check a particular object is available not required to all the relationship in memory.
+           5. Always use one way relationship. Do not load or use two way relationship. like
+               Student to personal details. should always be student id --> personal details. For this personal details to student relaatioship not required.
+           6. Do not use "*" in the query.
+           7. Always mentioned the required column names when go for join.
+           8. Always load data with pagination logic. Do not entire rows in memory.
+           9. Complex operation can be done in procedure or function insted of doing in java.
+   3. Java :
+       In Core Java/Server Side/Business Logic implementation.
+           1. String operation can used with StringBuilder
+           2. Static Reference can moved to null once it used.
+           3. Avoid creating Collections inside loop.
+           4. Declare the required variable outside the loop.
+           5. Use WeekHashMap()
+           6. Logging should be done properly with proper priority.
