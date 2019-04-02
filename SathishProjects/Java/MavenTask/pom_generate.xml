@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java</artifactId>
+        <groupId>com.sunsat.sathish.java</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sunsat.sathish.java.maventask</groupId>
+    <artifactId>maventask</artifactId>
+
+    <properties>
+        <swagger.codegen.inputSpec></swagger.codegen.inputSpec>
+    </properties>
+
+
+    <name>maventask</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+                    <execution>
+                        <id>swagger-dynamic-codegen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>
+                                generate
+                            </goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${swagger.codegen.inputSpec}</inputSpec>
+                            <output>${swagger.codegen.outputDir}</output>
+                            <language>java</language>
+                            <modelPackage>com.sunsat.sathish.java.maven</modelPackage>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <configOptions>
+                                <sourceFolder>src/main/java</sourceFolder>
+                                <singleContentTypes>true</singleContentTypes>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

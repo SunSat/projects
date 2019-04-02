@@ -14,6 +14,7 @@
         Employee e1=new Employee(); Employee e2=new Employee(); e1=e2;//Now e1 is available for garbage collection
     3. By anonymous object etc.
         new Employee();
+
 8. Four Type of GC can be algarithms available
     1. Serial GC
     2. Parallel GC

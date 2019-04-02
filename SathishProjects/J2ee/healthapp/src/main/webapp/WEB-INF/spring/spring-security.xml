@@ -21,21 +21,20 @@
         </headers>
     </http>
 
-<!--
-    <beans:bean id="authSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthenticationSuccessHandler"/>
-    <beans:bean id="authFailureHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustormAuthendicationFailureHandler"/>
--->
     <beans:bean id="customAuthendicationProvider" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthendicationProvider"/>
 
     <authentication-manager id="jdbcAuthenticationManager">
         <authentication-provider ref="customAuthendicationProvider">
+
         </authentication-provider>
     </authentication-manager>
 
-    <authentication-manager id="ldapAuthenticationManager">
-
-    </authentication-manager>
-
     <beans:bean id="logoutSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomLogoutSuccessHandler"/>
+
+    <!--
+    <beans:bean id="authSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthenticationSuccessHandler"/>
+    <beans:bean id="authFailureHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustormAuthendicationFailureHandler"/>
+    -->
+
 
 </beans:beans>

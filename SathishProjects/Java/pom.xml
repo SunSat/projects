@@ -18,7 +18,11 @@
         <module>HackerRank</module>
         <module>hibernate</module>
         <module>sample</module>
+        <module>MavenTask</module>
         <module>hibernatewithpersistance</module>
+        <module>MapStruct</module>
+        <module>swagercodegen</module>
+        <module>MavenTask1</module>
     </modules>
 
     <properties>

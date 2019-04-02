@@ -76,8 +76,8 @@ public class LoginController {
             isAdmin = GeneralAppUtil.isAdmin();
             session.setAttribute(IS_ADMIN,isAdmin);
         }
-        /*return "homepage";*/
-        return "sample_react";
+        return "homepage";
+        /*return "sample_react";*/
     }
 
     @RequestMapping(value = "/loginAction.an", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, method = RequestMethod.POST)

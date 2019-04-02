@@ -1,3 +1,6 @@
+Design Pattern : is widely accepted solution for common problem when we develop software.
+Can be clasified many categories :
+
 1. Creational Design Pattern
 2. Structural Design Pattern
 3. Behavioral Design Pattern
@@ -5,11 +8,11 @@
 5. Anti Patterns
 
 1. Creational Design Pattern
-    1. Factory
+    1. Singleton
     2. Abtract Factory
-    3. Singleton
-    4. Prototype
-    5. Builder
+    3. Factory
+    4. Builder
+    5. Prototype
 
     1. Singleton
         Single Object available per JVM
@@ -117,4 +120,22 @@
         Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual implementation to be used at runtime.
         Ex 1 : Collection.sort() will use different type of sort based on Size & Data Type.
         Ex 2 : Payment gateway based on type of credit card/debit card/net banking same payment will act with different algorithms.
+    7. Delegate Patterns :
+        Ex 1 : Class Loader - Class Loader will use delegate pattern to load the class from parent class loader if current class loader is not able to find the class.
 
+4. J2EE Design Patterns :
+    1. Presentation Layer Design patterns.
+        1. MVC
+        2. Front Controller
+        3. Intercepting Filters
+        4. View Helper
+        5. Model Object
+    2. Business Layer Design Patterns.
+        1. Transfer Object Patterns (TDO)
+        2. Service Locator Patterns
+        3. JNDI Patterns
+        4. Business Delegate Patterns
+        5. AOP
+    3. Data Access or Integration Layer Patterns
+        1. DAO - Data Access Object
+-----------------------------------

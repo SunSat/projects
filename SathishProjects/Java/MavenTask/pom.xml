@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java</artifactId>
+        <groupId>com.sunsat.sathish.java</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sunsat.sathish.java.maventask</groupId>
+    <artifactId>maventask</artifactId>
+
+    <name>maventask</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <swagger-annotations-version>1.5.21</swagger-annotations-version>
+        <jersey-version>2.25.1</jersey-version>
+        <jackson-version>2.9.5</jackson-version>
+        <jodatime-version>2.7</jodatime-version>
+        <maven-plugin-version>1.0.0</maven-plugin-version>
+        <junit-version>4.8.1</junit-version>
+        <dir>${project.basedir}/src/main/resource/antlink.properties</dir>
+        <swagger.codegen.inputSpec>${project.basedir}/src/main/resource/payment/payment.yaml</swagger.codegen.inputSpec>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yapstone.swager.codegen</groupId>
+            <artifactId>swagercodegen</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+<!--
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-invoker</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+-->
+    </dependencies>
+
+    <build>
+        <plugins>
+<!--
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target>
+                                <property name = "sitename" value = "Hello I am Sathish."/>
+                                <echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
+&lt;!&ndash;
+                                <loadproperties srcFile="${project.basedir}/src/main/resource/antlink.properties"/>
+                                <propertyselector property="constituents" match="\bDIR1/workDir([^.]+)\b" select="\0" casesensitive="false"/>
+                                <foreach list="${constituents}" target="print.name" param="myparam"/>
+                                <target name="print.name" >
+                                    <echo message="${pack.name}" />
+                                </target>
+&ndash;&gt;
+                                <loadfile property="swager.codegen" srcFile="${project.basedir}/src/main/resource/antlink.properties"/>
+                                <echo>Hello Property : ${swager.codegen} </echo>
+                                <for list="${swager.codegen}" param="letter"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+-->
+            <!--<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.sunsat.sathish.java.maventask.App</mainClass>
+                            <arguments>
+                                <argument>${project.basedir}</argument>
+                                <argument>${project.build.directory}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+<!--
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${project.basedir}/src/main/resource/antlink.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.ekryd.echo-maven-plugin</groupId>
+                <artifactId>echo-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>echo</goal>
+                        </goals>
+                        <configuration>
+                            <message>war has changed</message>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <property environment="env" />
+                                <echoproperties />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>
+                                java
+                            </goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.yapstone.swager.codegen.SwagerAutoCodeGen</mainClass>
+                            <arguments>
+                                <argument>${project.basedir}</argument>
+                                <argument>${project.basedir}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+                    <execution>
+                        <id>swagger-dynamic-codegen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>
+                                generate
+                            </goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/java/resource/payment/payment.yaml</inputSpec>
+                            <output>${project.basedir}/generated-sources</output>
+                            <language>java</language>
+                            <modelPackage>com.sunsat.sathish.java.maven</modelPackage>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <configOptions>
+                                <sourceFolder>src/main/java</sourceFolder>
+                                <singleContentTypes>true</singleContentTypes>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
