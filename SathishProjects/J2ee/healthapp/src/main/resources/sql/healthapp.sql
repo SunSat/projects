@@ -1,4 +1,6 @@
-CREATE DATABASE `healthapp`;
+
+
+USE DATABASE 'healthapp';
 
 drop procedure if exists `sp_verify_login`;
 delimiter $$;

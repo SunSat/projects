@@ -13,7 +13,16 @@
     <artifactId>spboot</artifactId>
     <name>spboot</name>
     <modules>
+        <module>CamelRouting</module>
         <module>demo</module>
+        <module>facebookssldemo1</module>
+        <module>facebookssodemo</module>
+        <module>Oauth2FacebookCustom</module>
+        <module>OAuthClient</module>
+        <module>OAuthServer</module>
+        <module>RxJava2</module>
+        <module>SecurityDemo</module>
+        <module>ssofacebookmanual</module>
     </modules>
     <packaging>pom</packaging>
 

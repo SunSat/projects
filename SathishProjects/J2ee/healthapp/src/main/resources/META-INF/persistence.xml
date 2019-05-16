@@ -5,6 +5,8 @@
         <properties>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL55Dialect"/>
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="none"/>
             <!--<property name="hibernate.format_sql" value="true"/>-->
         </properties>
         <class>com.sunsat.sathish.j2ee.health.login.pojo.dao.UserDao</class>

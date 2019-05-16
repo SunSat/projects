@@ -1,0 +1,36 @@
+RxJava2
+
+Observable : Can Emit Data
+Observer : Can Consume Data. -> 3 Main Method : onNext(),onError(),onCompleate()
+
+Schedulers : Between Observable & Observer we have schedulers. Scheduler.io are very important.
+Operator : DataStrems can be convert to many form by using operator before observer can receive.
+            We have, Debound, Map, etc.,
+
+Observables : There are many observables :
+    1. Single Observable --> Single Observer
+    2. Compleatable Observable --> CompleatableObserver
+    3. MayBy Observable --> MaybeObserver
+    4. Flowable Observable --> Observer
+    5. Observable --> Observer
+    6. Scheduler Observable -->
+
+Refer : BaseObserver.java
+
+Disposable & CompositeDisposable are the interface
+
+Once Observeble & Observer connected the complete connection called Subscription.
+
+Scheduler :
+
+    1. To handle multi threading in RxJava we will be using schedulers.
+    2. The scheduler is a kind of thread pool. will be used to emit and observe the data
+
+Type of schedulers :
+    1. scheduler.io --> is a scheduler thread pool has limitless threads. Can create n number of threads.
+    2. Scheduler.newthread--> Always will create new thread.
+    3. Scheduler.single() -->
+    4. SCheduler.from(Excecutor) -->
+    5. Scheduler.tranpline() --> Based on the number core processers.
+
+

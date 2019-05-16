@@ -20,7 +20,7 @@ public class SwagerAutoCodeGen
 
         String[][] paths = {{"payment/payment.yaml","payment"},{"refund/refund.yaml","refund"}};
 
-        for(int i=0;i<2;i++) {
+        /*for(int i=0;i<2;i++) {
             InvocationRequest request = new DefaultInvocationRequest();
             request.setPomFile(new File(args[0]+"/pom.xml"));
             request.setGoals(Collections.singletonList("generate-sources"));
@@ -34,6 +34,6 @@ public class SwagerAutoCodeGen
             } catch (MavenInvocationException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }

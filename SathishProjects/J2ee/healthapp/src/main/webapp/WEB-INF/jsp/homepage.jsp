@@ -77,16 +77,20 @@
               Introduction
             </h3>
             <p>
-              Hi All In this blog I am going to teach/tell you <strong>how to live an health life</strong> by applying a simple fundamental technique.
+              In this blog I am going to teach/tell you about <strong>"how to live an health life?"</strong> by applying a <strong>Simple Fundamental Technique</strong>
+              <b><h4>The Meaning of Healthy Life is : </h4></b>
               <ul>
                 <li>
-                  Without taking any medicine/any health suplimentery.
+                  All your Disease will be self healed. (Everything has some exceptional cases, So Except Few Type of Disease).
                 </li>
                 <li>
-                  without following any Diat.
+                  You can eat what ever you want. High/Low quality food. No need of any Diet Plan.
                 </li>
                 <li>
-                  Without doing any Yoga.
+                  You dont need to do any Yoga or Exercise.
+                </li>
+                <li>
+                  You dont required to take any health supplements.
                 </li>
               </ul>
             </p>
@@ -107,7 +111,8 @@
             <div class="col span-2-of-3 div-different-varity-of-hospitals">
               <ul class="ul-different-varity-of-hospitals">
                 <li class="li-with-img">
-                  Different verity of Multi Speciality medical hospitals and clinic for Allopathy(English Medicine), Homepathy, Sidha, Aurvedha, Unani, Acupuncture, PranicHealing, Touchhealing etc,
+                  Different verity of Multi Speciality medical hospitals and clinic for Allopathy(English Medicine),
+                  Homepathy, Sidha, Aurvedha, Unani, Acupuncture, PranicHealing, Touchhealing etc,
                 </li>
                 <li>
                   Medical Institutions & Advance Technology Research Labs.
@@ -186,198 +191,161 @@
             </div>
             <div class="clearfix"></div>
             <p>
-              And, We are utilizing all these by more then 130%. But still we are not able to live an
-              healthy life. And we are investing time, energy & money to live an healthy life without applying fundamental technique.
+              And, The bad news is, we are utilizing all these by more then 130%. But still we are not able to live an
+              healthy life. Because <strong>We Are Not Applying The Fundamental Technique.</strong>
+            </p>
+          </div>
+          <div>
+            <h3>
+              It Means
+            </h3>
+            <p>
+              We are heavily practicing in a Car to drive a Flight. Obliviously will end up in crashing the flight.
+            </p>
+            <p>
+              So to live an health life, every human being should know about?
+              <ul>
+                <li>
+                  What is Human Body? and organs? And how its Functioning?
+                </li>
+                <li>
+                  What is Mind/Soul?. And how its Functioning?
+                </li>
+                <li>
+                  What is Diseases?. Why we are having it?. What are the different Types of Diseases?
+                </li>
+                <li>
+                  And Finally the way to self heal them.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div>
+            <p>
+              So Am I asking you to study MBBS and become a doctor?. Definitely Not. To drive a Car do you study Mechanical
+              Engineering and become Car Mechanic? No, Not required. If you know the basis of how to drive a Car and some basic repare technique then you can
+              happily use your Car for ever. In the same way if you know the basic of your body and some self healing fundamental technique then you can live an health life for ever.
             </p>
           </div>
           <div>
             <h3>
               Fundamental Rules Every where:
             </h3>
-
             <p>
-
+              In This world every thing has a rule. For Ex :
+              <ul>
+                <li>
+                  Walking in a Road
+                </li>
+                <li>
+                  Watching a movie in Theater
+                </li>
+                <li>
+                  Buying products
+                </li>
+                <li>
+                  Studying in a schools
+                </li>
+                <li>
+                  Chatting in Whatsapp
+                </li>
+                <li>
+                  Driving a car
+                </li>
+                <li>
+                  Working in office
+                </li>
+                <li>
+                  etc., etc., etc.,
+                </li>
+              </ul>
             </p>
+            <p>
+              In The same way living an healthy life also has some rules. And we need to follow those rules strictly.
+              Otherwise we cannot live an health life. Unfortunately those rules were very simple if we understand and make practice it.
+            </p>
+            <div>
+              <h3>
+                Type of Diseases.
+              </h3>
+              <p>
+                According to Allopathy medicine more then 1 million different type Diseases available in human body.
+                But according to our ancient saint there were only 3 type of Diseases available
+                <ol>
+                  <li>
+                    <h4>Diseases one have when he/she born. </h4>
+                    <p>
+                      This type of Diseases has only 50% chance to self heal by applying the fundamental technique.
+                      So its mandatory to seek doctor advice and also you can try to apply the fundamental technique.
+                      For Ex.
+                      <ul>
+                        <li>
+                          Any Type of Genetic Disorder.
+                        </li>
+                        <li>
+                          Any Type of Disease the baby has in the womb itself.
+                        </li>
+                      </ul>
+                    </p>
+                  </li>
+                  <li>
+                    <h4>Any Type of Emergency in once lifespan Or Any Type Physical damage to your body. </h4>
+                    <p>
+                      These type cases cannot be self healed by applying this technique. Its mandatory to go to hospital and seek doctor advise.
+                      For Ex:
+                      <ul>
+                        <li>
+                          Twin Baby born with attached organs.
+                        </li>
+                        <li>
+                          One suddenly get an Heart Attack.
+                        </li>
+                        <li>
+                          Some poisoned inset bite.
+                        </li>
+                        <li>
+                          Any type of accident.
+                        </li>
+                        <li>
+                          Any type of born fracture.
+                        </li>
+                      </ul>
+                    </p>
+                  </li>
+                  <li>
+
+                    <h4>
+                      Diseases comes inside from your body after he/she born.
+                    </h4>
+                    <p>
+                      In this world majority of people face this type of Diseases due to lack of knowledge, about human body, its function and fundamental techniques.
+                      By applying the fundamental we can easily solve this these type of
+                      Like Ex:
+                    </p>
+                    <ul>
+                      <li>
+                        Asthuma, Vising, Headach, Any type of Eye Disease, Teeth problem, Heart Problem, Hair Falling, stones in kidney, Alsur etc....
+                      </li>
+                      <li>
+
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+
+              </p>
+            </div>
+            <div>
+              If you have 3rd type desiases and your intersted to know about fundamental technique to self
+              heal please send out a mail to healthylifetechnique@gmail.com for further communication.
+            </div>
           </div>
-
-          <div>
-            <h3>
-              Walk To Any Hospital:
-            </h3>
-
-            <p>
-              If your not believing me that, we are utilizing more then 100%? than, you can walk to any
-              famous/multi spaciality, hospital in your locality Or In India and try to meet the doctor
-              immediately without any preior appointment or waiting time. Definitely you cannot. You have to get
-              an appointment or you need to wait minimum of 2 to 3 hours to meet the doctor. Because we are over
-              utilizing all the hospitals, doctors, medicines and health products to live an healthy life.
-            </p>
-          </div>
-
-          <div>
-            <h3>
-              Reason For Non-Healthy Life:
-            </h3>
-
-            <p>
-              Even though we have so many advance technology research labs, medicines, hostpitals & scanning devices but still we are not able to live an
-              healthy life because <b>we don’t know the fundamental technique to live an healthy life</b>.
-            </p>
-            <p>
-              It means, If I ask you to walk then how easy it will be for you to walk. Because your body know the fundamental balancing technique to stand and walk. But the new born baby cannot walk. Because the baby does not know the fundamental technique.
-            </p>
-            <p>
-              If I ask you speak your own laungevage then how easy it will be for you to speak. Because you know the basics of your own language. But you cannot speak other unknown language.
-            </p>
-            <p>
-              In the same way to live an healthy life we need to follow a fundamental technique, which I am going to teach you in this blog please continue reading this.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Do We Need All These (Hospitable, Shops, Centers & Classes)?:
-            </h3>
-
-            <p>
-              Yes. Definitely we need all these(Hospitable, Shops, Centers & Classes). But the action you are taking against to live an healthy life will be in effect only when you apply my fundamental technique.
-            </p>
-            <h4>
-              For Ex:
-            </h4>
-
-            <p>
-              peoples continusly taking medicine for Suger, BB, Asthuma or Vising(etc......) but it never cured. The reason is with the medicine they are not applying the fundamental technique to live an healty life. If they start applying then all your healty problems or decises will be cured.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Benefits:
-            </h3>
-
-            <p>
-              Following the list of benefits when applying the fundamental technique.
-            </p>
-            <ul>
-              <li>
-                Your body wait will be reduced immediately. Unwanted LDL(Low density Liboprotien(FAT)) will go out from your body.
-              </li>
-              <li>
-                Belly, Hip, Thy, Breast and Buttex fat will be reduced.
-              </li>
-              <li>
-                Suger, BP, Asthuma, Vising, Skin(Itching, Heir fall, bad smell etc), Eye, Knee, IBS related diceses will
-                be cured.
-              </li>
-              <li>
-                Your immunity power, memory and concentration power will be increased.
-              </li>
-              <li>
-                Gynecology/Pregnent related desices or problems will be solved.
-              </li>
-              <li>
-                Women can give normal delivery without following up high diat chart suggesting by Dietitian.
-              </li>
-              <li>
-                Any many more.
-              </li>
-            </ul>
-            <p>
-              I am not asking you wait for more then 1 or 5 or 10 month to see the difference by following up my fundamental technique. You will be able to see the differences in your body with in a week time.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Strict Diat plan:
-            </h3>
-            <ul>
-              <li>
-                You can eat whatever you like and what ever you want on all the times. There is no Diat.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>
-              Benifites I got
-            </h3>
-
-            <p>
-              Following all health problems were solved after applying the technique.
-            </p>
-            <ul>
-              <li>
-                Back, Knee & Nech pain cured.
-              </li>
-              <li>
-                Vising & Asthuma cured 95% cured.
-              </li>
-              <li>
-                Alsur, Stomech burning & IBS cured.
-              </li>
-              <li>
-                Skin iches, body bad smell cured.
-              </li>
-              <li>
-                Eye site recoverd from -1.5 to Normal, Dry Eye, Eye burning cured.
-              </li>
-              <li>
-                Distrubed slipping and headach solved.
-              </li>
-              <li>
-                Memory and Concentration power increased.
-              </li>
-              <li>
-                Now I am able to travel more then 40KM(2 hour) per day in a normal Bike(Hero Splender+)in India with very bad road condition on all week days and able to work in office for more then 10 hours engertically.(Without taking any bolts).
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>
-              Donate me :
-            </h3>
-
-            <p>
-              My hearty congratulations for your happy healthy life. This technique can be followed from 4 year old kid to 120 years old persons. I have lost almost 5 years and I spent huge money(to hospitals, scanning, testing and medicines) just to live healthy life from 2012 to 2016. No one has helped me to recover from my health problems.
-              My Hearty thanks to my Guru <a href="#">Mr. Heler Basker.</a> The founder of Annatomic therophy who thought me so many healthy life techiques and now I am able to live an healthy life after  applying his techniqu. In this blog I used most of his technique and few of my knowledge I learned in last 5 years and presented to you in very simple and easy way to follow. So that you can applying it in your day to day life and you can live an healthy life easily. If you recoverd and interested then please donate me some amount.
-            </p>
-          </div>
-          <div>
-            <h3>
-              My Guru(Mr. Heler Basker):
-            </h3>
-            <p>
-              The founder of Annatomic therophy who has more knowledge about Human body and Mind. He has posted more then 1000 videos about healthy life techniques.
-              And I Requesting you to watch all his videos and understand how humen body/mind works and learn how you can solve all your health problems?. But still my technique is more enough to solve 80% of your  helth problems. For more clarification you can ask me Or My Guru directly.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Share this Video or Site:
-            </h3>
-
-            <p>
-              Please follow my technique then if you benefited and if you believe this is right technique then
-              please share this site or video to your friends, relatives, colleagues, any known, unknown and your
-              enemies also. So that every one in this world can live a
-              healthy life.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Technique:
-            </h3>
-
-            <p>
-              I have explained the technique in my Video with the demonstration. Please Skip first 20 mins in my
-              video which I already explained i this blog and watch it.
-            </p>
-          </div>
-
         </div>
         <div class="col span-1-of-6 main-right" style="border:  1px solid deepskyblue">
-          Display Google Adds.
+          Display Empty Container.
         </div>
         <div class="col span-1-of-6 main-right" style="border:  1px solid deepskyblue">
-          Display Google Adds.
+          Display Empty Container.
         </div>
 
       </div>

@@ -21,6 +21,7 @@
         </headers>
     </http>
 
+
     <beans:bean id="customAuthendicationProvider" class="com.sunsat.sathish.j2ee.health.login.util.CustomAuthendicationProvider"/>
 
     <authentication-manager id="jdbcAuthenticationManager">
@@ -28,6 +29,11 @@
 
         </authentication-provider>
     </authentication-manager>
+
+    <authentication-manager id="oauth2AuthendicationManager">
+
+    </authentication-manager>
+
 
     <beans:bean id="logoutSuccessHandler" class="com.sunsat.sathish.j2ee.health.login.util.CustomLogoutSuccessHandler"/>
 

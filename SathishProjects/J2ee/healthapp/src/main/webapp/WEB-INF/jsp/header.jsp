@@ -4,7 +4,7 @@
             <img src="webRes/img/logo_healthy_life_technique.jpg" alt="Logo Healthy Life Technique" class="main-logo">
         </div>
         <div class="google-ad-sense">
-            Display google Adds.
+            Diaplay Empty Container.
         </div>
 
         <div class="total-page-count-share-icon-list">

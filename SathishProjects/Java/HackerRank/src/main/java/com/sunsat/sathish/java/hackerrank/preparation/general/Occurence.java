@@ -1,11 +1,10 @@
 package com.sunsat.sathish.java.hackerrank.preparation.general;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Occurence {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		
@@ -30,6 +29,31 @@ public class Occurence {
 			System.out.println(m.getKey() +" : "+m.getValue());
 		}
 		
+	}*/
+
+	public static void main(String[] args) {
+		//String[] a = new String[]{"one","tWo","Threetwo","four","FourOne","one"};
+		List<String> list =  new ArrayList();
+		String[] a = new String[]{"one","tWo","Threetwo","four","FourOne","OneONE"};
+		int count;
+		for(String temp : a){
+			list.add(temp.toLowerCase());
+		}
+
+		Set<String> set = new HashSet(list);
+
+		for(String temp1:set){
+			count = 0;
+			for(String temp2:list){
+				if(temp2.contains(temp1)){
+					count++;
+				}
+
+			}
+			System.out.println(temp1+"::::"+count);
+		}
+
+
 	}
 
 }

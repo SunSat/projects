@@ -7,8 +7,8 @@
         <!-- Database connection properties - Driver, URL, user, password -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/healthapp</property>
-        <property name="hibernate.connection.username">sathish</property>
-        <property name="hibernate.connection.password">sathish</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root@123</property>
         <!-- Connection Pool Size -->
         <property name="hibernate.connection.pool_size">10</property>
 

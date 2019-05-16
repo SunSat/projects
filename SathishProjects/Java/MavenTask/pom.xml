@@ -25,7 +25,6 @@
         <jackson-version>2.9.5</jackson-version>
         <jodatime-version>2.7</jodatime-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
-        <junit-version>4.8.1</junit-version>
         <dir>${project.basedir}/src/main/resource/antlink.properties</dir>
         <swagger.codegen.inputSpec>${project.basedir}/src/main/resource/payment/payment.yaml</swagger.codegen.inputSpec>
     </properties>
@@ -34,7 +33,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${test.junit.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -161,7 +160,7 @@
                 </executions>
             </plugin>
 -->
-            <plugin>
+            <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
@@ -197,7 +196,7 @@
                             </goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/src/main/java/resource/payment/payment.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/src/main/java/resource/payment/payment_org.yaml</inputSpec>
                             <output>${project.basedir}/generated-sources</output>
                             <language>java</language>
                             <modelPackage>com.sunsat.sathish.java.maven</modelPackage>
@@ -209,7 +208,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

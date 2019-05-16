@@ -26,9 +26,9 @@ public class App
 
         System.out.println("The CMD Is : " + args[0]);
 
-        String[][] paths = {{"payment/payment.yaml","payment"},{"refund/refund.yaml","refund"}};
+        String[][] paths = {{"payment/payment.yaml","payment"}};
 
-        for(int i=0;i<2;i++) {
+        for(int i=0;i<paths.length;i++) {
             InvocationRequest request = new DefaultInvocationRequest();
             request.setPomFile(new File(args[0]+"/pom_generate.xml"));
             request.setGoals(Collections.singletonList("generate-sources"));

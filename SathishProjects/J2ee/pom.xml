@@ -21,6 +21,8 @@
         <module>healthapp</module>
         <module>LoginApp</module>
         <module>spboot</module>
+        <module>camelroutingmvn</module>
+        <module>Rxjava2Web</module>
     </modules>
 
     <build>

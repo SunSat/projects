@@ -64,7 +64,7 @@ public class LoginController {
     @RequestMapping(value = {"/homepage.an","/","/index.jsp"},method = RequestMethod.GET)
     public String loadHomePage(HttpServletRequest request, HttpSession session, ModelMap modelMap) {
         UserBusiness ub = GeneralAppUtil.getLoggedUserDetails();
-        Long count = userService.getLikeCount();
+        Long count = 0l;//userService.getLikeCount();
         modelMap.put(LIKE_COUNT,count);
         boolean isAdmin = false;
         if(ub.getUserName().equalsIgnoreCase(ANNOYMOUS_USER)) {

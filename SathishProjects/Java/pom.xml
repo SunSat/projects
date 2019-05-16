@@ -23,6 +23,9 @@
         <module>MapStruct</module>
         <module>swagercodegen</module>
         <module>MavenTask1</module>
+        <module>CamelCache</module>
+        <module>RxJavaDemo1</module>
+        <module>RxJava2Demo</module>
     </modules>
 
     <properties>
