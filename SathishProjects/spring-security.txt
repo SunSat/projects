@@ -1,0 +1,75 @@
+The first class will hit is:
+
+DelegatingFilterProxy.java --> DoFilter() -->
+In Spring security two important modules available
+    1. AuthendicationManager
+    2. AutherizationManager
+
+AuthendicationManager extends ProviderManager and one more method isSupported(class) so that we can use multiple
+authendication manager for multiple request
+    isAuthendicate() return boolean
+    setAuthendicate(boolean bool)
+    isSupported(Class cls)
+
+    Through the constructor we can set actually set the authendication success.
+
+    Ex :
+        In the controllerclass we can define the authedicatiomanager type
+
+    @Controller
+    public class LoginController {
+        @Autowired
+        @Qualifier("jdbcAuthenticationManager")
+        AuthenticationManager authManager;
+
+
+        //in the post login request method we can check for customem authedication successful or not
+        @RequestMapping(value = "/loginAction.an", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+        produces = MediaType.APPLICATION_JSON_UTF8_VALUE, method = RequestMethod.POST)
+        public @ResponseBody UserFormModel peformLogin(@ModelAttribute UserFormModel model,
+        HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+             Authentication newAuth = authManager.authenticate(new UsernamePasswordAuthenticationToken(model.getUserName(),model.getPassword()));
+             if(newAuth.isAuthenticated()) {
+
+                //Post authendication success operations we can do here.
+            } else {
+                //Failure Operation we can perform here.
+            }
+    }
+
+    SecurityContextHolder.getContext().getAuthentication().getPrincipal() will be used to hold the authendication detail for this session.
+
+    --------------------------
+Filters --> DelegatigFilterProxy --> DoFilter --> InvokeDelegate() --> VirutualFilterChain --> SecurityContextPersistenceFilter -->
+OncePerRequestFilter -->WebAsyncManagerIntegrationFilter -->HeaderWritterFilter -->LogoutFilter --> RequestCacheAwareFilter -->
+SecirutyContextHolderAwareFilter -->SessionManagermentFilter -->ExceptionTransalationFilter --> ApplicatoinFilterChain -->
+
+Finally DispatcherServlet...
+
+DispatcherServlet --> doService() -> doDispatch() -> This doDispatch will find the handlerHAdaptors, That is RequestMappingHandlerAdaptor-->handle() ->
+invokeHandlerMethod() -->
+This invokeHandlerMathod() will do the following work
+    1. Find the ModelAndView
+    2. ArgumentResolver-->
+        a. Will take the arguments and resolve those type
+        b. WIll convert arguments to Body to Json Or any other type
+        c. Will Check for mandatory arguments
+        d. will resolve path level
+        e. After resolved and value set then do validation using @Valid annotations.
+            If Any Exception then throw exception annotation.
+    3. ReturnValueHandler
+    4. Aspects @Before, @After, @Around
+Finally this will invoke handler Method and after return based on Annotations will resolve View using ViewResolver or send the response back to as body with conversation.
+
+-----------------------------------------
+
+In SpringSecurity WebSecurityConfigurerAdapter class has three method
+
+Configure(HttSecirity http)
+Congigure(WebSeciruty webSaecurity)
+Configure(authrozionatiomanager authManager)
+
+
+
+
+

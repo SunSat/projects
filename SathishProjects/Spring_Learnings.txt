@@ -19,4 +19,50 @@ problems you may face when you develop spring application first time
 ------------------------------------------
 3. The DAO layer should have filters from MVC Layer. So that we can load the required data based on the filters.
 4. In UI we should use Event-Driven program for login
-	 
+
+---------------------
+
+Spring JPA Respository :
+
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories("com.journaldev.spring.repository")
+@PropertySource("classpath:database.properties")
+public class DataConfig {
+1. @Bean
+   	LocalContainerEntityManagerFactoryBean
+
+    @Bean
+   	will set DriverManagerDataStorage,
+   	@Bean
+   	Will set JpaTransactionManager
+   	@Bean
+   	Will set PropertySoruces
+}
+
+public interface PersonRepository<P> extends CrudRepository<Person, Long> {
+    List<Person> findByFirstName(String firstName);
+}
+
+We can call all these
+
+save
+findOne
+exists
+findAll
+count
+delete
+deleteAll
+
+@Service
+public class PersonService {
+
+	@Autowired
+	PersonRepository<Person> personRepository;
+
+	@Transactional
+	public List<Person> getAllPersons() {
+		return (List<Person>) personRepository.findAll();
+	}
+}
+
