@@ -16,12 +16,14 @@ import java.nio.channels.FileChannel;
 
 import javax.imageio.ImageIO;
 
+/*
 import com.sun.pdfview.PDFFile;
 import com.sun.pdfview.PDFPage;
+*/
 
 public class pdfToImageConvertor {
     public static void main(String[] args) throws IOException {
-        File pdfFile = new File("C:\\personal\\idea_workspace\\HackersRank\\src\\preparation\\general\\images\\Sample.pdf");
+       /* File pdfFile = new File("C:\\personal\\idea_workspace\\HackersRank\\src\\preparation\\general\\images\\Sample.pdf");
         RandomAccessFile raf = new RandomAccessFile(pdfFile, "r");
         FileChannel channel = raf.getChannel();
         ByteBuffer buf = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size());
@@ -29,10 +31,10 @@ public class pdfToImageConvertor {
 
         for (int i=0; i<pdf.getNumPages(); i++) {
             createImage(pdf.getPage(i), "C:\\personal\\idea_workspace\\HackersRank\\src\\preparation\\general\\images\\PICTURE_" + i + ".jpg");
-        }
+        }*/
     }
 
-    public static void createImage(PDFPage page, String destination) throws IOException{
+   /* public static void createImage(PDFPage page, String destination) throws IOException{
         Rectangle rect = new Rectangle(0, 0, (int) page.getBBox().getWidth(),
                 (int) page.getBBox().getHeight());
         BufferedImage bufferedImage = new BufferedImage(rect.width, rect.height,
@@ -47,6 +49,6 @@ public class pdfToImageConvertor {
         Graphics2D bufImageGraphics = bufferedImage.createGraphics();
         bufImageGraphics.drawImage(image, 0, 0, null);
         ImageIO.write(bufferedImage, "JPG", new File( destination ));
-    }
+    }*/
 
 }

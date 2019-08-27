@@ -50,12 +50,12 @@
 
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/com.sun.pdfview/pdfrenderer -->
+    <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.sun.pdfview/pdfrenderer &ndash;&gt;
     <dependency>
       <groupId>com.sun.pdfview</groupId>
       <artifactId>pdfrenderer</artifactId>
-      <version>0.9.1-patched</version>
-    </dependency>
+      &lt;!&ndash;<version>0.9.1-patched</version>&ndash;&gt;
+    </dependency>-->
 
     <dependency>
       <groupId>commons-codec</groupId>
