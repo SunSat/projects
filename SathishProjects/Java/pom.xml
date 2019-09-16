@@ -26,6 +26,7 @@
         <module>CamelCache</module>
         <module>RxJavaDemo1</module>
         <module>RxJava2Demo</module>
+        <module>validation</module>
     </modules>
 
     <properties>
