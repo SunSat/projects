@@ -112,3 +112,19 @@ Java Memory Leak Can be broadly clasified in to 2 category.
            4. Declare the required variable outside the loop.
            5. Use WeekHashMap()
            6. Logging should be done properly with proper priority.
+
+   4. API & Other Memory Performance tuning
+      1. Separating the business logic to different threads.
+            1. Storing Database in Parallel thread Used ReenterentLock,
+            2. ObjectMapper we should not create new objectmapper everytime need to use same autowired object mapper.
+            3. Instead of ObjectMapper - Need to use ObjectReader and ObjectWriter.
+            4. RestTemplate - RestTemplate pool need to use this will stop creating connection everytime and will
+            5. All the HashMap with initial capacity need to create
+            6. All the Strings need to convert static field
+            7. Parallel Business logic using threads. Reactive threads
+            8. Try to complete operation in Memory and do response from Memory so that writing in database happenes in different thread.
+            9. Read object/or any required info from securityManager once and store it in custom request object. Not to get everytime from spring
+            10. Maximum required object should be passed as parameter
+            11. AOP unwanted AOP need to anlayze and stop it completely.
+            12.
+

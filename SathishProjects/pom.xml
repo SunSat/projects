@@ -16,6 +16,7 @@
     <modules>
         <module>Java</module>
         <module>J2ee</module>
+        <module>ObjectMapper</module>
     </modules>
 
     <properties>
