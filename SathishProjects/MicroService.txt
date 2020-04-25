@@ -1,0 +1,67 @@
+https://globallogic.udemy.com/course/microservices-software-architecture-patterns-and-techniques/learn/lecture/10513328#content
+What is Micro Services?
+    1. Micro Service is a software development technique to split monolathi application to multiple single domain specific application in which
+each one can solve single problem.
+
+Characteristics of Micro Service
+    1. Light weight
+    2. Loosely coupled (Low Coupling so easy to understand, develop, test, deploy).
+    3. Parallel development
+        that is different team with different technologies.
+    4. Scalability
+
+Drawback of Micro Services
+    1. Infrastructure cost are higher
+    2. Integration testing complexity
+    3. Service anti patterns like
+        Repeated task and services overhead
+            1. Inter process communications, Serializations costs
+            2. Parsing the request and response between each services
+            3. Basic validations between each services
+            4. Gui application may not helpful these Micro Services.
+1. Micro Service Templates :
+    1. Will be very useful by saving Significant amount of time to setup projects and similar code each micro service should follow
+        Most of the non functional or cross cutting concerns should be available in templates.
+        like :
+            1. Metrics
+                Distributed Tracing
+
+            2. Logging
+            3. Database connection setups.
+            4. authentication(security/token validations)
+            5. Basic Swagger or Java validations
+            6. automated testing
+            7. Continues Integrations settings like (Docker, Jenkins)
+
+ Examples of Templates :
+
+ https://github.com/Nike-Inc/riposte-microservice-template#how_to_generate_new_project
+ https://github.com/overture-stack/microservice-template-java
+
+2. Communications  :
+    1. Synchronous communication
+            1. Http, RPC, GRPC
+    2. Asynchronous communication :
+            1. Message Based communication, Event Driven communications or publish and subscribe design pattern
+3. Service Registrations
+4. Service Discovery or Service communication
+    Step 1 : Each time service has to send msg to service registry to find the actual instance of service which need to invoke
+    Step 2 : Based on the response Service has to send the request and get the response. This is very annoying process of wasting time.
+
+    For this : Client Side Discovery & Server Side Discovery
+        1. Server Side Discovery :
+            Step 1 : Micro Service dont have any knowledge of other services. The request will be send to load balancer.
+            Step 2 : Load balance query the service in service registry and forward the request to correct service and the response will be forward back
+
+            Advantage :
+                1. Client doesnot have any overhead of find the micro service
+                2. Load balancer will take care of splitting the load accorses multiple services
+            Dis-Advanage :
+                1. Multiple network hop between request and responses
+                    Overcome : Loadbalancer + Service registry in the same machine as two services
+
+            Tools for server side discovery
+                https://www.consul.io/
+                https://github.com/Netflix/eureka
+                https://zookeeper.apache.org/
+                https://etcd.io/

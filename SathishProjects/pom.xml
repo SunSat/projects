@@ -32,15 +32,19 @@
         <hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
         <hibernate.c3p0.version>5.2.17.Final</hibernate.c3p0.version>
         <hibernate-ehcache.version>5.3.7.Final</hibernate-ehcache.version>
-        <jackrabbit-core.version>2.7.0</jackrabbit-core.version>
-        <jackrabbit-jcr-rmi.version>2.7.0</jackrabbit-jcr-rmi.version>
-        <jackrabbit-webapp.version>2.7.0</jackrabbit-webapp.version>
+        <jackrabbit-core.version>2.18.5</jackrabbit-core.version>
+        <jackrabbit-jcr-rmi.version>2.18.5</jackrabbit-jcr-rmi.version>
+        <jackrabbit-webapp.version>2.18.5</jackrabbit-webapp.version>
         <javax.persistence-api>2.2</javax.persistence-api>
         <springframework.version>5.0.8.RELEASE</springframework.version>
         <servlet.version>2.5</servlet.version>
         <jsp.version>2.2</jsp.version>
         <hibernate-validator>6.0.9.Final</hibernate-validator>
         <log4j-api.version>2.6.1</log4j-api.version>
+        <camel-ehcache.version>2.18.1</camel-ehcache.version>
+        <org.slf4j-api.version>1.7.25</org.slf4j-api.version>
+        <org.mapstruct-jdk8.version></org.mapstruct-jdk8.version>
+        <rxjava3.version>3.0.1</rxjava3.version>
 
 
     </properties>
