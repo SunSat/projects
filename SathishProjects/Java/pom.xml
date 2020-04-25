@@ -27,6 +27,7 @@
         <module>RxJavaDemo1</module>
         <module>RxJava2Demo</module>
         <module>RxJava3Demo</module>
+        <module>JdkReleaseFeatures</module>
     </modules>
 
     <properties>
