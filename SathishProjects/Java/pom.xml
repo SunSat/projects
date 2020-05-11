@@ -28,6 +28,7 @@
         <module>RxJava2Demo</module>
         <module>RxJava3Demo</module>
         <module>JdkReleaseFeatures</module>
+        <module>imageHandling</module>
     </modules>
 
     <properties>

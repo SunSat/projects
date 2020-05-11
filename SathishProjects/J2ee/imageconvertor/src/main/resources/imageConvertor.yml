@@ -1,0 +1,19 @@
+---
+image:
+  uploadMaxSize: 15 #in MB
+  resize:
+    detailed:
+      type: detailed
+      width: 574
+      height: 574
+      folderPath: detailed
+    thumbnail:
+      type: thumbnail
+      width: 90
+      height: 90
+      folderPath: thumbnail
+  quality:
+    applyIfSize: 300
+    applyTo: 75
+
+
