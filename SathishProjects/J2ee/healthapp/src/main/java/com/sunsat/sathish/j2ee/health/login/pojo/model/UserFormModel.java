@@ -1,6 +1,5 @@
 package com.sunsat.sathish.j2ee.health.login.pojo.model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sunsat.sathish.j2ee.health.base.pojo.model.FormModel;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,7 +11,7 @@ public class UserFormModel extends FormModel {
     private String userName;
     private String password;
     private String confirmPassword;
-    private Bool keepMeSingedIn;
+    private Boolean keepMeSingedIn;
     private String firstName;
     private String lastName;
     private String dob;
@@ -53,12 +52,20 @@ public class UserFormModel extends FormModel {
         this.confirmPassword = confirmPassword;
     }
 
-    public Bool getKeepMeSingedIn() {
+    public Boolean getKeepMeSingedIn() {
         return keepMeSingedIn;
     }
 
-    public void setKeepMeSingedIn(Bool keepMeSingedIn) {
+    public void setKeepMeSingedIn(Boolean keepMeSingedIn) {
         this.keepMeSingedIn = keepMeSingedIn;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {

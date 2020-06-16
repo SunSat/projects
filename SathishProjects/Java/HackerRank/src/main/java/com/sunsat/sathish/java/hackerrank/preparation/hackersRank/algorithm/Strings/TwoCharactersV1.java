@@ -1,6 +1,5 @@
 package com.sunsat.sathish.java.hackerrank.preparation.hackersRank.algorithm.Strings;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.HashSet;
 import java.util.Scanner;

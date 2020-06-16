@@ -1,0 +1,6 @@
+VOLUME /tmp
+ARG JAR_FILE=./target/*.jar
+COPY ${JAR_FILE} /usr/heal/heal.jar
+WORKDIR /usr/heal
+RUN java heal-0.0.1*.jar
+ENTRYPOINT ["java","-jar","app.jar"]

@@ -1,0 +1,56 @@
+<div th:fragment="loginModel" class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="container modal-dialog modal-dialog-centered" role="document">
+    <div class="row">
+      <h2 style="text-align:center">Login with Manually or Social Media</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      <div class="col_left">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
+        </div>
+
+        <input type="text" name="username" placeholder="Username" required id="username_req">
+        <input type="password" name="password" placeholder="Password" required id = "passwrod_req">
+        <input type="button" value="Login" id="login_button">
+        <input type="button" value="SignUp" id="signup_button">
+
+        <a id="popover_datatrigger" tabindex="0" class="btn btn-lg btn-danger" role="button"  data-toggle="popover" title="Forgot Password" data-html='true' data-content="
+              <div class='forgot_container'>Email Id :
+                <input style = 'border:solid 1px blue;' type='text' id='forgot_passwrod_mail_id'>
+                <input style = 'width:100%' type='button' value='Send Password' onclick='fogotpasswrodcalled()' id='forgot_passwrod_button'><br>
+              </div>
+               ">Forgot Password</a>
+      </div>
+
+      <div class="col_right">
+        <a href="#" class="fb btn_social">
+          <i class="fa fa-facebook fa-fw"></i>
+        </a>
+        <a href="#" class="twitter btn_social">
+          <i class="fa fa-twitter fa-fw"></i>
+        </a>
+        <a href="#" class="google btn_social"><i class="fa fa-google fa-fw">
+        </i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div th:fragment="logoutModel" class="modal fade" id="logoutModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="container modal-dialog modal-dialog-centered" role="document">
+    <div class="row">
+      <h2 style="text-align:center">Do You want to Logout?</h2>
+      <div style="padding-left: 10%">
+        <div class="logout_col">
+          <h5>All your wallet's private key will be erased and you need enter again.</h5>
+          <input type="button" value="Logout" id="logout_button">
+          <input type="button" value="Cancel" id="logout_cancel_button">
+          <input type="checkbox" style="display: inline;width: 10% !important;">Do not Ask me again?
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
