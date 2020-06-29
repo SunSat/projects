@@ -1,11 +1,11 @@
-package com.sunsat.sathish.java.hackerrank.preparation.geeksForGeeks;
+package com.sunsat.sathish.java.hackerrank.preparation.geekforgeeks;
 
 import java.util.Scanner;
 
 /**
  * Created by ssundar2 on 5/11/2017.
  */
-public class GFG {
+public class GFG_Sorting {
 
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);

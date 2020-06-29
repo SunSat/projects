@@ -1,6 +1,7 @@
 package com.anisat.token.heal.controller;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class HomePageController {
     @GetMapping({"/","/index","/home"})
     public String getHomePage(HttpServletRequest request) {
         if(request.getUserPrincipal() != null) {
-            if(((UsernamePasswordAuthenticationToken)request.getUserPrincipal()).isAuthenticated()) {
+            if(((Authentication)request.getUserPrincipal()).isAuthenticated()) {
                 return "home";
             }
         }

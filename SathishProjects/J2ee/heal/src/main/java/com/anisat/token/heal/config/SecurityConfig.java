@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","/index","/file/**").permitAll()
+                .antMatchers("/","/index","/file/**","/webjars/**").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin()
                     .loginProcessingUrl("/manual_loggin")
@@ -30,6 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutSuccessUrl("/index")
                     .logoutSuccessHandler(loginEventHandler())
                 .invalidateHttpSession(true).permitAll();
+
+        http.oauth2Login();
     }
 
     @Bean

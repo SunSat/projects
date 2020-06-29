@@ -5,4 +5,4 @@ COPY ${JAR_FILE} /usr/heal/heal.jar
 WORKDIR /usr/heal
 #RUN java -jar heal.jar
 ENTRYPOINT ["java","-jar","heal.jar"]
-EXPOSE 8080
+EXPOSE 8080:8080

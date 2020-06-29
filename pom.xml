@@ -7,6 +7,8 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>SathishProjects</module>
+      <module>SathishProjects/Java/intelizest</module>
+      <module>SathishProjects/Java/javajwt</module>
   </modules>
   <packaging>pom</packaging>
 
