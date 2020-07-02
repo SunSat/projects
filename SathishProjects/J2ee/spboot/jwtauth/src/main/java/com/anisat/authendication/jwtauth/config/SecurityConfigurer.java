@@ -22,6 +22,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static com.anisat.authendication.jwtauth.config.jwt.Constants.ACCESS_TOKEN_URL;
+import static com.anisat.authendication.jwtauth.config.jwt.Constants.REFRESH_TOKEN_URL;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -34,7 +37,10 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    /*@Autowired
+    @Autowired
+    UserDetailsService userDetailsService;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
@@ -42,7 +48,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }*/
+    }
 
     @Bean(name = "authenticationManager")
     @Override
@@ -53,19 +59,13 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authendicate","/signup").permitAll()
+                .authorizeRequests().antMatchers(ACCESS_TOKEN_URL,REFRESH_TOKEN_URL,"/signup").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                /*.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                .and()*/
+                .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .userDetailsService(getUserDetailServie());
-    }
-
-    @Bean(name = "userDetailsService")
-    public UserDetailsService getUserDetailServie() {
-        UserDetails userDetails = User.builder().username("sat").password("{noop}sat").roles("user").build();
-        return new InMemoryUserDetailsManager(userDetails);
+                .userDetailsService(userDetailsService);
     }
 }

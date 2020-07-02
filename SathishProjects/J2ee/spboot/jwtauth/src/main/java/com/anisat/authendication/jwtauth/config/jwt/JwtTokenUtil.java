@@ -1,5 +1,6 @@
 package com.anisat.authendication.jwtauth.config.jwt;
 
+import com.anisat.authendication.jwtauth.service.dto.UserDto;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,19 +10,18 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.crypto.SecretKey;
+import javax.swing.text.html.HTMLDocument;
 import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
+import static com.anisat.authendication.jwtauth.config.jwt.Constants.*;
+
 
 @Component
 public class JwtTokenUtil {
 
-    private String secretKey = "hello world";
-    private String mdAlgorithm = "SHA-512";
-    private Integer tokenExpiryMillSec = 60 * 60 * 1000;
-    private Integer refereshTokenExpiryInMillSec = 100 * 1000;
     private SecretKey key;
 
     @PostConstruct
@@ -30,8 +30,8 @@ public class JwtTokenUtil {
     }
 
     private byte[] getEncryptedSecrete() throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance(mdAlgorithm);
-        return md.digest(secretKey.getBytes());
+        MessageDigest md = MessageDigest.getInstance(MESSAGE_DIGEST_ALGORITHM);
+        return md.digest(SECRET_KEY.getBytes());
     }
 
     private Key generateSignerKey() throws NoSuchAlgorithmException {
@@ -39,20 +39,20 @@ public class JwtTokenUtil {
        return key;
     }
 
-    public String generateToken(UserDetails user) throws NoSuchAlgorithmException {
+    public String generateToken(UserDto user) throws NoSuchAlgorithmException {
         Map<String,Object> claimsMap = new HashMap<>();
         claimsMap.put("scopes",user.getAuthorities());
         claimsMap.put("refreshToken",true);
+
         long currentDate = System.currentTimeMillis();
-        System.out.println("Current Date is : " + new Date(currentDate) + " &. Expire after" + new Date(currentDate + tokenExpiryMillSec));
         return Jwts.builder()
                 .addClaims(claimsMap)
                 .setIssuer("http://localhost:8080")
                 .setIssuedAt(new Date(currentDate))
-                .setExpiration(new Date(currentDate + tokenExpiryMillSec))
+                .setExpiration(new Date(currentDate + ACCESS_TOKEN_VALIDITY_SECONDS))
                 .signWith(key,SignatureAlgorithm.HS512)
                 .setId(UUID.randomUUID().toString())
-                .setSubject(user.getUsername())
+                .setSubject(user.getUserName())
                 .compact();
 
     }
@@ -85,8 +85,32 @@ public class JwtTokenUtil {
         return true;
     }
 
-    private Jws<Claims> getParsedJwt(String token) {
+    public Jws<Claims> getParsedJwt(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+    }
+
+    public String generateRefereshToken(String token) {
+        String refereshToken = null;
+        Claims claims = null;
+        try {
+            Jws<Claims> claimsJws = getParsedJwt(token);
+            claims = claimsJws.getBody();
+        } catch (ExpiredJwtException e) {
+            claims = e.getClaims();
+        } catch (Exception e) {
+            throw new RuntimeException("Invalid Token.");
+        }
+        if(null != claims) {
+            UserDto userDto = new UserDto();
+            userDto.setAuthorities(claims.get("scopes",List.class));
+            userDto.setUserName(claims.getSubject());
+            try {
+                refereshToken = generateToken(userDto);
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException("No Such Algorithm");
+            }
+        }
+        return refereshToken;
     }
 
 }
