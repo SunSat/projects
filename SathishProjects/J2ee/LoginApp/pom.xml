@@ -19,7 +19,7 @@
 
     <properties>
 
-        <spring.version>5.0.8.RELEASE</spring.version>
+        <spring.version>5.2.10.RELEASE</spring.version>
         <serlet-api>3.1.0</serlet-api>
     </properties>
 
